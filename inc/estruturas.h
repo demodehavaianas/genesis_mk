@@ -91,12 +91,12 @@ typedef struct
   u8 key_JOY_countdown[10];
   // Key_JOY_status informa se o botao
   // 0 - nao esta apertado
-  // 1- acabou de apertar
-  // 2- mantendo apertado
-  // 3- acabou de soltar
+  // 1 - acabou de apertar
+  // 2 - mantendo apertado
+  // 3 - acabou de soltar
   u8 key_JOY_status[12];
 } Player;
 
-Player player[2];
+extern Player player[2];
 
 #endif

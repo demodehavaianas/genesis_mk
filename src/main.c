@@ -29,6 +29,8 @@ s16 scrollValues[48];
 
 GraphicElement GE[25];
 
+Player player[2];
+
 void resetGraphicElements();
 void CLEAR_VDP();
 void playerState(int Player, u16 State);

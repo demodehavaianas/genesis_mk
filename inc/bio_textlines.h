@@ -1,3 +1,6 @@
+#ifndef _BIO_TEXTLINES_H_
+#define _BIO_TEXTLINES_H_
+
 #include "estruturas.h"
 
 const TextLine johnnyCageLines[] = {
@@ -80,3 +83,5 @@ const TextLine goroLines[] = {
     {"INTO SHANG TSUNG'S HANDS AND WAS", 4, 19},
     {"CORRUPTED", 15, 21},
 };
+
+#endif
