@@ -6,7 +6,7 @@
 
 PROJECT_NAME           = "Mortal Kombat Plus"
 PROJECT_BRIEF          = "Documentação gerada automaticamente com Doxygen"
-OUTPUT_DIRECTORY       = docs
+OUTPUT_DIRECTORY       = web
 CREATE_SUBDIRS         = NO
 OUTPUT_LANGUAGE        = Brazilian
 EXTRACT_ALL            = YES
@@ -29,7 +29,7 @@ EXCLUDE_SYMBOLS        =
 #--------------------------------------------------------------------------- 
 
 GENERATE_HTML          = YES
-HTML_OUTPUT            = html
+HTML_OUTPUT            = doc
 HTML_FILE_EXTENSION    = .html
 HTML_COLORSTYLE_HUE    = 220
 HTML_COLORSTYLE_SAT    = 100

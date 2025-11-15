@@ -5,7 +5,9 @@
 
 ## Mortal Kombat Plus
 
-Material de estudo para desenvolvimento de um jogo de luta para o Mega Drive usando a SGDK me baseando no jogo Mortal Kombat
+Material de estudo para desenvolvimento de um jogo de luta para o Mega Drive usando a SGDK me baseando no jogo Mortal Kombat.
+
+Versão web: [mk1-plus](https://demodehavaianas.github.io/genesis_mk/wasm/) | [doc](https://demodehavaianas.github.io/genesis_mk/doc)
 
 ### Build
 

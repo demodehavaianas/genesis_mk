@@ -1,0 +1,33 @@
+FROM emscripten/emsdk:2.0.34
+
+WORKDIR /workdir
+
+# Build Arguments
+ARG CORE_NAME=blastem
+ARG GAME_NAME=mk1-plus
+ARG GAME_ROM=mk1-plus.bin
+
+# Clone lotr and compile lutro core using emscripten
+RUN git clone https://github.com/humbertodias/lotr.git && \
+    cd lotr && \
+    git submodule update --init cores/frontend && \
+    git submodule update --init cores/${CORE_NAME} && \
+    make ${CORE_NAME}
+
+# Copy rom
+WORKDIR /workdir/lotr
+ADD ${GAME_ROM} game_rom
+
+# Sourcing ROMs for WASM
+# Assets for wasm come as .js/.data pairs and are generated via Emscripten's file_packager.py.
+# To package a rom from an original binary or disc:
+RUN python3 ${EMSDK}/upstream/emscripten/tools/file_packager.py \
+    "./example/${GAME_NAME}.data" \
+    --preload "./game_rom" \
+    --js-output="./example/${GAME_NAME}.js"
+
+# Your example/index.html will need to import the emulator and the ROM like this:
+# And your example/main.js will need to launch the ROM:    
+RUN sed -i "s|SMS Arena.js|${GAME_NAME}.js|g" example/index.html && \
+    sed -i "s|lutro_libretro.js|${CORE_NAME}_libretro.js|g" example/index.html && \
+    sed -i "s|main.lua|game_rom|g" example/main.js
