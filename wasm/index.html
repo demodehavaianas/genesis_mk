@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      html,
+      body,
+      #selector {
+        display: block;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+      }
+      body {
+        background: black;
+        font-family: sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      #wrapper {
+        text-align: center;
+      }
+      #screen {
+        height: 100vh;
+        width: 166vh;
+        image-rendering: -moz-crisp-edges;
+        image-rendering: -webkit-crisp-edges;
+        image-rendering: pixelated;
+        image-rendering: crisp-edges;
+      }
+      button {
+        position: absolute;
+        background: black;
+        color: white;
+        border: solid 4px white;
+        font-weight: bold;
+        padding: 10px 20px;
+        cursor: pointer;
+        font-size: 20px;
+      }
+      button:hover {
+        background: blue;
+      }
+      #loading {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        line-height: 100vh;
+        display: none;
+        color: white;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="wrapper">
+      <canvas id="screen"></canvas>
+    </div>
+    <button>PLAY</button>
+    <div id="loading">Loading game...</div>
+  </body>
+
+  <script src="mk1-plus.js"></script>
+  <script src="blastem_libretro.js"></script>
+
+  <script type="module" src="main.js"></script>
+</html>

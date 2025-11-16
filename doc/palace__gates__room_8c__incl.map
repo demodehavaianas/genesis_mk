@@ -1,0 +1,11 @@
+<map id="src/rooms/palace_gates_room.c" name="src/rooms/palace_gates_room.c">
+<area shape="rect" id="Node000001" title=" " alt="" coords="170,5,337,54"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,102,86,132"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="197,57,95,98,93,93,195,52"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="110,102,261,132"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="237,56,208,91,204,88,232,53"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="285,102,358,132"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="275,53,303,88,299,91,270,56"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="382,102,482,132"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="304,52,390,93,388,97,302,57"/>
+</map>

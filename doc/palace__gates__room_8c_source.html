@@ -1,0 +1,150 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt-BR">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.11.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Mortal Kombat Plus: Código-Fonte de src/rooms/palace_gates_room.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Mortal Kombat Plus
+   </div>
+   <div id="projectbrief">Documentação gerada automaticamente com Doxygen</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.11.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Busca',false);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){ initResizable(false); });
+/* @license-end */
+</script>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Carregando...</div>
+<div class="SRStatus" id="Searching">Procurando...</div>
+<div class="SRStatus" id="NoMatches">Nenhuma entrada encontrado</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_061d5f4231849b919a8e39e71db1f1a1.html">rooms</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div id="doc-content">
+<div class="header">
+  <div class="headertitle"><div class="title">palace_gates_room.c</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="palace__gates__room_8c.html">Ir para a documentação desse arquivo.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include &lt;genesis.h&gt;</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &quot;palace_gates_room.h&quot;</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &quot;stages.h&quot;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;game_vars.h&quot;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno"><a class="line" href="palace__gates__room_8c.html#aabd1194d3832b13a6ad6059d9bfa3806">    6</a></span><span class="preprocessor">#define PALACE_GATES_W 928</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno"><a class="line" href="palace__gates__room_8c.html#a99a56a5799e7eec62668dd6609856c6f">    7</a></span><span class="preprocessor">#define PALACE_GATES_H 232</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="foldopen" id="foldopen00009" data-start="{" data-end="}">
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno"><a class="line" href="palace__gates__room_8c.html#aa311e5f2262edd690db28a5e1fd05f97">    9</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="palace__gates__room_8c.html#aa311e5f2262edd690db28a5e1fd05f97">initPalaceGatesRoom</a>(<span class="keywordtype">void</span>)</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>{</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    <span class="comment">// carrego as informações do cenário.</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="game__vars_8c.html#a940f635da7254d2a02a607dab0139dfd">gFrames</a> == 1)</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    {</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>        <span class="comment">// defino o tamanho do meu cenário para rolagem</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>        <a class="code hl_variable" href="game__vars_8c.html#a9a5a6215707f5795c18f46c7cef8c2fd">gBG_Width</a> = <a class="code hl_define" href="palace__gates__room_8c.html#aabd1194d3832b13a6ad6059d9bfa3806">PALACE_GATES_W</a>;</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>        <a class="code hl_variable" href="game__vars_8c.html#aa679cf36be7f137105cedc17391cd822">gBG_Height</a> = <a class="code hl_define" href="palace__gates__room_8c.html#a99a56a5799e7eec62668dd6609856c6f">PALACE_GATES_H</a>;</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>        <span class="comment">// 304</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>        <a class="code hl_variable" href="game__vars_8c.html#aa2d51ef9576be55b8a1ff672efbd0009">gScrollValue</a> = (<a class="code hl_variable" href="game__vars_8c.html#a9a5a6215707f5795c18f46c7cef8c2fd">gBG_Width</a> - VDP_getScreenWidth()) / 2;</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>        <span class="comment">// s16 startX = (VDP_getScreenWidth() - gBG_Width) / 2;</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>        s16 startY = -(<a class="code hl_variable" href="game__vars_8c.html#aa679cf36be7f137105cedc17391cd822">gBG_Height</a> - VDP_getScreenHeight());</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>        <span class="comment">// BGA</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>        VDP_loadTileSet(pg_bga.tileset, <a class="code hl_variable" href="game__vars_8c.html#ac5c9f7210c7cb249636b7f1dc0121b71">gInd_tileset</a>, DMA);</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>        <span class="comment">// VDP_setTileMapEx(BG_A, pg_bga.tilemap, TILE_ATTR_FULL(PAL0, FALSE, FALSE, FALSE, gInd_tileset), startX / 8, startY / 8, 0, 0, gBG_Width / 8, 29, DMA);</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>        VDP_setTileMapEx(BG_A, pg_bga.tilemap, TILE_ATTR_FULL(PAL0, FALSE, FALSE, FALSE, <a class="code hl_variable" href="game__vars_8c.html#ac5c9f7210c7cb249636b7f1dc0121b71">gInd_tileset</a>),</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>                         0, 0, 0, 0, <a class="code hl_variable" href="game__vars_8c.html#a9a5a6215707f5795c18f46c7cef8c2fd">gBG_Width</a> / 8, 29, DMA_QUEUE);</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>        PAL_setPalette(PAL0, pg_bga.palette-&gt;data, DMA);</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>        <a class="code hl_variable" href="game__vars_8c.html#ac5c9f7210c7cb249636b7f1dc0121b71">gInd_tileset</a> += pg_bga.tileset-&gt;numTile;</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>        <span class="comment">// BGB</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>        VDP_loadTileSet(pg_bgb.tileset, <a class="code hl_variable" href="game__vars_8c.html#ac5c9f7210c7cb249636b7f1dc0121b71">gInd_tileset</a>, DMA);</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>        VDP_setTileMapEx(BG_B, pg_bgb.tilemap, TILE_ATTR_FULL(PAL1, FALSE, FALSE, FALSE, <a class="code hl_variable" href="game__vars_8c.html#ac5c9f7210c7cb249636b7f1dc0121b71">gInd_tileset</a>),</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>                         0, startY / 8, 0, 0, 64, 29, DMA);</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>        PAL_setPalette(PAL1, pg_bgb.palette-&gt;data, DMA);</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>        <a class="code hl_variable" href="game__vars_8c.html#ac5c9f7210c7cb249636b7f1dc0121b71">gInd_tileset</a> += pg_bgb.tileset-&gt;numTile;</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    }</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>}</div>
+</div>
+<div class="ttc" id="agame__vars_8c_html_a940f635da7254d2a02a607dab0139dfd"><div class="ttname"><a href="game__vars_8c.html#a940f635da7254d2a02a607dab0139dfd">gFrames</a></div><div class="ttdeci">u32 gFrames</div><div class="ttdef"><b>Definição</b> <a href="game__vars_8c_source.html#l00016">game_vars.c:16</a></div></div>
+<div class="ttc" id="agame__vars_8c_html_a9a5a6215707f5795c18f46c7cef8c2fd"><div class="ttname"><a href="game__vars_8c.html#a9a5a6215707f5795c18f46c7cef8c2fd">gBG_Width</a></div><div class="ttdeci">u16 gBG_Width</div><div class="ttdef"><b>Definição</b> <a href="game__vars_8c_source.html#l00013">game_vars.c:13</a></div></div>
+<div class="ttc" id="agame__vars_8c_html_aa2d51ef9576be55b8a1ff672efbd0009"><div class="ttname"><a href="game__vars_8c.html#aa2d51ef9576be55b8a1ff672efbd0009">gScrollValue</a></div><div class="ttdeci">s16 gScrollValue</div><div class="ttdef"><b>Definição</b> <a href="game__vars_8c_source.html#l00015">game_vars.c:15</a></div></div>
+<div class="ttc" id="agame__vars_8c_html_aa679cf36be7f137105cedc17391cd822"><div class="ttname"><a href="game__vars_8c.html#aa679cf36be7f137105cedc17391cd822">gBG_Height</a></div><div class="ttdeci">u16 gBG_Height</div><div class="ttdef"><b>Definição</b> <a href="game__vars_8c_source.html#l00014">game_vars.c:14</a></div></div>
+<div class="ttc" id="agame__vars_8c_html_ac5c9f7210c7cb249636b7f1dc0121b71"><div class="ttname"><a href="game__vars_8c.html#ac5c9f7210c7cb249636b7f1dc0121b71">gInd_tileset</a></div><div class="ttdeci">u16 gInd_tileset</div><div class="ttdef"><b>Definição</b> <a href="game__vars_8c_source.html#l00012">game_vars.c:12</a></div></div>
+<div class="ttc" id="apalace__gates__room_8c_html_a99a56a5799e7eec62668dd6609856c6f"><div class="ttname"><a href="palace__gates__room_8c.html#a99a56a5799e7eec62668dd6609856c6f">PALACE_GATES_H</a></div><div class="ttdeci">#define PALACE_GATES_H</div><div class="ttdef"><b>Definição</b> <a href="#l00007">palace_gates_room.c:7</a></div></div>
+<div class="ttc" id="apalace__gates__room_8c_html_aa311e5f2262edd690db28a5e1fd05f97"><div class="ttname"><a href="palace__gates__room_8c.html#aa311e5f2262edd690db28a5e1fd05f97">initPalaceGatesRoom</a></div><div class="ttdeci">void initPalaceGatesRoom(void)</div><div class="ttdef"><b>Definição</b> <a href="#l00009">palace_gates_room.c:9</a></div></div>
+<div class="ttc" id="apalace__gates__room_8c_html_aabd1194d3832b13a6ad6059d9bfa3806"><div class="ttname"><a href="palace__gates__room_8c.html#aabd1194d3832b13a6ad6059d9bfa3806">PALACE_GATES_W</a></div><div class="ttdeci">#define PALACE_GATES_W</div><div class="ttdef"><b>Definição</b> <a href="#l00006">palace_gates_room.c:6</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gerado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.11.0
+</small></address>
+</div><!-- doc-content -->
+</body>
+</html>

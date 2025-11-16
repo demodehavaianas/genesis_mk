@@ -1,0 +1,548 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt-BR">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.11.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Mortal Kombat Plus: Referência do Arquivo src/main.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Mortal Kombat Plus
+   </div>
+   <div id="projectbrief">Documentação gerada automaticamente com Doxygen</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.11.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Busca',false);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){ initResizable(false); });
+/* @license-end */
+</script>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Carregando...</div>
+<div class="SRStatus" id="Searching">Procurando...</div>
+<div class="SRStatus" id="NoMatches">Nenhuma entrada encontrado</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div id="doc-content">
+<div class="header">
+  <div class="summary">
+<a href="#func-members">Funções</a> &#124;
+<a href="#var-members">Variáveis</a>  </div>
+  <div class="headertitle"><div class="title">Referência do Arquivo main.c</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;genesis.h&gt;</code><br />
+<code>#include &quot;game_vars.h&quot;</code><br />
+<code>#include &quot;fighters.h&quot;</code><br />
+<code>#include &quot;estruturas.h&quot;</code><br />
+<code>#include &quot;cenarios.h&quot;</code><br />
+<code>#include &quot;input_system.h&quot;</code><br />
+<code>#include &quot;gfx.h&quot;</code><br />
+<code>#include &quot;sprites.h&quot;</code><br />
+<code>#include &quot;anima_system.h&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Gráfico de dependência de inclusões para main.c:</div>
+<div class="dyncontent">
+<div class="center"><img src="main_8c__incl.png" border="0" usemap="#asrc_2main_8c" alt=""/></div>
+<map name="asrc_2main_8c" id="asrc_2main_8c">
+<area shape="rect" title=" " alt="" coords="464,5,547,35"/>
+<area shape="rect" title=" " alt="" coords="5,83,86,113"/>
+<area shape="poly" title=" " alt="" coords="464,29,308,50,102,85,101,80,307,45,463,24"/>
+<area shape="rect" title=" " alt="" coords="110,83,210,113"/>
+<area shape="poly" title=" " alt="" coords="464,33,226,85,225,80,463,28"/>
+<area shape="rect" title=" " alt="" coords="235,83,317,113"/>
+<area shape="poly" title=" " alt="" coords="464,38,333,81,331,76,463,33"/>
+<area shape="rect" title=" " alt="" coords="341,83,438,113"/>
+<area shape="poly" title=" " alt="" coords="485,38,425,77,422,72,482,33"/>
+<area shape="rect" title=" " alt="" coords="463,83,548,113"/>
+<area shape="poly" title=" " alt="" coords="508,36,508,67,503,67,503,36"/>
+<area shape="rect" title=" " alt="" coords="572,83,687,113"/>
+<area shape="poly" title=" " alt="" coords="530,33,595,72,592,77,527,38"/>
+<area shape="rect" title=" " alt="" coords="711,83,764,113"/>
+<area shape="poly" title=" " alt="" coords="548,32,697,80,695,85,547,37"/>
+<area shape="rect" title=" " alt="" coords="788,83,863,113"/>
+<area shape="poly" title=" " alt="" coords="548,28,773,80,772,85,547,33"/>
+<area shape="rect" title=" " alt="" coords="887,83,1007,113"/>
+<area shape="poly" title=" " alt="" coords="548,26,872,80,871,85,547,31"/>
+</map>
+</div>
+</div>
+<p><a href="main_8c_source.html">Ir para o código-fonte desse arquivo.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Funções</h2></td></tr>
+<tr class="memitem:af1f907fd47e7a9f600f2e5c4bdded9e5" id="r_af1f907fd47e7a9f600f2e5c4bdded9e5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af1f907fd47e7a9f600f2e5c4bdded9e5">resetGraphicElements</a> ()</td></tr>
+<tr class="separator:af1f907fd47e7a9f600f2e5c4bdded9e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abc91f67f185063e878e79cebf91d246e" id="r_abc91f67f185063e878e79cebf91d246e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abc91f67f185063e878e79cebf91d246e">CLEAR_VDP</a> ()</td></tr>
+<tr class="separator:abc91f67f185063e878e79cebf91d246e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af2eb07b318158270774fcc967eec3c80" id="r_af2eb07b318158270774fcc967eec3c80"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af2eb07b318158270774fcc967eec3c80">main</a> (bool hardReset)</td></tr>
+<tr class="separator:af2eb07b318158270774fcc967eec3c80"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
+Variáveis</h2></td></tr>
+<tr class="memitem:a3990abcf74fa5f731cd480f51a1d0926" id="r_a3990abcf74fa5f731cd480f51a1d0926"><td class="memItemLeft" align="right" valign="top">u16&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3990abcf74fa5f731cd480f51a1d0926">gDistancia</a></td></tr>
+<tr class="separator:a3990abcf74fa5f731cd480f51a1d0926"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a44635857695ecd006d4023b31a12eab1" id="r_a44635857695ecd006d4023b31a12eab1"><td class="memItemLeft" align="right" valign="top">s16&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a44635857695ecd006d4023b31a12eab1">gMeioDaTela</a> = 0</td></tr>
+<tr class="separator:a44635857695ecd006d4023b31a12eab1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac153a1190235aa28f97b270e53fdabfa" id="r_ac153a1190235aa28f97b270e53fdabfa"><td class="memItemLeft" align="right" valign="top">s16&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac153a1190235aa28f97b270e53fdabfa">camPosX</a> = 0</td></tr>
+<tr class="separator:ac153a1190235aa28f97b270e53fdabfa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4c6764931b22714d599186991a86bfe0" id="r_a4c6764931b22714d599186991a86bfe0"><td class="memItemLeft" align="right" valign="top">s16&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4c6764931b22714d599186991a86bfe0">camPosXanterior</a> = 0</td></tr>
+<tr class="separator:a4c6764931b22714d599186991a86bfe0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab079fdcdff838058b3a7aded16e25e2e" id="r_ab079fdcdff838058b3a7aded16e25e2e"><td class="memItemLeft" align="right" valign="top">s16&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab079fdcdff838058b3a7aded16e25e2e">scrollOffset</a> = 0</td></tr>
+<tr class="separator:ab079fdcdff838058b3a7aded16e25e2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aad3b8401765626643972079764552da1" id="r_aad3b8401765626643972079764552da1"><td class="memItemLeft" align="right" valign="top">s16&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aad3b8401765626643972079764552da1">scrollValues</a> [48]</td></tr>
+<tr class="separator:aad3b8401765626643972079764552da1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Funções</h2>
+<a id="abc91f67f185063e878e79cebf91d246e" name="abc91f67f185063e878e79cebf91d246e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abc91f67f185063e878e79cebf91d246e">&#9670;&#160;</a></span>CLEAR_VDP()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CLEAR_VDP </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definição na linha <a class="el" href="main_8c_source.html#l00114">114</a> do arquivo <a class="el" href="main_8c_source.html">main.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  115</span>{</div>
+<div class="line"><span class="lineno">  116</span>  SYS_disableInts();</div>
+<div class="line"><span class="lineno">  117</span>  SPR_reset();</div>
+<div class="line"><span class="lineno">  118</span>  VDP_resetSprites();</div>
+<div class="line"><span class="lineno">  119</span>  VDP_releaseAllSprites();</div>
+<div class="line"><span class="lineno">  120</span>  SPR_defragVRAM();</div>
+<div class="line"><span class="lineno">  121</span>  VDP_clearPlane(BG_A, TRUE);</div>
+<div class="line"><span class="lineno">  122</span>  VDP_clearPlane(BG_B, TRUE);</div>
+<div class="line"><span class="lineno">  123</span>  <span class="comment">// VDP_setTextPlane(BG_B);</span></div>
+<div class="line"><span class="lineno">  124</span>  <span class="comment">// VDP_setHorizontalScroll(BG_B, 0);</span></div>
+<div class="line"><span class="lineno">  125</span>  <span class="comment">// VDP_setVerticalScroll(BG_B, 0);</span></div>
+<div class="line"><span class="lineno">  126</span>  <span class="comment">// VDP_setHorizontalScroll(BG_A, 0);</span></div>
+<div class="line"><span class="lineno">  127</span>  <span class="comment">// VDP_setVerticalScroll(BG_A, 0);</span></div>
+<div class="line"><span class="lineno">  128</span>  VDP_setBackgroundColor(0);</div>
+<div class="line"><span class="lineno">  129</span>  VDP_resetScreen();</div>
+<div class="line"><span class="lineno">  130</span>  <span class="comment">// PAL_setColors(0, palette_black, 64, DMA);</span></div>
+<div class="line"><span class="lineno">  131</span>  SYS_enableInts();</div>
+<div class="line"><span class="lineno">  132</span>  <a class="code hl_variable" href="game__vars_8c.html#ac5c9f7210c7cb249636b7f1dc0121b71">gInd_tileset</a> = 0;</div>
+<div class="line"><span class="lineno">  133</span>}</div>
+<div class="ttc" id="agame__vars_8c_html_ac5c9f7210c7cb249636b7f1dc0121b71"><div class="ttname"><a href="game__vars_8c.html#ac5c9f7210c7cb249636b7f1dc0121b71">gInd_tileset</a></div><div class="ttdeci">u16 gInd_tileset</div><div class="ttdef"><b>Definição</b> <a href="game__vars_8c_source.html#l00012">game_vars.c:12</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+Esse é o diagrama das funções que utilizam essa função:</div>
+<div class="dyncontent">
+<div class="center"><img src="main_8c_abc91f67f185063e878e79cebf91d246e_icgraph.png" border="0" usemap="#amain_8c_abc91f67f185063e878e79cebf91d246e_icgraph" alt=""/></div>
+<map name="amain_8c_abc91f67f185063e878e79cebf91d246e_icgraph" id="amain_8c_abc91f67f185063e878e79cebf91d246e_icgraph">
+<area shape="rect" title=" " alt="" coords="105,5,197,35"/>
+<area shape="rect" href="main_8c.html#af2eb07b318158270774fcc967eec3c80" title=" " alt="" coords="5,5,57,35"/>
+<area shape="poly" title=" " alt="" coords="89,23,57,23,57,18,89,18"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="af2eb07b318158270774fcc967eec3c80" name="af2eb07b318158270774fcc967eec3c80"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af2eb07b318158270774fcc967eec3c80">&#9670;&#160;</a></span>main()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int main </td>
+          <td>(</td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>hardReset</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definição na linha <a class="el" href="main_8c_source.html#l00023">23</a> do arquivo <a class="el" href="main_8c_source.html">main.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   24</span>{</div>
+<div class="line"><span class="lineno">   25</span>  SPR_init();</div>
+<div class="line"><span class="lineno">   26</span>  VDP_setScreenWidth320();</div>
+<div class="line"><span class="lineno">   27</span>  VDP_setScreenHeight224();</div>
+<div class="line"><span class="lineno">   28</span>  <span class="comment">// VDP_setHilightShadow(TRUE);</span></div>
+<div class="line"><span class="lineno">   29</span> </div>
+<div class="line"><span class="lineno">   30</span>  <a class="code hl_variable" href="game__vars_8c.html#ad0344eb1bc475981a837e350c08fb53a">debugEnabled</a> = FALSE;</div>
+<div class="line"><span class="lineno">   31</span>  <a class="code hl_variable" href="game__vars_8c.html#a784a617fe12ac8976bbae900c2343a36">gRoom</a> = TELA_DEMO_INTRO;</div>
+<div class="line"><span class="lineno">   32</span>  <a class="code hl_variable" href="game__vars_8c.html#a940f635da7254d2a02a607dab0139dfd">gFrames</a> = 0;</div>
+<div class="line"><span class="lineno">   33</span>  <a class="code hl_variable" href="game__vars_8c.html#ac5c9f7210c7cb249636b7f1dc0121b71">gInd_tileset</a> = 0;</div>
+<div class="line"><span class="lineno">   34</span>  <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[0].id = JOHNNY_CAGE;</div>
+<div class="line"><span class="lineno">   35</span> </div>
+<div class="line"><span class="lineno">   36</span>  <span class="keywordflow">if</span> (!hardReset)</div>
+<div class="line"><span class="lineno">   37</span>  {</div>
+<div class="line"><span class="lineno">   38</span>    SYS_hardReset();</div>
+<div class="line"><span class="lineno">   39</span>  }</div>
+<div class="line"><span class="lineno">   40</span> </div>
+<div class="line"><span class="lineno">   41</span>  <a class="code hl_function" href="#af1f907fd47e7a9f600f2e5c4bdded9e5">resetGraphicElements</a>();</div>
+<div class="line"><span class="lineno">   42</span> </div>
+<div class="line"><span class="lineno">   43</span>  <span class="keywordflow">while</span> (TRUE)</div>
+<div class="line"><span class="lineno">   44</span>  {</div>
+<div class="line"><span class="lineno">   45</span>    <span class="comment">// gFrames++;</span></div>
+<div class="line"><span class="lineno">   46</span> </div>
+<div class="line"><span class="lineno">   47</span>    <a class="code hl_function" href="input__system_8c.html#a2656744a9ebd96a8887f55208c53bc6e">inputSystem</a>();</div>
+<div class="line"><span class="lineno">   48</span> </div>
+<div class="line"><span class="lineno">   49</span>    <span class="keywordflow">if</span> (TELA_DEMO_INTRO == <a class="code hl_variable" href="game__vars_8c.html#a784a617fe12ac8976bbae900c2343a36">gRoom</a>)</div>
+<div class="line"><span class="lineno">   50</span>    {</div>
+<div class="line"><span class="lineno">   51</span>      <a class="code hl_function" href="intro__demo__room_8c.html#ac46ea98ecb7218ef78a7d4cd50896175">processIntro</a>();</div>
+<div class="line"><span class="lineno">   52</span>    }</div>
+<div class="line"><span class="lineno">   53</span> </div>
+<div class="line"><span class="lineno">   54</span>    <span class="keywordflow">if</span> (TELA_START == <a class="code hl_variable" href="game__vars_8c.html#a784a617fe12ac8976bbae900c2343a36">gRoom</a>)</div>
+<div class="line"><span class="lineno">   55</span>    {</div>
+<div class="line"><span class="lineno">   56</span>      <a class="code hl_function" href="press__start__room_8c.html#acdab073d60ace1b6f9ba4ecb1a63bc6c">processPressStart</a>();</div>
+<div class="line"><span class="lineno">   57</span>    }</div>
+<div class="line"><span class="lineno">   58</span> </div>
+<div class="line"><span class="lineno">   59</span>    <span class="keywordflow">if</span> (SELECAO_PERSONAGENS == <a class="code hl_variable" href="game__vars_8c.html#a784a617fe12ac8976bbae900c2343a36">gRoom</a>)</div>
+<div class="line"><span class="lineno">   60</span>    {</div>
+<div class="line"><span class="lineno">   61</span>      <a class="code hl_function" href="char__select__room_8c.html#a691b28223562237401b71b33874e1455">processSelecaoPersonagens</a>();</div>
+<div class="line"><span class="lineno">   62</span>    }</div>
+<div class="line"><span class="lineno">   63</span> </div>
+<div class="line"><span class="lineno">   64</span>    <span class="keywordflow">if</span> (PALACE_GATES == <a class="code hl_variable" href="game__vars_8c.html#a784a617fe12ac8976bbae900c2343a36">gRoom</a>)</div>
+<div class="line"><span class="lineno">   65</span>    {</div>
+<div class="line"><span class="lineno">   66</span>      <span class="keywordflow">if</span> (<a class="code hl_variable" href="game__vars_8c.html#a940f635da7254d2a02a607dab0139dfd">gFrames</a> == 1)</div>
+<div class="line"><span class="lineno">   67</span>        <a class="code hl_function" href="#abc91f67f185063e878e79cebf91d246e">CLEAR_VDP</a>();</div>
+<div class="line"><span class="lineno">   68</span> </div>
+<div class="line"><span class="lineno">   69</span>      <a class="code hl_function" href="palace__gates__room_8c.html#aa311e5f2262edd690db28a5e1fd05f97">initPalaceGatesRoom</a>();</div>
+<div class="line"><span class="lineno">   70</span> </div>
+<div class="line"><span class="lineno">   71</span>      <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[0].sprite = SPR_addSprite(&amp;spr_subzero, 24, 96, TILE_ATTR(PAL2, 0, FALSE, FALSE));</div>
+<div class="line"><span class="lineno">   72</span>      PAL_setPalette(PAL2, spr_subzero.palette-&gt;data, DMA);</div>
+<div class="line"><span class="lineno">   73</span> </div>
+<div class="line"><span class="lineno">   74</span>      <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[1].sprite = SPR_addSprite(&amp;spr_reptile, 168, 96, TILE_ATTR(PAL3, 0, FALSE, TRUE));</div>
+<div class="line"><span class="lineno">   75</span>      PAL_setPalette(PAL3, spr_reptile.palette-&gt;data, DMA);</div>
+<div class="line"><span class="lineno">   76</span> </div>
+<div class="line"><span class="lineno">   77</span>      <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[0].id = SUBZERO;</div>
+<div class="line"><span class="lineno">   78</span>      <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[1].id = REPTILE;</div>
+<div class="line"><span class="lineno">   79</span>      <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[0].state = PARADO;</div>
+<div class="line"><span class="lineno">   80</span>      <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[1].state = PARADO;</div>
+<div class="line"><span class="lineno">   81</span>      <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[0].paleta = PAL2;</div>
+<div class="line"><span class="lineno">   82</span>      <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[1].paleta = PAL3;</div>
+<div class="line"><span class="lineno">   83</span> </div>
+<div class="line"><span class="lineno">   84</span>      <a class="code hl_variable" href="#ab079fdcdff838058b3a7aded16e25e2e">scrollOffset</a> += 1;</div>
+<div class="line"><span class="lineno">   85</span>      VDP_setScrollingMode(HSCROLL_LINE, VSCROLL_COLUMN);</div>
+<div class="line"><span class="lineno">   86</span> </div>
+<div class="line"><span class="lineno">   87</span>      <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; 48; i++)</div>
+<div class="line"><span class="lineno">   88</span>      {</div>
+<div class="line"><span class="lineno">   89</span>        <a class="code hl_variable" href="#aad3b8401765626643972079764552da1">scrollValues</a>[i] = <a class="code hl_variable" href="#ab079fdcdff838058b3a7aded16e25e2e">scrollOffset</a>;</div>
+<div class="line"><span class="lineno">   90</span>      }</div>
+<div class="line"><span class="lineno">   91</span> </div>
+<div class="line"><span class="lineno">   92</span>      VDP_setHorizontalScrollLine(BG_B, 0, <a class="code hl_variable" href="#aad3b8401765626643972079764552da1">scrollValues</a>, 48, CPU);</div>
+<div class="line"><span class="lineno">   93</span>    }</div>
+<div class="line"><span class="lineno">   94</span> </div>
+<div class="line"><span class="lineno">   95</span>    <span class="comment">// -- DEBUG -- //</span></div>
+<div class="line"><span class="lineno">   96</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="game__vars_8c.html#ad0344eb1bc475981a837e350c08fb53a">debugEnabled</a>)</div>
+<div class="line"><span class="lineno">   97</span>    {</div>
+<div class="line"><span class="lineno">   98</span>      <span class="keywordtype">char</span> str[64];</div>
+<div class="line"><span class="lineno">   99</span>      sprintf(str, <span class="stringliteral">&quot;tiles nos BGs: %d&quot;</span>, <a class="code hl_variable" href="game__vars_8c.html#ac5c9f7210c7cb249636b7f1dc0121b71">gInd_tileset</a>);</div>
+<div class="line"><span class="lineno">  100</span>      VDP_drawText(str, 1, 1);</div>
+<div class="line"><span class="lineno">  101</span>      sprintf(str, <span class="stringliteral">&quot;contagem de frames: %ld&quot;</span>, <a class="code hl_variable" href="game__vars_8c.html#a940f635da7254d2a02a607dab0139dfd">gFrames</a>);</div>
+<div class="line"><span class="lineno">  102</span>      VDP_drawText(str, 1, 2);</div>
+<div class="line"><span class="lineno">  103</span>    }</div>
+<div class="line"><span class="lineno">  104</span> </div>
+<div class="line"><span class="lineno">  105</span>    <span class="comment">// -- FINALIZAÇÕES -- //</span></div>
+<div class="line"><span class="lineno">  106</span>    <span class="comment">// VDP_showFPS(1, 1, 1);</span></div>
+<div class="line"><span class="lineno">  107</span>    SPR_update();          <span class="comment">// Atualização dos sprites na tela</span></div>
+<div class="line"><span class="lineno">  108</span>    SYS_doVBlankProcess(); <span class="comment">// Sincroniza com o VBlank</span></div>
+<div class="line"><span class="lineno">  109</span>  }</div>
+<div class="line"><span class="lineno">  110</span> </div>
+<div class="line"><span class="lineno">  111</span>  <span class="keywordflow">return</span> 0;</div>
+<div class="line"><span class="lineno">  112</span>}</div>
+<div class="ttc" id="achar__select__room_8c_html_a691b28223562237401b71b33874e1455"><div class="ttname"><a href="char__select__room_8c.html#a691b28223562237401b71b33874e1455">processSelecaoPersonagens</a></div><div class="ttdeci">void processSelecaoPersonagens()</div><div class="ttdef"><b>Definição</b> <a href="char__select__room_8c_source.html#l00103">char_select_room.c:103</a></div></div>
+<div class="ttc" id="agame__vars_8c_html_a5135cf03aefd90677db09304781dbb8c"><div class="ttname"><a href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a></div><div class="ttdeci">Player player[2]</div><div class="ttdef"><b>Definição</b> <a href="game__vars_8c_source.html#l00022">game_vars.c:22</a></div></div>
+<div class="ttc" id="agame__vars_8c_html_a784a617fe12ac8976bbae900c2343a36"><div class="ttname"><a href="game__vars_8c.html#a784a617fe12ac8976bbae900c2343a36">gRoom</a></div><div class="ttdeci">u8 gRoom</div><div class="ttdef"><b>Definição</b> <a href="game__vars_8c_source.html#l00010">game_vars.c:10</a></div></div>
+<div class="ttc" id="agame__vars_8c_html_a940f635da7254d2a02a607dab0139dfd"><div class="ttname"><a href="game__vars_8c.html#a940f635da7254d2a02a607dab0139dfd">gFrames</a></div><div class="ttdeci">u32 gFrames</div><div class="ttdef"><b>Definição</b> <a href="game__vars_8c_source.html#l00016">game_vars.c:16</a></div></div>
+<div class="ttc" id="agame__vars_8c_html_ad0344eb1bc475981a837e350c08fb53a"><div class="ttname"><a href="game__vars_8c.html#ad0344eb1bc475981a837e350c08fb53a">debugEnabled</a></div><div class="ttdeci">bool debugEnabled</div><div class="ttdef"><b>Definição</b> <a href="game__vars_8c_source.html#l00008">game_vars.c:8</a></div></div>
+<div class="ttc" id="ainput__system_8c_html_a2656744a9ebd96a8887f55208c53bc6e"><div class="ttname"><a href="input__system_8c.html#a2656744a9ebd96a8887f55208c53bc6e">inputSystem</a></div><div class="ttdeci">void inputSystem()</div><div class="ttdef"><b>Definição</b> <a href="input__system_8c_source.html#l00004">input_system.c:4</a></div></div>
+<div class="ttc" id="aintro__demo__room_8c_html_ac46ea98ecb7218ef78a7d4cd50896175"><div class="ttname"><a href="intro__demo__room_8c.html#ac46ea98ecb7218ef78a7d4cd50896175">processIntro</a></div><div class="ttdeci">void processIntro()</div><div class="ttdef"><b>Definição</b> <a href="intro__demo__room_8c_source.html#l00055">intro_demo_room.c:55</a></div></div>
+<div class="ttc" id="amain_8c_html_aad3b8401765626643972079764552da1"><div class="ttname"><a href="#aad3b8401765626643972079764552da1">scrollValues</a></div><div class="ttdeci">s16 scrollValues[48]</div><div class="ttdef"><b>Definição</b> <a href="main_8c_source.html#l00018">main.c:18</a></div></div>
+<div class="ttc" id="amain_8c_html_ab079fdcdff838058b3a7aded16e25e2e"><div class="ttname"><a href="#ab079fdcdff838058b3a7aded16e25e2e">scrollOffset</a></div><div class="ttdeci">s16 scrollOffset</div><div class="ttdef"><b>Definição</b> <a href="main_8c_source.html#l00017">main.c:17</a></div></div>
+<div class="ttc" id="amain_8c_html_abc91f67f185063e878e79cebf91d246e"><div class="ttname"><a href="#abc91f67f185063e878e79cebf91d246e">CLEAR_VDP</a></div><div class="ttdeci">void CLEAR_VDP()</div><div class="ttdef"><b>Definição</b> <a href="main_8c_source.html#l00114">main.c:114</a></div></div>
+<div class="ttc" id="amain_8c_html_af1f907fd47e7a9f600f2e5c4bdded9e5"><div class="ttname"><a href="#af1f907fd47e7a9f600f2e5c4bdded9e5">resetGraphicElements</a></div><div class="ttdeci">void resetGraphicElements()</div><div class="ttdef"><b>Definição</b> <a href="main_8c_source.html#l00135">main.c:135</a></div></div>
+<div class="ttc" id="apalace__gates__room_8c_html_aa311e5f2262edd690db28a5e1fd05f97"><div class="ttname"><a href="palace__gates__room_8c.html#aa311e5f2262edd690db28a5e1fd05f97">initPalaceGatesRoom</a></div><div class="ttdeci">void initPalaceGatesRoom(void)</div><div class="ttdef"><b>Definição</b> <a href="palace__gates__room_8c_source.html#l00009">palace_gates_room.c:9</a></div></div>
+<div class="ttc" id="apress__start__room_8c_html_acdab073d60ace1b6f9ba4ecb1a63bc6c"><div class="ttname"><a href="press__start__room_8c.html#acdab073d60ace1b6f9ba4ecb1a63bc6c">processPressStart</a></div><div class="ttdeci">void processPressStart()</div><div class="ttdef"><b>Definição</b> <a href="press__start__room_8c_source.html#l00035">press_start_room.c:35</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+Este é o diagrama das funções utilizadas por essa função:</div>
+<div class="dyncontent">
+<div class="center"><img src="main_8c_af2eb07b318158270774fcc967eec3c80_cgraph.png" border="0" usemap="#amain_8c_af2eb07b318158270774fcc967eec3c80_cgraph" alt=""/></div>
+<map name="amain_8c_af2eb07b318158270774fcc967eec3c80_cgraph" id="amain_8c_af2eb07b318158270774fcc967eec3c80_cgraph">
+<area shape="rect" title=" " alt="" coords="5,163,57,192"/>
+<area shape="rect" href="main_8c.html#abc91f67f185063e878e79cebf91d246e" title=" " alt="" coords="157,5,249,35"/>
+<area shape="poly" title=" " alt="" coords="34,161,57,104,77,72,103,45,121,34,141,26,142,31,123,39,106,49,81,75,62,107,39,163"/>
+<area shape="rect" href="palace__gates__room_8c.html#aa311e5f2262edd690db28a5e1fd05f97" title=" " alt="" coords="127,59,279,88"/>
+<area shape="poly" title=" " alt="" coords="42,161,68,132,103,105,128,92,130,97,106,109,72,136,46,164"/>
+<area shape="rect" href="input__system_8c.html#a2656744a9ebd96a8887f55208c53bc6e" title=" " alt="" coords="391,59,489,88"/>
+<area shape="poly" title=" " alt="" coords="56,165,104,148,249,110,375,83,376,88,250,115,105,153,58,170"/>
+<area shape="rect" href="intro__demo__room_8c.html#ac46ea98ecb7218ef78a7d4cd50896175" title=" " alt="" coords="153,216,253,246"/>
+<area shape="poly" title=" " alt="" coords="58,185,105,202,139,212,138,217,104,207,56,190"/>
+<area shape="rect" href="press__start__room_8c.html#acdab073d60ace1b6f9ba4ecb1a63bc6c" title=" " alt="" coords="137,163,269,192"/>
+<area shape="poly" title=" " alt="" coords="57,175,121,175,121,180,57,180"/>
+<area shape="rect" href="char__select__room_8c.html#a691b28223562237401b71b33874e1455" title=" " alt="" coords="105,589,301,619"/>
+<area shape="poly" title=" " alt="" coords="41,192,192,574,187,576,36,194"/>
+<area shape="rect" href="main_8c.html#af1f907fd47e7a9f600f2e5c4bdded9e5" title=" " alt="" coords="124,643,282,672"/>
+<area shape="poly" title=" " alt="" coords="35,193,39,282,50,413,59,481,71,544,87,595,107,629,113,635,109,639,103,632,82,597,66,545,53,482,44,414,34,282,30,193"/>
+<area shape="poly" title=" " alt="" coords="252,223,277,215,299,202,310,190,317,178,323,152,328,125,335,111,347,98,375,82,378,87,351,102,340,114,333,127,328,153,322,180,315,193,303,206,279,220,254,228"/>
+<area shape="rect" href="intro__demo__room_8c.html#a152c80724646f7fe60348e27f4a8ca2c" title=" " alt="" coords="386,112,495,142"/>
+<area shape="poly" title=" " alt="" coords="252,220,300,202,314,192,323,181,333,170,348,158,372,146,374,150,350,162,336,173,327,184,318,195,302,207,254,225"/>
+<area shape="rect" href="intro__demo__room_8c.html#abd84a8f7942f738b8f807b5c83e766dc" title=" " alt="" coords="607,243,719,272"/>
+<area shape="poly" title=" " alt="" coords="252,216,309,205,379,196,456,194,532,202,578,215,621,233,618,238,577,220,531,207,456,199,380,201,310,210,253,221"/>
+<area shape="rect" href="intro__demo__room_8c.html#aaf01eb7af118af02997ccd40dfaebdaa" title=" " alt="" coords="356,216,524,246"/>
+<area shape="poly" title=" " alt="" coords="253,228,340,228,340,234,253,234"/>
+<area shape="rect" href="intro__demo__room_8c.html#a32183ed63a770a246f599a6c8cf6ca32" title=" " alt="" coords="365,376,516,406"/>
+<area shape="poly" title=" " alt="" coords="218,244,272,301,309,334,350,362,361,367,359,372,348,366,306,338,268,305,215,248"/>
+<area shape="rect" href="intro__demo__room_8c.html#a2791cbdef785b738e2b65514d8a90618" title=" " alt="" coords="349,269,531,299"/>
+<area shape="poly" title=" " alt="" coords="253,239,357,263,356,268,252,244"/>
+<area shape="rect" href="intro__demo__room_8c.html#a46851a69b6140500d8f59ad9b1683b01" title=" " alt="" coords="414,323,466,352"/>
+<area shape="poly" title=" " alt="" coords="229,244,284,276,350,308,400,325,398,330,348,313,281,280,227,248"/>
+<area shape="poly" title=" " alt="" coords="492,140,533,158,588,194,635,230,631,234,585,198,530,163,490,145"/>
+<area shape="rect" href="typewriter__printer_8c.html#ad6e8362eb9b82d100d479b769a6acf9c" title=" " alt="" coords="579,112,747,142"/>
+<area shape="poly" title=" " alt="" coords="495,124,564,124,564,130,495,130"/>
+<area shape="poly" title=" " alt="" coords="525,238,592,246,592,252,524,244"/>
+<area shape="poly" title=" " alt="" coords="504,373,530,362,588,323,634,282,638,286,591,327,533,367,506,378"/>
+<area shape="rect" href="typewriter__printer_8c.html#a7b99e213b81356a73cbd48457b5877ea" title=" " alt="" coords="602,376,724,406"/>
+<area shape="poly" title=" " alt="" coords="516,388,586,388,586,394,516,394"/>
+<area shape="poly" title=" " alt="" coords="531,271,592,263,593,269,532,276"/>
+<area shape="poly" title=" " alt="" coords="466,328,530,308,612,276,614,281,532,313,468,333"/>
+<area shape="poly" title=" " alt="" coords="261,160,300,142,314,131,323,120,333,109,348,98,375,86,377,91,350,102,336,113,327,124,317,135,302,146,263,164"/>
+<area shape="poly" title=" " alt="" coords="206,588,283,314,347,99,375,81,378,85,351,102,288,315,211,589"/>
+<area shape="rect" href="char__select__room_8c.html#acbd5457c126570af763ea24dc41da830" title="Carrega as informações dos backgrounds." alt="" coords="378,429,503,459"/>
+<area shape="poly" title=" " alt="" coords="215,587,268,530,306,497,348,469,362,462,364,466,350,473,309,501,272,534,218,591"/>
+<area shape="rect" href="char__select__room_8c.html#a358d2e2397ca11ccd17553e3c40e7901" title=" " alt="" coords="419,483,462,512"/>
+<area shape="poly" title=" " alt="" coords="227,587,281,555,348,522,402,504,404,509,350,527,284,559,229,591"/>
+<area shape="rect" href="char__select__room_8c.html#a1dca549e20947032febfdf3cda5dbd8b" title=" " alt="" coords="401,536,480,566"/>
+<area shape="poly" title=" " alt="" coords="271,586,385,560,386,566,273,591"/>
+<area shape="rect" href="char__select__room_8c.html#ad2b5a2c8eb273c314ef357bf7c46c3d9" title="move a tela para fora da parte visível a esquerda para iniciar o efeito de Persiana." alt="" coords="391,643,489,672"/>
+<area shape="poly" title=" " alt="" coords="273,617,376,641,375,646,271,622"/>
+<area shape="rect" href="char__select__room_8c.html#a0d815a5b9fde845e473ccd3c2749b91a" title=" " alt="" coords="376,696,504,726"/>
+<area shape="poly" title=" " alt="" coords="279,617,302,629,318,642,327,656,336,669,351,682,363,689,360,693,347,686,332,673,323,659,314,646,300,633,277,622"/>
+<area shape="rect" href="char__select__room_8c.html#aef0d923955a5f8c15ece5e94e4f34516" title=" " alt="" coords="359,749,521,779"/>
+<area shape="poly" title=" " alt="" coords="285,617,303,629,315,642,322,656,328,683,333,710,340,723,351,736,355,739,352,743,347,739,335,726,328,712,323,685,317,658,311,645,299,633,282,622"/>
+<area shape="rect" href="char__select__room_8c.html#a0ef959c1328c22bc747f0fe922ab81d1" title=" " alt="" coords="384,803,497,832"/>
+<area shape="poly" title=" " alt="" coords="287,617,303,629,318,649,326,670,328,711,329,751,336,770,351,789,371,802,368,807,347,793,332,772,324,752,323,711,321,671,314,652,299,633,284,622"/>
+<area shape="rect" href="char__select__room_8c.html#a5950f90fdf5f67fab5bae67d2b350de9" title=" " alt="" coords="400,856,481,886"/>
+<area shape="poly" title=" " alt="" coords="288,617,303,629,322,656,330,683,331,711,328,738,325,764,326,790,333,816,351,842,367,854,385,862,383,867,364,859,347,846,328,819,320,791,320,764,323,737,325,710,325,684,317,658,299,633,285,622"/>
+<area shape="rect" href="char__select__room_8c.html#a0c43ccbb25a07b7b39a14e5650fa5f9e" title="Revela a tela fazendo o efeito de persiana." alt="" coords="374,909,506,939"/>
+<area shape="poly" title=" " alt="" coords="289,617,303,629,326,663,334,697,333,731,328,764,323,797,322,830,330,863,351,896,362,905,358,909,347,899,325,865,316,831,317,797,323,763,328,730,329,698,321,665,299,633,285,621"/>
+<area shape="rect" href="char__select__room_8c.html#a7d5c58c0b00f06187c8e13947ce8b0b5" title="Atualiza a posição do cursor de seleção de acordo com o ID." alt="" coords="382,589,498,619"/>
+<area shape="poly" title=" " alt="" coords="302,602,366,602,366,607,302,607"/>
+<area shape="rect" href="anima__system_8c.html#ab609215115971b40d9e47df6e4a8f853" title=" " alt="" coords="617,536,709,566"/>
+<area shape="poly" title=" " alt="" coords="480,548,601,548,601,554,480,554"/>
+<area shape="rect" href="char__select__room_8c.html#a4c282a9dd139d3b5ee59f0ad6d1c3de3" title=" " alt="" coords="610,909,716,939"/>
+<area shape="poly" title=" " alt="" coords="507,922,595,922,595,927,507,927"/>
+<area shape="poly" title=" " alt="" coords="498,588,601,563,602,568,499,593"/>
+<area shape="rect" href="char__select__room_8c.html#a37bd73e0d1cbe85b3b538e53eb41a098" title="Executa o áudio do cursor." alt="" coords="619,589,707,619"/>
+<area shape="poly" title=" " alt="" coords="499,602,603,602,603,607,499,607"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="af1f907fd47e7a9f600f2e5c4bdded9e5" name="af1f907fd47e7a9f600f2e5c4bdded9e5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af1f907fd47e7a9f600f2e5c4bdded9e5">&#9670;&#160;</a></span>resetGraphicElements()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void resetGraphicElements </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definição na linha <a class="el" href="main_8c_source.html#l00135">135</a> do arquivo <a class="el" href="main_8c_source.html">main.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  136</span>{</div>
+<div class="line"><span class="lineno">  137</span>  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> ind = 0; ind &lt; 25; ind++)</div>
+<div class="line"><span class="lineno">  138</span>  {</div>
+<div class="line"><span class="lineno">  139</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="game__vars_8c.html#aa5e097d9886fbef5de8248a18d1d95ee">GE</a>[ind].sprite)</div>
+<div class="line"><span class="lineno">  140</span>    {</div>
+<div class="line"><span class="lineno">  141</span>      SPR_releaseSprite(<a class="code hl_variable" href="game__vars_8c.html#aa5e097d9886fbef5de8248a18d1d95ee">GE</a>[ind].sprite);</div>
+<div class="line"><span class="lineno">  142</span>      <a class="code hl_variable" href="game__vars_8c.html#aa5e097d9886fbef5de8248a18d1d95ee">GE</a>[ind].sprite = NULL;</div>
+<div class="line"><span class="lineno">  143</span>    }</div>
+<div class="line"><span class="lineno">  144</span>  }</div>
+<div class="line"><span class="lineno">  145</span>}</div>
+<div class="ttc" id="agame__vars_8c_html_aa5e097d9886fbef5de8248a18d1d95ee"><div class="ttname"><a href="game__vars_8c.html#aa5e097d9886fbef5de8248a18d1d95ee">GE</a></div><div class="ttdeci">GraphicElement GE[25]</div><div class="ttdef"><b>Definição</b> <a href="game__vars_8c_source.html#l00020">game_vars.c:20</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+Esse é o diagrama das funções que utilizam essa função:</div>
+<div class="dyncontent">
+<div class="center"><img src="main_8c_af1f907fd47e7a9f600f2e5c4bdded9e5_icgraph.png" border="0" usemap="#amain_8c_af1f907fd47e7a9f600f2e5c4bdded9e5_icgraph" alt=""/></div>
+<map name="amain_8c_af1f907fd47e7a9f600f2e5c4bdded9e5_icgraph" id="amain_8c_af1f907fd47e7a9f600f2e5c4bdded9e5_icgraph">
+<area shape="rect" title=" " alt="" coords="105,5,262,35"/>
+<area shape="rect" href="main_8c.html#af2eb07b318158270774fcc967eec3c80" title=" " alt="" coords="5,5,57,35"/>
+<area shape="poly" title=" " alt="" coords="89,23,57,23,57,18,89,18"/>
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">Variáveis</h2>
+<a id="ac153a1190235aa28f97b270e53fdabfa" name="ac153a1190235aa28f97b270e53fdabfa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac153a1190235aa28f97b270e53fdabfa">&#9670;&#160;</a></span>camPosX</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">s16 camPosX = 0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definição na linha <a class="el" href="main_8c_source.html#l00015">15</a> do arquivo <a class="el" href="main_8c_source.html">main.c</a>.</p>
+
+</div>
+</div>
+<a id="a4c6764931b22714d599186991a86bfe0" name="a4c6764931b22714d599186991a86bfe0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4c6764931b22714d599186991a86bfe0">&#9670;&#160;</a></span>camPosXanterior</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">s16 camPosXanterior = 0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definição na linha <a class="el" href="main_8c_source.html#l00016">16</a> do arquivo <a class="el" href="main_8c_source.html">main.c</a>.</p>
+
+</div>
+</div>
+<a id="a3990abcf74fa5f731cd480f51a1d0926" name="a3990abcf74fa5f731cd480f51a1d0926"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3990abcf74fa5f731cd480f51a1d0926">&#9670;&#160;</a></span>gDistancia</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">u16 gDistancia</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definição na linha <a class="el" href="main_8c_source.html#l00013">13</a> do arquivo <a class="el" href="main_8c_source.html">main.c</a>.</p>
+
+</div>
+</div>
+<a id="a44635857695ecd006d4023b31a12eab1" name="a44635857695ecd006d4023b31a12eab1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a44635857695ecd006d4023b31a12eab1">&#9670;&#160;</a></span>gMeioDaTela</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">s16 gMeioDaTela = 0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definição na linha <a class="el" href="main_8c_source.html#l00014">14</a> do arquivo <a class="el" href="main_8c_source.html">main.c</a>.</p>
+
+</div>
+</div>
+<a id="ab079fdcdff838058b3a7aded16e25e2e" name="ab079fdcdff838058b3a7aded16e25e2e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab079fdcdff838058b3a7aded16e25e2e">&#9670;&#160;</a></span>scrollOffset</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">s16 scrollOffset = 0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definição na linha <a class="el" href="main_8c_source.html#l00017">17</a> do arquivo <a class="el" href="main_8c_source.html">main.c</a>.</p>
+
+</div>
+</div>
+<a id="aad3b8401765626643972079764552da1" name="aad3b8401765626643972079764552da1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aad3b8401765626643972079764552da1">&#9670;&#160;</a></span>scrollValues</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">s16 scrollValues[48]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definição na linha <a class="el" href="main_8c_source.html#l00018">18</a> do arquivo <a class="el" href="main_8c_source.html">main.c</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gerado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.11.0
+</small></address>
+</div><!-- doc-content -->
+</body>
+</html>

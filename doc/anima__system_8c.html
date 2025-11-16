@@ -1,0 +1,345 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt-BR">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.11.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Mortal Kombat Plus: Referência do Arquivo src/modulos/anima_system.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Mortal Kombat Plus
+   </div>
+   <div id="projectbrief">Documentação gerada automaticamente com Doxygen</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.11.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Busca',false);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){ initResizable(false); });
+/* @license-end */
+</script>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Carregando...</div>
+<div class="SRStatus" id="Searching">Procurando...</div>
+<div class="SRStatus" id="NoMatches">Nenhuma entrada encontrado</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_47a83392b137ed71e1cf45a1606573c3.html">modulos</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div id="doc-content">
+<div class="header">
+  <div class="summary">
+<a href="#typedef-members">Definições de Tipos</a> &#124;
+<a href="#func-members">Funções</a> &#124;
+<a href="#var-members">Variáveis</a>  </div>
+  <div class="headertitle"><div class="title">Referência do Arquivo anima_system.c</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &quot;anima_system.h&quot;</code><br />
+<code>#include &quot;game_vars.h&quot;</code><br />
+<code>#include &quot;fighters.h&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Gráfico de dependência de inclusões para anima_system.c:</div>
+<div class="dyncontent">
+<div class="center"><img src="anima__system_8c__incl.png" border="0" usemap="#asrc_2modulos_2anima__system_8c" alt=""/></div>
+<map name="asrc_2modulos_2anima__system_8c" id="asrc_2modulos_2anima__system_8c">
+<area shape="rect" title=" " alt="" coords="101,5,299,35"/>
+<area shape="rect" title=" " alt="" coords="5,83,126,113"/>
+<area shape="poly" title=" " alt="" coords="176,38,105,77,103,73,174,33"/>
+<area shape="rect" title=" " alt="" coords="150,83,250,113"/>
+<area shape="poly" title=" " alt="" coords="203,36,203,67,198,67,198,36"/>
+<area shape="rect" title=" " alt="" coords="275,83,357,113"/>
+<area shape="poly" title=" " alt="" coords="223,33,283,72,280,77,221,38"/>
+</map>
+</div>
+</div>
+<p><a href="anima__system_8c_source.html">Ir para o código-fonte desse arquivo.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
+Definições de Tipos</h2></td></tr>
+<tr class="memitem:abe5fa2071132c66cf3e714a2ac38037c" id="r_abe5fa2071132c66cf3e714a2ac38037c"><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abe5fa2071132c66cf3e714a2ac38037c">PlayerStateFunc</a>) (int, u16)</td></tr>
+<tr class="separator:abe5fa2071132c66cf3e714a2ac38037c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Funções</h2></td></tr>
+<tr class="memitem:ab609215115971b40d9e47df6e4a8f853" id="r_ab609215115971b40d9e47df6e4a8f853"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab609215115971b40d9e47df6e4a8f853">playerState</a> (int ind, u16 state)</td></tr>
+<tr class="separator:ab609215115971b40d9e47df6e4a8f853"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a628b00b919856c9e5c3bc6e4e492f8b4" id="r_a628b00b919856c9e5c3bc6e4e492f8b4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a628b00b919856c9e5c3bc6e4e492f8b4">anima</a> ()</td></tr>
+<tr class="separator:a628b00b919856c9e5c3bc6e4e492f8b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
+Variáveis</h2></td></tr>
+<tr class="memitem:aadbba599ec6da804710a19884e08e608" id="r_aadbba599ec6da804710a19884e08e608"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="#abe5fa2071132c66cf3e714a2ac38037c">PlayerStateFunc</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aadbba599ec6da804710a19884e08e608">PLAYER_STATE_FUNCS</a> [7]</td></tr>
+<tr class="separator:aadbba599ec6da804710a19884e08e608"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Definições dos tipos</h2>
+<a id="abe5fa2071132c66cf3e714a2ac38037c" name="abe5fa2071132c66cf3e714a2ac38037c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abe5fa2071132c66cf3e714a2ac38037c">&#9670;&#160;</a></span>PlayerStateFunc</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef void(* PlayerStateFunc) (int, u16)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definição na linha <a class="el" href="anima__system_8c_source.html#l00006">6</a> do arquivo <a class="el" href="anima__system_8c_source.html">anima_system.c</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Funções</h2>
+<a id="a628b00b919856c9e5c3bc6e4e492f8b4" name="a628b00b919856c9e5c3bc6e4e492f8b4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a628b00b919856c9e5c3bc6e4e492f8b4">&#9670;&#160;</a></span>anima()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void anima </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definição na linha <a class="el" href="anima__system_8c_source.html#l00045">45</a> do arquivo <a class="el" href="anima__system_8c_source.html">anima_system.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   46</span>{</div>
+<div class="line"><span class="lineno">   47</span>    <a class="code hl_variable" href="game__vars_8c.html#ab6aaeb8394cea6ecbe228b9504e02a0e">gASG_system</a> = FALSE;</div>
+<div class="line"><span class="lineno">   48</span> </div>
+<div class="line"><span class="lineno">   49</span>    <span class="comment">// jogadores 1 e 2</span></div>
+<div class="line"><span class="lineno">   50</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> ind = 0; ind &lt; 2; ind++)</div>
+<div class="line"><span class="lineno">   51</span>    {</div>
+<div class="line"><span class="lineno">   52</span>        <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[ind].frameTimeAtual++;</div>
+<div class="line"><span class="lineno">   53</span> </div>
+<div class="line"><span class="lineno">   54</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[ind].frameTimeAtual &gt; <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[ind].frameTimeTotal &amp;&amp; <a class="code hl_variable" href="game__vars_8c.html#ab6aaeb8394cea6ecbe228b9504e02a0e">gASG_system</a> == FALSE)</div>
+<div class="line"><span class="lineno">   55</span>        {</div>
+<div class="line"><span class="lineno">   56</span>            <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[ind].animFrame++;</div>
+<div class="line"><span class="lineno">   57</span> </div>
+<div class="line"><span class="lineno">   58</span>            <span class="keywordflow">if</span> (<a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[ind].animFrame &gt; <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[ind].animFrameTotal)</div>
+<div class="line"><span class="lineno">   59</span>            {</div>
+<div class="line"><span class="lineno">   60</span>                <a class="code hl_variable" href="game__vars_8c.html#ab6aaeb8394cea6ecbe228b9504e02a0e">gASG_system</a> = TRUE;</div>
+<div class="line"><span class="lineno">   61</span> </div>
+<div class="line"><span class="lineno">   62</span>                <span class="keywordflow">if</span> (<a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[ind].state == PARADO)</div>
+<div class="line"><span class="lineno">   63</span>                {</div>
+<div class="line"><span class="lineno">   64</span>                    <a class="code hl_function" href="#ab609215115971b40d9e47df6e4a8f853">playerState</a>(ind, PARADO);</div>
+<div class="line"><span class="lineno">   65</span>                }</div>
+<div class="line"><span class="lineno">   66</span>            }</div>
+<div class="line"><span class="lineno">   67</span>            <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[ind].frameTimeAtual = 1;</div>
+<div class="line"><span class="lineno">   68</span>            <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[ind].frameTimeTotal = <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[ind].dataAnim[<a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[ind].animFrame];</div>
+<div class="line"><span class="lineno">   69</span> </div>
+<div class="line"><span class="lineno">   70</span>            <span class="keywordflow">if</span> (<a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[ind].sprite)</div>
+<div class="line"><span class="lineno">   71</span>            {</div>
+<div class="line"><span class="lineno">   72</span>                u16 totalReal = <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[ind].sprite-&gt;animation-&gt;numFrame;</div>
+<div class="line"><span class="lineno">   73</span> </div>
+<div class="line"><span class="lineno">   74</span>                <span class="keywordflow">if</span> (<a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[ind].animFrame - 1 &lt; totalReal)</div>
+<div class="line"><span class="lineno">   75</span>                {</div>
+<div class="line"><span class="lineno">   76</span>                    SPR_setAnimAndFrame(<a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[ind].sprite, 0, <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[ind].animFrame - 1);</div>
+<div class="line"><span class="lineno">   77</span>                }</div>
+<div class="line"><span class="lineno">   78</span>            }</div>
+<div class="line"><span class="lineno">   79</span>        }</div>
+<div class="line"><span class="lineno">   80</span>        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[ind].frameTimeAtual &gt; <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[ind].frameTimeTotal &amp;&amp; <a class="code hl_variable" href="game__vars_8c.html#ab6aaeb8394cea6ecbe228b9504e02a0e">gASG_system</a> == TRUE)</div>
+<div class="line"><span class="lineno">   81</span>        {</div>
+<div class="line"><span class="lineno">   82</span>            <span class="keywordflow">if</span> (<a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[ind].frameTimeAtual &gt; 1)</div>
+<div class="line"><span class="lineno">   83</span>            {</div>
+<div class="line"><span class="lineno">   84</span>                <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[ind].frameTimeAtual--;</div>
+<div class="line"><span class="lineno">   85</span>            }</div>
+<div class="line"><span class="lineno">   86</span>        }</div>
+<div class="line"><span class="lineno">   87</span>    }</div>
+<div class="line"><span class="lineno">   88</span>}</div>
+<div class="ttc" id="aanima__system_8c_html_ab609215115971b40d9e47df6e4a8f853"><div class="ttname"><a href="#ab609215115971b40d9e47df6e4a8f853">playerState</a></div><div class="ttdeci">void playerState(int ind, u16 state)</div><div class="ttdef"><b>Definição</b> <a href="anima__system_8c_source.html#l00017">anima_system.c:17</a></div></div>
+<div class="ttc" id="agame__vars_8c_html_a5135cf03aefd90677db09304781dbb8c"><div class="ttname"><a href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a></div><div class="ttdeci">Player player[2]</div><div class="ttdef"><b>Definição</b> <a href="game__vars_8c_source.html#l00022">game_vars.c:22</a></div></div>
+<div class="ttc" id="agame__vars_8c_html_ab6aaeb8394cea6ecbe228b9504e02a0e"><div class="ttname"><a href="game__vars_8c.html#ab6aaeb8394cea6ecbe228b9504e02a0e">gASG_system</a></div><div class="ttdeci">bool gASG_system</div><div class="ttdef"><b>Definição</b> <a href="game__vars_8c_source.html#l00017">game_vars.c:17</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+Este é o diagrama das funções utilizadas por essa função:</div>
+<div class="dyncontent">
+<div class="center"><img src="anima__system_8c_a628b00b919856c9e5c3bc6e4e492f8b4_cgraph.png" border="0" usemap="#aanima__system_8c_a628b00b919856c9e5c3bc6e4e492f8b4_cgraph" alt=""/></div>
+<map name="aanima__system_8c_a628b00b919856c9e5c3bc6e4e492f8b4_cgraph" id="aanima__system_8c_a628b00b919856c9e5c3bc6e4e492f8b4_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,64,35"/>
+<area shape="rect" href="anima__system_8c.html#ab609215115971b40d9e47df6e4a8f853" title=" " alt="" coords="112,5,204,35"/>
+<area shape="poly" title=" " alt="" coords="64,18,96,18,96,23,64,23"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ab609215115971b40d9e47df6e4a8f853" name="ab609215115971b40d9e47df6e4a8f853"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab609215115971b40d9e47df6e4a8f853">&#9670;&#160;</a></span>playerState()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void playerState </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>ind</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">u16</td>          <td class="paramname"><span class="paramname"><em>state</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definição na linha <a class="el" href="anima__system_8c_source.html#l00017">17</a> do arquivo <a class="el" href="anima__system_8c_source.html">anima_system.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   18</span>{</div>
+<div class="line"><span class="lineno">   19</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[ind].sprite)</div>
+<div class="line"><span class="lineno">   20</span>    {</div>
+<div class="line"><span class="lineno">   21</span>        SPR_releaseSprite(<a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[ind].sprite);</div>
+<div class="line"><span class="lineno">   22</span>        <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[ind].sprite = NULL;</div>
+<div class="line"><span class="lineno">   23</span>    }</div>
+<div class="line"><span class="lineno">   24</span> </div>
+<div class="line"><span class="lineno">   25</span>    <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[ind].animFrame = 1;</div>
+<div class="line"><span class="lineno">   26</span>    <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[ind].frameTimeAtual = 1;</div>
+<div class="line"><span class="lineno">   27</span>    <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[ind].dataAnim[1] = 1;</div>
+<div class="line"><span class="lineno">   28</span>    <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[ind].animFrameTotal = 1;</div>
+<div class="line"><span class="lineno">   29</span>    <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[ind].state = state;</div>
+<div class="line"><span class="lineno">   30</span> </div>
+<div class="line"><span class="lineno">   31</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="#aadbba599ec6da804710a19884e08e608">PLAYER_STATE_FUNCS</a>[<a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[ind].<span class="keywordtype">id</span>])</div>
+<div class="line"><span class="lineno">   32</span>    {</div>
+<div class="line"><span class="lineno">   33</span>        <a class="code hl_variable" href="#aadbba599ec6da804710a19884e08e608">PLAYER_STATE_FUNCS</a>[<a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[ind].id](ind, state);</div>
+<div class="line"><span class="lineno">   34</span>    }</div>
+<div class="line"><span class="lineno">   35</span> </div>
+<div class="line"><span class="lineno">   36</span>    SPR_setHFlip(<a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[ind].sprite, (<a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[ind].direcao == 1) ? FALSE : TRUE);</div>
+<div class="line"><span class="lineno">   37</span> </div>
+<div class="line"><span class="lineno">   38</span>    SPR_setDepth(<a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[ind].sprite, SPR_MIN_DEPTH);</div>
+<div class="line"><span class="lineno">   39</span> </div>
+<div class="line"><span class="lineno">   40</span>    SPR_setAnimAndFrame(<a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[ind].sprite, 0, <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[ind].animFrame - 1);</div>
+<div class="line"><span class="lineno">   41</span>    <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[ind].frameTimeTotal = <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[ind].dataAnim[1];</div>
+<div class="line"><span class="lineno">   42</span>    <span class="comment">// SPR_setAnim(player[ind].sprite, 0);</span></div>
+<div class="line"><span class="lineno">   43</span>}</div>
+<div class="ttc" id="aanima__system_8c_html_aadbba599ec6da804710a19884e08e608"><div class="ttname"><a href="#aadbba599ec6da804710a19884e08e608">PLAYER_STATE_FUNCS</a></div><div class="ttdeci">const PlayerStateFunc PLAYER_STATE_FUNCS[7]</div><div class="ttdef"><b>Definição</b> <a href="anima__system_8c_source.html#l00008">anima_system.c:8</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+Esse é o diagrama das funções que utilizam essa função:</div>
+<div class="dyncontent">
+<div class="center"><img src="anima__system_8c_ab609215115971b40d9e47df6e4a8f853_icgraph.png" border="0" usemap="#aanima__system_8c_ab609215115971b40d9e47df6e4a8f853_icgraph" alt=""/></div>
+<map name="aanima__system_8c_ab609215115971b40d9e47df6e4a8f853_icgraph" id="aanima__system_8c_ab609215115971b40d9e47df6e4a8f853_icgraph">
+<area shape="rect" title=" " alt="" coords="513,59,606,88"/>
+<area shape="rect" href="anima__system_8c.html#a628b00b919856c9e5c3bc6e4e492f8b4" title=" " alt="" coords="378,5,436,35"/>
+<area shape="poly" title=" " alt="" coords="500,56,436,33,437,28,502,51"/>
+<area shape="rect" href="char__select__room_8c.html#a1dca549e20947032febfdf3cda5dbd8b" title=" " alt="" coords="368,59,447,88"/>
+<area shape="poly" title=" " alt="" coords="498,76,447,76,447,71,498,71"/>
+<area shape="rect" href="char__select__room_8c.html#a7d5c58c0b00f06187c8e13947ce8b0b5" title="Atualiza a posição do cursor de seleção de acordo com o ID." alt="" coords="349,112,465,142"/>
+<area shape="poly" title=" " alt="" coords="502,96,453,114,451,109,500,91"/>
+<area shape="rect" href="char__select__room_8c.html#a691b28223562237401b71b33874e1455" title=" " alt="" coords="105,85,301,115"/>
+<area shape="poly" title=" " alt="" coords="352,83,302,90,301,85,352,78"/>
+<area shape="rect" href="main_8c.html#af2eb07b318158270774fcc967eec3c80" title=" " alt="" coords="5,85,57,115"/>
+<area shape="poly" title=" " alt="" coords="89,103,57,103,57,98,89,98"/>
+<area shape="poly" title=" " alt="" coords="333,120,301,116,302,110,334,115"/>
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">Variáveis</h2>
+<a id="aadbba599ec6da804710a19884e08e608" name="aadbba599ec6da804710a19884e08e608"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aadbba599ec6da804710a19884e08e608">&#9670;&#160;</a></span>PLAYER_STATE_FUNCS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="#abe5fa2071132c66cf3e714a2ac38037c">PlayerStateFunc</a> PLAYER_STATE_FUNCS[7]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Valor inicial:</b><div class="fragment"><div class="line">= {</div>
+<div class="line">    <a class="code hl_function" href="johnny_8c.html#a5635dc6c5ae4a8d650ea136bf881121f">playerState_Johnny</a>,</div>
+<div class="line">    <a class="code hl_function" href="kano_8c.html#ae49ceb6de430e1dde8484e8d524f0df7">playerState_Kano</a>,</div>
+<div class="line">    <a class="code hl_function" href="raiden_8c.html#abed78657293fad361e593e9052c3b148">playerState_Raiden</a>,</div>
+<div class="line">    <a class="code hl_function" href="liukang_8c.html#a5a3bcbd1a1a0d55543e1c91dd1ab41cb">playerState_LiuKang</a>,</div>
+<div class="line">    <a class="code hl_function" href="subzero_8c.html#abe9f0634a3089727d50dd795e49f8ee8">playerState_SubZero</a>,</div>
+<div class="line">    <a class="code hl_function" href="scorpion_8c.html#a677895a9db6e2f52ccb683d663f430d0">playerState_Scorpion</a>,</div>
+<div class="line">    <a class="code hl_function" href="sonya_8c.html#a94b4d88d6e407cc231b1f692e18f513a">playerState_Sonya</a>}</div>
+<div class="ttc" id="ajohnny_8c_html_a5635dc6c5ae4a8d650ea136bf881121f"><div class="ttname"><a href="johnny_8c.html#a5635dc6c5ae4a8d650ea136bf881121f">playerState_Johnny</a></div><div class="ttdeci">void playerState_Johnny(int numPlayer, u16 State)</div><div class="ttdef"><b>Definição</b> <a href="johnny_8c_source.html#l00006">johnny.c:6</a></div></div>
+<div class="ttc" id="akano_8c_html_ae49ceb6de430e1dde8484e8d524f0df7"><div class="ttname"><a href="kano_8c.html#ae49ceb6de430e1dde8484e8d524f0df7">playerState_Kano</a></div><div class="ttdeci">void playerState_Kano(int numPlayer, u16 State)</div><div class="ttdef"><b>Definição</b> <a href="kano_8c_source.html#l00006">kano.c:6</a></div></div>
+<div class="ttc" id="aliukang_8c_html_a5a3bcbd1a1a0d55543e1c91dd1ab41cb"><div class="ttname"><a href="liukang_8c.html#a5a3bcbd1a1a0d55543e1c91dd1ab41cb">playerState_LiuKang</a></div><div class="ttdeci">void playerState_LiuKang(int numPlayer, u16 State)</div><div class="ttdef"><b>Definição</b> <a href="liukang_8c_source.html#l00006">liukang.c:6</a></div></div>
+<div class="ttc" id="araiden_8c_html_abed78657293fad361e593e9052c3b148"><div class="ttname"><a href="raiden_8c.html#abed78657293fad361e593e9052c3b148">playerState_Raiden</a></div><div class="ttdeci">void playerState_Raiden(int numPlayer, u16 State)</div><div class="ttdef"><b>Definição</b> <a href="raiden_8c_source.html#l00006">raiden.c:6</a></div></div>
+<div class="ttc" id="ascorpion_8c_html_a677895a9db6e2f52ccb683d663f430d0"><div class="ttname"><a href="scorpion_8c.html#a677895a9db6e2f52ccb683d663f430d0">playerState_Scorpion</a></div><div class="ttdeci">void playerState_Scorpion(int numPlayer, u16 State)</div><div class="ttdef"><b>Definição</b> <a href="scorpion_8c_source.html#l00006">scorpion.c:6</a></div></div>
+<div class="ttc" id="asonya_8c_html_a94b4d88d6e407cc231b1f692e18f513a"><div class="ttname"><a href="sonya_8c.html#a94b4d88d6e407cc231b1f692e18f513a">playerState_Sonya</a></div><div class="ttdeci">void playerState_Sonya(int numPlayer, u16 State)</div><div class="ttdef"><b>Definição</b> <a href="sonya_8c_source.html#l00006">sonya.c:6</a></div></div>
+<div class="ttc" id="asubzero_8c_html_abe9f0634a3089727d50dd795e49f8ee8"><div class="ttname"><a href="subzero_8c.html#abe9f0634a3089727d50dd795e49f8ee8">playerState_SubZero</a></div><div class="ttdeci">void playerState_SubZero(int numPlayer, u16 State)</div><div class="ttdef"><b>Definição</b> <a href="subzero_8c_source.html#l00006">subzero.c:6</a></div></div>
+</div><!-- fragment -->
+<p class="definition">Definição na linha <a class="el" href="anima__system_8c_source.html#l00008">8</a> do arquivo <a class="el" href="anima__system_8c_source.html">anima_system.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">    8</span>                                              {</div>
+<div class="line"><span class="lineno">    9</span>    <a class="code hl_function" href="johnny_8c.html#a5635dc6c5ae4a8d650ea136bf881121f">playerState_Johnny</a>,</div>
+<div class="line"><span class="lineno">   10</span>    <a class="code hl_function" href="kano_8c.html#ae49ceb6de430e1dde8484e8d524f0df7">playerState_Kano</a>,</div>
+<div class="line"><span class="lineno">   11</span>    <a class="code hl_function" href="raiden_8c.html#abed78657293fad361e593e9052c3b148">playerState_Raiden</a>,</div>
+<div class="line"><span class="lineno">   12</span>    <a class="code hl_function" href="liukang_8c.html#a5a3bcbd1a1a0d55543e1c91dd1ab41cb">playerState_LiuKang</a>,</div>
+<div class="line"><span class="lineno">   13</span>    <a class="code hl_function" href="subzero_8c.html#abe9f0634a3089727d50dd795e49f8ee8">playerState_SubZero</a>,</div>
+<div class="line"><span class="lineno">   14</span>    <a class="code hl_function" href="scorpion_8c.html#a677895a9db6e2f52ccb683d663f430d0">playerState_Scorpion</a>,</div>
+<div class="line"><span class="lineno">   15</span>    <a class="code hl_function" href="sonya_8c.html#a94b4d88d6e407cc231b1f692e18f513a">playerState_Sonya</a>};</div>
+</div><!-- fragment -->
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gerado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.11.0
+</small></address>
+</div><!-- doc-content -->
+</body>
+</html>

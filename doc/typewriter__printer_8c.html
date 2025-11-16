@@ -1,0 +1,259 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt-BR">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.11.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Mortal Kombat Plus: Referência do Arquivo src/modulos/typewriter_printer.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Mortal Kombat Plus
+   </div>
+   <div id="projectbrief">Documentação gerada automaticamente com Doxygen</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.11.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Busca',false);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){ initResizable(false); });
+/* @license-end */
+</script>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Carregando...</div>
+<div class="SRStatus" id="Searching">Procurando...</div>
+<div class="SRStatus" id="NoMatches">Nenhuma entrada encontrado</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_47a83392b137ed71e1cf45a1606573c3.html">modulos</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div id="doc-content">
+<div class="header">
+  <div class="summary">
+<a href="#func-members">Funções</a>  </div>
+  <div class="headertitle"><div class="title">Referência do Arquivo typewriter_printer.c</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &quot;typewriter_printer.h&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Gráfico de dependência de inclusões para typewriter_printer.c:</div>
+<div class="dyncontent">
+<div class="center"><img src="typewriter__printer_8c__incl.png" border="0" usemap="#asrc_2modulos_2typewriter__printer_8c" alt=""/></div>
+<map name="asrc_2modulos_2typewriter__printer_8c" id="asrc_2modulos_2typewriter__printer_8c">
+<area shape="rect" title=" " alt="" coords="5,5,172,54"/>
+<area shape="rect" title=" " alt="" coords="16,102,161,132"/>
+<area shape="poly" title=" " alt="" coords="91,55,91,86,86,86,86,55"/>
+</map>
+</div>
+</div>
+<p><a href="typewriter__printer_8c_source.html">Ir para o código-fonte desse arquivo.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Funções</h2></td></tr>
+<tr class="memitem:a7b99e213b81356a73cbd48457b5877ea" id="r_a7b99e213b81356a73cbd48457b5877ea"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7b99e213b81356a73cbd48457b5877ea">typewriterEffect</a> (const char *text, u16 x, u16 y, u16 delay, VDPPlane plane, u16 numPal)</td></tr>
+<tr class="separator:a7b99e213b81356a73cbd48457b5877ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad6e8362eb9b82d100d479b769a6acf9c" id="r_ad6e8362eb9b82d100d479b769a6acf9c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad6e8362eb9b82d100d479b769a6acf9c">typewriterWriteAllLines</a> (const TextLine *lines, u16 numLines, VDPPlane plane, u16 numPal)</td></tr>
+<tr class="separator:ad6e8362eb9b82d100d479b769a6acf9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Funções</h2>
+<a id="a7b99e213b81356a73cbd48457b5877ea" name="a7b99e213b81356a73cbd48457b5877ea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7b99e213b81356a73cbd48457b5877ea">&#9670;&#160;</a></span>typewriterEffect()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void typewriterEffect </td>
+          <td>(</td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>text</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">u16</td>          <td class="paramname"><span class="paramname"><em>x</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">u16</td>          <td class="paramname"><span class="paramname"><em>y</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">u16</td>          <td class="paramname"><span class="paramname"><em>delay</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">VDPPlane</td>          <td class="paramname"><span class="paramname"><em>plane</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">u16</td>          <td class="paramname"><span class="paramname"><em>numPal</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definição na linha <a class="el" href="typewriter__printer_8c_source.html#l00003">3</a> do arquivo <a class="el" href="typewriter__printer_8c_source.html">typewriter_printer.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">    4</span>{</div>
+<div class="line"><span class="lineno">    5</span>    u16 len = strlen(text);</div>
+<div class="line"><span class="lineno">    6</span>    <span class="keywordflow">for</span> (u16 i = 0; i &lt; len; i++)</div>
+<div class="line"><span class="lineno">    7</span>    {</div>
+<div class="line"><span class="lineno">    8</span>        VDP_setTileMapXY(plane, TILE_ATTR_FULL(numPal, TRUE, FALSE, FALSE, TILE_FONT_INDEX + text[i] - <span class="charliteral">&#39; &#39;</span>), x + i, y);</div>
+<div class="line"><span class="lineno">    9</span>        SYS_doVBlankProcess(); <span class="comment">// Espera o V-Blank</span></div>
+<div class="line"><span class="lineno">   10</span> </div>
+<div class="line"><span class="lineno">   11</span>        <span class="keywordflow">if</span> (delay != 0)</div>
+<div class="line"><span class="lineno">   12</span>        {</div>
+<div class="line"><span class="lineno">   13</span>            <span class="keywordflow">for</span> (u16 j = 0; j &lt; delay; j++)</div>
+<div class="line"><span class="lineno">   14</span>            {</div>
+<div class="line"><span class="lineno">   15</span>                SYS_doVBlankProcess(); <span class="comment">// Atraso adicional</span></div>
+<div class="line"><span class="lineno">   16</span>            }</div>
+<div class="line"><span class="lineno">   17</span>        }</div>
+<div class="line"><span class="lineno">   18</span>    }</div>
+<div class="line"><span class="lineno">   19</span>}</div>
+</div><!-- fragment --><div class="dynheader">
+Esse é o diagrama das funções que utilizam essa função:</div>
+<div class="dyncontent">
+<div class="center"><img src="typewriter__printer_8c_a7b99e213b81356a73cbd48457b5877ea_icgraph.png" border="0" usemap="#atypewriter__printer_8c_a7b99e213b81356a73cbd48457b5877ea_icgraph" alt=""/></div>
+<map name="atypewriter__printer_8c_a7b99e213b81356a73cbd48457b5877ea_icgraph" id="atypewriter__printer_8c_a7b99e213b81356a73cbd48457b5877ea_icgraph">
+<area shape="rect" title=" " alt="" coords="451,5,573,35"/>
+<area shape="rect" href="intro__demo__room_8c.html#a32183ed63a770a246f599a6c8cf6ca32" title=" " alt="" coords="252,5,403,35"/>
+<area shape="poly" title=" " alt="" coords="435,23,404,23,404,18,435,18"/>
+<area shape="rect" href="intro__demo__room_8c.html#ac46ea98ecb7218ef78a7d4cd50896175" title=" " alt="" coords="105,5,204,35"/>
+<area shape="poly" title=" " alt="" coords="236,23,204,23,204,18,236,18"/>
+<area shape="rect" href="main_8c.html#af2eb07b318158270774fcc967eec3c80" title=" " alt="" coords="5,5,57,35"/>
+<area shape="poly" title=" " alt="" coords="89,23,57,23,57,18,89,18"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ad6e8362eb9b82d100d479b769a6acf9c" name="ad6e8362eb9b82d100d479b769a6acf9c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad6e8362eb9b82d100d479b769a6acf9c">&#9670;&#160;</a></span>typewriterWriteAllLines()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void typewriterWriteAllLines </td>
+          <td>(</td>
+          <td class="paramtype">const TextLine *</td>          <td class="paramname"><span class="paramname"><em>lines</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">u16</td>          <td class="paramname"><span class="paramname"><em>numLines</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">VDPPlane</td>          <td class="paramname"><span class="paramname"><em>plane</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">u16</td>          <td class="paramname"><span class="paramname"><em>numPal</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definição na linha <a class="el" href="typewriter__printer_8c_source.html#l00022">22</a> do arquivo <a class="el" href="typewriter__printer_8c_source.html">typewriter_printer.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   23</span>{</div>
+<div class="line"><span class="lineno">   24</span>    <span class="keywordflow">for</span> (u16 i = 0; i &lt; numLines; i++)</div>
+<div class="line"><span class="lineno">   25</span>    {</div>
+<div class="line"><span class="lineno">   26</span>        <span class="keyword">const</span> <span class="keywordtype">char</span> *text = lines[i].text;</div>
+<div class="line"><span class="lineno">   27</span>        u16 x = lines[i].x;</div>
+<div class="line"><span class="lineno">   28</span>        u16 y = lines[i].y;</div>
+<div class="line"><span class="lineno">   29</span>        u16 len = strlen(text);</div>
+<div class="line"><span class="lineno">   30</span>        <span class="keywordflow">for</span> (u16 j = 0; j &lt; len; j++)</div>
+<div class="line"><span class="lineno">   31</span>        {</div>
+<div class="line"><span class="lineno">   32</span>            VDP_setTileMapXY(plane, TILE_ATTR_FULL(numPal, TRUE, FALSE, FALSE, TILE_FONT_INDEX + text[j] - <span class="charliteral">&#39; &#39;</span>), x + j, y);</div>
+<div class="line"><span class="lineno">   33</span>        }</div>
+<div class="line"><span class="lineno">   34</span>    }</div>
+<div class="line"><span class="lineno">   35</span>}</div>
+</div><!-- fragment --><div class="dynheader">
+Esse é o diagrama das funções que utilizam essa função:</div>
+<div class="dyncontent">
+<div class="center"><img src="typewriter__printer_8c_ad6e8362eb9b82d100d479b769a6acf9c_icgraph.png" border="0" usemap="#atypewriter__printer_8c_ad6e8362eb9b82d100d479b769a6acf9c_icgraph" alt=""/></div>
+<map name="atypewriter__printer_8c_ad6e8362eb9b82d100d479b769a6acf9c_icgraph" id="atypewriter__printer_8c_ad6e8362eb9b82d100d479b769a6acf9c_icgraph">
+<area shape="rect" title=" " alt="" coords="409,5,577,35"/>
+<area shape="rect" href="intro__demo__room_8c.html#a152c80724646f7fe60348e27f4a8ca2c" title=" " alt="" coords="252,5,361,35"/>
+<area shape="poly" title=" " alt="" coords="394,23,362,23,362,18,394,18"/>
+<area shape="rect" href="intro__demo__room_8c.html#ac46ea98ecb7218ef78a7d4cd50896175" title=" " alt="" coords="105,5,204,35"/>
+<area shape="poly" title=" " alt="" coords="237,23,204,23,204,18,237,18"/>
+<area shape="rect" href="main_8c.html#af2eb07b318158270774fcc967eec3c80" title=" " alt="" coords="5,5,57,35"/>
+<area shape="poly" title=" " alt="" coords="89,23,57,23,57,18,89,18"/>
+</map>
+</div>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gerado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.11.0
+</small></address>
+</div><!-- doc-content -->
+</body>
+</html>

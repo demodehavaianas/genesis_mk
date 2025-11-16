@@ -1,0 +1,136 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt-BR">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.11.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Mortal Kombat Plus: Código-Fonte de src/game_vars.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Mortal Kombat Plus
+   </div>
+   <div id="projectbrief">Documentação gerada automaticamente com Doxygen</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.11.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Busca',false);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){ initResizable(false); });
+/* @license-end */
+</script>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Carregando...</div>
+<div class="SRStatus" id="Searching">Procurando...</div>
+<div class="SRStatus" id="NoMatches">Nenhuma entrada encontrado</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div id="doc-content">
+<div class="header">
+  <div class="headertitle"><div class="title">game_vars.c</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="game__vars_8c.html">Ir para a documentação desse arquivo.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include &quot;game_vars.h&quot;</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &quot;estruturas.h&quot;</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">// ===============================</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment">// Definições das variáveis globais</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment">// ===============================</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno"><a class="line" href="game__vars_8c.html#ad0344eb1bc475981a837e350c08fb53a">    8</a></span><span class="keywordtype">bool</span> <a class="code hl_variable" href="game__vars_8c.html#ad0344eb1bc475981a837e350c08fb53a">debugEnabled</a>;</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno"><a class="line" href="game__vars_8c.html#a7db0859ee62e2447701751d5980ede35">    9</a></span><span class="keywordtype">bool</span> <a class="code hl_variable" href="game__vars_8c.html#a7db0859ee62e2447701751d5980ede35">gPodeMover</a> = FALSE;</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="game__vars_8c.html#a784a617fe12ac8976bbae900c2343a36">   10</a></span>u8 <a class="code hl_variable" href="game__vars_8c.html#a784a617fe12ac8976bbae900c2343a36">gRoom</a>;</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="game__vars_8c.html#add5eb59c4f71be58ef78c256ac2de63d">   11</a></span>u8 <a class="code hl_variable" href="game__vars_8c.html#add5eb59c4f71be58ef78c256ac2de63d">gAlturaDoPiso</a>;</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="game__vars_8c.html#ac5c9f7210c7cb249636b7f1dc0121b71">   12</a></span>u16 <a class="code hl_variable" href="game__vars_8c.html#ac5c9f7210c7cb249636b7f1dc0121b71">gInd_tileset</a>;</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="game__vars_8c.html#a9a5a6215707f5795c18f46c7cef8c2fd">   13</a></span>u16 <a class="code hl_variable" href="game__vars_8c.html#a9a5a6215707f5795c18f46c7cef8c2fd">gBG_Width</a>;</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="game__vars_8c.html#aa679cf36be7f137105cedc17391cd822">   14</a></span>u16 <a class="code hl_variable" href="game__vars_8c.html#aa679cf36be7f137105cedc17391cd822">gBG_Height</a>;</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="game__vars_8c.html#aa2d51ef9576be55b8a1ff672efbd0009">   15</a></span>s16 <a class="code hl_variable" href="game__vars_8c.html#aa2d51ef9576be55b8a1ff672efbd0009">gScrollValue</a>;</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="game__vars_8c.html#a940f635da7254d2a02a607dab0139dfd">   16</a></span>u32 <a class="code hl_variable" href="game__vars_8c.html#a940f635da7254d2a02a607dab0139dfd">gFrames</a>;</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="game__vars_8c.html#ab6aaeb8394cea6ecbe228b9504e02a0e">   17</a></span><span class="keywordtype">bool</span> <a class="code hl_variable" href="game__vars_8c.html#ab6aaeb8394cea6ecbe228b9504e02a0e">gASG_system</a>;</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="comment">// Elementos gráficos globais como cursores, sparks, etc.</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="game__vars_8c.html#aa5e097d9886fbef5de8248a18d1d95ee">   20</a></span>GraphicElement <a class="code hl_variable" href="game__vars_8c.html#aa5e097d9886fbef5de8248a18d1d95ee">GE</a>[25];</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">   22</a></span>Player <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[2];</div>
+<div class="ttc" id="agame__vars_8c_html_a5135cf03aefd90677db09304781dbb8c"><div class="ttname"><a href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a></div><div class="ttdeci">Player player[2]</div><div class="ttdef"><b>Definição</b> <a href="#l00022">game_vars.c:22</a></div></div>
+<div class="ttc" id="agame__vars_8c_html_a784a617fe12ac8976bbae900c2343a36"><div class="ttname"><a href="game__vars_8c.html#a784a617fe12ac8976bbae900c2343a36">gRoom</a></div><div class="ttdeci">u8 gRoom</div><div class="ttdef"><b>Definição</b> <a href="#l00010">game_vars.c:10</a></div></div>
+<div class="ttc" id="agame__vars_8c_html_a7db0859ee62e2447701751d5980ede35"><div class="ttname"><a href="game__vars_8c.html#a7db0859ee62e2447701751d5980ede35">gPodeMover</a></div><div class="ttdeci">bool gPodeMover</div><div class="ttdef"><b>Definição</b> <a href="#l00009">game_vars.c:9</a></div></div>
+<div class="ttc" id="agame__vars_8c_html_a940f635da7254d2a02a607dab0139dfd"><div class="ttname"><a href="game__vars_8c.html#a940f635da7254d2a02a607dab0139dfd">gFrames</a></div><div class="ttdeci">u32 gFrames</div><div class="ttdef"><b>Definição</b> <a href="#l00016">game_vars.c:16</a></div></div>
+<div class="ttc" id="agame__vars_8c_html_a9a5a6215707f5795c18f46c7cef8c2fd"><div class="ttname"><a href="game__vars_8c.html#a9a5a6215707f5795c18f46c7cef8c2fd">gBG_Width</a></div><div class="ttdeci">u16 gBG_Width</div><div class="ttdef"><b>Definição</b> <a href="#l00013">game_vars.c:13</a></div></div>
+<div class="ttc" id="agame__vars_8c_html_aa2d51ef9576be55b8a1ff672efbd0009"><div class="ttname"><a href="game__vars_8c.html#aa2d51ef9576be55b8a1ff672efbd0009">gScrollValue</a></div><div class="ttdeci">s16 gScrollValue</div><div class="ttdef"><b>Definição</b> <a href="#l00015">game_vars.c:15</a></div></div>
+<div class="ttc" id="agame__vars_8c_html_aa5e097d9886fbef5de8248a18d1d95ee"><div class="ttname"><a href="game__vars_8c.html#aa5e097d9886fbef5de8248a18d1d95ee">GE</a></div><div class="ttdeci">GraphicElement GE[25]</div><div class="ttdef"><b>Definição</b> <a href="#l00020">game_vars.c:20</a></div></div>
+<div class="ttc" id="agame__vars_8c_html_aa679cf36be7f137105cedc17391cd822"><div class="ttname"><a href="game__vars_8c.html#aa679cf36be7f137105cedc17391cd822">gBG_Height</a></div><div class="ttdeci">u16 gBG_Height</div><div class="ttdef"><b>Definição</b> <a href="#l00014">game_vars.c:14</a></div></div>
+<div class="ttc" id="agame__vars_8c_html_ab6aaeb8394cea6ecbe228b9504e02a0e"><div class="ttname"><a href="game__vars_8c.html#ab6aaeb8394cea6ecbe228b9504e02a0e">gASG_system</a></div><div class="ttdeci">bool gASG_system</div><div class="ttdef"><b>Definição</b> <a href="#l00017">game_vars.c:17</a></div></div>
+<div class="ttc" id="agame__vars_8c_html_ac5c9f7210c7cb249636b7f1dc0121b71"><div class="ttname"><a href="game__vars_8c.html#ac5c9f7210c7cb249636b7f1dc0121b71">gInd_tileset</a></div><div class="ttdeci">u16 gInd_tileset</div><div class="ttdef"><b>Definição</b> <a href="#l00012">game_vars.c:12</a></div></div>
+<div class="ttc" id="agame__vars_8c_html_ad0344eb1bc475981a837e350c08fb53a"><div class="ttname"><a href="game__vars_8c.html#ad0344eb1bc475981a837e350c08fb53a">debugEnabled</a></div><div class="ttdeci">bool debugEnabled</div><div class="ttdef"><b>Definição</b> <a href="#l00008">game_vars.c:8</a></div></div>
+<div class="ttc" id="agame__vars_8c_html_add5eb59c4f71be58ef78c256ac2de63d"><div class="ttname"><a href="game__vars_8c.html#add5eb59c4f71be58ef78c256ac2de63d">gAlturaDoPiso</a></div><div class="ttdeci">u8 gAlturaDoPiso</div><div class="ttdef"><b>Definição</b> <a href="#l00011">game_vars.c:11</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gerado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.11.0
+</small></address>
+</div><!-- doc-content -->
+</body>
+</html>

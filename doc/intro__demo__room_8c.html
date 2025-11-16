@@ -1,0 +1,726 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt-BR">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.11.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Mortal Kombat Plus: Referência do Arquivo src/rooms/intro_demo_room.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Mortal Kombat Plus
+   </div>
+   <div id="projectbrief">Documentação gerada automaticamente com Doxygen</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.11.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Busca',false);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){ initResizable(false); });
+/* @license-end */
+</script>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Carregando...</div>
+<div class="SRStatus" id="Searching">Procurando...</div>
+<div class="SRStatus" id="NoMatches">Nenhuma entrada encontrado</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_061d5f4231849b919a8e39e71db1f1a1.html">rooms</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div id="doc-content">
+<div class="header">
+  <div class="summary">
+<a href="#func-members">Funções</a>  </div>
+  <div class="headertitle"><div class="title">Referência do Arquivo intro_demo_room.c</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;genesis.h&gt;</code><br />
+<code>#include &quot;intro_demo_room.h&quot;</code><br />
+<code>#include &quot;input_system.h&quot;</code><br />
+<code>#include &quot;typewriter_printer.h&quot;</code><br />
+<code>#include &quot;sprites.h&quot;</code><br />
+<code>#include &quot;sound.h&quot;</code><br />
+<code>#include &quot;stages.h&quot;</code><br />
+<code>#include &quot;gfx.h&quot;</code><br />
+<code>#include &quot;bio_textlines.h&quot;</code><br />
+<code>#include &quot;game_vars.h&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Gráfico de dependência de inclusões para intro_demo_room.c:</div>
+<div class="dyncontent">
+<div class="center"><img src="intro__demo__room_8c__incl.png" border="0" usemap="#asrc_2rooms_2intro__demo__room_8c" alt=""/></div>
+<map name="asrc_2rooms_2intro__demo__room_8c" id="asrc_2rooms_2intro__demo__room_8c">
+<area shape="rect" title=" " alt="" coords="593,5,751,54"/>
+<area shape="rect" title=" " alt="" coords="5,102,86,132"/>
+<area shape="poly" title=" " alt="" coords="593,40,375,63,240,81,101,104,101,99,239,76,374,58,592,35"/>
+<area shape="rect" title=" " alt="" coords="110,102,253,132"/>
+<area shape="poly" title=" " alt="" coords="593,47,269,103,268,98,592,42"/>
+<area shape="rect" title=" " alt="" coords="277,102,393,132"/>
+<area shape="poly" title=" " alt="" coords="593,54,407,100,405,95,592,48"/>
+<area shape="rect" title=" " alt="" coords="417,102,562,132"/>
+<area shape="poly" title=" " alt="" coords="622,57,535,97,533,93,620,52"/>
+<area shape="rect" title=" " alt="" coords="587,102,662,132"/>
+<area shape="poly" title=" " alt="" coords="661,56,642,90,637,87,656,53"/>
+<area shape="rect" title=" " alt="" coords="686,102,757,132"/>
+<area shape="poly" title=" " alt="" coords="688,53,708,87,703,90,684,56"/>
+<area shape="rect" title=" " alt="" coords="781,102,854,132"/>
+<area shape="poly" title=" " alt="" coords="714,52,782,92,779,96,711,57"/>
+<area shape="rect" title=" " alt="" coords="879,102,932,132"/>
+<area shape="poly" title=" " alt="" coords="738,52,865,98,864,103,736,57"/>
+<area shape="rect" title=" " alt="" coords="956,102,1066,132"/>
+<area shape="poly" title=" " alt="" coords="753,48,941,95,940,101,751,54"/>
+<area shape="rect" title=" " alt="" coords="1090,102,1190,132"/>
+<area shape="poly" title=" " alt="" coords="752,41,1075,99,1074,104,751,47"/>
+</map>
+</div>
+</div>
+<p><a href="intro__demo__room_8c_source.html">Ir para o código-fonte desse arquivo.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Funções</h2></td></tr>
+<tr class="memitem:aaf01eb7af118af02997ccd40dfaebdaa" id="r_aaf01eb7af118af02997ccd40dfaebdaa"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aaf01eb7af118af02997ccd40dfaebdaa">loadBrainAtWorkScreen</a> ()</td></tr>
+<tr class="separator:aaf01eb7af118af02997ccd40dfaebdaa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2791cbdef785b738e2b65514d8a90618" id="r_a2791cbdef785b738e2b65514d8a90618"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2791cbdef785b738e2b65514d8a90618">loadMidwayTitleMKScreen</a> ()</td></tr>
+<tr class="separator:a2791cbdef785b738e2b65514d8a90618"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a32183ed63a770a246f599a6c8cf6ca32" id="r_a32183ed63a770a246f599a6c8cf6ca32"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a32183ed63a770a246f599a6c8cf6ca32">loadGoroLivesScreen</a> ()</td></tr>
+<tr class="separator:a32183ed63a770a246f599a6c8cf6ca32"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a152c80724646f7fe60348e27f4a8ca2c" id="r_a152c80724646f7fe60348e27f4a8ca2c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a152c80724646f7fe60348e27f4a8ca2c">loadBioScreen</a> (const BioData *data)</td></tr>
+<tr class="separator:a152c80724646f7fe60348e27f4a8ca2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a46851a69b6140500d8f59ad9b1683b01" id="r_a46851a69b6140500d8f59ad9b1683b01"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a46851a69b6140500d8f59ad9b1683b01">saida</a> ()</td></tr>
+<tr class="separator:a46851a69b6140500d8f59ad9b1683b01"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abd84a8f7942f738b8f807b5c83e766dc" id="r_abd84a8f7942f738b8f807b5c83e766dc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abd84a8f7942f738b8f807b5c83e766dc">softClearPlane</a> ()</td></tr>
+<tr class="separator:abd84a8f7942f738b8f807b5c83e766dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac46ea98ecb7218ef78a7d4cd50896175" id="r_ac46ea98ecb7218ef78a7d4cd50896175"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac46ea98ecb7218ef78a7d4cd50896175">processIntro</a> ()</td></tr>
+<tr class="separator:ac46ea98ecb7218ef78a7d4cd50896175"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Funções</h2>
+<a id="a152c80724646f7fe60348e27f4a8ca2c" name="a152c80724646f7fe60348e27f4a8ca2c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a152c80724646f7fe60348e27f4a8ca2c">&#9670;&#160;</a></span>loadBioScreen()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void loadBioScreen </td>
+          <td>(</td>
+          <td class="paramtype">const BioData *</td>          <td class="paramname"><span class="paramname"><em>data</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definição na linha <a class="el" href="intro__demo__room_8c_source.html#l00246">246</a> do arquivo <a class="el" href="intro__demo__room_8c_source.html">intro_demo_room.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  247</span>{</div>
+<div class="line"><span class="lineno">  248</span>    <a class="code hl_function" href="#abd84a8f7942f738b8f807b5c83e766dc">softClearPlane</a>();</div>
+<div class="line"><span class="lineno">  249</span>    PAL_fadeOut(0, 15, 5, FALSE);</div>
+<div class="line"><span class="lineno">  250</span>    PAL_fadeOut(16, 30, 5, FALSE);</div>
+<div class="line"><span class="lineno">  251</span> </div>
+<div class="line"><span class="lineno">  252</span>    VDP_loadTileSet(bio_b.tileset, <a class="code hl_variable" href="game__vars_8c.html#ac5c9f7210c7cb249636b7f1dc0121b71">gInd_tileset</a>, DMA);</div>
+<div class="line"><span class="lineno">  253</span>    VDP_setTileMapEx(BG_A, bio_b.tilemap, TILE_ATTR_FULL(PAL0, FALSE, FALSE, FALSE, <a class="code hl_variable" href="game__vars_8c.html#ac5c9f7210c7cb249636b7f1dc0121b71">gInd_tileset</a>),</div>
+<div class="line"><span class="lineno">  254</span>                     0, 0, 0, 0, 40, 28, DMA_QUEUE);</div>
+<div class="line"><span class="lineno">  255</span>    PAL_setPalette(PAL0, bio_b.palette-&gt;data, DMA);</div>
+<div class="line"><span class="lineno">  256</span>    <a class="code hl_variable" href="game__vars_8c.html#ac5c9f7210c7cb249636b7f1dc0121b71">gInd_tileset</a> += bio_b.tileset-&gt;numTile;</div>
+<div class="line"><span class="lineno">  257</span> </div>
+<div class="line"><span class="lineno">  258</span>    Sprite *bioAnimation = SPR_addSprite(data-&gt;bio, 112, 48, TILE_ATTR(PAL1, FALSE, FALSE, FALSE));</div>
+<div class="line"><span class="lineno">  259</span>    PAL_setPalette(PAL1, data-&gt;bio-&gt;palette-&gt;data, DMA);</div>
+<div class="line"><span class="lineno">  260</span>    SPR_setAnimationLoop(bioAnimation, FALSE);</div>
+<div class="line"><span class="lineno">  261</span>    SPR_setDepth(bioAnimation, 0);</div>
+<div class="line"><span class="lineno">  262</span> </div>
+<div class="line"><span class="lineno">  263</span>    u16 size_name = (VDP_getScreenWidth() / 2) - (data-&gt;name-&gt;w / 2);</div>
+<div class="line"><span class="lineno">  264</span>    Sprite *headName = SPR_addSprite(data-&gt;name, size_name, 16, TILE_ATTR(PAL2, FALSE, FALSE, FALSE));</div>
+<div class="line"><span class="lineno">  265</span>    PAL_setPalette(PAL2, data-&gt;name-&gt;palette-&gt;data, DMA);</div>
+<div class="line"><span class="lineno">  266</span>    SPR_setDepth(headName, 0);</div>
+<div class="line"><span class="lineno">  267</span> </div>
+<div class="line"><span class="lineno">  268</span>    <span class="comment">// TODO: carregar a fonte apenas uma vez no início do jogo</span></div>
+<div class="line"><span class="lineno">  269</span>    VDP_setTextPlane(BG_B);</div>
+<div class="line"><span class="lineno">  270</span>    VDP_loadFontData(font_a.tiles, font_a.numTile, CPU);</div>
+<div class="line"><span class="lineno">  271</span>    PAL_setPalette(PAL3, font_a_pal.data, DMA);</div>
+<div class="line"><span class="lineno">  272</span>    VDP_setTextPalette(PAL3);</div>
+<div class="line"><span class="lineno">  273</span> </div>
+<div class="line"><span class="lineno">  274</span>    XGM2_playPCM(data-&gt;voice, data-&gt;voice_size, SOUND_PCM_CH2);</div>
+<div class="line"><span class="lineno">  275</span>    <a class="code hl_function" href="typewriter__printer_8c.html#ad6e8362eb9b82d100d479b769a6acf9c">typewriterWriteAllLines</a>(data-&gt;lines, data-&gt;num_lines, BG_B, PAL3);</div>
+<div class="line"><span class="lineno">  276</span>    XGM2_play(mus_the_beginning);</div>
+<div class="line"><span class="lineno">  277</span>}</div>
+<div class="ttc" id="agame__vars_8c_html_ac5c9f7210c7cb249636b7f1dc0121b71"><div class="ttname"><a href="game__vars_8c.html#ac5c9f7210c7cb249636b7f1dc0121b71">gInd_tileset</a></div><div class="ttdeci">u16 gInd_tileset</div><div class="ttdef"><b>Definição</b> <a href="game__vars_8c_source.html#l00012">game_vars.c:12</a></div></div>
+<div class="ttc" id="aintro__demo__room_8c_html_abd84a8f7942f738b8f807b5c83e766dc"><div class="ttname"><a href="#abd84a8f7942f738b8f807b5c83e766dc">softClearPlane</a></div><div class="ttdeci">void softClearPlane()</div><div class="ttdef"><b>Definição</b> <a href="intro__demo__room_8c_source.html#l00044">intro_demo_room.c:44</a></div></div>
+<div class="ttc" id="atypewriter__printer_8c_html_ad6e8362eb9b82d100d479b769a6acf9c"><div class="ttname"><a href="typewriter__printer_8c.html#ad6e8362eb9b82d100d479b769a6acf9c">typewriterWriteAllLines</a></div><div class="ttdeci">void typewriterWriteAllLines(const TextLine *lines, u16 numLines, VDPPlane plane, u16 numPal)</div><div class="ttdef"><b>Definição</b> <a href="typewriter__printer_8c_source.html#l00022">typewriter_printer.c:22</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+Este é o diagrama das funções utilizadas por essa função:</div>
+<div class="dyncontent">
+<div class="center"><img src="intro__demo__room_8c_a152c80724646f7fe60348e27f4a8ca2c_cgraph.png" border="0" usemap="#aintro__demo__room_8c_a152c80724646f7fe60348e27f4a8ca2c_cgraph" alt=""/></div>
+<map name="aintro__demo__room_8c_a152c80724646f7fe60348e27f4a8ca2c_cgraph" id="aintro__demo__room_8c_a152c80724646f7fe60348e27f4a8ca2c_cgraph">
+<area shape="rect" title=" " alt="" coords="5,32,115,62"/>
+<area shape="rect" href="intro__demo__room_8c.html#abd84a8f7942f738b8f807b5c83e766dc" title=" " alt="" coords="191,5,302,35"/>
+<area shape="poly" title=" " alt="" coords="115,36,175,28,176,33,115,42"/>
+<area shape="rect" href="typewriter__printer_8c.html#ad6e8362eb9b82d100d479b769a6acf9c" title=" " alt="" coords="163,59,330,88"/>
+<area shape="poly" title=" " alt="" coords="115,52,148,57,147,62,115,57"/>
+</map>
+</div>
+<div class="dynheader">
+Esse é o diagrama das funções que utilizam essa função:</div>
+<div class="dyncontent">
+<div class="center"><img src="intro__demo__room_8c_a152c80724646f7fe60348e27f4a8ca2c_icgraph.png" border="0" usemap="#aintro__demo__room_8c_a152c80724646f7fe60348e27f4a8ca2c_icgraph" alt=""/></div>
+<map name="aintro__demo__room_8c_a152c80724646f7fe60348e27f4a8ca2c_icgraph" id="aintro__demo__room_8c_a152c80724646f7fe60348e27f4a8ca2c_icgraph">
+<area shape="rect" title=" " alt="" coords="252,5,361,35"/>
+<area shape="rect" href="intro__demo__room_8c.html#ac46ea98ecb7218ef78a7d4cd50896175" title=" " alt="" coords="105,5,204,35"/>
+<area shape="poly" title=" " alt="" coords="237,23,204,23,204,18,237,18"/>
+<area shape="rect" href="main_8c.html#af2eb07b318158270774fcc967eec3c80" title=" " alt="" coords="5,5,57,35"/>
+<area shape="poly" title=" " alt="" coords="89,23,57,23,57,18,89,18"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aaf01eb7af118af02997ccd40dfaebdaa" name="aaf01eb7af118af02997ccd40dfaebdaa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaf01eb7af118af02997ccd40dfaebdaa">&#9670;&#160;</a></span>loadBrainAtWorkScreen()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void loadBrainAtWorkScreen </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definição na linha <a class="el" href="intro__demo__room_8c_source.html#l00132">132</a> do arquivo <a class="el" href="intro__demo__room_8c_source.html">intro_demo_room.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  133</span>{</div>
+<div class="line"><span class="lineno">  134</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="game__vars_8c.html#a940f635da7254d2a02a607dab0139dfd">gFrames</a> == 1)</div>
+<div class="line"><span class="lineno">  135</span>    {</div>
+<div class="line"><span class="lineno">  136</span>        SYS_disableInts();</div>
+<div class="line"><span class="lineno">  137</span>        VDP_loadTileSet(baw_a.tileset, <a class="code hl_variable" href="game__vars_8c.html#ac5c9f7210c7cb249636b7f1dc0121b71">gInd_tileset</a>, DMA);</div>
+<div class="line"><span class="lineno">  138</span>        VDP_setTileMapEx(BG_A, baw_a.tilemap, TILE_ATTR_FULL(PAL0, FALSE, FALSE, FALSE, <a class="code hl_variable" href="game__vars_8c.html#ac5c9f7210c7cb249636b7f1dc0121b71">gInd_tileset</a>), 0, 0, 0, 0, 40, 28, DMA_QUEUE);</div>
+<div class="line"><span class="lineno">  139</span>        PAL_setPalette(PAL0, baw_a.palette-&gt;data, DMA);</div>
+<div class="line"><span class="lineno">  140</span>        <a class="code hl_variable" href="game__vars_8c.html#ac5c9f7210c7cb249636b7f1dc0121b71">gInd_tileset</a> += baw_a.tileset-&gt;numTile;</div>
+<div class="line"><span class="lineno">  141</span> </div>
+<div class="line"><span class="lineno">  142</span>        VDP_loadTileSet(baw_b.tileset, <a class="code hl_variable" href="game__vars_8c.html#ac5c9f7210c7cb249636b7f1dc0121b71">gInd_tileset</a>, DMA);</div>
+<div class="line"><span class="lineno">  143</span>        VDP_setTileMapEx(BG_B, baw_b.tilemap, TILE_ATTR_FULL(PAL1, FALSE, FALSE, FALSE, <a class="code hl_variable" href="game__vars_8c.html#ac5c9f7210c7cb249636b7f1dc0121b71">gInd_tileset</a>), 0, 0, 0, 0, 40, 28, DMA_QUEUE);</div>
+<div class="line"><span class="lineno">  144</span>        PAL_setPalette(PAL1, baw_b.palette-&gt;data, DMA);</div>
+<div class="line"><span class="lineno">  145</span>        <a class="code hl_variable" href="game__vars_8c.html#ac5c9f7210c7cb249636b7f1dc0121b71">gInd_tileset</a> += baw_b.tileset-&gt;numTile;</div>
+<div class="line"><span class="lineno">  146</span> </div>
+<div class="line"><span class="lineno">  147</span>        PAL_fadeIn(0, 15, baw_a.palette-&gt;data, 8, FALSE);</div>
+<div class="line"><span class="lineno">  148</span>        PAL_fadeIn(16, 30, baw_b.palette-&gt;data, 8, FALSE);</div>
+<div class="line"><span class="lineno">  149</span>    }</div>
+<div class="line"><span class="lineno">  150</span> </div>
+<div class="line"><span class="lineno">  151</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="game__vars_8c.html#a940f635da7254d2a02a607dab0139dfd">gFrames</a> == 200)</div>
+<div class="line"><span class="lineno">  152</span>    {</div>
+<div class="line"><span class="lineno">  153</span>        PAL_fadeOut(0, 15, 5, FALSE);</div>
+<div class="line"><span class="lineno">  154</span>        PAL_fadeOut(16, 30, 5, FALSE);</div>
+<div class="line"><span class="lineno">  155</span> </div>
+<div class="line"><span class="lineno">  156</span>        <a class="code hl_function" href="#abd84a8f7942f738b8f807b5c83e766dc">softClearPlane</a>();</div>
+<div class="line"><span class="lineno">  157</span>    }</div>
+<div class="line"><span class="lineno">  158</span>}</div>
+<div class="ttc" id="agame__vars_8c_html_a940f635da7254d2a02a607dab0139dfd"><div class="ttname"><a href="game__vars_8c.html#a940f635da7254d2a02a607dab0139dfd">gFrames</a></div><div class="ttdeci">u32 gFrames</div><div class="ttdef"><b>Definição</b> <a href="game__vars_8c_source.html#l00016">game_vars.c:16</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+Este é o diagrama das funções utilizadas por essa função:</div>
+<div class="dyncontent">
+<div class="center"><img src="intro__demo__room_8c_aaf01eb7af118af02997ccd40dfaebdaa_cgraph.png" border="0" usemap="#aintro__demo__room_8c_aaf01eb7af118af02997ccd40dfaebdaa_cgraph" alt=""/></div>
+<map name="aintro__demo__room_8c_aaf01eb7af118af02997ccd40dfaebdaa_cgraph" id="aintro__demo__room_8c_aaf01eb7af118af02997ccd40dfaebdaa_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,174,35"/>
+<area shape="rect" href="intro__demo__room_8c.html#abd84a8f7942f738b8f807b5c83e766dc" title=" " alt="" coords="222,5,333,35"/>
+<area shape="poly" title=" " alt="" coords="174,18,206,18,206,23,174,23"/>
+</map>
+</div>
+<div class="dynheader">
+Esse é o diagrama das funções que utilizam essa função:</div>
+<div class="dyncontent">
+<div class="center"><img src="intro__demo__room_8c_aaf01eb7af118af02997ccd40dfaebdaa_icgraph.png" border="0" usemap="#aintro__demo__room_8c_aaf01eb7af118af02997ccd40dfaebdaa_icgraph" alt=""/></div>
+<map name="aintro__demo__room_8c_aaf01eb7af118af02997ccd40dfaebdaa_icgraph" id="aintro__demo__room_8c_aaf01eb7af118af02997ccd40dfaebdaa_icgraph">
+<area shape="rect" title=" " alt="" coords="252,5,420,35"/>
+<area shape="rect" href="intro__demo__room_8c.html#ac46ea98ecb7218ef78a7d4cd50896175" title=" " alt="" coords="105,5,204,35"/>
+<area shape="poly" title=" " alt="" coords="236,23,205,23,205,18,236,18"/>
+<area shape="rect" href="main_8c.html#af2eb07b318158270774fcc967eec3c80" title=" " alt="" coords="5,5,57,35"/>
+<area shape="poly" title=" " alt="" coords="89,23,57,23,57,18,89,18"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a32183ed63a770a246f599a6c8cf6ca32" name="a32183ed63a770a246f599a6c8cf6ca32"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a32183ed63a770a246f599a6c8cf6ca32">&#9670;&#160;</a></span>loadGoroLivesScreen()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void loadGoroLivesScreen </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definição na linha <a class="el" href="intro__demo__room_8c_source.html#l00198">198</a> do arquivo <a class="el" href="intro__demo__room_8c_source.html">intro_demo_room.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  199</span>{</div>
+<div class="line"><span class="lineno">  200</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="game__vars_8c.html#a940f635da7254d2a02a607dab0139dfd">gFrames</a> == 700)</div>
+<div class="line"><span class="lineno">  201</span>    {</div>
+<div class="line"><span class="lineno">  202</span>        <a class="code hl_function" href="#abd84a8f7942f738b8f807b5c83e766dc">softClearPlane</a>();</div>
+<div class="line"><span class="lineno">  203</span> </div>
+<div class="line"><span class="lineno">  204</span>        SND_PCM4_stopPlay(SOUND_PCM_CH1);</div>
+<div class="line"><span class="lineno">  205</span>        SND_PCM4_startPlay(mus_goro_lives, <span class="keyword">sizeof</span>(mus_goro_lives), SOUND_PCM_CH1, FALSE);</div>
+<div class="line"><span class="lineno">  206</span> </div>
+<div class="line"><span class="lineno">  207</span>        VDP_loadTileSet(goro_lives.tileset, <a class="code hl_variable" href="game__vars_8c.html#ac5c9f7210c7cb249636b7f1dc0121b71">gInd_tileset</a>, DMA);</div>
+<div class="line"><span class="lineno">  208</span>        VDP_setTileMapEx(BG_A, goro_lives.tilemap, TILE_ATTR_FULL(PAL0, FALSE, FALSE, FALSE, <a class="code hl_variable" href="game__vars_8c.html#ac5c9f7210c7cb249636b7f1dc0121b71">gInd_tileset</a>),</div>
+<div class="line"><span class="lineno">  209</span>                         0, 0, 0, 0, 40, 28, DMA_QUEUE);</div>
+<div class="line"><span class="lineno">  210</span>        PAL_setPalette(PAL0, goro_lives.palette-&gt;data, DMA);</div>
+<div class="line"><span class="lineno">  211</span>        <a class="code hl_variable" href="game__vars_8c.html#ac5c9f7210c7cb249636b7f1dc0121b71">gInd_tileset</a> += goro_lives.tileset-&gt;numTile;</div>
+<div class="line"><span class="lineno">  212</span>    }</div>
+<div class="line"><span class="lineno">  213</span> </div>
+<div class="line"><span class="lineno">  214</span>    <span class="comment">// TELA GORO E HISTORIA</span></div>
+<div class="line"><span class="lineno">  215</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="game__vars_8c.html#a940f635da7254d2a02a607dab0139dfd">gFrames</a> == 855)</div>
+<div class="line"><span class="lineno">  216</span>    {</div>
+<div class="line"><span class="lineno">  217</span>        <a class="code hl_function" href="#abd84a8f7942f738b8f807b5c83e766dc">softClearPlane</a>();</div>
+<div class="line"><span class="lineno">  218</span> </div>
+<div class="line"><span class="lineno">  219</span>        PAL_setColors(0, palette_black, 64, DMA);</div>
+<div class="line"><span class="lineno">  220</span>        VDP_loadTileSet(goro_a.tileset, <a class="code hl_variable" href="game__vars_8c.html#ac5c9f7210c7cb249636b7f1dc0121b71">gInd_tileset</a>, DMA);</div>
+<div class="line"><span class="lineno">  221</span>        VDP_setTileMapEx(BG_A, goro_a.tilemap, TILE_ATTR_FULL(PAL0, FALSE, FALSE, FALSE, <a class="code hl_variable" href="game__vars_8c.html#ac5c9f7210c7cb249636b7f1dc0121b71">gInd_tileset</a>), 0, 0, 0, 0, 40, 28, DMA_QUEUE);</div>
+<div class="line"><span class="lineno">  222</span>        PAL_setPalette(PAL0, goro_a.palette-&gt;data, DMA);</div>
+<div class="line"><span class="lineno">  223</span>        <a class="code hl_variable" href="game__vars_8c.html#ac5c9f7210c7cb249636b7f1dc0121b71">gInd_tileset</a> += goro_a.tileset-&gt;numTile;</div>
+<div class="line"><span class="lineno">  224</span> </div>
+<div class="line"><span class="lineno">  225</span>        VDP_setTextPlane(BG_B);</div>
+<div class="line"><span class="lineno">  226</span>        VDP_loadFontData(font_a.tiles, font_a.numTile, CPU);</div>
+<div class="line"><span class="lineno">  227</span>        PAL_setPalette(PAL1, font_a_pal.data, DMA);</div>
+<div class="line"><span class="lineno">  228</span>        VDP_setTextPalette(PAL1);</div>
+<div class="line"><span class="lineno">  229</span>    }</div>
+<div class="line"><span class="lineno">  230</span> </div>
+<div class="line"><span class="lineno">  231</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="game__vars_8c.html#a940f635da7254d2a02a607dab0139dfd">gFrames</a> == 930)</div>
+<div class="line"><span class="lineno">  232</span>    {</div>
+<div class="line"><span class="lineno">  233</span>        <span class="keywordflow">for</span> (u16 i = 0; i &lt; <span class="keyword">sizeof</span>(<a class="code hl_variable" href="bio__textlines_8c.html#a2e581eeb9a56303299f538d905ad5126">goroLines</a>[0]); i++)</div>
+<div class="line"><span class="lineno">  234</span>        {</div>
+<div class="line"><span class="lineno">  235</span>            <a class="code hl_function" href="typewriter__printer_8c.html#a7b99e213b81356a73cbd48457b5877ea">typewriterEffect</a>(<a class="code hl_variable" href="bio__textlines_8c.html#a2e581eeb9a56303299f538d905ad5126">goroLines</a>[i].text, <a class="code hl_variable" href="bio__textlines_8c.html#a2e581eeb9a56303299f538d905ad5126">goroLines</a>[i].x, <a class="code hl_variable" href="bio__textlines_8c.html#a2e581eeb9a56303299f538d905ad5126">goroLines</a>[i].y, 0, BG_B, PAL1);</div>
+<div class="line"><span class="lineno">  236</span>        }</div>
+<div class="line"><span class="lineno">  237</span>    }</div>
+<div class="line"><span class="lineno">  238</span> </div>
+<div class="line"><span class="lineno">  239</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="game__vars_8c.html#a940f635da7254d2a02a607dab0139dfd">gFrames</a> == 1280)</div>
+<div class="line"><span class="lineno">  240</span>    {</div>
+<div class="line"><span class="lineno">  241</span>        PAL_setColors(0, palette_black, 64, DMA);</div>
+<div class="line"><span class="lineno">  242</span>        SND_PCM4_stopPlay(SOUND_PCM_CH1);</div>
+<div class="line"><span class="lineno">  243</span>    }</div>
+<div class="line"><span class="lineno">  244</span>}</div>
+<div class="ttc" id="abio__textlines_8c_html_a2e581eeb9a56303299f538d905ad5126"><div class="ttname"><a href="bio__textlines_8c.html#a2e581eeb9a56303299f538d905ad5126">goroLines</a></div><div class="ttdeci">const TextLine goroLines[]</div><div class="ttdef"><b>Definição</b> <a href="bio__textlines_8c_source.html#l00105">bio_textlines.c:105</a></div></div>
+<div class="ttc" id="atypewriter__printer_8c_html_a7b99e213b81356a73cbd48457b5877ea"><div class="ttname"><a href="typewriter__printer_8c.html#a7b99e213b81356a73cbd48457b5877ea">typewriterEffect</a></div><div class="ttdeci">void typewriterEffect(const char *text, u16 x, u16 y, u16 delay, VDPPlane plane, u16 numPal)</div><div class="ttdef"><b>Definição</b> <a href="typewriter__printer_8c_source.html#l00003">typewriter_printer.c:3</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+Este é o diagrama das funções utilizadas por essa função:</div>
+<div class="dyncontent">
+<div class="center"><img src="intro__demo__room_8c_a32183ed63a770a246f599a6c8cf6ca32_cgraph.png" border="0" usemap="#aintro__demo__room_8c_a32183ed63a770a246f599a6c8cf6ca32_cgraph" alt=""/></div>
+<map name="aintro__demo__room_8c_a32183ed63a770a246f599a6c8cf6ca32_cgraph" id="aintro__demo__room_8c_a32183ed63a770a246f599a6c8cf6ca32_cgraph">
+<area shape="rect" title=" " alt="" coords="5,32,157,62"/>
+<area shape="rect" href="intro__demo__room_8c.html#abd84a8f7942f738b8f807b5c83e766dc" title=" " alt="" coords="210,5,321,35"/>
+<area shape="poly" title=" " alt="" coords="157,33,194,28,195,33,158,38"/>
+<area shape="rect" href="typewriter__printer_8c.html#a7b99e213b81356a73cbd48457b5877ea" title=" " alt="" coords="205,59,326,88"/>
+<area shape="poly" title=" " alt="" coords="158,55,189,60,189,65,157,60"/>
+</map>
+</div>
+<div class="dynheader">
+Esse é o diagrama das funções que utilizam essa função:</div>
+<div class="dyncontent">
+<div class="center"><img src="intro__demo__room_8c_a32183ed63a770a246f599a6c8cf6ca32_icgraph.png" border="0" usemap="#aintro__demo__room_8c_a32183ed63a770a246f599a6c8cf6ca32_icgraph" alt=""/></div>
+<map name="aintro__demo__room_8c_a32183ed63a770a246f599a6c8cf6ca32_icgraph" id="aintro__demo__room_8c_a32183ed63a770a246f599a6c8cf6ca32_icgraph">
+<area shape="rect" title=" " alt="" coords="252,5,403,35"/>
+<area shape="rect" href="intro__demo__room_8c.html#ac46ea98ecb7218ef78a7d4cd50896175" title=" " alt="" coords="105,5,204,35"/>
+<area shape="poly" title=" " alt="" coords="236,23,204,23,204,18,236,18"/>
+<area shape="rect" href="main_8c.html#af2eb07b318158270774fcc967eec3c80" title=" " alt="" coords="5,5,57,35"/>
+<area shape="poly" title=" " alt="" coords="89,23,57,23,57,18,89,18"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a2791cbdef785b738e2b65514d8a90618" name="a2791cbdef785b738e2b65514d8a90618"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2791cbdef785b738e2b65514d8a90618">&#9670;&#160;</a></span>loadMidwayTitleMKScreen()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void loadMidwayTitleMKScreen </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definição na linha <a class="el" href="intro__demo__room_8c_source.html#l00160">160</a> do arquivo <a class="el" href="intro__demo__room_8c_source.html">intro_demo_room.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  161</span>{</div>
+<div class="line"><span class="lineno">  162</span>    <span class="comment">// TELA MIDWAY</span></div>
+<div class="line"><span class="lineno">  163</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="game__vars_8c.html#a940f635da7254d2a02a607dab0139dfd">gFrames</a> == 230)</div>
+<div class="line"><span class="lineno">  164</span>    {</div>
+<div class="line"><span class="lineno">  165</span>        <a class="code hl_function" href="#abd84a8f7942f738b8f807b5c83e766dc">softClearPlane</a>();</div>
+<div class="line"><span class="lineno">  166</span>        XGM2_stop();</div>
+<div class="line"><span class="lineno">  167</span>        XGM2_playPCM(mus_midway, <span class="keyword">sizeof</span>(mus_midway), SOUND_PCM_CH1_MSK);</div>
+<div class="line"><span class="lineno">  168</span> </div>
+<div class="line"><span class="lineno">  169</span>        VDP_loadTileSet(midway.tileset, <a class="code hl_variable" href="game__vars_8c.html#ac5c9f7210c7cb249636b7f1dc0121b71">gInd_tileset</a>, DMA);</div>
+<div class="line"><span class="lineno">  170</span>        VDP_setTileMapEx(BG_A, midway.tilemap, TILE_ATTR_FULL(PAL0, FALSE, FALSE, FALSE, <a class="code hl_variable" href="game__vars_8c.html#ac5c9f7210c7cb249636b7f1dc0121b71">gInd_tileset</a>), 0, 0, 0, 0, 40, 28, DMA_QUEUE);</div>
+<div class="line"><span class="lineno">  171</span>        PAL_setPalette(PAL0, midway.palette-&gt;data, DMA);</div>
+<div class="line"><span class="lineno">  172</span>        <a class="code hl_variable" href="game__vars_8c.html#ac5c9f7210c7cb249636b7f1dc0121b71">gInd_tileset</a> += midway.tileset-&gt;numTile;</div>
+<div class="line"><span class="lineno">  173</span>    }</div>
+<div class="line"><span class="lineno">  174</span> </div>
+<div class="line"><span class="lineno">  175</span>    <span class="comment">// TELA TITULO MK</span></div>
+<div class="line"><span class="lineno">  176</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="game__vars_8c.html#a940f635da7254d2a02a607dab0139dfd">gFrames</a> == 370)</div>
+<div class="line"><span class="lineno">  177</span>    {</div>
+<div class="line"><span class="lineno">  178</span>        <a class="code hl_function" href="#abd84a8f7942f738b8f807b5c83e766dc">softClearPlane</a>();</div>
+<div class="line"><span class="lineno">  179</span> </div>
+<div class="line"><span class="lineno">  180</span>        XGM2_stop();</div>
+<div class="line"><span class="lineno">  181</span>        XGM2_playPCM(mus_title, <span class="keyword">sizeof</span>(mus_title), SOUND_PCM_CH1_MSK);</div>
+<div class="line"><span class="lineno">  182</span> </div>
+<div class="line"><span class="lineno">  183</span>        VDP_loadTileSet(mk_title.tileset, <a class="code hl_variable" href="game__vars_8c.html#ac5c9f7210c7cb249636b7f1dc0121b71">gInd_tileset</a>, DMA);</div>
+<div class="line"><span class="lineno">  184</span>        VDP_setTileMapEx(BG_A, mk_title.tilemap, TILE_ATTR_FULL(PAL0, FALSE, FALSE, FALSE, <a class="code hl_variable" href="game__vars_8c.html#ac5c9f7210c7cb249636b7f1dc0121b71">gInd_tileset</a>), 0, 0, 0, 0, 40, 28, DMA_QUEUE);</div>
+<div class="line"><span class="lineno">  185</span>        PAL_setPalette(PAL0, mk_title.palette-&gt;data, DMA);</div>
+<div class="line"><span class="lineno">  186</span>        <a class="code hl_variable" href="game__vars_8c.html#ac5c9f7210c7cb249636b7f1dc0121b71">gInd_tileset</a> += mk_title.tileset-&gt;numTile;</div>
+<div class="line"><span class="lineno">  187</span> </div>
+<div class="line"><span class="lineno">  188</span>        <span class="comment">// TODO: Refazer essa parte para usar mk_title_b</span></div>
+<div class="line"><span class="lineno">  189</span>        <span class="comment">//  VDP_loadTileSet(mk_title_b.tileset, gInd_tileset, DMA);</span></div>
+<div class="line"><span class="lineno">  190</span>        <span class="comment">//  VDP_setTileMapEx(BG_B, mk_title_b.tilemap, TILE_ATTR_FULL(PAL1, TRUE, FALSE, FALSE, gInd_tileset), 0, 0, 0, 0, 40, 28, DMA_QUEUE);</span></div>
+<div class="line"><span class="lineno">  191</span>        <span class="comment">//  PAL_setPalette(PAL1, mk_title_b.palette-&gt;data, DMA);</span></div>
+<div class="line"><span class="lineno">  192</span>        <span class="comment">//  gInd_tileset += mk_title_b.tileset-&gt;numTile;</span></div>
+<div class="line"><span class="lineno">  193</span>    }</div>
+<div class="line"><span class="lineno">  194</span>    <a class="code hl_variable" href="game__vars_8c.html#a7db0859ee62e2447701751d5980ede35">gPodeMover</a> = TRUE;</div>
+<div class="line"><span class="lineno">  195</span>}</div>
+<div class="ttc" id="agame__vars_8c_html_a7db0859ee62e2447701751d5980ede35"><div class="ttname"><a href="game__vars_8c.html#a7db0859ee62e2447701751d5980ede35">gPodeMover</a></div><div class="ttdeci">bool gPodeMover</div><div class="ttdef"><b>Definição</b> <a href="game__vars_8c_source.html#l00009">game_vars.c:9</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+Este é o diagrama das funções utilizadas por essa função:</div>
+<div class="dyncontent">
+<div class="center"><img src="intro__demo__room_8c_a2791cbdef785b738e2b65514d8a90618_cgraph.png" border="0" usemap="#aintro__demo__room_8c_a2791cbdef785b738e2b65514d8a90618_cgraph" alt=""/></div>
+<map name="aintro__demo__room_8c_a2791cbdef785b738e2b65514d8a90618_cgraph" id="aintro__demo__room_8c_a2791cbdef785b738e2b65514d8a90618_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,188,35"/>
+<area shape="rect" href="intro__demo__room_8c.html#abd84a8f7942f738b8f807b5c83e766dc" title=" " alt="" coords="236,5,347,35"/>
+<area shape="poly" title=" " alt="" coords="188,18,220,18,220,23,188,23"/>
+</map>
+</div>
+<div class="dynheader">
+Esse é o diagrama das funções que utilizam essa função:</div>
+<div class="dyncontent">
+<div class="center"><img src="intro__demo__room_8c_a2791cbdef785b738e2b65514d8a90618_icgraph.png" border="0" usemap="#aintro__demo__room_8c_a2791cbdef785b738e2b65514d8a90618_icgraph" alt=""/></div>
+<map name="aintro__demo__room_8c_a2791cbdef785b738e2b65514d8a90618_icgraph" id="aintro__demo__room_8c_a2791cbdef785b738e2b65514d8a90618_icgraph">
+<area shape="rect" title=" " alt="" coords="252,5,434,35"/>
+<area shape="rect" href="intro__demo__room_8c.html#ac46ea98ecb7218ef78a7d4cd50896175" title=" " alt="" coords="105,5,204,35"/>
+<area shape="poly" title=" " alt="" coords="236,23,204,23,204,18,236,18"/>
+<area shape="rect" href="main_8c.html#af2eb07b318158270774fcc967eec3c80" title=" " alt="" coords="5,5,57,35"/>
+<area shape="poly" title=" " alt="" coords="89,23,57,23,57,18,89,18"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ac46ea98ecb7218ef78a7d4cd50896175" name="ac46ea98ecb7218ef78a7d4cd50896175"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac46ea98ecb7218ef78a7d4cd50896175">&#9670;&#160;</a></span>processIntro()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void processIntro </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definição na linha <a class="el" href="intro__demo__room_8c_source.html#l00055">55</a> do arquivo <a class="el" href="intro__demo__room_8c_source.html">intro_demo_room.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   56</span>{</div>
+<div class="line"><span class="lineno">   57</span>    <span class="keywordtype">bool</span> sair = FALSE;</div>
+<div class="line"><span class="lineno">   58</span> </div>
+<div class="line"><span class="lineno">   59</span>    <span class="keywordflow">while</span> (!sair)</div>
+<div class="line"><span class="lineno">   60</span>    {</div>
+<div class="line"><span class="lineno">   61</span>        <a class="code hl_function" href="input__system_8c.html#a2656744a9ebd96a8887f55208c53bc6e">inputSystem</a>();</div>
+<div class="line"><span class="lineno">   62</span>        <a class="code hl_variable" href="game__vars_8c.html#a940f635da7254d2a02a607dab0139dfd">gFrames</a>++;</div>
+<div class="line"><span class="lineno">   63</span> </div>
+<div class="line"><span class="lineno">   64</span>        <a class="code hl_function" href="#aaf01eb7af118af02997ccd40dfaebdaa">loadBrainAtWorkScreen</a>();</div>
+<div class="line"><span class="lineno">   65</span> </div>
+<div class="line"><span class="lineno">   66</span>        <a class="code hl_function" href="#a2791cbdef785b738e2b65514d8a90618">loadMidwayTitleMKScreen</a>();</div>
+<div class="line"><span class="lineno">   67</span> </div>
+<div class="line"><span class="lineno">   68</span>        <a class="code hl_function" href="#a32183ed63a770a246f599a6c8cf6ca32">loadGoroLivesScreen</a>();</div>
+<div class="line"><span class="lineno">   69</span> </div>
+<div class="line"><span class="lineno">   70</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="game__vars_8c.html#a940f635da7254d2a02a607dab0139dfd">gFrames</a> == 1300)</div>
+<div class="line"><span class="lineno">   71</span>        {</div>
+<div class="line"><span class="lineno">   72</span>            VDP_waitVSync();</div>
+<div class="line"><span class="lineno">   73</span> </div>
+<div class="line"><span class="lineno">   74</span>            <span class="keywordflow">switch</span> (<a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[0].<span class="keywordtype">id</span>) <span class="comment">// preguiça de criar uma variável só pra isso</span></div>
+<div class="line"><span class="lineno">   75</span>            {</div>
+<div class="line"><span class="lineno">   76</span>            <span class="keywordflow">case</span> JOHNNY_CAGE:</div>
+<div class="line"><span class="lineno">   77</span>                <a class="code hl_function" href="#a152c80724646f7fe60348e27f4a8ca2c">loadBioScreen</a>(&amp;fighterBios[<a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[0].<span class="keywordtype">id</span>]);</div>
+<div class="line"><span class="lineno">   78</span>                <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[0].id = KANO;</div>
+<div class="line"><span class="lineno">   79</span>                <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">   80</span>            <span class="keywordflow">case</span> KANO:</div>
+<div class="line"><span class="lineno">   81</span>                <a class="code hl_function" href="#a152c80724646f7fe60348e27f4a8ca2c">loadBioScreen</a>(&amp;fighterBios[<a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[0].<span class="keywordtype">id</span>]);</div>
+<div class="line"><span class="lineno">   82</span>                <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[0].id = RAIDEN;</div>
+<div class="line"><span class="lineno">   83</span>                <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">   84</span>            <span class="keywordflow">case</span> RAIDEN:</div>
+<div class="line"><span class="lineno">   85</span>                <a class="code hl_function" href="#a152c80724646f7fe60348e27f4a8ca2c">loadBioScreen</a>(&amp;fighterBios[<a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[0].<span class="keywordtype">id</span>]);</div>
+<div class="line"><span class="lineno">   86</span>                <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[0].id = LIU_KANG;</div>
+<div class="line"><span class="lineno">   87</span>                <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">   88</span>            <span class="keywordflow">case</span> LIU_KANG:</div>
+<div class="line"><span class="lineno">   89</span>                <a class="code hl_function" href="#a152c80724646f7fe60348e27f4a8ca2c">loadBioScreen</a>(&amp;fighterBios[<a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[0].<span class="keywordtype">id</span>]);</div>
+<div class="line"><span class="lineno">   90</span>                <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[0].id = SUBZERO;</div>
+<div class="line"><span class="lineno">   91</span>                <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">   92</span>            <span class="keywordflow">case</span> SUBZERO:</div>
+<div class="line"><span class="lineno">   93</span>                <a class="code hl_function" href="#a152c80724646f7fe60348e27f4a8ca2c">loadBioScreen</a>(&amp;fighterBios[<a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[0].<span class="keywordtype">id</span>]);</div>
+<div class="line"><span class="lineno">   94</span>                <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[0].id = SCORPION;</div>
+<div class="line"><span class="lineno">   95</span>                <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">   96</span>            <span class="keywordflow">case</span> SCORPION:</div>
+<div class="line"><span class="lineno">   97</span>                <a class="code hl_function" href="#a152c80724646f7fe60348e27f4a8ca2c">loadBioScreen</a>(&amp;fighterBios[<a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[0].<span class="keywordtype">id</span>]);</div>
+<div class="line"><span class="lineno">   98</span>                <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[0].id = SONYA;</div>
+<div class="line"><span class="lineno">   99</span>                <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  100</span>            <span class="keywordflow">case</span> SONYA:</div>
+<div class="line"><span class="lineno">  101</span>                <a class="code hl_function" href="#a152c80724646f7fe60348e27f4a8ca2c">loadBioScreen</a>(&amp;fighterBios[<a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[0].<span class="keywordtype">id</span>]);</div>
+<div class="line"><span class="lineno">  102</span>                <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[0].id = JOHNNY_CAGE;</div>
+<div class="line"><span class="lineno">  103</span>                <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  104</span>            <span class="keywordflow">default</span>:</div>
+<div class="line"><span class="lineno">  105</span>                <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  106</span>            }</div>
+<div class="line"><span class="lineno">  107</span>        }</div>
+<div class="line"><span class="lineno">  108</span> </div>
+<div class="line"><span class="lineno">  109</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="game__vars_8c.html#a940f635da7254d2a02a607dab0139dfd">gFrames</a> &gt; 2100)</div>
+<div class="line"><span class="lineno">  110</span>        {</div>
+<div class="line"><span class="lineno">  111</span>            PAL_fadeOut(0, 15, 5, FALSE);</div>
+<div class="line"><span class="lineno">  112</span>            PAL_fadeOut(16, 30, 5, FALSE);</div>
+<div class="line"><span class="lineno">  113</span>            SPR_reset();</div>
+<div class="line"><span class="lineno">  114</span>            XGM2_stop();</div>
+<div class="line"><span class="lineno">  115</span>            <a class="code hl_function" href="#abd84a8f7942f738b8f807b5c83e766dc">softClearPlane</a>();</div>
+<div class="line"><span class="lineno">  116</span>            <a class="code hl_variable" href="game__vars_8c.html#a940f635da7254d2a02a607dab0139dfd">gFrames</a> = 0;</div>
+<div class="line"><span class="lineno">  117</span>        }</div>
+<div class="line"><span class="lineno">  118</span> </div>
+<div class="line"><span class="lineno">  119</span>        <span class="comment">// start só funciona a partir da tela título do MK ...</span></div>
+<div class="line"><span class="lineno">  120</span>        <span class="keywordflow">if</span> ((<a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[0].key_JOY_START_status &gt; 0 || <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[1].key_JOY_START_status &gt; 0) &amp;&amp; <a class="code hl_variable" href="game__vars_8c.html#a940f635da7254d2a02a607dab0139dfd">gFrames</a> &gt; 410)</div>
+<div class="line"><span class="lineno">  121</span>        {</div>
+<div class="line"><span class="lineno">  122</span>            sair = TRUE;</div>
+<div class="line"><span class="lineno">  123</span>        }</div>
+<div class="line"><span class="lineno">  124</span> </div>
+<div class="line"><span class="lineno">  125</span>        SPR_update(); <span class="comment">// Atualização dos sprites na tela</span></div>
+<div class="line"><span class="lineno">  126</span>        SYS_doVBlankProcess();</div>
+<div class="line"><span class="lineno">  127</span>    }</div>
+<div class="line"><span class="lineno">  128</span>    <a class="code hl_function" href="#a46851a69b6140500d8f59ad9b1683b01">saida</a>();</div>
+<div class="line"><span class="lineno">  129</span>}</div>
+<div class="ttc" id="agame__vars_8c_html_a5135cf03aefd90677db09304781dbb8c"><div class="ttname"><a href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a></div><div class="ttdeci">Player player[2]</div><div class="ttdef"><b>Definição</b> <a href="game__vars_8c_source.html#l00022">game_vars.c:22</a></div></div>
+<div class="ttc" id="ainput__system_8c_html_a2656744a9ebd96a8887f55208c53bc6e"><div class="ttname"><a href="input__system_8c.html#a2656744a9ebd96a8887f55208c53bc6e">inputSystem</a></div><div class="ttdeci">void inputSystem()</div><div class="ttdef"><b>Definição</b> <a href="input__system_8c_source.html#l00004">input_system.c:4</a></div></div>
+<div class="ttc" id="aintro__demo__room_8c_html_a152c80724646f7fe60348e27f4a8ca2c"><div class="ttname"><a href="#a152c80724646f7fe60348e27f4a8ca2c">loadBioScreen</a></div><div class="ttdeci">void loadBioScreen(const BioData *data)</div><div class="ttdef"><b>Definição</b> <a href="intro__demo__room_8c_source.html#l00246">intro_demo_room.c:246</a></div></div>
+<div class="ttc" id="aintro__demo__room_8c_html_a2791cbdef785b738e2b65514d8a90618"><div class="ttname"><a href="#a2791cbdef785b738e2b65514d8a90618">loadMidwayTitleMKScreen</a></div><div class="ttdeci">void loadMidwayTitleMKScreen()</div><div class="ttdef"><b>Definição</b> <a href="intro__demo__room_8c_source.html#l00160">intro_demo_room.c:160</a></div></div>
+<div class="ttc" id="aintro__demo__room_8c_html_a32183ed63a770a246f599a6c8cf6ca32"><div class="ttname"><a href="#a32183ed63a770a246f599a6c8cf6ca32">loadGoroLivesScreen</a></div><div class="ttdeci">void loadGoroLivesScreen()</div><div class="ttdef"><b>Definição</b> <a href="intro__demo__room_8c_source.html#l00198">intro_demo_room.c:198</a></div></div>
+<div class="ttc" id="aintro__demo__room_8c_html_a46851a69b6140500d8f59ad9b1683b01"><div class="ttname"><a href="#a46851a69b6140500d8f59ad9b1683b01">saida</a></div><div class="ttdeci">void saida()</div><div class="ttdef"><b>Definição</b> <a href="intro__demo__room_8c_source.html#l00030">intro_demo_room.c:30</a></div></div>
+<div class="ttc" id="aintro__demo__room_8c_html_aaf01eb7af118af02997ccd40dfaebdaa"><div class="ttname"><a href="#aaf01eb7af118af02997ccd40dfaebdaa">loadBrainAtWorkScreen</a></div><div class="ttdeci">void loadBrainAtWorkScreen()</div><div class="ttdef"><b>Definição</b> <a href="intro__demo__room_8c_source.html#l00132">intro_demo_room.c:132</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+Este é o diagrama das funções utilizadas por essa função:</div>
+<div class="dyncontent">
+<div class="center"><img src="intro__demo__room_8c_ac46ea98ecb7218ef78a7d4cd50896175_cgraph.png" border="0" usemap="#aintro__demo__room_8c_ac46ea98ecb7218ef78a7d4cd50896175_cgraph" alt=""/></div>
+<map name="aintro__demo__room_8c_ac46ea98ecb7218ef78a7d4cd50896175_cgraph" id="aintro__demo__room_8c_ac46ea98ecb7218ef78a7d4cd50896175_cgraph">
+<area shape="rect" title=" " alt="" coords="5,163,105,192"/>
+<area shape="rect" href="input__system_8c.html#a2656744a9ebd96a8887f55208c53bc6e" title=" " alt="" coords="195,5,293,35"/>
+<area shape="poly" title=" " alt="" coords="61,161,95,104,120,72,151,45,179,31,181,35,154,49,124,76,99,107,66,163"/>
+<area shape="rect" href="intro__demo__room_8c.html#a152c80724646f7fe60348e27f4a8ca2c" title=" " alt="" coords="189,59,299,88"/>
+<area shape="poly" title=" " alt="" coords="72,160,108,132,151,104,178,92,180,97,154,109,111,137,76,164"/>
+<area shape="rect" href="intro__demo__room_8c.html#abd84a8f7942f738b8f807b5c83e766dc" title=" " alt="" coords="411,189,522,219"/>
+<area shape="poly" title=" " alt="" coords="102,159,152,148,244,138,285,140,336,148,382,162,424,180,422,184,380,167,334,153,284,145,244,144,153,153,103,165"/>
+<area shape="rect" href="intro__demo__room_8c.html#aaf01eb7af118af02997ccd40dfaebdaa" title=" " alt="" coords="160,163,328,192"/>
+<area shape="poly" title=" " alt="" coords="105,175,144,175,144,180,105,180"/>
+<area shape="rect" href="intro__demo__room_8c.html#a32183ed63a770a246f599a6c8cf6ca32" title=" " alt="" coords="168,323,320,352"/>
+<area shape="poly" title=" " alt="" coords="66,191,98,249,124,281,154,309,161,313,159,318,151,313,120,285,94,252,61,194"/>
+<area shape="rect" href="intro__demo__room_8c.html#a2791cbdef785b738e2b65514d8a90618" title=" " alt="" coords="153,216,335,246"/>
+<area shape="poly" title=" " alt="" coords="106,189,175,209,173,214,105,194"/>
+<area shape="rect" href="intro__demo__room_8c.html#a46851a69b6140500d8f59ad9b1683b01" title=" " alt="" coords="218,269,270,299"/>
+<area shape="poly" title=" " alt="" coords="72,191,108,223,154,255,203,273,202,278,151,260,104,227,69,195"/>
+<area shape="poly" title=" " alt="" coords="295,86,336,104,392,140,438,177,435,181,389,145,334,109,293,91"/>
+<area shape="rect" href="typewriter__printer_8c.html#ad6e8362eb9b82d100d479b769a6acf9c" title=" " alt="" coords="383,59,550,88"/>
+<area shape="poly" title=" " alt="" coords="299,71,367,71,367,76,299,76"/>
+<area shape="poly" title=" " alt="" coords="329,185,396,193,395,198,328,190"/>
+<area shape="poly" title=" " alt="" coords="308,320,334,308,392,269,438,228,442,232,395,274,336,313,310,325"/>
+<area shape="rect" href="typewriter__printer_8c.html#a7b99e213b81356a73cbd48457b5877ea" title=" " alt="" coords="406,323,527,352"/>
+<area shape="poly" title=" " alt="" coords="320,335,390,335,390,340,320,340"/>
+<area shape="poly" title=" " alt="" coords="335,217,396,210,396,215,336,223"/>
+<area shape="poly" title=" " alt="" coords="270,275,334,255,415,223,417,228,336,260,271,280"/>
+</map>
+</div>
+<div class="dynheader">
+Esse é o diagrama das funções que utilizam essa função:</div>
+<div class="dyncontent">
+<div class="center"><img src="intro__demo__room_8c_ac46ea98ecb7218ef78a7d4cd50896175_icgraph.png" border="0" usemap="#aintro__demo__room_8c_ac46ea98ecb7218ef78a7d4cd50896175_icgraph" alt=""/></div>
+<map name="aintro__demo__room_8c_ac46ea98ecb7218ef78a7d4cd50896175_icgraph" id="aintro__demo__room_8c_ac46ea98ecb7218ef78a7d4cd50896175_icgraph">
+<area shape="rect" title=" " alt="" coords="105,5,204,35"/>
+<area shape="rect" href="main_8c.html#af2eb07b318158270774fcc967eec3c80" title=" " alt="" coords="5,5,57,35"/>
+<area shape="poly" title=" " alt="" coords="89,23,57,23,57,18,89,18"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a46851a69b6140500d8f59ad9b1683b01" name="a46851a69b6140500d8f59ad9b1683b01"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a46851a69b6140500d8f59ad9b1683b01">&#9670;&#160;</a></span>saida()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void saida </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definição na linha <a class="el" href="intro__demo__room_8c_source.html#l00030">30</a> do arquivo <a class="el" href="intro__demo__room_8c_source.html">intro_demo_room.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   31</span>{</div>
+<div class="line"><span class="lineno">   32</span>    SPR_clear();</div>
+<div class="line"><span class="lineno">   33</span>    PAL_fadeOut(0, 15, 5, FALSE);</div>
+<div class="line"><span class="lineno">   34</span>    PAL_fadeOut(16, 30, 5, FALSE);</div>
+<div class="line"><span class="lineno">   35</span>    PAL_setColors(0, palette_black, 64, DMA);</div>
+<div class="line"><span class="lineno">   36</span>    XGM2_stop();</div>
+<div class="line"><span class="lineno">   37</span>    SND_PCM4_stopPlay(SOUND_PCM_CH1);</div>
+<div class="line"><span class="lineno">   38</span>    SPR_reset();</div>
+<div class="line"><span class="lineno">   39</span>    <a class="code hl_variable" href="game__vars_8c.html#a940f635da7254d2a02a607dab0139dfd">gFrames</a> = 0;</div>
+<div class="line"><span class="lineno">   40</span>    <a class="code hl_variable" href="game__vars_8c.html#a784a617fe12ac8976bbae900c2343a36">gRoom</a> = TELA_START;</div>
+<div class="line"><span class="lineno">   41</span>    <a class="code hl_function" href="#abd84a8f7942f738b8f807b5c83e766dc">softClearPlane</a>();</div>
+<div class="line"><span class="lineno">   42</span>}</div>
+<div class="ttc" id="agame__vars_8c_html_a784a617fe12ac8976bbae900c2343a36"><div class="ttname"><a href="game__vars_8c.html#a784a617fe12ac8976bbae900c2343a36">gRoom</a></div><div class="ttdeci">u8 gRoom</div><div class="ttdef"><b>Definição</b> <a href="game__vars_8c_source.html#l00010">game_vars.c:10</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+Este é o diagrama das funções utilizadas por essa função:</div>
+<div class="dyncontent">
+<div class="center"><img src="intro__demo__room_8c_a46851a69b6140500d8f59ad9b1683b01_cgraph.png" border="0" usemap="#aintro__demo__room_8c_a46851a69b6140500d8f59ad9b1683b01_cgraph" alt=""/></div>
+<map name="aintro__demo__room_8c_a46851a69b6140500d8f59ad9b1683b01_cgraph" id="aintro__demo__room_8c_a46851a69b6140500d8f59ad9b1683b01_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,58,35"/>
+<area shape="rect" href="intro__demo__room_8c.html#abd84a8f7942f738b8f807b5c83e766dc" title=" " alt="" coords="106,5,217,35"/>
+<area shape="poly" title=" " alt="" coords="58,18,90,18,90,23,58,23"/>
+</map>
+</div>
+<div class="dynheader">
+Esse é o diagrama das funções que utilizam essa função:</div>
+<div class="dyncontent">
+<div class="center"><img src="intro__demo__room_8c_a46851a69b6140500d8f59ad9b1683b01_icgraph.png" border="0" usemap="#aintro__demo__room_8c_a46851a69b6140500d8f59ad9b1683b01_icgraph" alt=""/></div>
+<map name="aintro__demo__room_8c_a46851a69b6140500d8f59ad9b1683b01_icgraph" id="aintro__demo__room_8c_a46851a69b6140500d8f59ad9b1683b01_icgraph">
+<area shape="rect" title=" " alt="" coords="252,5,304,35"/>
+<area shape="rect" href="intro__demo__room_8c.html#ac46ea98ecb7218ef78a7d4cd50896175" title=" " alt="" coords="105,5,204,35"/>
+<area shape="poly" title=" " alt="" coords="236,23,204,23,204,18,236,18"/>
+<area shape="rect" href="main_8c.html#af2eb07b318158270774fcc967eec3c80" title=" " alt="" coords="5,5,57,35"/>
+<area shape="poly" title=" " alt="" coords="89,23,57,23,57,18,89,18"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="abd84a8f7942f738b8f807b5c83e766dc" name="abd84a8f7942f738b8f807b5c83e766dc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abd84a8f7942f738b8f807b5c83e766dc">&#9670;&#160;</a></span>softClearPlane()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void softClearPlane </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definição na linha <a class="el" href="intro__demo__room_8c_source.html#l00044">44</a> do arquivo <a class="el" href="intro__demo__room_8c_source.html">intro_demo_room.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   45</span>{</div>
+<div class="line"><span class="lineno">   46</span>    VDP_waitVSync();</div>
+<div class="line"><span class="lineno">   47</span>    SYS_disableInts();</div>
+<div class="line"><span class="lineno">   48</span>    VDP_clearPlane(BG_A, TRUE);</div>
+<div class="line"><span class="lineno">   49</span>    VDP_clearPlane(BG_B, TRUE);</div>
+<div class="line"><span class="lineno">   50</span>    VDP_setBackgroundColor(0); <span class="comment">// Define preto</span></div>
+<div class="line"><span class="lineno">   51</span>    <a class="code hl_variable" href="game__vars_8c.html#ac5c9f7210c7cb249636b7f1dc0121b71">gInd_tileset</a> = TILE_USER_INDEX;</div>
+<div class="line"><span class="lineno">   52</span>    SYS_enableInts();</div>
+<div class="line"><span class="lineno">   53</span>}</div>
+</div><!-- fragment --><div class="dynheader">
+Esse é o diagrama das funções que utilizam essa função:</div>
+<div class="dyncontent">
+<div class="center"><img src="intro__demo__room_8c_abd84a8f7942f738b8f807b5c83e766dc_icgraph.png" border="0" usemap="#aintro__demo__room_8c_abd84a8f7942f738b8f807b5c83e766dc_icgraph" alt=""/></div>
+<map name="aintro__demo__room_8c_abd84a8f7942f738b8f807b5c83e766dc_icgraph" id="aintro__demo__room_8c_abd84a8f7942f738b8f807b5c83e766dc_icgraph">
+<area shape="rect" title=" " alt="" coords="482,136,594,166"/>
+<area shape="rect" href="intro__demo__room_8c.html#a152c80724646f7fe60348e27f4a8ca2c" title=" " alt="" coords="289,5,398,35"/>
+<area shape="poly" title=" " alt="" coords="513,127,477,90,433,56,396,38,398,33,436,51,481,86,517,123"/>
+<area shape="rect" href="intro__demo__room_8c.html#ac46ea98ecb7218ef78a7d4cd50896175" title=" " alt="" coords="105,136,204,166"/>
+<area shape="poly" title=" " alt="" coords="501,130,469,113,434,100,383,89,343,85,303,89,253,100,212,117,178,138,175,133,209,112,251,95,302,84,343,80,384,84,435,95,471,108,503,125"/>
+<area shape="rect" href="intro__demo__room_8c.html#aaf01eb7af118af02997ccd40dfaebdaa" title=" " alt="" coords="259,109,427,139"/>
+<area shape="poly" title=" " alt="" coords="467,144,428,138,428,133,467,139"/>
+<area shape="rect" href="intro__demo__room_8c.html#a32183ed63a770a246f599a6c8cf6ca32" title=" " alt="" coords="268,163,419,192"/>
+<area shape="poly" title=" " alt="" coords="467,163,420,170,419,164,467,158"/>
+<area shape="rect" href="intro__demo__room_8c.html#a2791cbdef785b738e2b65514d8a90618" title=" " alt="" coords="252,216,434,246"/>
+<area shape="poly" title=" " alt="" coords="498,176,435,207,403,218,402,213,433,202,496,171"/>
+<area shape="rect" href="intro__demo__room_8c.html#a46851a69b6140500d8f59ad9b1683b01" title=" " alt="" coords="317,269,369,299"/>
+<area shape="poly" title=" " alt="" coords="519,180,483,221,436,260,403,275,371,283,369,278,401,269,433,255,479,217,515,177"/>
+<area shape="poly" title=" " alt="" coords="276,44,253,56,228,75,204,97,169,137,165,134,201,93,224,71,251,51,273,39"/>
+<area shape="rect" href="main_8c.html#af2eb07b318158270774fcc967eec3c80" title=" " alt="" coords="5,136,57,166"/>
+<area shape="poly" title=" " alt="" coords="89,154,57,154,57,148,89,148"/>
+<area shape="poly" title=" " alt="" coords="244,141,205,147,204,141,243,136"/>
+<area shape="poly" title=" " alt="" coords="252,167,204,160,204,155,252,162"/>
+<area shape="poly" title=" " alt="" coords="268,213,251,207,179,169,181,164,253,202,270,208"/>
+<area shape="poly" title=" " alt="" coords="301,280,275,272,251,260,223,238,198,213,163,168,167,164,202,210,226,234,253,255,277,267,303,275"/>
+</map>
+</div>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gerado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.11.0
+</small></address>
+</div><!-- doc-content -->
+</body>
+</html>

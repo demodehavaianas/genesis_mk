@@ -1,0 +1,7 @@
+<map id="loadGoroLivesScreen" name="loadGoroLivesScreen">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,32,157,62"/>
+<area shape="rect" id="Node000002" href="$intro__demo__room_8c.html#abd84a8f7942f738b8f807b5c83e766dc" title=" " alt="" coords="210,5,321,35"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="157,33,194,28,195,33,158,38"/>
+<area shape="rect" id="Node000003" href="$typewriter__printer_8c.html#a7b99e213b81356a73cbd48457b5877ea" title=" " alt="" coords="205,59,326,88"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="158,55,189,60,189,65,157,60"/>
+</map>

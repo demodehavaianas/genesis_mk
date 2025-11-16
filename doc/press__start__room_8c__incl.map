@@ -1,0 +1,15 @@
+<map id="src/rooms/press_start_room.c" name="src/rooms/press_start_room.c">
+<area shape="rect" id="Node000001" title=" " alt="" coords="313,5,469,54"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,102,86,132"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="314,52,101,104,100,99,312,47"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="110,102,250,132"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="333,57,230,98,228,93,331,52"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="275,102,390,132"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="377,56,353,90,348,87,372,53"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="414,102,488,132"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="410,53,434,87,430,91,405,56"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="512,102,587,132"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="436,52,511,92,508,97,434,57"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="611,102,712,132"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="467,52,602,94,601,99,466,57"/>
+</map>

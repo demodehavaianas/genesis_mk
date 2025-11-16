@@ -1,0 +1,231 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt-BR">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.11.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Mortal Kombat Plus: Referência do Arquivo src/modulos/input_system.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Mortal Kombat Plus
+   </div>
+   <div id="projectbrief">Documentação gerada automaticamente com Doxygen</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.11.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Busca',false);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){ initResizable(false); });
+/* @license-end */
+</script>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Carregando...</div>
+<div class="SRStatus" id="Searching">Procurando...</div>
+<div class="SRStatus" id="NoMatches">Nenhuma entrada encontrado</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_47a83392b137ed71e1cf45a1606573c3.html">modulos</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div id="doc-content">
+<div class="header">
+  <div class="summary">
+<a href="#func-members">Funções</a>  </div>
+  <div class="headertitle"><div class="title">Referência do Arquivo input_system.c</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &quot;input_system.h&quot;</code><br />
+<code>#include &quot;game_vars.h&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Gráfico de dependência de inclusões para input_system.c:</div>
+<div class="dyncontent">
+<div class="center"><img src="input__system_8c__incl.png" border="0" usemap="#asrc_2modulos_2input__system_8c" alt=""/></div>
+<map name="asrc_2modulos_2input__system_8c" id="asrc_2modulos_2input__system_8c">
+<area shape="rect" title=" " alt="" coords="32,5,225,35"/>
+<area shape="rect" title=" " alt="" coords="5,83,121,113"/>
+<area shape="poly" title=" " alt="" coords="118,37,87,73,83,69,114,34"/>
+<area shape="rect" title=" " alt="" coords="145,83,245,113"/>
+<area shape="poly" title=" " alt="" coords="143,34,174,69,170,73,139,37"/>
+</map>
+</div>
+</div>
+<p><a href="input__system_8c_source.html">Ir para o código-fonte desse arquivo.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Funções</h2></td></tr>
+<tr class="memitem:a2656744a9ebd96a8887f55208c53bc6e" id="r_a2656744a9ebd96a8887f55208c53bc6e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2656744a9ebd96a8887f55208c53bc6e">inputSystem</a> ()</td></tr>
+<tr class="separator:a2656744a9ebd96a8887f55208c53bc6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Funções</h2>
+<a id="a2656744a9ebd96a8887f55208c53bc6e" name="a2656744a9ebd96a8887f55208c53bc6e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2656744a9ebd96a8887f55208c53bc6e">&#9670;&#160;</a></span>inputSystem()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void inputSystem </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definição na linha <a class="el" href="input__system_8c_source.html#l00004">4</a> do arquivo <a class="el" href="input__system_8c_source.html">input_system.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">    5</span>{</div>
+<div class="line"><span class="lineno">    6</span>    <span class="keyword">static</span> u16 currentJoyState[2] = {0};</div>
+<div class="line"><span class="lineno">    7</span>    <span class="keyword">static</span> u16 previousJoyState[2] = {0};</div>
+<div class="line"><span class="lineno">    8</span>    u16 buttons[] = {BUTTON_UP, BUTTON_DOWN, BUTTON_LEFT, BUTTON_RIGHT, BUTTON_A, BUTTON_B, BUTTON_C, BUTTON_X, BUTTON_Y, BUTTON_Z, BUTTON_START, BUTTON_MODE};</div>
+<div class="line"><span class="lineno">    9</span>    </div>
+<div class="line"><span class="lineno">   10</span>    <span class="keywordflow">if</span>(<a class="code hl_variable" href="game__vars_8c.html#a7db0859ee62e2447701751d5980ede35">gPodeMover</a>) <span class="comment">// travar o controle dos jogadores</span></div>
+<div class="line"><span class="lineno">   11</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> jogador = 0; jogador &lt; 2; jogador++)</div>
+<div class="line"><span class="lineno">   12</span>    {</div>
+<div class="line"><span class="lineno">   13</span>        previousJoyState[jogador] = currentJoyState[jogador];</div>
+<div class="line"><span class="lineno">   14</span> </div>
+<div class="line"><span class="lineno">   15</span>        <span class="keywordflow">if</span> (jogador == 0)</div>
+<div class="line"><span class="lineno">   16</span>        {</div>
+<div class="line"><span class="lineno">   17</span>            currentJoyState[jogador] = JOY_readJoypad(JOY_1);</div>
+<div class="line"><span class="lineno">   18</span>        }</div>
+<div class="line"><span class="lineno">   19</span>        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (jogador == 1)</div>
+<div class="line"><span class="lineno">   20</span>        {</div>
+<div class="line"><span class="lineno">   21</span>            currentJoyState[jogador] = JOY_readJoypad(JOY_2);</div>
+<div class="line"><span class="lineno">   22</span>        }</div>
+<div class="line"><span class="lineno">   23</span> </div>
+<div class="line"><span class="lineno">   24</span>        <span class="keywordtype">int</span> numButtons = <span class="keyword">sizeof</span>(buttons) / <span class="keyword">sizeof</span>(buttons[0]);</div>
+<div class="line"><span class="lineno">   25</span> </div>
+<div class="line"><span class="lineno">   26</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; numButtons; i++)</div>
+<div class="line"><span class="lineno">   27</span>        {</div>
+<div class="line"><span class="lineno">   28</span>            u16 button = buttons[i];</div>
+<div class="line"><span class="lineno">   29</span> </div>
+<div class="line"><span class="lineno">   30</span>            <span class="keywordflow">if</span> (!(currentJoyState[jogador] &amp; button))</div>
+<div class="line"><span class="lineno">   31</span>            {</div>
+<div class="line"><span class="lineno">   32</span>                <span class="comment">// não esta apertado</span></div>
+<div class="line"><span class="lineno">   33</span>                <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[jogador].key_JOY_status[i] = 0;</div>
+<div class="line"><span class="lineno">   34</span>            }</div>
+<div class="line"><span class="lineno">   35</span>            <span class="keywordflow">else</span> <span class="keywordflow">if</span> ((currentJoyState[jogador] &amp; button) &amp;&amp; !(previousJoyState[jogador] &amp; button))</div>
+<div class="line"><span class="lineno">   36</span>            {</div>
+<div class="line"><span class="lineno">   37</span>                <span class="comment">// acabou de apertar</span></div>
+<div class="line"><span class="lineno">   38</span>                <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[jogador].key_JOY_status[i] = 1;</div>
+<div class="line"><span class="lineno">   39</span>            }</div>
+<div class="line"><span class="lineno">   40</span>            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (currentJoyState[jogador] &amp; button)</div>
+<div class="line"><span class="lineno">   41</span>            {</div>
+<div class="line"><span class="lineno">   42</span>                <span class="comment">// mantendo apertado</span></div>
+<div class="line"><span class="lineno">   43</span>                <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[jogador].key_JOY_status[i] = 2;</div>
+<div class="line"><span class="lineno">   44</span>            }</div>
+<div class="line"><span class="lineno">   45</span>            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (!(currentJoyState[jogador] &amp; button) &amp;&amp; (previousJoyState[jogador] &amp; button))</div>
+<div class="line"><span class="lineno">   46</span>            {</div>
+<div class="line"><span class="lineno">   47</span>                <span class="comment">// acabou de soltar</span></div>
+<div class="line"><span class="lineno">   48</span>                <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[jogador].key_JOY_status[i] = 3;</div>
+<div class="line"><span class="lineno">   49</span>            }</div>
+<div class="line"><span class="lineno">   50</span> </div>
+<div class="line"><span class="lineno">   51</span>            <span class="keywordflow">if</span> (i == numButtons - 1) <span class="comment">// end of loop, assignments</span></div>
+<div class="line"><span class="lineno">   52</span>            {</div>
+<div class="line"><span class="lineno">   53</span>                <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[jogador].key_JOY_UP_status = <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[jogador].key_JOY_status[0];</div>
+<div class="line"><span class="lineno">   54</span>                <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[jogador].key_JOY_DOWN_status = <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[jogador].key_JOY_status[1];</div>
+<div class="line"><span class="lineno">   55</span>                <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[jogador].key_JOY_LEFT_status = <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[jogador].key_JOY_status[2];</div>
+<div class="line"><span class="lineno">   56</span>                <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[jogador].key_JOY_RIGHT_status = <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[jogador].key_JOY_status[3];</div>
+<div class="line"><span class="lineno">   57</span>                <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[jogador].key_JOY_A_status = <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[jogador].key_JOY_status[4];</div>
+<div class="line"><span class="lineno">   58</span>                <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[jogador].key_JOY_B_status = <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[jogador].key_JOY_status[5];</div>
+<div class="line"><span class="lineno">   59</span>                <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[jogador].key_JOY_C_status = <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[jogador].key_JOY_status[6];</div>
+<div class="line"><span class="lineno">   60</span>                <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[jogador].key_JOY_X_status = <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[jogador].key_JOY_status[7];</div>
+<div class="line"><span class="lineno">   61</span>                <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[jogador].key_JOY_Y_status = <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[jogador].key_JOY_status[8];</div>
+<div class="line"><span class="lineno">   62</span>                <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[jogador].key_JOY_Z_status = <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[jogador].key_JOY_status[9];</div>
+<div class="line"><span class="lineno">   63</span>                <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[jogador].key_JOY_START_status = <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[jogador].key_JOY_status[10];</div>
+<div class="line"><span class="lineno">   64</span>                <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[jogador].key_JOY_MODE_status = <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[jogador].key_JOY_status[11];</div>
+<div class="line"><span class="lineno">   65</span>            }</div>
+<div class="line"><span class="lineno">   66</span>        }</div>
+<div class="line"><span class="lineno">   67</span>    }</div>
+<div class="line"><span class="lineno">   68</span>}</div>
+<div class="ttc" id="agame__vars_8c_html_a5135cf03aefd90677db09304781dbb8c"><div class="ttname"><a href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a></div><div class="ttdeci">Player player[2]</div><div class="ttdef"><b>Definição</b> <a href="game__vars_8c_source.html#l00022">game_vars.c:22</a></div></div>
+<div class="ttc" id="agame__vars_8c_html_a7db0859ee62e2447701751d5980ede35"><div class="ttname"><a href="game__vars_8c.html#a7db0859ee62e2447701751d5980ede35">gPodeMover</a></div><div class="ttdeci">bool gPodeMover</div><div class="ttdef"><b>Definição</b> <a href="game__vars_8c_source.html#l00009">game_vars.c:9</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+Esse é o diagrama das funções que utilizam essa função:</div>
+<div class="dyncontent">
+<div class="center"><img src="input__system_8c_a2656744a9ebd96a8887f55208c53bc6e_icgraph.png" border="0" usemap="#ainput__system_8c_a2656744a9ebd96a8887f55208c53bc6e_icgraph" alt=""/></div>
+<map name="ainput__system_8c_a2656744a9ebd96a8887f55208c53bc6e_icgraph" id="ainput__system_8c_a2656744a9ebd96a8887f55208c53bc6e_icgraph">
+<area shape="rect" title=" " alt="" coords="349,63,447,92"/>
+<area shape="rect" href="main_8c.html#af2eb07b318158270774fcc967eec3c80" title=" " alt="" coords="5,63,57,92"/>
+<area shape="poly" title=" " alt="" coords="363,56,333,39,300,27,246,14,202,8,159,12,106,27,74,43,48,64,45,60,71,39,104,22,158,7,202,3,247,8,302,22,335,34,365,51"/>
+<area shape="rect" href="intro__demo__room_8c.html#ac46ea98ecb7218ef78a7d4cd50896175" title=" " alt="" coords="153,36,253,66"/>
+<area shape="poly" title=" " alt="" coords="333,71,253,60,253,55,334,66"/>
+<area shape="rect" href="press__start__room_8c.html#acdab073d60ace1b6f9ba4ecb1a63bc6c" title=" " alt="" coords="137,89,269,119"/>
+<area shape="poly" title=" " alt="" coords="334,89,269,98,269,92,334,83"/>
+<area shape="rect" href="char__select__room_8c.html#a691b28223562237401b71b33874e1455" title=" " alt="" coords="105,143,301,172"/>
+<area shape="poly" title=" " alt="" coords="361,103,302,133,269,145,268,140,300,128,359,98"/>
+<area shape="poly" title=" " alt="" coords="138,64,58,76,57,71,137,58"/>
+<area shape="poly" title=" " alt="" coords="122,94,57,84,58,79,122,89"/>
+<area shape="poly" title=" " alt="" coords="118,139,103,133,73,115,47,95,51,90,76,110,106,128,120,135"/>
+</map>
+</div>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gerado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.11.0
+</small></address>
+</div><!-- doc-content -->
+</body>
+</html>
