@@ -102,7 +102,7 @@ $(function(){ initResizable(false); });
 <code>#include &quot;input_system.h&quot;</code><br />
 <code>#include &quot;stages.h&quot;</code><br />
 <code>#include &quot;sprites.h&quot;</code><br />
-<code>#include &quot;sound.h&quot;</code><br />
+<code>#include &quot;audio.h&quot;</code><br />
 <code>#include &quot;game_vars.h&quot;</code><br />
 <code>#include &quot;fighters.h&quot;</code><br />
 <code>#include &quot;anima_system.h&quot;</code><br />
@@ -122,14 +122,14 @@ Gráfico de dependência de inclusões para char_select_room.c:</div>
 <area shape="poly" title=" " alt="" coords="524,57,481,93,477,89,520,53"/>
 <area shape="rect" title=" " alt="" coords="512,102,587,132"/>
 <area shape="poly" title=" " alt="" coords="552,55,552,86,547,86,547,55"/>
-<area shape="rect" title=" " alt="" coords="611,102,683,132"/>
-<area shape="poly" title=" " alt="" coords="578,53,621,89,617,93,575,57"/>
-<area shape="rect" title=" " alt="" coords="706,102,806,132"/>
-<area shape="poly" title=" " alt="" coords="608,52,709,93,707,98,606,57"/>
-<area shape="rect" title=" " alt="" coords="831,102,913,132"/>
-<area shape="poly" title=" " alt="" coords="629,49,816,98,815,103,627,54"/>
-<area shape="rect" title=" " alt="" coords="937,102,1058,132"/>
-<area shape="poly" title=" " alt="" coords="629,43,922,99,922,104,628,48"/>
+<area shape="rect" title=" " alt="" coords="612,102,679,132"/>
+<area shape="poly" title=" " alt="" coords="578,53,620,89,616,93,574,57"/>
+<area shape="rect" title=" " alt="" coords="703,102,804,132"/>
+<area shape="poly" title=" " alt="" coords="607,52,707,93,704,98,605,57"/>
+<area shape="rect" title=" " alt="" coords="828,102,911,132"/>
+<area shape="poly" title=" " alt="" coords="629,49,814,98,813,103,628,54"/>
+<area shape="rect" title=" " alt="" coords="935,102,1055,132"/>
+<area shape="poly" title=" " alt="" coords="629,43,920,99,919,104,628,49"/>
 </map>
 </div>
 </div>
@@ -494,7 +494,7 @@ Esse é o diagrama das funções que utilizam essa função:</div>
 <div class="line"><span class="lineno">  101</span>}</div>
 <div class="ttc" id="agame__vars_8c_html_a784a617fe12ac8976bbae900c2343a36"><div class="ttname"><a href="game__vars_8c.html#a784a617fe12ac8976bbae900c2343a36">gRoom</a></div><div class="ttdeci">u8 gRoom</div><div class="ttdef"><b>Definição</b> <a href="game__vars_8c_source.html#l00010">game_vars.c:10</a></div></div>
 <div class="ttc" id="agame__vars_8c_html_a940f635da7254d2a02a607dab0139dfd"><div class="ttname"><a href="game__vars_8c.html#a940f635da7254d2a02a607dab0139dfd">gFrames</a></div><div class="ttdeci">u32 gFrames</div><div class="ttdef"><b>Definição</b> <a href="game__vars_8c_source.html#l00016">game_vars.c:16</a></div></div>
-<div class="ttc" id="agame__vars_8c_html_aa5e097d9886fbef5de8248a18d1d95ee"><div class="ttname"><a href="game__vars_8c.html#aa5e097d9886fbef5de8248a18d1d95ee">GE</a></div><div class="ttdeci">GraphicElement GE[25]</div><div class="ttdef"><b>Definição</b> <a href="game__vars_8c_source.html#l00020">game_vars.c:20</a></div></div>
+<div class="ttc" id="agame__vars_8c_html_aa5e097d9886fbef5de8248a18d1d95ee"><div class="ttname"><a href="game__vars_8c.html#aa5e097d9886fbef5de8248a18d1d95ee">GE</a></div><div class="ttdeci">GraphicElement GE[25]</div><div class="ttdef"><b>Definição</b> <a href="game__vars_8c_source.html#l00023">game_vars.c:23</a></div></div>
 </div><!-- fragment --><div class="dynheader">
 Esse é o diagrama das funções que utilizam essa função:</div>
 <div class="dyncontent">
@@ -612,7 +612,7 @@ Esse é o diagrama das funções que utilizam essa função:</div>
 <div class="ttc" id="achar__select__room_8c_html_a81c347ec83f0d64c6fe39526029cb2d2"><div class="ttname"><a href="#a81c347ec83f0d64c6fe39526029cb2d2">PLAYER_1_POS_Y</a></div><div class="ttdeci">#define PLAYER_1_POS_Y</div><div class="ttdef"><b>Definição</b> <a href="char__select__room_8c_source.html#l00018">char_select_room.c:18</a></div></div>
 <div class="ttc" id="achar__select__room_8c_html_ac75b161bb8ede82c624783eb6d63a468"><div class="ttname"><a href="#ac75b161bb8ede82c624783eb6d63a468">PLAYER_2_POS_Y</a></div><div class="ttdeci">#define PLAYER_2_POS_Y</div><div class="ttdef"><b>Definição</b> <a href="char__select__room_8c_source.html#l00020">char_select_room.c:20</a></div></div>
 <div class="ttc" id="achar__select__room_8c_html_adfd7161599c48c9e339ea98722ced220"><div class="ttname"><a href="#adfd7161599c48c9e339ea98722ced220">PLAYER_1_POS_X</a></div><div class="ttdeci">#define PLAYER_1_POS_X</div><div class="ttdef"><b>Definição</b> <a href="char__select__room_8c_source.html#l00017">char_select_room.c:17</a></div></div>
-<div class="ttc" id="agame__vars_8c_html_a5135cf03aefd90677db09304781dbb8c"><div class="ttname"><a href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a></div><div class="ttdeci">Player player[2]</div><div class="ttdef"><b>Definição</b> <a href="game__vars_8c_source.html#l00022">game_vars.c:22</a></div></div>
+<div class="ttc" id="agame__vars_8c_html_a5135cf03aefd90677db09304781dbb8c"><div class="ttname"><a href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a></div><div class="ttdeci">Player player[2]</div><div class="ttdef"><b>Definição</b> <a href="game__vars_8c_source.html#l00024">game_vars.c:24</a></div></div>
 <div class="ttc" id="agame__vars_8c_html_add5eb59c4f71be58ef78c256ac2de63d"><div class="ttname"><a href="game__vars_8c.html#add5eb59c4f71be58ef78c256ac2de63d">gAlturaDoPiso</a></div><div class="ttdeci">u8 gAlturaDoPiso</div><div class="ttdef"><b>Definição</b> <a href="game__vars_8c_source.html#l00011">game_vars.c:11</a></div></div>
 </div><!-- fragment --><div class="dynheader">
 Este é o diagrama das funções utilizadas por essa função:</div>
@@ -708,13 +708,13 @@ Esse é o diagrama das funções que utilizam essa função:</div>
 <p class="definition">Definição na linha <a class="el" href="char__select__room_8c_source.html#l00609">609</a> do arquivo <a class="el" href="char__select__room_8c_source.html">char_select_room.c</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  610</span>{</div>
 <div class="line"><span class="lineno">  611</span>  <span class="comment">// indice 0 e 1 do GE serão usados para carregar o gráfico do seletor</span></div>
-<div class="line"><span class="lineno">  612</span>  <a class="code hl_variable" href="game__vars_8c.html#aa5e097d9886fbef5de8248a18d1d95ee">GE</a>[0].sprite = SPR_addSprite(&amp;player_seletor,</div>
+<div class="line"><span class="lineno">  612</span>  <a class="code hl_variable" href="game__vars_8c.html#aa5e097d9886fbef5de8248a18d1d95ee">GE</a>[0].sprite = SPR_addSpriteSafe(&amp;player_seletor,</div>
 <div class="line"><span class="lineno">  613</span>                               <a class="code hl_variable" href="#a26831dc9f30c381be0cbc4257340b250">OPTIONS_X</a>[KANO], <a class="code hl_variable" href="#a48ffbad9d97e8960918efdd7521afbca">OPTIONS_Y</a>[KANO],</div>
 <div class="line"><span class="lineno">  614</span>                               TILE_ATTR(PAL1, FALSE, FALSE, FALSE));</div>
 <div class="line"><span class="lineno">  615</span>  SPR_setAnim(<a class="code hl_variable" href="game__vars_8c.html#aa5e097d9886fbef5de8248a18d1d95ee">GE</a>[0].sprite, <a class="code hl_define" href="#a98e87e5d518a755ada15310a80a0aa7f">CURSOR_P1</a>); <span class="comment">// animação P1</span></div>
 <div class="line"><span class="lineno">  616</span>  SPR_setDepth(<a class="code hl_variable" href="game__vars_8c.html#aa5e097d9886fbef5de8248a18d1d95ee">GE</a>[0].sprite, SPR_MIN_DEPTH);</div>
 <div class="line"><span class="lineno">  617</span> </div>
-<div class="line"><span class="lineno">  618</span>  <a class="code hl_variable" href="game__vars_8c.html#aa5e097d9886fbef5de8248a18d1d95ee">GE</a>[1].sprite = SPR_addSprite(&amp;player_seletor,</div>
+<div class="line"><span class="lineno">  618</span>  <a class="code hl_variable" href="game__vars_8c.html#aa5e097d9886fbef5de8248a18d1d95ee">GE</a>[1].sprite = SPR_addSpriteSafe(&amp;player_seletor,</div>
 <div class="line"><span class="lineno">  619</span>                               <a class="code hl_variable" href="#a26831dc9f30c381be0cbc4257340b250">OPTIONS_X</a>[SUBZERO], <a class="code hl_variable" href="#a48ffbad9d97e8960918efdd7521afbca">OPTIONS_Y</a>[SUBZERO],</div>
 <div class="line"><span class="lineno">  620</span>                               TILE_ATTR(PAL1, FALSE, FALSE, FALSE));</div>
 <div class="line"><span class="lineno">  621</span>  SPR_setAnim(<a class="code hl_variable" href="game__vars_8c.html#aa5e097d9886fbef5de8248a18d1d95ee">GE</a>[1].sprite, <a class="code hl_define" href="#a0460b2a95f5db13cb1e4a2f21e13aff5">CURSOR_P2</a>); <span class="comment">// animação P2</span></div>

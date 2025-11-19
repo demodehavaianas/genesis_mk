@@ -23,8 +23,12 @@ var searchData=
   ['playerstate_5fsubzero_20',['playerState_SubZero',['../subzero_8c.html#abe9f0634a3089727d50dd795e49f8ee8',1,'subzero.c']]],
   ['playerstatefunc_21',['PlayerStateFunc',['../anima__system_8c.html#abe5fa2071132c66cf3e714a2ac38037c',1,'anima_system.c']]],
   ['playmusic_22',['playMusic',['../char__select__room_8c.html#a5950f90fdf5f67fab5bae67d2b350de9',1,'char_select_room.c']]],
-  ['press_5fstart_5froom_2ec_23',['press_start_room.c',['../press__start__room_8c.html',1,'']]],
-  ['processintro_24',['processIntro',['../intro__demo__room_8c.html#ac46ea98ecb7218ef78a7d4cd50896175',1,'intro_demo_room.c']]],
-  ['processpressstart_25',['processPressStart',['../press__start__room_8c.html#acdab073d60ace1b6f9ba4ecb1a63bc6c',1,'press_start_room.c']]],
-  ['processselecaopersonagens_26',['processSelecaoPersonagens',['../char__select__room_8c.html#a691b28223562237401b71b33874e1455',1,'char_select_room.c']]]
+  ['pos_5fx_5fp1_23',['POS_X_P1',['../bonus__stage__room_8c.html#a2ba221da80a1a0dbb04556b40f5aa261',1,'bonus_stage_room.c']]],
+  ['pos_5fx_5fp2_24',['POS_X_P2',['../bonus__stage__room_8c.html#a53b332b294123544b73026ea4e4d50e6',1,'bonus_stage_room.c']]],
+  ['pos_5fy_5fp_25',['POS_Y_P',['../bonus__stage__room_8c.html#a1ae3460f7b7d3db5b8da111578dff7fe',1,'bonus_stage_room.c']]],
+  ['press_5fstart_5froom_2ec_26',['press_start_room.c',['../press__start__room_8c.html',1,'']]],
+  ['processbonusstage_27',['processBonusStage',['../bonus__stage__room_8c.html#a283acd3e436aace9ae52dda764f70ce8',1,'bonus_stage_room.c']]],
+  ['processintro_28',['processIntro',['../intro__demo__room_8c.html#ac46ea98ecb7218ef78a7d4cd50896175',1,'intro_demo_room.c']]],
+  ['processpressstart_29',['processPressStart',['../press__start__room_8c.html#acdab073d60ace1b6f9ba4ecb1a63bc6c',1,'press_start_room.c']]],
+  ['processselecaopersonagens_30',['processSelecaoPersonagens',['../char__select__room_8c.html#a691b28223562237401b71b33874e1455',1,'char_select_room.c']]]
 ];

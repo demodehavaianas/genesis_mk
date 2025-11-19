@@ -93,143 +93,245 @@ $(function(){ initResizable(false); });
 </div><!--header-->
 <div class="contents">
 <a href="bio__textlines_8c.html">Ir para a documentação desse arquivo.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include &quot;bio_textlines.h&quot;</span></div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment">// const TextLine johnnyCageLines[] = {</span></div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">//     {&quot;UM SUPERASTRO DAS ARTES MARCIAIS&quot;, 4, 17},</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment">//     {&quot;TREINADO POR GRANDES MESTRES DE&quot;, 5, 18},</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment">//     {&quot;TODO O MUNDO. CAGE USA SEUS&quot;, 5, 19},</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment">//     {&quot;TALENTOS NAS TELAS DE CINEMA, ELE&quot;, 3, 20},</span></div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment">//     {&quot;E&#39; O ATUAL CAMPEAO DE BILHETERIA E&quot;, 4, 21},</span></div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment">//     {&quot;ESTRELA DE FILMES COMO PUNHO DO&quot;, 3, 22},</span></div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment">//     {&quot;DRAGAO E PUNHO DO DRAGAO II, BEM&quot;, 3, 23},</span></div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="comment">//     {&quot;COMO O PREMIADO VIOLENCIA SUBITA&quot;, 4, 24},</span></div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="comment">// };</span></div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
-<div class="foldopen" id="foldopen00014" data-start="{" data-end="};">
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="bio__textlines_8c.html#a33e6470955ec968ebb5b7a432bbe78ca">   14</a></span><span class="keyword">const</span> TextLine <a class="code hl_variable" href="bio__textlines_8c.html#a33e6470955ec968ebb5b7a432bbe78ca">johnnyCageLines</a>[] = {</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    {<span class="stringliteral">&quot;A MARTIAL ARTS SUPERSTAR TRAINED BY&quot;</span>, 3, 17},</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    {<span class="stringliteral">&quot;GREAT MASTERS FROM AROUND THE WORLD.&quot;</span>, 2, 18},</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    {<span class="stringliteral">&quot;CAGE USES HIS TALENTS ON&quot;</span>, 7, 19},</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    {<span class="stringliteral">&quot;THE BIG SCREEN,&quot;</span>, 10, 20},</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    {<span class="stringliteral">&quot;HE IS THE CURRENT BOX-OFFICE CHAMP&quot;</span>, 3, 21},</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    {<span class="stringliteral">&quot;AND STAR OF SUCH MOVIES AS DRAGON&quot;</span>, 3, 22},</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    {<span class="stringliteral">&quot;FIST AND DRAGON FIST II AS WELL&quot;</span>, 4, 23},</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    {<span class="stringliteral">&quot;AS THE AWARD&quot;</span>, 13, 24},</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    {<span class="stringliteral">&quot;WINNING SUDDEN VIOLENCE.&quot;</span>, 7, 25},</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>};</div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &quot;audio.h&quot;</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &quot;sprites.h&quot;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;game_vars.h&quot;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment">// Texto da Bio do Johnny Cage em Português</span></div>
+<div class="foldopen" id="foldopen00007" data-start="{" data-end="};">
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno"><a class="line" href="bio__textlines_8c.html#a29b7fd5d746a19566df8a927400e4b93">    7</a></span><span class="keyword">const</span> TextLine <a class="code hl_variable" href="bio__textlines_8c.html#a29b7fd5d746a19566df8a927400e4b93">johnnyCageLines_BR</a>[] = {</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>    {<span class="stringliteral">&quot;UM SUPERASTRO DAS ARTES MARCIAIS&quot;</span>, 4, 17},</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    {<span class="stringliteral">&quot;TREINADO POR GRANDES MESTRES DE&quot;</span>, 5, 18},</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    {<span class="stringliteral">&quot;TODO O MUNDO. CAGE USA SEUS&quot;</span>, 6, 19},</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    {<span class="stringliteral">&quot;TALENTOS NAS TELAS DE CINEMA, ELE&quot;</span>, 3, 20},</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    {<span class="stringliteral">&quot;E&#39; O ATUAL CAMPEAO DE BILHETERIA&quot;</span>, 4, 21},</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    {<span class="stringliteral">&quot;E ESTRELA DE FILMES COMO PUNHO DO&quot;</span>, 3, 22},</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    {<span class="stringliteral">&quot;DRAGAO E PUNHO DO DRAGAO II,&quot;</span>, 5, 23},</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    {<span class="stringliteral">&quot;BEM COMO O PREMIADO&quot;</span>, 9, 24},</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    {<span class="stringliteral">&quot;VIOLENCIA SUBITA&quot;</span>, 11, 25}</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>};</div>
 </div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
-<div class="foldopen" id="foldopen00026" data-start="{" data-end="};">
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="bio__textlines_8c.html#a95047f5b474d53989468f0a14dde2a4c">   26</a></span><span class="keyword">const</span> TextLine <a class="code hl_variable" href="bio__textlines_8c.html#a95047f5b474d53989468f0a14dde2a4c">kanoLines</a>[] = {</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    {<span class="stringliteral">&quot;A MERCENARY, THUG, EXTORTIONIST&quot;</span>, 4, 17},</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    {<span class="stringliteral">&quot;THIEF - KANO LIVES A LIFE OF CRIME&quot;</span>, 3, 18},</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    {<span class="stringliteral">&quot;AND INJUSTICE. HE IS A DEVOTED&quot;</span>, 5, 19},</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    {<span class="stringliteral">&quot;MEMBER OF THE BLACK DRAGON,&quot;</span>, 7, 20},</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    {<span class="stringliteral">&quot;A DANGEROUS GROUP OF CUT-THROAT&quot;</span>, 5, 21},</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    {<span class="stringliteral">&quot;MADMEN FEARED AND RESPECTED&quot;</span>, 7, 22},</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    {<span class="stringliteral">&quot;THROUGHOUT ALL OF CRIME&#39;S&quot;</span>, 6, 23},</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    {<span class="stringliteral">&quot;INNER CIRCLES.&quot;</span>, 12, 24},</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>};</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="comment">// Texto da Bio do Johnny Cage em Inglês</span></div>
+<div class="foldopen" id="foldopen00020" data-start="{" data-end="};">
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="bio__textlines_8c.html#a7590aa6e91c535d8ffaa0123f706f41b">   20</a></span><span class="keyword">const</span> TextLine <a class="code hl_variable" href="bio__textlines_8c.html#a7590aa6e91c535d8ffaa0123f706f41b">johnnyCageLines_EN</a>[] = {</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    {<span class="stringliteral">&quot;A MARTIAL ARTS SUPERSTAR TRAINED BY&quot;</span>, 3, 17},</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    {<span class="stringliteral">&quot;GREAT MASTERS FROM AROUND THE WORLD.&quot;</span>, 2, 18},</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    {<span class="stringliteral">&quot;CAGE USES HIS TALENTS ON&quot;</span>, 7, 19},</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    {<span class="stringliteral">&quot;THE BIG SCREEN,&quot;</span>, 10, 20},</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    {<span class="stringliteral">&quot;HE IS THE CURRENT BOX-OFFICE CHAMP&quot;</span>, 3, 21},</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    {<span class="stringliteral">&quot;AND STAR OF SUCH MOVIES AS DRAGON&quot;</span>, 3, 22},</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    {<span class="stringliteral">&quot;FIST AND DRAGON FIST II AS WELL&quot;</span>, 4, 23},</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    {<span class="stringliteral">&quot;AS THE AWARD&quot;</span>, 13, 24},</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    {<span class="stringliteral">&quot;WINNING SUDDEN VIOLENCE.&quot;</span>, 7, 25},</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>};</div>
 </div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="comment">// const TextLine kanoLines[] = {</span></div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="comment">//     {&quot;MERCENARIO, BANDIDO, EXTORSIONISTA,&quot;, 3, 17},</span></div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="comment">//     {&quot;LADRAO. KANO VIVE UMA VIDA DE&quot;, 4, 18},</span></div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="comment">//     {&quot;CRIMES E INJUSTICA. ELE E&#39; UM&quot;, 5, 19},</span></div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="comment">//     {&quot;DEVOTADO MEMBRO DO DRAGAO NEGRO,&quot;, 6, 20},</span></div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="comment">//     {&quot;UM GRUPO PERIGOSO DE ASSASSINOS&quot;, 5, 21},</span></div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="comment">//     {&quot;lOUCOS, TEMIDOS E RESPEITADOS&quot;, 7, 22},</span></div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="comment">//     {&quot;POR TODOS OS CIRCULOS&quot;, 9, 23},</span></div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="comment">//     {&quot;INTERNOS DO CRIME.&quot;, 12, 24},</span></div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="comment">// };</span></div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
-<div class="foldopen" id="foldopen00048" data-start="{" data-end="};">
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno"><a class="line" href="bio__textlines_8c.html#a7cb93af4e4ea0dd960fbf98e596bb7c7">   48</a></span><span class="keyword">const</span> TextLine <a class="code hl_variable" href="bio__textlines_8c.html#a7cb93af4e4ea0dd960fbf98e596bb7c7">liuKangLines</a>[] = {</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    {<span class="stringliteral">&quot;ONCE A MEMBER OF THE SUPER SECRET&quot;</span>, 3, 18},</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    {<span class="stringliteral">&quot;WHITE LOTUS SOCIETY, LIU KANG LEFT&quot;</span>, 3, 19},</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    {<span class="stringliteral">&quot;THE ORGANIZATION IN ORDER TO&quot;</span>, 5, 20},</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    {<span class="stringliteral">&quot;REPRESENT SHAOLIN TEMPLES IN THE&quot;</span>, 3, 21},</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    {<span class="stringliteral">&quot;TOURNAMENT, KANG IS STRONG IN HIS&quot;</span>, 3, 22},</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    {<span class="stringliteral">&quot;BELIEFS AND DESPISES SHANG TSUNG&quot;</span>, 3, 23},</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>};</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="comment">// Texto da Bio do Kano em Português</span></div>
+<div class="foldopen" id="foldopen00033" data-start="{" data-end="};">
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="bio__textlines_8c.html#a0696b949d0309f55c08540ebb02ab205">   33</a></span><span class="keyword">const</span> TextLine <a class="code hl_variable" href="bio__textlines_8c.html#a0696b949d0309f55c08540ebb02ab205">kanoLines_BR</a>[] = {</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    {<span class="stringliteral">&quot;MERCENARIO, BANDIDO, EXTORSIONISTA,&quot;</span>, 3, 17},</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    {<span class="stringliteral">&quot;LADRAO. KANO VIVE UMA VIDA DE&quot;</span>, 5, 18},</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    {<span class="stringliteral">&quot;CRIMES E INJUSTICA. ELE E&#39; UM&quot;</span>, 5, 19},</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    {<span class="stringliteral">&quot;DEVOTADO MEMBRO DO DRAGAO NEGRO,&quot;</span>, 4, 20},</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    {<span class="stringliteral">&quot;UM GRUPO PERIGOSO DE ASSASSINOS&quot;</span>, 3, 21},</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    {<span class="stringliteral">&quot;lOUCOS, TEMIDOS E RESPEITADOS&quot;</span>, 6, 22},</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    {<span class="stringliteral">&quot;POR TODOS OS CIRCULOS&quot;</span>, 9, 23},</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    {<span class="stringliteral">&quot;INTERNOS DO CRIME.&quot;</span>, 11, 24},</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>};</div>
 </div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
-<div class="foldopen" id="foldopen00057" data-start="{" data-end="};">
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno"><a class="line" href="bio__textlines_8c.html#a638c086ec8f74a70cb557528d18ed154">   57</a></span><span class="keyword">const</span> TextLine <a class="code hl_variable" href="bio__textlines_8c.html#a638c086ec8f74a70cb557528d18ed154">scorpionLines</a>[] = {</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    {<span class="stringliteral">&quot;LIKE SUB-ZERO, SCORPION&#39;S TRUE&quot;</span>, 5, 18},</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    {<span class="stringliteral">&quot;NAME AND ORIGIN ARE NOT KNOWN&quot;</span>, 5, 19},</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    {<span class="stringliteral">&quot;HE HAS SHOWN FROM TIME TO TIME&quot;</span>, 5, 20},</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    {<span class="stringliteral">&quot;DISTRUST AND HATRED TOWARDS&quot;</span>, 7, 21},</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    {<span class="stringliteral">&quot;SUB-ZERO. BETWEEN NINJAS, THIS&quot;</span>, 5, 22},</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    {<span class="stringliteral">&quot;IS USUALLY A SIGN OF&quot;</span>, 11, 23},</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    {<span class="stringliteral">&quot;OPPOSING CLANS&quot;</span>, 13, 24},</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>};</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="comment">// Texto da Bio do Kano em Inglês</span></div>
+<div class="foldopen" id="foldopen00045" data-start="{" data-end="};">
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="bio__textlines_8c.html#a8fc1c0e2e5b6bdf310ed48ddb952156e">   45</a></span><span class="keyword">const</span> TextLine <a class="code hl_variable" href="bio__textlines_8c.html#a8fc1c0e2e5b6bdf310ed48ddb952156e">kanoLines_EN</a>[] = {</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    {<span class="stringliteral">&quot;A MERCENARY, THUG, EXTORTIONIST&quot;</span>, 4, 17},</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    {<span class="stringliteral">&quot;THIEF - KANO LIVES A LIFE OF CRIME&quot;</span>, 3, 18},</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    {<span class="stringliteral">&quot;AND INJUSTICE. HE IS A DEVOTED&quot;</span>, 5, 19},</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    {<span class="stringliteral">&quot;MEMBER OF THE BLACK DRAGON,&quot;</span>, 7, 20},</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    {<span class="stringliteral">&quot;A DANGEROUS GROUP OF CUT-THROAT&quot;</span>, 5, 21},</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    {<span class="stringliteral">&quot;MADMEN FEARED AND RESPECTED&quot;</span>, 7, 22},</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    {<span class="stringliteral">&quot;THROUGHOUT ALL OF CRIME&#39;S&quot;</span>, 6, 23},</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    {<span class="stringliteral">&quot;INNER CIRCLES.&quot;</span>, 12, 24},</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>};</div>
 </div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span> </div>
-<div class="foldopen" id="foldopen00067" data-start="{" data-end="};">
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno"><a class="line" href="bio__textlines_8c.html#a1c874dd167e3cbef240d60c2dd14df99">   67</a></span><span class="keyword">const</span> TextLine <a class="code hl_variable" href="bio__textlines_8c.html#a1c874dd167e3cbef240d60c2dd14df99">subzeroLines</a>[] = {</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    {<span class="stringliteral">&quot;THE ACTUAL NAME OR IDENTITY OF&quot;</span>, 5, 18},</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    {<span class="stringliteral">&quot;THIS WARRIOR IS UNKNOWN. HOWEVER&quot;</span>, 4, 19},</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    {<span class="stringliteral">&quot;BASED ON THE MARKINGS OF HIS&quot;</span>, 5, 20},</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    {<span class="stringliteral">&quot;UNIFORM, IT IS BELIEVED HE BELONGS&quot;</span>, 3, 21},</div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    {<span class="stringliteral">&quot;TO THE LIN KUEI, A LEGENDARY&quot;</span>, 5, 22},</div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    {<span class="stringliteral">&quot;CLAN OF CHINESE NINJA.&quot;</span>, 10, 23},</div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>};</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
+<div class="foldopen" id="foldopen00056" data-start="{" data-end="};">
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno"><a class="line" href="bio__textlines_8c.html#a4cc24ff5f192b0d41cc43b5e7a935e3d">   56</a></span><span class="keyword">const</span> TextLine <a class="code hl_variable" href="bio__textlines_8c.html#a4cc24ff5f192b0d41cc43b5e7a935e3d">liuKangLines_BR</a>[] = {</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    {<span class="stringliteral">&quot;OUTRORA MEMBRO DA SUPER SECRETA&quot;</span>, 5, 18},</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    {<span class="stringliteral">&quot;SOCIEDADE DO LOTUS BRANCO,&quot;</span>, 7, 19},</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    {<span class="stringliteral">&quot;LIU KANG DEIXOU A ORGANIZACAO&quot;</span>, 5, 20},</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    {<span class="stringliteral">&quot;A FIM DE REPRESENTAR OS&quot;</span>, 7, 21},</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    {<span class="stringliteral">&quot;TEMPLOS SHAOLIN NO TORNEIO.&quot;</span>, 6, 22},</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    {<span class="stringliteral">&quot;KANG E&#39; FIRME EM SUAS CRENCAS&quot;</span>, 5, 23},</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    {<span class="stringliteral">&quot;E DESPREZA SHANG TSUNG&quot;</span>, 7, 24},</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>};</div>
 </div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span> </div>
-<div class="foldopen" id="foldopen00076" data-start="{" data-end="};">
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno"><a class="line" href="bio__textlines_8c.html#a2bd665893d33e8b7121989bf75757652">   76</a></span><span class="keyword">const</span> TextLine <a class="code hl_variable" href="bio__textlines_8c.html#a2bd665893d33e8b7121989bf75757652">raidenLines</a>[] = {</div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    {<span class="stringliteral">&quot;THE NAME RAIDEN IS ACTUALLY THAT OF&quot;</span>, 3, 18},</div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    {<span class="stringliteral">&quot;A DEITY KNOWN AS THE THUNDER GOD.&quot;</span>, 4, 19},</div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    {<span class="stringliteral">&quot;IT IS RUMORED HE RECEIVED A&quot;</span>, 7, 20},</div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    {<span class="stringliteral">&quot;PERSONAL INVITATION BY SHANG TSUNG&quot;</span>, 3, 21},</div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    {<span class="stringliteral">&quot;HIMSELF AND TOOK THE FORM OF A&quot;</span>, 5, 22},</div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    {<span class="stringliteral">&quot;HUMAN TO COMPETE IN THE TOURNAMENT&quot;</span>, 3, 23},</div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>};</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span> </div>
+<div class="foldopen" id="foldopen00066" data-start="{" data-end="};">
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno"><a class="line" href="bio__textlines_8c.html#acff605e8c7585722197249daba87805e">   66</a></span><span class="keyword">const</span> TextLine <a class="code hl_variable" href="bio__textlines_8c.html#acff605e8c7585722197249daba87805e">liuKangLines_EN</a>[] = {</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    {<span class="stringliteral">&quot;ONCE A MEMBER OF THE SUPER SECRET&quot;</span>, 3, 18},</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    {<span class="stringliteral">&quot;WHITE LOTUS SOCIETY, LIU KANG LEFT&quot;</span>, 3, 19},</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    {<span class="stringliteral">&quot;THE ORGANIZATION IN ORDER TO&quot;</span>, 5, 20},</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    {<span class="stringliteral">&quot;REPRESENT SHAOLIN TEMPLES IN THE&quot;</span>, 3, 21},</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    {<span class="stringliteral">&quot;TOURNAMENT, KANG IS STRONG IN HIS&quot;</span>, 3, 22},</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    {<span class="stringliteral">&quot;BELIEFS AND DESPISES SHANG TSUNG&quot;</span>, 3, 23},</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>};</div>
+</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span> </div>
+<div class="foldopen" id="foldopen00075" data-start="{" data-end="};">
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno"><a class="line" href="bio__textlines_8c.html#a8c94feff9708c243ffa77d737a5e7b71">   75</a></span><span class="keyword">const</span> TextLine <a class="code hl_variable" href="bio__textlines_8c.html#a8c94feff9708c243ffa77d737a5e7b71">scorpionLines_BR</a>[] = {</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    {<span class="stringliteral">&quot;ASSIM COMO SUB-ZERO, O VERDADEIRO&quot;</span>, 4, 17},</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    {<span class="stringliteral">&quot;NOME E ORIGEM DE SCORPION&quot;</span>, 8, 18},</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    {<span class="stringliteral">&quot;NAO SAO CONHECIDOS.&quot;</span>, 10, 19},</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    {<span class="stringliteral">&quot;ELE DEMONSTROU DE TEMPOS EM TEMPOS&quot;</span>, 3, 20},</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    {<span class="stringliteral">&quot;DESCONFIANCA E ODIO EM RELACAO&quot;</span>, 5, 21},</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    {<span class="stringliteral">&quot;A SUB-ZERO. ENTRE NINJAS, ISSO&quot;</span>, 4, 22},</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    {<span class="stringliteral">&quot;GERALMENTE E&#39; UM SINAL DE&quot;</span>, 6, 23},</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    {<span class="stringliteral">&quot;CLAS RIVAIS&quot;</span>, 14, 24}};</div>
 </div>
 <div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span> </div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span><span class="comment">// const TextLine raidenLines[] = {</span></div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span><span class="comment">//     {&quot;O NOME RAIDEN E&#39; NA VERDADE O DE&quot;, 4, 18},</span></div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span><span class="comment">//     {&quot;UMA DEIDADE CONHECIDA COMO&quot;, 6, 19},</span></div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span><span class="comment">//     {&quot;DEUS DO TROVAO.&quot;, 11, 20},</span></div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span><span class="comment">//     {&quot;HA&#39; RUMORES DE QUE ELE RECEBEU UM&quot;, 3, 21},</span></div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span><span class="comment">//     {&quot;CONVITE PESSOAL DO PROPRIO&quot;, 6, 22},</span></div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span><span class="comment">//     {&quot;SHANG TSUNG E ASSUMIU A FORMA&quot;, 5, 23},</span></div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span><span class="comment">//     {&quot;HUMANA PARA COMPETIR NO TORNEIO&quot;, 4, 24},</span></div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span><span class="comment">// };</span></div>
+<div class="foldopen" id="foldopen00085" data-start="{" data-end="};">
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno"><a class="line" href="bio__textlines_8c.html#ae218996bbaf16478e34777d78954ac7b">   85</a></span><span class="keyword">const</span> TextLine <a class="code hl_variable" href="bio__textlines_8c.html#ae218996bbaf16478e34777d78954ac7b">scorpionLines_EN</a>[] = {</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    {<span class="stringliteral">&quot;LIKE SUB-ZERO, SCORPION&#39;S TRUE&quot;</span>, 5, 18},</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    {<span class="stringliteral">&quot;NAME AND ORIGIN ARE NOT KNOWN&quot;</span>, 5, 19},</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    {<span class="stringliteral">&quot;HE HAS SHOWN FROM TIME TO TIME&quot;</span>, 5, 20},</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    {<span class="stringliteral">&quot;DISTRUST AND HATRED TOWARDS&quot;</span>, 7, 21},</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    {<span class="stringliteral">&quot;SUB-ZERO. BETWEEN NINJAS, THIS&quot;</span>, 5, 22},</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    {<span class="stringliteral">&quot;IS USUALLY A SIGN OF&quot;</span>, 11, 23},</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>    {<span class="stringliteral">&quot;OPPOSING CLANS&quot;</span>, 13, 24},</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>};</div>
+</div>
 <div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span> </div>
 <div class="foldopen" id="foldopen00095" data-start="{" data-end="};">
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno"><a class="line" href="bio__textlines_8c.html#a06de95f5aa4ecb5b6d4861be8d739bd5">   95</a></span><span class="keyword">const</span> TextLine <a class="code hl_variable" href="bio__textlines_8c.html#a06de95f5aa4ecb5b6d4861be8d739bd5">sonyaLines</a>[] = {</div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>    {<span class="stringliteral">&quot;SONYA IS A MEMBER OF A TOP U.S.&quot;</span>, 5, 18},</div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>    {<span class="stringliteral">&quot;SPECIAL FORCES UNIT, HER TEAM WAS&quot;</span>, 4, 19},</div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>    {<span class="stringliteral">&quot;HOT ON THE TRAIL OF KANO&#39;S BLACK&quot;</span>, 5, 20},</div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    {<span class="stringliteral">&quot;DRAGON ORGANIZATION. THEY&quot;</span>, 8, 21},</div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>    {<span class="stringliteral">&quot;FOLLOWED THEM TO AN UNCHARTED&quot;</span>, 6, 22},</div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    {<span class="stringliteral">&quot;ISLAND WHERE THEY WERE AMBUSHED&quot;</span>, 5, 23},</div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    {<span class="stringliteral">&quot;BY SHANG TSUNG&#39;S PERSONAL ARMY.&quot;</span>, 5, 24},</div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>};</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno"><a class="line" href="bio__textlines_8c.html#afc5cc04711b39c78da75a07456099dc8">   95</a></span><span class="keyword">const</span> TextLine <a class="code hl_variable" href="bio__textlines_8c.html#afc5cc04711b39c78da75a07456099dc8">subzeroLines_BR</a>[] = {</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>    {<span class="stringliteral">&quot;O VERDADEIRO NOME OU IDENTIDADE&quot;</span>, 4, 18},</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>    {<span class="stringliteral">&quot;DESSE GUERREIRO E&#39; DESCONHECIDA.&quot;</span>, 5, 19},</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>    {<span class="stringliteral">&quot;NO ENTANTO COM BASE NAS MARCAS DE&quot;</span>, 3, 20},</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    {<span class="stringliteral">&quot;SEU UNIFORME, ACREDITA-SE QUE&quot;</span>, 5, 21},</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>    {<span class="stringliteral">&quot;ELE PERTENCA AOS LIN KUEI,&quot;</span>, 6, 22},</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    {<span class="stringliteral">&quot;UM LENDARIO CLA DE&quot;</span>, 9, 23},</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    {<span class="stringliteral">&quot;NINJAS CHINESES.&quot;</span>, 10, 24}};</div>
 </div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span> </div>
-<div class="foldopen" id="foldopen00105" data-start="{" data-end="};">
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno"><a class="line" href="bio__textlines_8c.html#a2e581eeb9a56303299f538d905ad5126">  105</a></span><span class="keyword">const</span> TextLine <a class="code hl_variable" href="bio__textlines_8c.html#a2e581eeb9a56303299f538d905ad5126">goroLines</a>[] = {</div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>    {<span class="stringliteral">&quot;A 2.000 YEAR OLD HALF HUMAN DRAGON&quot;</span>, 3, 7},</div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>    {<span class="stringliteral">&quot;GORO REMAINS UNDERFEATED FOR THE PAST&quot;</span>, 2, 9},</div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>    {<span class="stringliteral">&quot;500 YEARS. HE WON THE TITLE OF GRAND&quot;</span>, 2, 11},</div>
-<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>    {<span class="stringliteral">&quot;CHAMPION BY DEFEATING KUNG LAO, A&quot;</span>, 3, 13},</div>
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>    {<span class="stringliteral">&quot;SHAOLIN FIGHTING MONK. IT WAS DURING&quot;</span>, 2, 15},</div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>    {<span class="stringliteral">&quot;THIS PERIOD THAT TOURNAMENT FELL&quot;</span>, 2, 17},</div>
-<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>    {<span class="stringliteral">&quot;INTO SHANG TSUNG&#39;S HANDS AND WAS&quot;</span>, 4, 19},</div>
-<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>    {<span class="stringliteral">&quot;CORRUPTED&quot;</span>, 15, 21},</div>
-<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>};</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span> </div>
+<div class="foldopen" id="foldopen00104" data-start="{" data-end="};">
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno"><a class="line" href="bio__textlines_8c.html#af1baccebe0dd77d2d631130947a1ff94">  104</a></span><span class="keyword">const</span> TextLine <a class="code hl_variable" href="bio__textlines_8c.html#af1baccebe0dd77d2d631130947a1ff94">subzeroLines_EN</a>[] = {</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>    {<span class="stringliteral">&quot;THE ACTUAL NAME OR IDENTITY OF&quot;</span>, 5, 18},</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>    {<span class="stringliteral">&quot;THIS WARRIOR IS UNKNOWN. HOWEVER&quot;</span>, 4, 19},</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>    {<span class="stringliteral">&quot;BASED ON THE MARKINGS OF HIS&quot;</span>, 5, 20},</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>    {<span class="stringliteral">&quot;UNIFORM, IT IS BELIEVED HE BELONGS&quot;</span>, 3, 21},</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>    {<span class="stringliteral">&quot;TO THE LIN KUEI, A LEGENDARY&quot;</span>, 5, 22},</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>    {<span class="stringliteral">&quot;CLAN OF CHINESE NINJA.&quot;</span>, 10, 23},</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>};</div>
 </div>
-<div class="ttc" id="abio__textlines_8c_html_a06de95f5aa4ecb5b6d4861be8d739bd5"><div class="ttname"><a href="bio__textlines_8c.html#a06de95f5aa4ecb5b6d4861be8d739bd5">sonyaLines</a></div><div class="ttdeci">const TextLine sonyaLines[]</div><div class="ttdef"><b>Definição</b> <a href="#l00095">bio_textlines.c:95</a></div></div>
-<div class="ttc" id="abio__textlines_8c_html_a1c874dd167e3cbef240d60c2dd14df99"><div class="ttname"><a href="bio__textlines_8c.html#a1c874dd167e3cbef240d60c2dd14df99">subzeroLines</a></div><div class="ttdeci">const TextLine subzeroLines[]</div><div class="ttdef"><b>Definição</b> <a href="#l00067">bio_textlines.c:67</a></div></div>
-<div class="ttc" id="abio__textlines_8c_html_a2bd665893d33e8b7121989bf75757652"><div class="ttname"><a href="bio__textlines_8c.html#a2bd665893d33e8b7121989bf75757652">raidenLines</a></div><div class="ttdeci">const TextLine raidenLines[]</div><div class="ttdef"><b>Definição</b> <a href="#l00076">bio_textlines.c:76</a></div></div>
-<div class="ttc" id="abio__textlines_8c_html_a2e581eeb9a56303299f538d905ad5126"><div class="ttname"><a href="bio__textlines_8c.html#a2e581eeb9a56303299f538d905ad5126">goroLines</a></div><div class="ttdeci">const TextLine goroLines[]</div><div class="ttdef"><b>Definição</b> <a href="#l00105">bio_textlines.c:105</a></div></div>
-<div class="ttc" id="abio__textlines_8c_html_a33e6470955ec968ebb5b7a432bbe78ca"><div class="ttname"><a href="bio__textlines_8c.html#a33e6470955ec968ebb5b7a432bbe78ca">johnnyCageLines</a></div><div class="ttdeci">const TextLine johnnyCageLines[]</div><div class="ttdef"><b>Definição</b> <a href="#l00014">bio_textlines.c:14</a></div></div>
-<div class="ttc" id="abio__textlines_8c_html_a638c086ec8f74a70cb557528d18ed154"><div class="ttname"><a href="bio__textlines_8c.html#a638c086ec8f74a70cb557528d18ed154">scorpionLines</a></div><div class="ttdeci">const TextLine scorpionLines[]</div><div class="ttdef"><b>Definição</b> <a href="#l00057">bio_textlines.c:57</a></div></div>
-<div class="ttc" id="abio__textlines_8c_html_a7cb93af4e4ea0dd960fbf98e596bb7c7"><div class="ttname"><a href="bio__textlines_8c.html#a7cb93af4e4ea0dd960fbf98e596bb7c7">liuKangLines</a></div><div class="ttdeci">const TextLine liuKangLines[]</div><div class="ttdef"><b>Definição</b> <a href="#l00048">bio_textlines.c:48</a></div></div>
-<div class="ttc" id="abio__textlines_8c_html_a95047f5b474d53989468f0a14dde2a4c"><div class="ttname"><a href="bio__textlines_8c.html#a95047f5b474d53989468f0a14dde2a4c">kanoLines</a></div><div class="ttdeci">const TextLine kanoLines[]</div><div class="ttdef"><b>Definição</b> <a href="#l00026">bio_textlines.c:26</a></div></div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span> </div>
+<div class="foldopen" id="foldopen00113" data-start="{" data-end="};">
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno"><a class="line" href="bio__textlines_8c.html#adb457cfae2d0ed7c6af5c2ec53f49d48">  113</a></span><span class="keyword">const</span> TextLine <a class="code hl_variable" href="bio__textlines_8c.html#adb457cfae2d0ed7c6af5c2ec53f49d48">raidenLines_BR</a>[] = {</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>    {<span class="stringliteral">&quot;O NOME RAIDEN E&#39; NA VERDADE&quot;</span>, 5, 18},</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>    {<span class="stringliteral">&quot;O DE UMA DEIDADE CONHECIDA COMO&quot;</span>, 4, 19},</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>    {<span class="stringliteral">&quot;DEUS DO TROVAO.&quot;</span>, 11, 20},</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>    {<span class="stringliteral">&quot;HA&#39; RUMORES DE QUE ELE RECEBEU&quot;</span>, 4, 21},</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>    {<span class="stringliteral">&quot;UM CONVITE PESSOAL&quot;</span>, 9, 22},</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>    {<span class="stringliteral">&quot;DO PROPRIO SHANG TSUNG&quot;</span>, 7, 23},</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>    {<span class="stringliteral">&quot;E ASSUMIU A FORMA HUMANA PARA&quot;</span>, 4, 24},</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>    {<span class="stringliteral">&quot;COMPETIR NO TORNEIO&quot;</span>, 9, 25}};</div>
+</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span> </div>
+<div class="foldopen" id="foldopen00123" data-start="{" data-end="};">
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno"><a class="line" href="bio__textlines_8c.html#a55557cae4607ed96bd2713db2b9e0547">  123</a></span><span class="keyword">const</span> TextLine <a class="code hl_variable" href="bio__textlines_8c.html#a55557cae4607ed96bd2713db2b9e0547">raidenLines_EN</a>[] = {</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>    {<span class="stringliteral">&quot;THE NAME RAIDEN IS ACTUALLY THAT OF&quot;</span>, 3, 18},</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>    {<span class="stringliteral">&quot;A DEITY KNOWN AS THE THUNDER GOD.&quot;</span>, 4, 19},</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>    {<span class="stringliteral">&quot;IT IS RUMORED HE RECEIVED A&quot;</span>, 7, 20},</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>    {<span class="stringliteral">&quot;PERSONAL INVITATION BY SHANG TSUNG&quot;</span>, 3, 21},</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>    {<span class="stringliteral">&quot;HIMSELF AND TOOK THE FORM OF A&quot;</span>, 5, 22},</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>    {<span class="stringliteral">&quot;HUMAN TO COMPETE IN THE TOURNAMENT&quot;</span>, 3, 23},</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>};</div>
+</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span> </div>
+<div class="foldopen" id="foldopen00132" data-start="{" data-end="};">
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno"><a class="line" href="bio__textlines_8c.html#a1fd2b4779a786cd80fec48a3bc00fca8">  132</a></span><span class="keyword">const</span> TextLine <a class="code hl_variable" href="bio__textlines_8c.html#a1fd2b4779a786cd80fec48a3bc00fca8">sonyaLines_BR</a>[] = {</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>    {<span class="stringliteral">&quot;SONYA E MEMBRA DE UMA ELITE DA&quot;</span>, 5, 17},</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>    {<span class="stringliteral">&quot;UNIDADE DE FORCAS ESPECIAIS DOS EUA&quot;</span>, 3, 18},</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>    {<span class="stringliteral">&quot;SUA EQUIPE ESTAVA NA PISTA DA&quot;</span>, 6, 19},</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>    {<span class="stringliteral">&quot;ORGANIZACAO DRAGAO NEGRO DE KANO.&quot;</span>, 4, 20},</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>    {<span class="stringliteral">&quot;ELES OS SEGUIRAM ATE UMA&quot;</span>, 7, 21},</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>    {<span class="stringliteral">&quot;ILHA INEXPLORADA ONDE FORAM&quot;</span>, 5, 22},</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>    {<span class="stringliteral">&quot;EMBOSCADOS PELO EXERCITO PESSOAL&quot;</span>, 4, 23},</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>    {<span class="stringliteral">&quot;DE SHANG TSUNG.&quot;</span>, 13, 24}};</div>
+</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span> </div>
+<div class="foldopen" id="foldopen00142" data-start="{" data-end="};">
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno"><a class="line" href="bio__textlines_8c.html#a3001dea0320b90b883b9205917571156">  142</a></span><span class="keyword">const</span> TextLine <a class="code hl_variable" href="bio__textlines_8c.html#a3001dea0320b90b883b9205917571156">sonyaLines_EN</a>[] = {</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>    {<span class="stringliteral">&quot;SONYA IS A MEMBER OF A TOP U.S.&quot;</span>, 5, 18},</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>    {<span class="stringliteral">&quot;SPECIAL FORCES UNIT, HER TEAM WAS&quot;</span>, 4, 19},</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>    {<span class="stringliteral">&quot;HOT ON THE TRAIL OF KANO&#39;S BLACK&quot;</span>, 5, 20},</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>    {<span class="stringliteral">&quot;DRAGON ORGANIZATION. THEY&quot;</span>, 8, 21},</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>    {<span class="stringliteral">&quot;FOLLOWED THEM TO AN UNCHARTED&quot;</span>, 6, 22},</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>    {<span class="stringliteral">&quot;ISLAND WHERE THEY WERE AMBUSHED&quot;</span>, 5, 23},</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>    {<span class="stringliteral">&quot;BY SHANG TSUNG&#39;S PERSONAL ARMY.&quot;</span>, 5, 24},</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>};</div>
+</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span> </div>
+<div class="foldopen" id="foldopen00152" data-start="{" data-end="};">
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno"><a class="line" href="bio__textlines_8c.html#acc18844befc41cdc62e55f796f7b9fd5">  152</a></span><span class="keyword">const</span> TextLine <a class="code hl_variable" href="bio__textlines_8c.html#acc18844befc41cdc62e55f796f7b9fd5">goroLines_BR</a>[] = {</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>    {<span class="stringliteral">&quot;UM DRAGAO MEIO HUMANO DE 2.000 ANOS&quot;</span>, 3, 7},</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>    {<span class="stringliteral">&quot;GORO PERMANECE INVENCIVEL NOS ULTIMOS&quot;</span>, 2, 9},</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>    {<span class="stringliteral">&quot;500 ANOS. ELE CONQUISTOU O TITULO DE&quot;</span>, 2, 11},</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>    {<span class="stringliteral">&quot;GRANDE CAMPEAO AO DERROTAR KUNG LAO,&quot;</span>, 3, 13},</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>    {<span class="stringliteral">&quot;UM GUERREIRO MONGE SHAOLIN. FOI&quot;</span>, 3, 15},</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>    {<span class="stringliteral">&quot;DURANTE ESSE PERIODO QUE O TORNEIO&quot;</span>, 2, 17},</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>    {<span class="stringliteral">&quot;CAIU NAS MAOS DE SHANG TSUNG&quot;</span>, 5, 19},</div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>    {<span class="stringliteral">&quot;E FOI CORROMPIDO&quot;</span>, 12, 21},</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>};</div>
+</div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span> </div>
+<div class="foldopen" id="foldopen00163" data-start="{" data-end="};">
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno"><a class="line" href="bio__textlines_8c.html#a448b2627b574f1bd6d9d07eff8e21130">  163</a></span><span class="keyword">const</span> TextLine <a class="code hl_variable" href="bio__textlines_8c.html#a448b2627b574f1bd6d9d07eff8e21130">goroLines_EN</a>[] = {</div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>    {<span class="stringliteral">&quot;A 2.000 YEAR OLD HALF HUMAN DRAGON&quot;</span>, 3, 7},</div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>    {<span class="stringliteral">&quot;GORO REMAINS UNDERFEATED FOR THE PAST&quot;</span>, 2, 9},</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>    {<span class="stringliteral">&quot;500 YEARS. HE WON THE TITLE OF GRAND&quot;</span>, 2, 11},</div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>    {<span class="stringliteral">&quot;CHAMPION BY DEFEATING KUNG LAO, A&quot;</span>, 3, 13},</div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>    {<span class="stringliteral">&quot;SHAOLIN FIGHTING MONK. IT WAS DURING&quot;</span>, 2, 15},</div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>    {<span class="stringliteral">&quot;THIS PERIOD THAT TOURNAMENT FELL&quot;</span>, 2, 17},</div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>    {<span class="stringliteral">&quot;INTO SHANG TSUNG&#39;S HANDS AND WAS&quot;</span>, 4, 19},</div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>    {<span class="stringliteral">&quot;CORRUPTED&quot;</span>, 15, 21},</div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>};</div>
+</div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span> </div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span><span class="keyword">static</span> <span class="keyword">const</span> BioData fighterBios[] = {</div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>    {&amp;jc_bio,       &amp;jc_name,       loc_jc,       <span class="keyword">sizeof</span>(loc_jc),       <a class="code hl_variable" href="bio__textlines_8c.html#a7590aa6e91c535d8ffaa0123f706f41b">johnnyCageLines_EN</a>, <span class="keyword">sizeof</span>(<a class="code hl_variable" href="bio__textlines_8c.html#a7590aa6e91c535d8ffaa0123f706f41b">johnnyCageLines_EN</a>) / <span class="keyword">sizeof</span>(TextLine), <a class="code hl_variable" href="bio__textlines_8c.html#a29b7fd5d746a19566df8a927400e4b93">johnnyCageLines_BR</a>, <span class="keyword">sizeof</span>(<a class="code hl_variable" href="bio__textlines_8c.html#a29b7fd5d746a19566df8a927400e4b93">johnnyCageLines_BR</a>) / <span class="keyword">sizeof</span>(TextLine)},</div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>    {&amp;kano_bio,     &amp;kano_name,     loc_kano,     <span class="keyword">sizeof</span>(loc_kano),     <a class="code hl_variable" href="bio__textlines_8c.html#a8fc1c0e2e5b6bdf310ed48ddb952156e">kanoLines_EN</a>,       <span class="keyword">sizeof</span>(<a class="code hl_variable" href="bio__textlines_8c.html#a8fc1c0e2e5b6bdf310ed48ddb952156e">kanoLines_EN</a>) / <span class="keyword">sizeof</span>(TextLine),       <a class="code hl_variable" href="bio__textlines_8c.html#a0696b949d0309f55c08540ebb02ab205">kanoLines_BR</a>,       <span class="keyword">sizeof</span>(<a class="code hl_variable" href="bio__textlines_8c.html#a0696b949d0309f55c08540ebb02ab205">kanoLines_BR</a>) / <span class="keyword">sizeof</span>(TextLine)},</div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>    {&amp;raiden_bio,   &amp;raiden_name,   loc_raiden,   <span class="keyword">sizeof</span>(loc_raiden),   <a class="code hl_variable" href="bio__textlines_8c.html#a55557cae4607ed96bd2713db2b9e0547">raidenLines_EN</a>,     <span class="keyword">sizeof</span>(<a class="code hl_variable" href="bio__textlines_8c.html#a55557cae4607ed96bd2713db2b9e0547">raidenLines_EN</a>) / <span class="keyword">sizeof</span>(TextLine),     <a class="code hl_variable" href="bio__textlines_8c.html#adb457cfae2d0ed7c6af5c2ec53f49d48">raidenLines_BR</a>,     <span class="keyword">sizeof</span>(<a class="code hl_variable" href="bio__textlines_8c.html#adb457cfae2d0ed7c6af5c2ec53f49d48">raidenLines_BR</a>) / <span class="keyword">sizeof</span>(TextLine)},</div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>    {&amp;liu_kang_bio, &amp;liukang_name,  loc_liu_kang, <span class="keyword">sizeof</span>(loc_liu_kang), <a class="code hl_variable" href="bio__textlines_8c.html#acff605e8c7585722197249daba87805e">liuKangLines_EN</a>,    <span class="keyword">sizeof</span>(<a class="code hl_variable" href="bio__textlines_8c.html#acff605e8c7585722197249daba87805e">liuKangLines_EN</a>) / <span class="keyword">sizeof</span>(TextLine),    <a class="code hl_variable" href="bio__textlines_8c.html#a4cc24ff5f192b0d41cc43b5e7a935e3d">liuKangLines_BR</a>,    <span class="keyword">sizeof</span>(<a class="code hl_variable" href="bio__textlines_8c.html#a4cc24ff5f192b0d41cc43b5e7a935e3d">liuKangLines_BR</a>) / <span class="keyword">sizeof</span>(TextLine)},</div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>    {&amp;subzero_bio,  &amp;subzero_name,  loc_suzero,   <span class="keyword">sizeof</span>(loc_suzero),   <a class="code hl_variable" href="bio__textlines_8c.html#af1baccebe0dd77d2d631130947a1ff94">subzeroLines_EN</a>,    <span class="keyword">sizeof</span>(<a class="code hl_variable" href="bio__textlines_8c.html#af1baccebe0dd77d2d631130947a1ff94">subzeroLines_EN</a>) / <span class="keyword">sizeof</span>(TextLine),    <a class="code hl_variable" href="bio__textlines_8c.html#afc5cc04711b39c78da75a07456099dc8">subzeroLines_BR</a>,    <span class="keyword">sizeof</span>(<a class="code hl_variable" href="bio__textlines_8c.html#afc5cc04711b39c78da75a07456099dc8">subzeroLines_BR</a>) / <span class="keyword">sizeof</span>(TextLine)},</div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>    {&amp;scorpion_bio, &amp;scorpion_name, loc_scorpion, <span class="keyword">sizeof</span>(loc_scorpion), <a class="code hl_variable" href="bio__textlines_8c.html#ae218996bbaf16478e34777d78954ac7b">scorpionLines_EN</a>,   <span class="keyword">sizeof</span>(<a class="code hl_variable" href="bio__textlines_8c.html#ae218996bbaf16478e34777d78954ac7b">scorpionLines_EN</a>) / <span class="keyword">sizeof</span>(TextLine),   <a class="code hl_variable" href="bio__textlines_8c.html#a8c94feff9708c243ffa77d737a5e7b71">scorpionLines_BR</a>,   <span class="keyword">sizeof</span>(<a class="code hl_variable" href="bio__textlines_8c.html#a8c94feff9708c243ffa77d737a5e7b71">scorpionLines_BR</a>) / <span class="keyword">sizeof</span>(TextLine)},</div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>    {&amp;sonya_bio,    &amp;sonya_name,    loc_sonya,    <span class="keyword">sizeof</span>(loc_sonya),    <a class="code hl_variable" href="bio__textlines_8c.html#a3001dea0320b90b883b9205917571156">sonyaLines_EN</a>,      <span class="keyword">sizeof</span>(<a class="code hl_variable" href="bio__textlines_8c.html#a3001dea0320b90b883b9205917571156">sonyaLines_EN</a>) / <span class="keyword">sizeof</span>(TextLine),      <a class="code hl_variable" href="bio__textlines_8c.html#a1fd2b4779a786cd80fec48a3bc00fca8">sonyaLines_BR</a>,      <span class="keyword">sizeof</span>(<a class="code hl_variable" href="bio__textlines_8c.html#a1fd2b4779a786cd80fec48a3bc00fca8">sonyaLines_BR</a>) / <span class="keyword">sizeof</span>(TextLine)},</div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>    {NULL,          NULL,           NULL,         NULL,                 <a class="code hl_variable" href="bio__textlines_8c.html#a448b2627b574f1bd6d9d07eff8e21130">goroLines_EN</a>,       <span class="keyword">sizeof</span>(<a class="code hl_variable" href="bio__textlines_8c.html#a448b2627b574f1bd6d9d07eff8e21130">goroLines_EN</a>) / <span class="keyword">sizeof</span>(TextLine),       <a class="code hl_variable" href="bio__textlines_8c.html#acc18844befc41cdc62e55f796f7b9fd5">goroLines_BR</a>,       <span class="keyword">sizeof</span>(<a class="code hl_variable" href="bio__textlines_8c.html#acc18844befc41cdc62e55f796f7b9fd5">goroLines_BR</a>) / <span class="keyword">sizeof</span>(TextLine)}</div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>};</div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span> </div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span><span class="comment">// retorna o BioData correto baseado no lutador</span></div>
+<div class="foldopen" id="foldopen00186" data-start="{" data-end="}">
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno"><a class="line" href="bio__textlines_8c.html#a8edb0526c4339ce7f0c73d8c6454079c">  186</a></span><span class="keyword">const</span> BioData* <a class="code hl_function" href="bio__textlines_8c.html#a8edb0526c4339ce7f0c73d8c6454079c">getFighterBio</a>(u16 fighterIndex)</div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>{</div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>    <span class="keywordflow">return</span> &amp;fighterBios[fighterIndex];</div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>}</div>
+</div>
+<div class="ttc" id="abio__textlines_8c_html_a0696b949d0309f55c08540ebb02ab205"><div class="ttname"><a href="bio__textlines_8c.html#a0696b949d0309f55c08540ebb02ab205">kanoLines_BR</a></div><div class="ttdeci">const TextLine kanoLines_BR[]</div><div class="ttdef"><b>Definição</b> <a href="#l00033">bio_textlines.c:33</a></div></div>
+<div class="ttc" id="abio__textlines_8c_html_a1fd2b4779a786cd80fec48a3bc00fca8"><div class="ttname"><a href="bio__textlines_8c.html#a1fd2b4779a786cd80fec48a3bc00fca8">sonyaLines_BR</a></div><div class="ttdeci">const TextLine sonyaLines_BR[]</div><div class="ttdef"><b>Definição</b> <a href="#l00132">bio_textlines.c:132</a></div></div>
+<div class="ttc" id="abio__textlines_8c_html_a29b7fd5d746a19566df8a927400e4b93"><div class="ttname"><a href="bio__textlines_8c.html#a29b7fd5d746a19566df8a927400e4b93">johnnyCageLines_BR</a></div><div class="ttdeci">const TextLine johnnyCageLines_BR[]</div><div class="ttdef"><b>Definição</b> <a href="#l00007">bio_textlines.c:7</a></div></div>
+<div class="ttc" id="abio__textlines_8c_html_a3001dea0320b90b883b9205917571156"><div class="ttname"><a href="bio__textlines_8c.html#a3001dea0320b90b883b9205917571156">sonyaLines_EN</a></div><div class="ttdeci">const TextLine sonyaLines_EN[]</div><div class="ttdef"><b>Definição</b> <a href="#l00142">bio_textlines.c:142</a></div></div>
+<div class="ttc" id="abio__textlines_8c_html_a448b2627b574f1bd6d9d07eff8e21130"><div class="ttname"><a href="bio__textlines_8c.html#a448b2627b574f1bd6d9d07eff8e21130">goroLines_EN</a></div><div class="ttdeci">const TextLine goroLines_EN[]</div><div class="ttdef"><b>Definição</b> <a href="#l00163">bio_textlines.c:163</a></div></div>
+<div class="ttc" id="abio__textlines_8c_html_a4cc24ff5f192b0d41cc43b5e7a935e3d"><div class="ttname"><a href="bio__textlines_8c.html#a4cc24ff5f192b0d41cc43b5e7a935e3d">liuKangLines_BR</a></div><div class="ttdeci">const TextLine liuKangLines_BR[]</div><div class="ttdef"><b>Definição</b> <a href="#l00056">bio_textlines.c:56</a></div></div>
+<div class="ttc" id="abio__textlines_8c_html_a55557cae4607ed96bd2713db2b9e0547"><div class="ttname"><a href="bio__textlines_8c.html#a55557cae4607ed96bd2713db2b9e0547">raidenLines_EN</a></div><div class="ttdeci">const TextLine raidenLines_EN[]</div><div class="ttdef"><b>Definição</b> <a href="#l00123">bio_textlines.c:123</a></div></div>
+<div class="ttc" id="abio__textlines_8c_html_a7590aa6e91c535d8ffaa0123f706f41b"><div class="ttname"><a href="bio__textlines_8c.html#a7590aa6e91c535d8ffaa0123f706f41b">johnnyCageLines_EN</a></div><div class="ttdeci">const TextLine johnnyCageLines_EN[]</div><div class="ttdef"><b>Definição</b> <a href="#l00020">bio_textlines.c:20</a></div></div>
+<div class="ttc" id="abio__textlines_8c_html_a8c94feff9708c243ffa77d737a5e7b71"><div class="ttname"><a href="bio__textlines_8c.html#a8c94feff9708c243ffa77d737a5e7b71">scorpionLines_BR</a></div><div class="ttdeci">const TextLine scorpionLines_BR[]</div><div class="ttdef"><b>Definição</b> <a href="#l00075">bio_textlines.c:75</a></div></div>
+<div class="ttc" id="abio__textlines_8c_html_a8edb0526c4339ce7f0c73d8c6454079c"><div class="ttname"><a href="bio__textlines_8c.html#a8edb0526c4339ce7f0c73d8c6454079c">getFighterBio</a></div><div class="ttdeci">const BioData * getFighterBio(u16 fighterIndex)</div><div class="ttdef"><b>Definição</b> <a href="#l00186">bio_textlines.c:186</a></div></div>
+<div class="ttc" id="abio__textlines_8c_html_a8fc1c0e2e5b6bdf310ed48ddb952156e"><div class="ttname"><a href="bio__textlines_8c.html#a8fc1c0e2e5b6bdf310ed48ddb952156e">kanoLines_EN</a></div><div class="ttdeci">const TextLine kanoLines_EN[]</div><div class="ttdef"><b>Definição</b> <a href="#l00045">bio_textlines.c:45</a></div></div>
+<div class="ttc" id="abio__textlines_8c_html_acc18844befc41cdc62e55f796f7b9fd5"><div class="ttname"><a href="bio__textlines_8c.html#acc18844befc41cdc62e55f796f7b9fd5">goroLines_BR</a></div><div class="ttdeci">const TextLine goroLines_BR[]</div><div class="ttdef"><b>Definição</b> <a href="#l00152">bio_textlines.c:152</a></div></div>
+<div class="ttc" id="abio__textlines_8c_html_acff605e8c7585722197249daba87805e"><div class="ttname"><a href="bio__textlines_8c.html#acff605e8c7585722197249daba87805e">liuKangLines_EN</a></div><div class="ttdeci">const TextLine liuKangLines_EN[]</div><div class="ttdef"><b>Definição</b> <a href="#l00066">bio_textlines.c:66</a></div></div>
+<div class="ttc" id="abio__textlines_8c_html_adb457cfae2d0ed7c6af5c2ec53f49d48"><div class="ttname"><a href="bio__textlines_8c.html#adb457cfae2d0ed7c6af5c2ec53f49d48">raidenLines_BR</a></div><div class="ttdeci">const TextLine raidenLines_BR[]</div><div class="ttdef"><b>Definição</b> <a href="#l00113">bio_textlines.c:113</a></div></div>
+<div class="ttc" id="abio__textlines_8c_html_ae218996bbaf16478e34777d78954ac7b"><div class="ttname"><a href="bio__textlines_8c.html#ae218996bbaf16478e34777d78954ac7b">scorpionLines_EN</a></div><div class="ttdeci">const TextLine scorpionLines_EN[]</div><div class="ttdef"><b>Definição</b> <a href="#l00085">bio_textlines.c:85</a></div></div>
+<div class="ttc" id="abio__textlines_8c_html_af1baccebe0dd77d2d631130947a1ff94"><div class="ttname"><a href="bio__textlines_8c.html#af1baccebe0dd77d2d631130947a1ff94">subzeroLines_EN</a></div><div class="ttdeci">const TextLine subzeroLines_EN[]</div><div class="ttdef"><b>Definição</b> <a href="#l00104">bio_textlines.c:104</a></div></div>
+<div class="ttc" id="abio__textlines_8c_html_afc5cc04711b39c78da75a07456099dc8"><div class="ttname"><a href="bio__textlines_8c.html#afc5cc04711b39c78da75a07456099dc8">subzeroLines_BR</a></div><div class="ttdeci">const TextLine subzeroLines_BR[]</div><div class="ttdef"><b>Definição</b> <a href="#l00095">bio_textlines.c:95</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

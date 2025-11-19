@@ -1,0 +1,401 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt-BR">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.11.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Mortal Kombat Plus: Referência do Arquivo src/rooms/bonus_stage_room.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Mortal Kombat Plus
+   </div>
+   <div id="projectbrief">Documentação gerada automaticamente com Doxygen</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.11.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Busca',false);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){ initResizable(false); });
+/* @license-end */
+</script>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Carregando...</div>
+<div class="SRStatus" id="Searching">Procurando...</div>
+<div class="SRStatus" id="NoMatches">Nenhuma entrada encontrado</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_061d5f4231849b919a8e39e71db1f1a1.html">rooms</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div id="doc-content">
+<div class="header">
+  <div class="summary">
+<a href="#define-members">Definições e Macros</a> &#124;
+<a href="#func-members">Funções</a>  </div>
+  <div class="headertitle"><div class="title">Referência do Arquivo bonus_stage_room.c</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;genesis.h&gt;</code><br />
+<code>#include &quot;bonus_stage_room.h&quot;</code><br />
+<code>#include &quot;stages.h&quot;</code><br />
+<code>#include &quot;gfx.h&quot;</code><br />
+<code>#include &quot;sprites.h&quot;</code><br />
+<code>#include &quot;game_vars.h&quot;</code><br />
+<code>#include &quot;typewriter_printer.h&quot;</code><br />
+<code>#include &quot;bio_textlines.h&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Gráfico de dependência de inclusões para bonus_stage_room.c:</div>
+<div class="dyncontent">
+<div class="center"><img src="bonus__stage__room_8c__incl.png" border="0" usemap="#asrc_2rooms_2bonus__stage__room_8c" alt=""/></div>
+<map name="asrc_2rooms_2bonus__stage__room_8c" id="asrc_2rooms_2bonus__stage__room_8c">
+<area shape="rect" title=" " alt="" coords="371,5,536,54"/>
+<area shape="rect" title=" " alt="" coords="5,102,86,132"/>
+<area shape="poly" title=" " alt="" coords="371,49,102,104,100,99,370,44"/>
+<area shape="rect" title=" " alt="" coords="110,102,261,132"/>
+<area shape="poly" title=" " alt="" coords="379,57,246,99,244,94,378,52"/>
+<area shape="rect" title=" " alt="" coords="285,102,358,132"/>
+<area shape="poly" title=" " alt="" coords="418,57,358,95,355,91,415,52"/>
+<area shape="rect" title=" " alt="" coords="383,102,436,132"/>
+<area shape="poly" title=" " alt="" coords="444,56,426,89,422,87,439,53"/>
+<area shape="rect" title=" " alt="" coords="460,102,535,132"/>
+<area shape="poly" title=" " alt="" coords="468,53,485,87,481,89,463,56"/>
+<area shape="rect" title=" " alt="" coords="559,102,660,132"/>
+<area shape="poly" title=" " alt="" coords="498,52,572,92,569,97,496,57"/>
+<area shape="rect" title=" " alt="" coords="684,102,829,132"/>
+<area shape="poly" title=" " alt="" coords="537,52,692,95,690,100,536,57"/>
+<area shape="rect" title=" " alt="" coords="853,102,963,132"/>
+<area shape="poly" title=" " alt="" coords="537,43,838,99,837,104,536,48"/>
+</map>
+</div>
+</div>
+<p><a href="bonus__stage__room_8c_source.html">Ir para o código-fonte desse arquivo.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+Definições e Macros</h2></td></tr>
+<tr class="memitem:a1627cc1afe20cd3ba02e1a4037610f9e" id="r_a1627cc1afe20cd3ba02e1a4037610f9e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1627cc1afe20cd3ba02e1a4037610f9e">BLOCO_P1_POS_X</a>&#160;&#160;&#160;16</td></tr>
+<tr class="separator:a1627cc1afe20cd3ba02e1a4037610f9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aec2be2fb3c5ffeb97a9fe1d6e2e00b60" id="r_aec2be2fb3c5ffeb97a9fe1d6e2e00b60"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aec2be2fb3c5ffeb97a9fe1d6e2e00b60">BLOCO_P2_POS_X</a>&#160;&#160;&#160;168</td></tr>
+<tr class="separator:aec2be2fb3c5ffeb97a9fe1d6e2e00b60"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa3bfdc8a0caa802f3edbbb39f1bd286b" id="r_aa3bfdc8a0caa802f3edbbb39f1bd286b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa3bfdc8a0caa802f3edbbb39f1bd286b">BLOCO_POS_Y</a>&#160;&#160;&#160;128</td></tr>
+<tr class="separator:aa3bfdc8a0caa802f3edbbb39f1bd286b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad159a92ec8d5f5ef115bd439f52bd13c" id="r_ad159a92ec8d5f5ef115bd439f52bd13c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad159a92ec8d5f5ef115bd439f52bd13c">BLOCO_ANIM_INTEGRO</a>&#160;&#160;&#160;0</td></tr>
+<tr class="separator:ad159a92ec8d5f5ef115bd439f52bd13c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9b0805ee22a33afe9848feeaff57e05c" id="r_a9b0805ee22a33afe9848feeaff57e05c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9b0805ee22a33afe9848feeaff57e05c">BLOCO_ANIM_QUEBRADO</a>&#160;&#160;&#160;1</td></tr>
+<tr class="separator:a9b0805ee22a33afe9848feeaff57e05c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2ba221da80a1a0dbb04556b40f5aa261" id="r_a2ba221da80a1a0dbb04556b40f5aa261"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2ba221da80a1a0dbb04556b40f5aa261">POS_X_P1</a>&#160;&#160;&#160;24</td></tr>
+<tr class="separator:a2ba221da80a1a0dbb04556b40f5aa261"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a53b332b294123544b73026ea4e4d50e6" id="r_a53b332b294123544b73026ea4e4d50e6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a53b332b294123544b73026ea4e4d50e6">POS_X_P2</a>&#160;&#160;&#160;176</td></tr>
+<tr class="separator:a53b332b294123544b73026ea4e4d50e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1ae3460f7b7d3db5b8da111578dff7fe" id="r_a1ae3460f7b7d3db5b8da111578dff7fe"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1ae3460f7b7d3db5b8da111578dff7fe">POS_Y_P</a>&#160;&#160;&#160;56</td></tr>
+<tr class="separator:a1ae3460f7b7d3db5b8da111578dff7fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Funções</h2></td></tr>
+<tr class="memitem:a283acd3e436aace9ae52dda764f70ce8" id="r_a283acd3e436aace9ae52dda764f70ce8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a283acd3e436aace9ae52dda764f70ce8">processBonusStage</a> ()</td></tr>
+<tr class="separator:a283acd3e436aace9ae52dda764f70ce8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Definições e macros</h2>
+<a id="ad159a92ec8d5f5ef115bd439f52bd13c" name="ad159a92ec8d5f5ef115bd439f52bd13c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad159a92ec8d5f5ef115bd439f52bd13c">&#9670;&#160;</a></span>BLOCO_ANIM_INTEGRO</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BLOCO_ANIM_INTEGRO&#160;&#160;&#160;0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definição na linha <a class="el" href="bonus__stage__room_8c_source.html#l00013">13</a> do arquivo <a class="el" href="bonus__stage__room_8c_source.html">bonus_stage_room.c</a>.</p>
+
+</div>
+</div>
+<a id="a9b0805ee22a33afe9848feeaff57e05c" name="a9b0805ee22a33afe9848feeaff57e05c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9b0805ee22a33afe9848feeaff57e05c">&#9670;&#160;</a></span>BLOCO_ANIM_QUEBRADO</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BLOCO_ANIM_QUEBRADO&#160;&#160;&#160;1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definição na linha <a class="el" href="bonus__stage__room_8c_source.html#l00014">14</a> do arquivo <a class="el" href="bonus__stage__room_8c_source.html">bonus_stage_room.c</a>.</p>
+
+</div>
+</div>
+<a id="a1627cc1afe20cd3ba02e1a4037610f9e" name="a1627cc1afe20cd3ba02e1a4037610f9e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1627cc1afe20cd3ba02e1a4037610f9e">&#9670;&#160;</a></span>BLOCO_P1_POS_X</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BLOCO_P1_POS_X&#160;&#160;&#160;16</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definição na linha <a class="el" href="bonus__stage__room_8c_source.html#l00010">10</a> do arquivo <a class="el" href="bonus__stage__room_8c_source.html">bonus_stage_room.c</a>.</p>
+
+</div>
+</div>
+<a id="aec2be2fb3c5ffeb97a9fe1d6e2e00b60" name="aec2be2fb3c5ffeb97a9fe1d6e2e00b60"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aec2be2fb3c5ffeb97a9fe1d6e2e00b60">&#9670;&#160;</a></span>BLOCO_P2_POS_X</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BLOCO_P2_POS_X&#160;&#160;&#160;168</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definição na linha <a class="el" href="bonus__stage__room_8c_source.html#l00011">11</a> do arquivo <a class="el" href="bonus__stage__room_8c_source.html">bonus_stage_room.c</a>.</p>
+
+</div>
+</div>
+<a id="aa3bfdc8a0caa802f3edbbb39f1bd286b" name="aa3bfdc8a0caa802f3edbbb39f1bd286b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa3bfdc8a0caa802f3edbbb39f1bd286b">&#9670;&#160;</a></span>BLOCO_POS_Y</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BLOCO_POS_Y&#160;&#160;&#160;128</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definição na linha <a class="el" href="bonus__stage__room_8c_source.html#l00012">12</a> do arquivo <a class="el" href="bonus__stage__room_8c_source.html">bonus_stage_room.c</a>.</p>
+
+</div>
+</div>
+<a id="a2ba221da80a1a0dbb04556b40f5aa261" name="a2ba221da80a1a0dbb04556b40f5aa261"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2ba221da80a1a0dbb04556b40f5aa261">&#9670;&#160;</a></span>POS_X_P1</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define POS_X_P1&#160;&#160;&#160;24</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definição na linha <a class="el" href="bonus__stage__room_8c_source.html#l00015">15</a> do arquivo <a class="el" href="bonus__stage__room_8c_source.html">bonus_stage_room.c</a>.</p>
+
+</div>
+</div>
+<a id="a53b332b294123544b73026ea4e4d50e6" name="a53b332b294123544b73026ea4e4d50e6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a53b332b294123544b73026ea4e4d50e6">&#9670;&#160;</a></span>POS_X_P2</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define POS_X_P2&#160;&#160;&#160;176</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definição na linha <a class="el" href="bonus__stage__room_8c_source.html#l00016">16</a> do arquivo <a class="el" href="bonus__stage__room_8c_source.html">bonus_stage_room.c</a>.</p>
+
+</div>
+</div>
+<a id="a1ae3460f7b7d3db5b8da111578dff7fe" name="a1ae3460f7b7d3db5b8da111578dff7fe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1ae3460f7b7d3db5b8da111578dff7fe">&#9670;&#160;</a></span>POS_Y_P</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define POS_Y_P&#160;&#160;&#160;56</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definição na linha <a class="el" href="bonus__stage__room_8c_source.html#l00017">17</a> do arquivo <a class="el" href="bonus__stage__room_8c_source.html">bonus_stage_room.c</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Funções</h2>
+<a id="a283acd3e436aace9ae52dda764f70ce8" name="a283acd3e436aace9ae52dda764f70ce8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a283acd3e436aace9ae52dda764f70ce8">&#9670;&#160;</a></span>processBonusStage()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void processBonusStage </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definição na linha <a class="el" href="bonus__stage__room_8c_source.html#l00019">19</a> do arquivo <a class="el" href="bonus__stage__room_8c_source.html">bonus_stage_room.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   20</span>{</div>
+<div class="line"><span class="lineno">   21</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; 16; i++)</div>
+<div class="line"><span class="lineno">   22</span>    {</div>
+<div class="line"><span class="lineno">   23</span>        <a class="code hl_variable" href="game__vars_8c.html#aa5e097d9886fbef5de8248a18d1d95ee">GE</a>[i].sprite = NULL;</div>
+<div class="line"><span class="lineno">   24</span>    }</div>
+<div class="line"><span class="lineno">   25</span>    <span class="keywordflow">while</span> (TRUE)</div>
+<div class="line"><span class="lineno">   26</span>    {</div>
+<div class="line"><span class="lineno">   27</span> </div>
+<div class="line"><span class="lineno">   28</span>        <a class="code hl_variable" href="game__vars_8c.html#a940f635da7254d2a02a607dab0139dfd">gFrames</a>++;</div>
+<div class="line"><span class="lineno">   29</span> </div>
+<div class="line"><span class="lineno">   30</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="game__vars_8c.html#a940f635da7254d2a02a607dab0139dfd">gFrames</a> == 1)</div>
+<div class="line"><span class="lineno">   31</span>        {</div>
+<div class="line"><span class="lineno">   32</span>            <span class="comment">// BG_A</span></div>
+<div class="line"><span class="lineno">   33</span>            VDP_loadTileSet(tym_bga.tileset, <a class="code hl_variable" href="game__vars_8c.html#ac5c9f7210c7cb249636b7f1dc0121b71">gInd_tileset</a>, DMA);</div>
+<div class="line"><span class="lineno">   34</span>            VDP_setTileMapEx(BG_A, tym_bga.tilemap,</div>
+<div class="line"><span class="lineno">   35</span>                             TILE_ATTR_FULL(PAL0, FALSE, FALSE, FALSE, <a class="code hl_variable" href="game__vars_8c.html#ac5c9f7210c7cb249636b7f1dc0121b71">gInd_tileset</a>), 0, 0, 0, 0, 40, 28, DMA);</div>
+<div class="line"><span class="lineno">   36</span>            PAL_setPalette(PAL0, tym_bga.palette-&gt;data, DMA);</div>
+<div class="line"><span class="lineno">   37</span>            <a class="code hl_variable" href="game__vars_8c.html#ac5c9f7210c7cb249636b7f1dc0121b71">gInd_tileset</a> += tym_bga.tileset-&gt;numTile;</div>
+<div class="line"><span class="lineno">   38</span> </div>
+<div class="line"><span class="lineno">   39</span>            <span class="comment">// BG_B com tiles com prioridades setados no editor</span></div>
+<div class="line"><span class="lineno">   40</span>            VDP_loadTileSet(tym_bgb.tileset, <a class="code hl_variable" href="game__vars_8c.html#ac5c9f7210c7cb249636b7f1dc0121b71">gInd_tileset</a>, DMA);</div>
+<div class="line"><span class="lineno">   41</span>            VDP_setTileMapEx(BG_B, tym_bgb.tilemap,</div>
+<div class="line"><span class="lineno">   42</span>                             TILE_ATTR_FULL(PAL1, FALSE, FALSE, FALSE, <a class="code hl_variable" href="game__vars_8c.html#ac5c9f7210c7cb249636b7f1dc0121b71">gInd_tileset</a>), 0, 0, 0, 0, 40, 28, DMA);</div>
+<div class="line"><span class="lineno">   43</span>            PAL_setPalette(PAL1, tym_bgb.palette-&gt;data, DMA);</div>
+<div class="line"><span class="lineno">   44</span>            <a class="code hl_variable" href="game__vars_8c.html#ac5c9f7210c7cb249636b7f1dc0121b71">gInd_tileset</a> += tym_bgb.tileset-&gt;numTile;</div>
+<div class="line"><span class="lineno">   45</span> </div>
+<div class="line"><span class="lineno">   46</span>            <span class="comment">// Sprite do P1</span></div>
+<div class="line"><span class="lineno">   47</span>            <a class="code hl_variable" href="game__vars_8c.html#aa5e097d9886fbef5de8248a18d1d95ee">GE</a>[0].sprite = SPR_addSpriteSafe(&amp;spKanoBonus, <a class="code hl_define" href="#a2ba221da80a1a0dbb04556b40f5aa261">POS_X_P1</a>, <a class="code hl_define" href="#a1ae3460f7b7d3db5b8da111578dff7fe">POS_Y_P</a>, (TILE_ATTR(PAL2, FALSE, FALSE, FALSE)));</div>
+<div class="line"><span class="lineno">   48</span>            PAL_setPalette(PAL2, spKanoBonus.palette-&gt;data, DMA);</div>
+<div class="line"><span class="lineno">   49</span>            SPR_setAnim(<a class="code hl_variable" href="game__vars_8c.html#aa5e097d9886fbef5de8248a18d1d95ee">GE</a>[0].sprite, 0);</div>
+<div class="line"><span class="lineno">   50</span> </div>
+<div class="line"><span class="lineno">   51</span>            <span class="comment">// Sprite do P2</span></div>
+<div class="line"><span class="lineno">   52</span>            <a class="code hl_variable" href="game__vars_8c.html#aa5e097d9886fbef5de8248a18d1d95ee">GE</a>[1].sprite = SPR_addSpriteSafe(&amp;spKanoBonus, <a class="code hl_define" href="#a53b332b294123544b73026ea4e4d50e6">POS_X_P2</a>, <a class="code hl_define" href="#a1ae3460f7b7d3db5b8da111578dff7fe">POS_Y_P</a>, (TILE_ATTR(PAL2, FALSE, FALSE, FALSE)));</div>
+<div class="line"><span class="lineno">   53</span>            PAL_setPalette(PAL3, spKanoBonus.palette-&gt;data, DMA);</div>
+<div class="line"><span class="lineno">   54</span>            SPR_setAnim(<a class="code hl_variable" href="game__vars_8c.html#aa5e097d9886fbef5de8248a18d1d95ee">GE</a>[1].sprite, 0);</div>
+<div class="line"><span class="lineno">   55</span>            <span class="comment">// SPR_setFrame(GE[1].sprite, 1);</span></div>
+<div class="line"><span class="lineno">   56</span>            <span class="comment">// SPR_setAnimationLoop(GE[1].sprite, FALSE);</span></div>
+<div class="line"><span class="lineno">   57</span> </div>
+<div class="line"><span class="lineno">   58</span>            <span class="comment">// Add Sprite do bloco do P1</span></div>
+<div class="line"><span class="lineno">   59</span>            <a class="code hl_variable" href="game__vars_8c.html#aa5e097d9886fbef5de8248a18d1d95ee">GE</a>[2].sprite = SPR_addSpriteSafe(&amp;spWood, <a class="code hl_define" href="#a1627cc1afe20cd3ba02e1a4037610f9e">BLOCO_P1_POS_X</a>, <a class="code hl_define" href="#aa3bfdc8a0caa802f3edbbb39f1bd286b">BLOCO_POS_Y</a>, TILE_ATTR(PAL1, TRUE, FALSE, FALSE));</div>
+<div class="line"><span class="lineno">   60</span>            SPR_setDepth(<a class="code hl_variable" href="game__vars_8c.html#aa5e097d9886fbef5de8248a18d1d95ee">GE</a>[2].sprite, SPR_MIN_DEPTH);</div>
+<div class="line"><span class="lineno">   61</span> </div>
+<div class="line"><span class="lineno">   62</span>            <span class="comment">// Add Sprite do bloco do P2</span></div>
+<div class="line"><span class="lineno">   63</span>            <a class="code hl_variable" href="game__vars_8c.html#aa5e097d9886fbef5de8248a18d1d95ee">GE</a>[3].sprite = SPR_addSpriteSafe(&amp;spWood, <a class="code hl_define" href="#aec2be2fb3c5ffeb97a9fe1d6e2e00b60">BLOCO_P2_POS_X</a>, <a class="code hl_define" href="#aa3bfdc8a0caa802f3edbbb39f1bd286b">BLOCO_POS_Y</a>, TILE_ATTR(PAL1, TRUE, FALSE, FALSE));</div>
+<div class="line"><span class="lineno">   64</span>            SPR_setDepth(<a class="code hl_variable" href="game__vars_8c.html#aa5e097d9886fbef5de8248a18d1d95ee">GE</a>[3].sprite, SPR_MIN_DEPTH);</div>
+<div class="line"><span class="lineno">   65</span> </div>
+<div class="line"><span class="lineno">   66</span>            <span class="comment">// Teste da animação do Frame do Bloco destruído</span></div>
+<div class="line"><span class="lineno">   67</span>            SPR_setFrame(<a class="code hl_variable" href="game__vars_8c.html#aa5e097d9886fbef5de8248a18d1d95ee">GE</a>[3].sprite, <a class="code hl_define" href="#a9b0805ee22a33afe9848feeaff57e05c">BLOCO_ANIM_QUEBRADO</a>);</div>
+<div class="line"><span class="lineno">   68</span> </div>
+<div class="line"><span class="lineno">   69</span>            <a class="code hl_variable" href="game__vars_8c.html#aa5e097d9886fbef5de8248a18d1d95ee">GE</a>[4].sprite = SPR_addSpriteSafe(&amp;spMessage1, 56, 24, TILE_ATTR(PAL0, FALSE, FALSE, FALSE));</div>
+<div class="line"><span class="lineno">   70</span>            <span class="comment">// PAL_setPalette(PAL1, spMessage1.palette-&gt;data, DMA);</span></div>
+<div class="line"><span class="lineno">   71</span>            SPR_setDepth(<a class="code hl_variable" href="game__vars_8c.html#aa5e097d9886fbef5de8248a18d1d95ee">GE</a>[4].sprite, SPR_MIN_DEPTH);</div>
+<div class="line"><span class="lineno">   72</span>            <span class="comment">// SPR_setFrame(GE[4].sprite, 0);</span></div>
+<div class="line"><span class="lineno">   73</span>        }</div>
+<div class="line"><span class="lineno">   74</span> </div>
+<div class="line"><span class="lineno">   75</span>        <span class="keywordflow">if</span>(<a class="code hl_variable" href="game__vars_8c.html#a940f635da7254d2a02a607dab0139dfd">gFrames</a> == 60)</div>
+<div class="line"><span class="lineno">   76</span>        {</div>
+<div class="line"><span class="lineno">   77</span>            <span class="keywordflow">if</span>(<a class="code hl_variable" href="game__vars_8c.html#aa5e097d9886fbef5de8248a18d1d95ee">GE</a>[4].sprite)</div>
+<div class="line"><span class="lineno">   78</span>            {</div>
+<div class="line"><span class="lineno">   79</span>                SPR_releaseSprite(<a class="code hl_variable" href="game__vars_8c.html#aa5e097d9886fbef5de8248a18d1d95ee">GE</a>[4].sprite);</div>
+<div class="line"><span class="lineno">   80</span>                <a class="code hl_variable" href="game__vars_8c.html#aa5e097d9886fbef5de8248a18d1d95ee">GE</a>[4].sprite = NULL;</div>
+<div class="line"><span class="lineno">   81</span>            }</div>
+<div class="line"><span class="lineno">   82</span>        }</div>
+<div class="line"><span class="lineno">   83</span> </div>
+<div class="line"><span class="lineno">   84</span>        SPR_update();</div>
+<div class="line"><span class="lineno">   85</span>        SYS_doVBlankProcess();</div>
+<div class="line"><span class="lineno">   86</span>    }</div>
+<div class="line"><span class="lineno">   87</span>}</div>
+<div class="ttc" id="abonus__stage__room_8c_html_a1627cc1afe20cd3ba02e1a4037610f9e"><div class="ttname"><a href="#a1627cc1afe20cd3ba02e1a4037610f9e">BLOCO_P1_POS_X</a></div><div class="ttdeci">#define BLOCO_P1_POS_X</div><div class="ttdef"><b>Definição</b> <a href="bonus__stage__room_8c_source.html#l00010">bonus_stage_room.c:10</a></div></div>
+<div class="ttc" id="abonus__stage__room_8c_html_a1ae3460f7b7d3db5b8da111578dff7fe"><div class="ttname"><a href="#a1ae3460f7b7d3db5b8da111578dff7fe">POS_Y_P</a></div><div class="ttdeci">#define POS_Y_P</div><div class="ttdef"><b>Definição</b> <a href="bonus__stage__room_8c_source.html#l00017">bonus_stage_room.c:17</a></div></div>
+<div class="ttc" id="abonus__stage__room_8c_html_a2ba221da80a1a0dbb04556b40f5aa261"><div class="ttname"><a href="#a2ba221da80a1a0dbb04556b40f5aa261">POS_X_P1</a></div><div class="ttdeci">#define POS_X_P1</div><div class="ttdef"><b>Definição</b> <a href="bonus__stage__room_8c_source.html#l00015">bonus_stage_room.c:15</a></div></div>
+<div class="ttc" id="abonus__stage__room_8c_html_a53b332b294123544b73026ea4e4d50e6"><div class="ttname"><a href="#a53b332b294123544b73026ea4e4d50e6">POS_X_P2</a></div><div class="ttdeci">#define POS_X_P2</div><div class="ttdef"><b>Definição</b> <a href="bonus__stage__room_8c_source.html#l00016">bonus_stage_room.c:16</a></div></div>
+<div class="ttc" id="abonus__stage__room_8c_html_a9b0805ee22a33afe9848feeaff57e05c"><div class="ttname"><a href="#a9b0805ee22a33afe9848feeaff57e05c">BLOCO_ANIM_QUEBRADO</a></div><div class="ttdeci">#define BLOCO_ANIM_QUEBRADO</div><div class="ttdef"><b>Definição</b> <a href="bonus__stage__room_8c_source.html#l00014">bonus_stage_room.c:14</a></div></div>
+<div class="ttc" id="abonus__stage__room_8c_html_aa3bfdc8a0caa802f3edbbb39f1bd286b"><div class="ttname"><a href="#aa3bfdc8a0caa802f3edbbb39f1bd286b">BLOCO_POS_Y</a></div><div class="ttdeci">#define BLOCO_POS_Y</div><div class="ttdef"><b>Definição</b> <a href="bonus__stage__room_8c_source.html#l00012">bonus_stage_room.c:12</a></div></div>
+<div class="ttc" id="abonus__stage__room_8c_html_aec2be2fb3c5ffeb97a9fe1d6e2e00b60"><div class="ttname"><a href="#aec2be2fb3c5ffeb97a9fe1d6e2e00b60">BLOCO_P2_POS_X</a></div><div class="ttdeci">#define BLOCO_P2_POS_X</div><div class="ttdef"><b>Definição</b> <a href="bonus__stage__room_8c_source.html#l00011">bonus_stage_room.c:11</a></div></div>
+<div class="ttc" id="agame__vars_8c_html_a940f635da7254d2a02a607dab0139dfd"><div class="ttname"><a href="game__vars_8c.html#a940f635da7254d2a02a607dab0139dfd">gFrames</a></div><div class="ttdeci">u32 gFrames</div><div class="ttdef"><b>Definição</b> <a href="game__vars_8c_source.html#l00016">game_vars.c:16</a></div></div>
+<div class="ttc" id="agame__vars_8c_html_aa5e097d9886fbef5de8248a18d1d95ee"><div class="ttname"><a href="game__vars_8c.html#aa5e097d9886fbef5de8248a18d1d95ee">GE</a></div><div class="ttdeci">GraphicElement GE[25]</div><div class="ttdef"><b>Definição</b> <a href="game__vars_8c_source.html#l00023">game_vars.c:23</a></div></div>
+<div class="ttc" id="agame__vars_8c_html_ac5c9f7210c7cb249636b7f1dc0121b71"><div class="ttname"><a href="game__vars_8c.html#ac5c9f7210c7cb249636b7f1dc0121b71">gInd_tileset</a></div><div class="ttdeci">u16 gInd_tileset</div><div class="ttdef"><b>Definição</b> <a href="game__vars_8c_source.html#l00012">game_vars.c:12</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+Esse é o diagrama das funções que utilizam essa função:</div>
+<div class="dyncontent">
+<div class="center"><img src="bonus__stage__room_8c_a283acd3e436aace9ae52dda764f70ce8_icgraph.png" border="0" usemap="#abonus__stage__room_8c_a283acd3e436aace9ae52dda764f70ce8_icgraph" alt=""/></div>
+<map name="abonus__stage__room_8c_a283acd3e436aace9ae52dda764f70ce8_icgraph" id="abonus__stage__room_8c_a283acd3e436aace9ae52dda764f70ce8_icgraph">
+<area shape="rect" title=" " alt="" coords="105,5,247,35"/>
+<area shape="rect" href="main_8c.html#af2eb07b318158270774fcc967eec3c80" title=" " alt="" coords="5,5,57,35"/>
+<area shape="poly" title=" " alt="" coords="89,23,57,23,57,18,89,18"/>
+</map>
+</div>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gerado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.11.0
+</small></address>
+</div><!-- doc-content -->
+</body>
+</html>

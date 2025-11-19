@@ -1,0 +1,10 @@
+<map id="getFighterBio" name="getFighterBio">
+<area shape="rect" id="Node000001" title=" " alt="" coords="451,32,559,62"/>
+<area shape="rect" id="Node000002" href="$intro__demo__room_8c.html#a32183ed63a770a246f599a6c8cf6ca32" title=" " alt="" coords="252,5,403,35"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="435,39,403,34,404,29,436,34"/>
+<area shape="rect" id="Node000003" href="$intro__demo__room_8c.html#ac46ea98ecb7218ef78a7d4cd50896175" title=" " alt="" coords="105,32,204,62"/>
+<area shape="poly" id="edge4_Node000001_Node000003" title=" " alt="" coords="436,50,205,50,205,44,436,44"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="237,37,205,42,204,37,236,32"/>
+<area shape="rect" id="Node000004" href="$main_8c.html#af2eb07b318158270774fcc967eec3c80" title=" " alt="" coords="5,32,57,62"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="89,50,57,50,57,44,89,44"/>
+</map>

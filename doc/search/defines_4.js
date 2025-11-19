@@ -1,5 +1,12 @@
 var searchData=
 [
-  ['screen_5fheight_0',['SCREEN_HEIGHT',['../char__select__room_8c.html#a6974d08a74da681b3957b2fead2608b8',1,'char_select_room.c']]],
-  ['screen_5fwidth_1',['SCREEN_WIDTH',['../char__select__room_8c.html#a2cd109632a6dcccaa80b43561b1ab700',1,'char_select_room.c']]]
+  ['palace_5fgates_5fh_0',['PALACE_GATES_H',['../palace__gates__room_8c.html#a99a56a5799e7eec62668dd6609856c6f',1,'palace_gates_room.c']]],
+  ['palace_5fgates_5fw_1',['PALACE_GATES_W',['../palace__gates__room_8c.html#aabd1194d3832b13a6ad6059d9bfa3806',1,'palace_gates_room.c']]],
+  ['player_5f1_5fpos_5fx_2',['PLAYER_1_POS_X',['../char__select__room_8c.html#adfd7161599c48c9e339ea98722ced220',1,'char_select_room.c']]],
+  ['player_5f1_5fpos_5fy_3',['PLAYER_1_POS_Y',['../char__select__room_8c.html#a81c347ec83f0d64c6fe39526029cb2d2',1,'char_select_room.c']]],
+  ['player_5f2_5fpos_5fx_4',['PLAYER_2_POS_X',['../char__select__room_8c.html#a4a02c780d3b0cdfbf0233a3b61a4a4cc',1,'char_select_room.c']]],
+  ['player_5f2_5fpos_5fy_5',['PLAYER_2_POS_Y',['../char__select__room_8c.html#ac75b161bb8ede82c624783eb6d63a468',1,'char_select_room.c']]],
+  ['pos_5fx_5fp1_6',['POS_X_P1',['../bonus__stage__room_8c.html#a2ba221da80a1a0dbb04556b40f5aa261',1,'bonus_stage_room.c']]],
+  ['pos_5fx_5fp2_7',['POS_X_P2',['../bonus__stage__room_8c.html#a53b332b294123544b73026ea4e4d50e6',1,'bonus_stage_room.c']]],
+  ['pos_5fy_5fp_8',['POS_Y_P',['../bonus__stage__room_8c.html#a1ae3460f7b7d3db5b8da111578dff7fe',1,'bonus_stage_room.c']]]
 ];

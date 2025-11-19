@@ -1,5 +1,11 @@
 <map id="src/modulos/bio_textlines.c" name="src/modulos/bio_textlines.c">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,194,35"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="44,83,155,113"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="102,36,102,67,97,67,97,36"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="128,5,316,35"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,83,116,113"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="193,38,106,79,103,74,190,33"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="140,83,208,113"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="215,37,193,71,189,68,211,34"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="232,83,308,113"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="233,34,255,68,251,71,229,37"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="332,83,432,113"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="253,33,339,74,337,79,251,38"/>
 </map>
