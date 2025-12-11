@@ -25,6 +25,8 @@ extern bool gASG_system;
 extern s8 gClockL;     // Digito esquerdo do Relogio
 extern s8 gClockR;     // Digito direito do Relogio
 extern s8 gClockTimer; // relógio atualizado a cada segundo
+extern s16 scrollOffset;
+extern s16 scrollValues[48];
 
 extern GameLanguage language; // definição da linguagem do sistema
 extern GraphicElement GE[25]; // Vetor global de elementos gráficos (GE)

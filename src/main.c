@@ -14,8 +14,6 @@ u16 gDistancia;          // Distancia entre os Players
 s16 gMeioDaTela = 0;     // MEio da Câmera em X
 s16 camPosX = 0;         // Posicao da Camera
 s16 camPosXanterior = 0; // Posicao da Camera no frame Anterior
-s16 scrollOffset = 0;
-s16 scrollValues[48];
 
 void resetGraphicElements();
 void CLEAR_VDP();
@@ -28,7 +26,7 @@ int main(bool hardReset)
   // VDP_setHilightShadow(TRUE);
 
   debugEnabled = FALSE;
-  gRoom = TELA_DEMO_INTRO;
+  gRoom = PALACE_GATES;
   gFrames = 0;
   gInd_tileset = 0;
   player[0].id = JOHNNY_CAGE;
@@ -66,33 +64,7 @@ int main(bool hardReset)
 
     if (PALACE_GATES == gRoom)
     {
-      if (gFrames == 1)
-        CLEAR_VDP();
-
       initPalaceGatesRoom();
-
-      player[0].sprite = SPR_addSprite(&spr_subzero, 24, 96, TILE_ATTR(PAL2, 0, FALSE, FALSE));
-      PAL_setPalette(PAL2, spr_subzero.palette->data, DMA);
-
-      player[1].sprite = SPR_addSprite(&spr_reptile, 168, 96, TILE_ATTR(PAL3, 0, FALSE, TRUE));
-      PAL_setPalette(PAL3, spr_reptile.palette->data, DMA);
-
-      player[0].id = SUBZERO;
-      player[1].id = REPTILE;
-      player[0].state = PARADO;
-      player[1].state = PARADO;
-      player[0].paleta = PAL2;
-      player[1].paleta = PAL3;
-
-      scrollOffset += 1;
-      VDP_setScrollingMode(HSCROLL_LINE, VSCROLL_COLUMN);
-
-      for (int i = 0; i < 48; i++)
-      {
-        scrollValues[i] = scrollOffset;
-      }
-
-      VDP_setHorizontalScrollLine(BG_B, 0, scrollValues, 48, CPU);
     }
 
     // -- DEBUG -- //
