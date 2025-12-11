@@ -19,9 +19,12 @@ IMAGE screen_opt_a "stages/scr_opt/screen_options_a.png" NONE
 IMAGE screen_opt_b "stages/scr_opt/screen_options_b.png" NONE
 
 # TELA DE BONUS
-IMAGE tym_bga   "stages/bonus/tym_bga.png" NONE 
-IMAGE tym_bgb   "stages/bonus/tym_bgb.png" NONE 
+IMAGE   tym_bga     "stages/bonus/tym_bga.png" NONE 
+IMAGE   tym_bgb     "stages/bonus/tym_bgb.png" NONE 
+#PALETTE bga_pal     "stages/bonus/tym_bga.png"
+#TILESET bga_tileset "stages/bonus/tym_bga-Sheet.png" BEST ALL
+#MAP     tym_a_bga   "stages/bonus/tym_bga.png" bga_tileset
 
 # ESTAGIO 2 - PALACE GATES
-IMAGE  pg_bga  "stages/s2/palace_gates_bga_v2.png" NONE
+IMAGE  pg_bga  "stages/s2/palace_gates_bga_v3.png" NONE
 IMAGE  pg_bgb  "stages/s2/palace_gates_bgb_v3.png" NONE 
