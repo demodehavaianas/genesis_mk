@@ -9,12 +9,12 @@ void initLifebar()
 }
 
 // Desenha uma barra de vida horizontal com tamanho variável + terminal
-void drawLifeBar(u16 plan, u16 x, u16 y, u16 currentLife, u16 maxLife, u8 length)
+void drawLifeBar(u16 plan, u16 numPal, u16 x, u16 y, u16 currentLife, u16 maxLife, u8 length)
 {
     if (maxLife == 0 || length == 0)
         return;
 
-    VDP_setTileMapXY(plan, TILE_ATTR_FULL(PAL2, TRUE, FALSE, FALSE, TILE_LIFEBAR_BASE), x-1, y);
+    VDP_setTileMapXY(plan, TILE_ATTR_FULL(numPal, TRUE, FALSE, FALSE, TILE_LIFEBAR_BASE), x-1, y);
 
     u16 percent = (currentLife * 100) / maxLife;
     u8 filled = (percent * length) / 100;
@@ -44,18 +44,18 @@ void drawLifeBar(u16 plan, u16 x, u16 y, u16 currentLife, u16 maxLife, u8 length
             tileIndex = LIFEBAR_EMPTY;
         }
 
-        VDP_setTileMapXY(plan, TILE_ATTR_FULL(PAL2, TRUE, FALSE, FALSE, TILE_LIFEBAR_BASE + tileIndex), x + i, y);
+        VDP_setTileMapXY(plan, TILE_ATTR_FULL(numPal, TRUE, FALSE, FALSE, TILE_LIFEBAR_BASE + tileIndex), x + i, y);
     }
 
     // Terminal no final da barra
-    VDP_setTileMapXY(plan, TILE_ATTR_FULL(PAL2, TRUE, FALSE, TRUE, TILE_LIFEBAR_BASE + LIFEBAR_END), x + length, y);
+    VDP_setTileMapXY(plan, TILE_ATTR_FULL(numPal, TRUE, FALSE, TRUE, TILE_LIFEBAR_BASE + LIFEBAR_END), x + length, y);
 }
 
 // Esconde a barra de vida sobrescrevendo com tiles vazios
-void hideLifeBar(u16 plan, u16 x, u16 y, u8 length)
+void hideLifeBar(u16 plan, u16 numPal, u16 x, u16 y, u8 length)
 {
     for (u8 i = 0; i < length + 1; i++) // +1 para o terminal
     {
-        VDP_setTileMapXY(plan, TILE_ATTR_FULL(PAL2, FALSE, FALSE, FALSE, TILE_LIFEBAR_BASE + LIFEBAR_CLEAR), x + i, y);
+        VDP_setTileMapXY(plan, TILE_ATTR_FULL(numPal, FALSE, FALSE, FALSE, TILE_LIFEBAR_BASE + LIFEBAR_CLEAR), x + i, y);
     }
 }

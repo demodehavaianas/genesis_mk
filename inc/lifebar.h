@@ -16,7 +16,7 @@ enum {
 };
 
 void initLifebar();
-void drawLifeBar(u16 plan, u16 x, u16 y, u16 currentLife, u16 maxLife, u8 length);
-void hideLifeBar(u16 plan, u16 x, u16 y, u8 length);
+void drawLifeBar(u16 plan, u16 numPal, u16 x, u16 y, u16 currentLife, u16 maxLife, u8 length);
+void hideLifeBar(u16 plan, u16 numPal, u16 x, u16 y, u8 length);
 
 #endif
