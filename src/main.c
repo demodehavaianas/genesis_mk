@@ -1,3 +1,12 @@
+/**
+ * @file main.c
+ * @author Nil Obermüller Schaupp a.k.a demodehavaianas (demoniodehavaianas@outlook.com)
+ * @brief Orquestrador principal que gerencia o fluxo do jogo.
+ * @version 0.1
+ * @date 2025-08-11
+ * 
+ */
+
 #include <genesis.h>
 
 #include "game_vars.h"
@@ -11,7 +20,7 @@
 
 // -- DECLARACAO DE VARIAVEIS -- //
 u16 gDistancia;          // Distancia entre os Players
-s16 gMeioDaTela = 0;     // MEio da Câmera em X
+s16 gMeioDaTela = 0;     // Meio da Câmera em X
 s16 camPosX = 0;         // Posicao da Camera
 s16 camPosXanterior = 0; // Posicao da Camera no frame Anterior
 s16 scrollOffset = 0;

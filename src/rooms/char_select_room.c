@@ -103,7 +103,7 @@ void exit()
 void processSelecaoPersonagens()
 {
   bool sair = FALSE;
-  u8 selectorBlinkTimer[2] = {0, 0};
+  u8 selectorBlinkTimer[2] = {0, 0}; // timer para o efeito de piscar o retrato do personagem selecionado
 
   s16 countDown = -1;
 

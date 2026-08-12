@@ -3,6 +3,12 @@
 #include "estruturas.h"
 #include "game_vars.h"
 
+/**
+ * @brief Define o estado do personagem Kano.
+ * 
+ * @param numPlayer o player que está sendo atualizado (0 para o player 1 ou 1 para o player 2)
+ * @param State novo estado da animação do personagem (ex: PARADO, ANDANDO, PULANDO, etc.)
+ */
 void playerState_Kano(int numPlayer, u16 State)
 {
     switch (State)

@@ -13,7 +13,7 @@
 #include "estruturas.h"
 
 /**
- * @brief
+ * @brief Implementa um efeito de máquina de escrever (typewriter effect) para exibir texto na tela.
  *
  * @param text The string
  * @param x X position (in tile).
@@ -28,6 +28,14 @@
  */
 void typewriterEffect(const char *text, u16 x, u16 y, u16 delay, VDPPlane plane, u16 numPal);
 
+/**
+ * @brief Exibe todas as linhas de texto com o efeito de máquina de escrever.
+ *
+ * @param lines Array de linhas de texto.
+ * @param numLines Número de linhas.
+ * @param plane Plane where we want to load tilemap.
+ * @param numPal Palette number: PAL0, PAL1, PAL2 or PAL3
+ */
 void typewriterWriteAllLines(const TextLine *lines, u16 numLines, VDPPlane plane, u16 numPal);
 
 #endif

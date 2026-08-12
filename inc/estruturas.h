@@ -4,14 +4,24 @@
 #include "types.h"
 #include "sprite_eng.h"
 
-// idiomas suportados
+/**
+ * @file estruturas.h
+ * @brief Define as estruturas de dados complexas utilizadas no jogo, 
+ *        incluindo jogadores, elementos gráficos e configurações de idioma.
+ */
+
+/**
+ * @brief Enumeração dos idiomas suportados pelo jogo.
+ */
 typedef enum
 {
   EN,
   BR
 } GameLanguage;
 
-// Lista de Personagens
+/**
+ * @brief Enumeração dos personagens disponíveis no jogo.
+ */
 enum Fighters
 {
   JOHNNY_CAGE,
@@ -26,7 +36,9 @@ enum Fighters
   REPTILE
 };
 
-// Lista de 'Salas' para segmentação do jogo
+/**
+ * @brief Enumeração das salas do jogo.
+ */
 enum GAME_ROOM
 {
   TELA_DEMO_INTRO,
@@ -37,6 +49,9 @@ enum GAME_ROOM
   PALACE_GATES
 };
 
+/**
+ * @brief Enumeração dos estados possíveis do jogador.
+ */
 enum PLAYER_STATUS
 {
   PARADO,
@@ -48,7 +63,9 @@ enum PLAYER_STATUS
   INI_PULO_FRENTE
 };
 
-// Linhas de texto e sua posição em tela
+/**
+ * @brief Estrutura para representar uma linha de texto e sua posição em tela.
+ */
 typedef struct
 {
   const char *text;
@@ -61,6 +78,9 @@ typedef struct
   Sprite *sprite;
 } GraphicElement;
 
+/**
+ * @brief Estrutura para representar um jogador.
+ */
 typedef struct
 {
   u8 id;
