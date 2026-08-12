@@ -1,7 +1,7 @@
 /**
  *  \file game_vars.h
  *  \brief Todas as varíaveis globais usadas no jogo
- *  \author Nil Obermüller Schaupp de Aguiar
+ *  \author Nil Obermüller Schaupp a.k.a demodehavaianas (demoniodehavaianas@outlook.com)
  *  \date 11/2025
  *
  * Mortal Kombat Plus - Game's global vars.

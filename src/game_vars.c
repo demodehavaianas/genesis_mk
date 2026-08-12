@@ -1,9 +1,16 @@
+/**
+ * @file game_vars.c
+ * @author Nil Obermüller Schaupp a.k.a demodehavaianas (demoniodehavaianas@outlook.com)
+ * @brief Definições das variáveis globais do jogo.
+ * @version 0.1
+ * @date 2026-08-11
+ * 
+ * @copyright Copyright (c) 2026
+ * 
+ */
+
 #include "game_vars.h"
 #include "estruturas.h"
-
-// ===============================
-// Definições das variáveis globais
-// ===============================
 
 bool debugEnabled;
 bool gPodeMover = FALSE;
