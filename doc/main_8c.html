@@ -95,6 +95,9 @@ $(function(){ initResizable(false); });
   <div class="headertitle"><div class="title">Referência do Arquivo main.c</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Orquestrador principal que gerencia o fluxo do jogo.  
+<a href="#details">Mais...</a></p>
 <div class="textblock"><code>#include &lt;genesis.h&gt;</code><br />
 <code>#include &quot;game_vars.h&quot;</code><br />
 <code>#include &quot;fighters.h&quot;</code><br />
@@ -109,7 +112,7 @@ Gráfico de dependência de inclusões para main.c:</div>
 <div class="dyncontent">
 <div class="center"><img src="main_8c__incl.png" border="0" usemap="#asrc_2main_8c" alt=""/></div>
 <map name="asrc_2main_8c" id="asrc_2main_8c">
-<area shape="rect" title=" " alt="" coords="464,5,547,35"/>
+<area shape="rect" title="Orquestrador principal que gerencia o fluxo do jogo." alt="" coords="464,5,547,35"/>
 <area shape="rect" title=" " alt="" coords="5,83,86,113"/>
 <area shape="poly" title=" " alt="" coords="464,29,308,50,102,85,101,80,307,45,463,24"/>
 <area shape="rect" title=" " alt="" coords="110,83,210,113"/>
@@ -157,7 +160,14 @@ Variáveis</h2></td></tr>
 <tr class="memitem:aad3b8401765626643972079764552da1" id="r_aad3b8401765626643972079764552da1"><td class="memItemLeft" align="right" valign="top">s16&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aad3b8401765626643972079764552da1">scrollValues</a> [48]</td></tr>
 <tr class="separator:aad3b8401765626643972079764552da1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Funções</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Descrição detalhada</h2>
+<div class="textblock"><p>Orquestrador principal que gerencia o fluxo do jogo. </p>
+<dl class="section author"><dt>Autor</dt><dd>Nil Obermüller Schaupp a.k.a demodehavaianas (<a href="#" onclick="location.href='mai'+'lto:'+'dem'+'on'+'iod'+'eh'+'ava'+'ia'+'nas'+'@o'+'utl'+'oo'+'k.c'+'om'; return false;">demon<span class="obfuscator">.nosp@m.</span>iode<span class="obfuscator">.nosp@m.</span>havai<span class="obfuscator">.nosp@m.</span>anas<span class="obfuscator">.nosp@m.</span>@outl<span class="obfuscator">.nosp@m.</span>ook.<span class="obfuscator">.nosp@m.</span>com</a>) </dd></dl>
+<dl class="section version"><dt>Versão</dt><dd>0.1 </dd></dl>
+<dl class="section date"><dt>Data</dt><dd>2025-08-11 </dd></dl>
+
+<p class="definition">Definição no arquivo <a class="el" href="main_8c_source.html">main.c</a>.</p>
+</div><h2 class="groupheader">Funções</h2>
 <a id="abc91f67f185063e878e79cebf91d246e" name="abc91f67f185063e878e79cebf91d246e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#abc91f67f185063e878e79cebf91d246e">&#9670;&#160;</a></span>CLEAR_VDP()</h2>
 
@@ -173,27 +183,27 @@ Variáveis</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definição na linha <a class="el" href="main_8c_source.html#l00117">117</a> do arquivo <a class="el" href="main_8c_source.html">main.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  118</span>{</div>
-<div class="line"><span class="lineno">  119</span>  SYS_disableInts();</div>
-<div class="line"><span class="lineno">  120</span>  SPR_reset();</div>
-<div class="line"><span class="lineno">  121</span>  VDP_resetSprites();</div>
-<div class="line"><span class="lineno">  122</span>  VDP_releaseAllSprites();</div>
-<div class="line"><span class="lineno">  123</span>  SPR_defragVRAM();</div>
-<div class="line"><span class="lineno">  124</span>  VDP_clearPlane(BG_A, TRUE);</div>
-<div class="line"><span class="lineno">  125</span>  VDP_clearPlane(BG_B, TRUE);</div>
-<div class="line"><span class="lineno">  126</span>  <span class="comment">// VDP_setTextPlane(BG_B);</span></div>
-<div class="line"><span class="lineno">  127</span>  <span class="comment">// VDP_setHorizontalScroll(BG_B, 0);</span></div>
-<div class="line"><span class="lineno">  128</span>  <span class="comment">// VDP_setVerticalScroll(BG_B, 0);</span></div>
-<div class="line"><span class="lineno">  129</span>  <span class="comment">// VDP_setHorizontalScroll(BG_A, 0);</span></div>
-<div class="line"><span class="lineno">  130</span>  <span class="comment">// VDP_setVerticalScroll(BG_A, 0);</span></div>
-<div class="line"><span class="lineno">  131</span>  VDP_setBackgroundColor(0);</div>
-<div class="line"><span class="lineno">  132</span>  VDP_resetScreen();</div>
-<div class="line"><span class="lineno">  133</span>  <span class="comment">// PAL_setColors(0, palette_black, 64, DMA);</span></div>
-<div class="line"><span class="lineno">  134</span>  SYS_enableInts();</div>
-<div class="line"><span class="lineno">  135</span>  <a class="code hl_variable" href="game__vars_8c.html#ac5c9f7210c7cb249636b7f1dc0121b71">gInd_tileset</a> = 0;</div>
-<div class="line"><span class="lineno">  136</span>}</div>
-<div class="ttc" id="agame__vars_8c_html_ac5c9f7210c7cb249636b7f1dc0121b71"><div class="ttname"><a href="game__vars_8c.html#ac5c9f7210c7cb249636b7f1dc0121b71">gInd_tileset</a></div><div class="ttdeci">u16 gInd_tileset</div><div class="ttdef"><b>Definição</b> <a href="game__vars_8c_source.html#l00012">game_vars.c:12</a></div></div>
+<p class="definition">Definição na linha <a class="el" href="main_8c_source.html#l00126">126</a> do arquivo <a class="el" href="main_8c_source.html">main.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  127</span>{</div>
+<div class="line"><span class="lineno">  128</span>  SYS_disableInts();</div>
+<div class="line"><span class="lineno">  129</span>  SPR_reset();</div>
+<div class="line"><span class="lineno">  130</span>  VDP_resetSprites();</div>
+<div class="line"><span class="lineno">  131</span>  VDP_releaseAllSprites();</div>
+<div class="line"><span class="lineno">  132</span>  SPR_defragVRAM();</div>
+<div class="line"><span class="lineno">  133</span>  VDP_clearPlane(BG_A, TRUE);</div>
+<div class="line"><span class="lineno">  134</span>  VDP_clearPlane(BG_B, TRUE);</div>
+<div class="line"><span class="lineno">  135</span>  <span class="comment">// VDP_setTextPlane(BG_B);</span></div>
+<div class="line"><span class="lineno">  136</span>  <span class="comment">// VDP_setHorizontalScroll(BG_B, 0);</span></div>
+<div class="line"><span class="lineno">  137</span>  <span class="comment">// VDP_setVerticalScroll(BG_B, 0);</span></div>
+<div class="line"><span class="lineno">  138</span>  <span class="comment">// VDP_setHorizontalScroll(BG_A, 0);</span></div>
+<div class="line"><span class="lineno">  139</span>  <span class="comment">// VDP_setVerticalScroll(BG_A, 0);</span></div>
+<div class="line"><span class="lineno">  140</span>  VDP_setBackgroundColor(0);</div>
+<div class="line"><span class="lineno">  141</span>  VDP_resetScreen();</div>
+<div class="line"><span class="lineno">  142</span>  <span class="comment">// PAL_setColors(0, palette_black, 64, DMA);</span></div>
+<div class="line"><span class="lineno">  143</span>  SYS_enableInts();</div>
+<div class="line"><span class="lineno">  144</span>  <a class="code hl_variable" href="game__vars_8c.html#ac5c9f7210c7cb249636b7f1dc0121b71">gInd_tileset</a> = 0;</div>
+<div class="line"><span class="lineno">  145</span>}</div>
+<div class="ttc" id="agame__vars_8c_html_ac5c9f7210c7cb249636b7f1dc0121b71"><div class="ttname"><a href="game__vars_8c.html#ac5c9f7210c7cb249636b7f1dc0121b71">gInd_tileset</a></div><div class="ttdeci">u16 gInd_tileset</div><div class="ttdef"><b>Definição</b> <a href="game__vars_8c_source.html#l00019">game_vars.c:19</a></div></div>
 </div><!-- fragment --><div class="dynheader">
 Esse é o diagrama das funções que utilizam essa função:</div>
 <div class="dyncontent">
@@ -222,111 +232,111 @@ Esse é o diagrama das funções que utilizam essa função:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definição na linha <a class="el" href="main_8c_source.html#l00023">23</a> do arquivo <a class="el" href="main_8c_source.html">main.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   24</span>{</div>
-<div class="line"><span class="lineno">   25</span>  SPR_init();</div>
-<div class="line"><span class="lineno">   26</span>  VDP_setScreenWidth320();</div>
-<div class="line"><span class="lineno">   27</span>  VDP_setScreenHeight224();</div>
-<div class="line"><span class="lineno">   28</span>  <span class="comment">// VDP_setHilightShadow(TRUE);</span></div>
-<div class="line"><span class="lineno">   29</span> </div>
-<div class="line"><span class="lineno">   30</span>  <a class="code hl_variable" href="game__vars_8c.html#ad0344eb1bc475981a837e350c08fb53a">debugEnabled</a> = FALSE;</div>
-<div class="line"><span class="lineno">   31</span>  <a class="code hl_variable" href="game__vars_8c.html#a784a617fe12ac8976bbae900c2343a36">gRoom</a> = TELA_DEMO_INTRO;</div>
-<div class="line"><span class="lineno">   32</span>  <a class="code hl_variable" href="game__vars_8c.html#a940f635da7254d2a02a607dab0139dfd">gFrames</a> = 0;</div>
-<div class="line"><span class="lineno">   33</span>  <a class="code hl_variable" href="game__vars_8c.html#ac5c9f7210c7cb249636b7f1dc0121b71">gInd_tileset</a> = 0;</div>
-<div class="line"><span class="lineno">   34</span>  <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[0].id = JOHNNY_CAGE;</div>
-<div class="line"><span class="lineno">   35</span> </div>
-<div class="line"><span class="lineno">   36</span>  <span class="keywordflow">if</span> (!hardReset)</div>
-<div class="line"><span class="lineno">   37</span>  {</div>
-<div class="line"><span class="lineno">   38</span>    SYS_hardReset();</div>
-<div class="line"><span class="lineno">   39</span>  }</div>
-<div class="line"><span class="lineno">   40</span> </div>
-<div class="line"><span class="lineno">   41</span>  <a class="code hl_function" href="#af1f907fd47e7a9f600f2e5c4bdded9e5">resetGraphicElements</a>();</div>
-<div class="line"><span class="lineno">   42</span> </div>
-<div class="line"><span class="lineno">   43</span>  <span class="keywordflow">while</span> (TRUE)</div>
-<div class="line"><span class="lineno">   44</span>  {</div>
-<div class="line"><span class="lineno">   45</span>    <a class="code hl_function" href="input__system_8c.html#a2656744a9ebd96a8887f55208c53bc6e">inputSystem</a>();</div>
-<div class="line"><span class="lineno">   46</span> </div>
-<div class="line"><span class="lineno">   47</span>    <span class="keywordflow">if</span> (TELA_DEMO_INTRO == <a class="code hl_variable" href="game__vars_8c.html#a784a617fe12ac8976bbae900c2343a36">gRoom</a>)</div>
-<div class="line"><span class="lineno">   48</span>    {</div>
-<div class="line"><span class="lineno">   49</span>      <a class="code hl_function" href="intro__demo__room_8c.html#ac46ea98ecb7218ef78a7d4cd50896175">processIntro</a>();</div>
-<div class="line"><span class="lineno">   50</span>    }</div>
+<p class="definition">Definição na linha <a class="el" href="main_8c_source.html#l00032">32</a> do arquivo <a class="el" href="main_8c_source.html">main.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   33</span>{</div>
+<div class="line"><span class="lineno">   34</span>  SPR_init();</div>
+<div class="line"><span class="lineno">   35</span>  VDP_setScreenWidth320();</div>
+<div class="line"><span class="lineno">   36</span>  VDP_setScreenHeight224();</div>
+<div class="line"><span class="lineno">   37</span>  <span class="comment">// VDP_setHilightShadow(TRUE);</span></div>
+<div class="line"><span class="lineno">   38</span> </div>
+<div class="line"><span class="lineno">   39</span>  <a class="code hl_variable" href="game__vars_8c.html#ad0344eb1bc475981a837e350c08fb53a">debugEnabled</a> = FALSE;</div>
+<div class="line"><span class="lineno">   40</span>  <a class="code hl_variable" href="game__vars_8c.html#a784a617fe12ac8976bbae900c2343a36">gRoom</a> = TELA_DEMO_INTRO;</div>
+<div class="line"><span class="lineno">   41</span>  <a class="code hl_variable" href="game__vars_8c.html#a940f635da7254d2a02a607dab0139dfd">gFrames</a> = 0;</div>
+<div class="line"><span class="lineno">   42</span>  <a class="code hl_variable" href="game__vars_8c.html#ac5c9f7210c7cb249636b7f1dc0121b71">gInd_tileset</a> = 0;</div>
+<div class="line"><span class="lineno">   43</span>  <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[0].id = JOHNNY_CAGE;</div>
+<div class="line"><span class="lineno">   44</span> </div>
+<div class="line"><span class="lineno">   45</span>  <span class="keywordflow">if</span> (!hardReset)</div>
+<div class="line"><span class="lineno">   46</span>  {</div>
+<div class="line"><span class="lineno">   47</span>    SYS_hardReset();</div>
+<div class="line"><span class="lineno">   48</span>  }</div>
+<div class="line"><span class="lineno">   49</span> </div>
+<div class="line"><span class="lineno">   50</span>  <a class="code hl_function" href="#af1f907fd47e7a9f600f2e5c4bdded9e5">resetGraphicElements</a>();</div>
 <div class="line"><span class="lineno">   51</span> </div>
-<div class="line"><span class="lineno">   52</span>    <span class="keywordflow">if</span> (TELA_START == <a class="code hl_variable" href="game__vars_8c.html#a784a617fe12ac8976bbae900c2343a36">gRoom</a>)</div>
-<div class="line"><span class="lineno">   53</span>    {</div>
-<div class="line"><span class="lineno">   54</span>      <a class="code hl_function" href="press__start__room_8c.html#acdab073d60ace1b6f9ba4ecb1a63bc6c">processPressStart</a>();</div>
-<div class="line"><span class="lineno">   55</span>    }</div>
-<div class="line"><span class="lineno">   56</span> </div>
-<div class="line"><span class="lineno">   57</span>    <span class="keywordflow">if</span> (SELECAO_PERSONAGENS == <a class="code hl_variable" href="game__vars_8c.html#a784a617fe12ac8976bbae900c2343a36">gRoom</a>)</div>
-<div class="line"><span class="lineno">   58</span>    {</div>
-<div class="line"><span class="lineno">   59</span>      <a class="code hl_function" href="char__select__room_8c.html#a691b28223562237401b71b33874e1455">processSelecaoPersonagens</a>();</div>
-<div class="line"><span class="lineno">   60</span>    }</div>
-<div class="line"><span class="lineno">   61</span> </div>
-<div class="line"><span class="lineno">   62</span>    <span class="keywordflow">if</span>(BONUS_STAGE == <a class="code hl_variable" href="game__vars_8c.html#a784a617fe12ac8976bbae900c2343a36">gRoom</a>)</div>
-<div class="line"><span class="lineno">   63</span>    {</div>
-<div class="line"><span class="lineno">   64</span>      <a class="code hl_function" href="bonus__stage__room_8c.html#a283acd3e436aace9ae52dda764f70ce8">processBonusStage</a>();</div>
-<div class="line"><span class="lineno">   65</span>    }</div>
-<div class="line"><span class="lineno">   66</span> </div>
-<div class="line"><span class="lineno">   67</span>    <span class="keywordflow">if</span> (PALACE_GATES == <a class="code hl_variable" href="game__vars_8c.html#a784a617fe12ac8976bbae900c2343a36">gRoom</a>)</div>
-<div class="line"><span class="lineno">   68</span>    {</div>
-<div class="line"><span class="lineno">   69</span>      <span class="keywordflow">if</span> (<a class="code hl_variable" href="game__vars_8c.html#a940f635da7254d2a02a607dab0139dfd">gFrames</a> == 1)</div>
-<div class="line"><span class="lineno">   70</span>        <a class="code hl_function" href="#abc91f67f185063e878e79cebf91d246e">CLEAR_VDP</a>();</div>
-<div class="line"><span class="lineno">   71</span> </div>
-<div class="line"><span class="lineno">   72</span>      <a class="code hl_function" href="palace__gates__room_8c.html#aa311e5f2262edd690db28a5e1fd05f97">initPalaceGatesRoom</a>();</div>
-<div class="line"><span class="lineno">   73</span> </div>
-<div class="line"><span class="lineno">   74</span>      <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[0].sprite = SPR_addSprite(&amp;spr_subzero, 24, 96, TILE_ATTR(PAL2, 0, FALSE, FALSE));</div>
-<div class="line"><span class="lineno">   75</span>      PAL_setPalette(PAL2, spr_subzero.palette-&gt;data, DMA);</div>
-<div class="line"><span class="lineno">   76</span> </div>
-<div class="line"><span class="lineno">   77</span>      <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[1].sprite = SPR_addSprite(&amp;spr_reptile, 168, 96, TILE_ATTR(PAL3, 0, FALSE, TRUE));</div>
-<div class="line"><span class="lineno">   78</span>      PAL_setPalette(PAL3, spr_reptile.palette-&gt;data, DMA);</div>
-<div class="line"><span class="lineno">   79</span> </div>
-<div class="line"><span class="lineno">   80</span>      <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[0].id = SUBZERO;</div>
-<div class="line"><span class="lineno">   81</span>      <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[1].id = REPTILE;</div>
-<div class="line"><span class="lineno">   82</span>      <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[0].state = PARADO;</div>
-<div class="line"><span class="lineno">   83</span>      <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[1].state = PARADO;</div>
-<div class="line"><span class="lineno">   84</span>      <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[0].paleta = PAL2;</div>
-<div class="line"><span class="lineno">   85</span>      <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[1].paleta = PAL3;</div>
-<div class="line"><span class="lineno">   86</span> </div>
-<div class="line"><span class="lineno">   87</span>      <a class="code hl_variable" href="#ab079fdcdff838058b3a7aded16e25e2e">scrollOffset</a> += 1;</div>
-<div class="line"><span class="lineno">   88</span>      VDP_setScrollingMode(HSCROLL_LINE, VSCROLL_COLUMN);</div>
-<div class="line"><span class="lineno">   89</span> </div>
-<div class="line"><span class="lineno">   90</span>      <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; 48; i++)</div>
-<div class="line"><span class="lineno">   91</span>      {</div>
-<div class="line"><span class="lineno">   92</span>        <a class="code hl_variable" href="#aad3b8401765626643972079764552da1">scrollValues</a>[i] = <a class="code hl_variable" href="#ab079fdcdff838058b3a7aded16e25e2e">scrollOffset</a>;</div>
-<div class="line"><span class="lineno">   93</span>      }</div>
-<div class="line"><span class="lineno">   94</span> </div>
-<div class="line"><span class="lineno">   95</span>      VDP_setHorizontalScrollLine(BG_B, 0, <a class="code hl_variable" href="#aad3b8401765626643972079764552da1">scrollValues</a>, 48, CPU);</div>
-<div class="line"><span class="lineno">   96</span>    }</div>
-<div class="line"><span class="lineno">   97</span> </div>
-<div class="line"><span class="lineno">   98</span>    <span class="comment">// -- DEBUG -- //</span></div>
-<div class="line"><span class="lineno">   99</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="game__vars_8c.html#ad0344eb1bc475981a837e350c08fb53a">debugEnabled</a>)</div>
-<div class="line"><span class="lineno">  100</span>    {</div>
-<div class="line"><span class="lineno">  101</span>      <span class="keywordtype">char</span> str[64];</div>
-<div class="line"><span class="lineno">  102</span>      sprintf(str, <span class="stringliteral">&quot;tiles nos BGs: %d&quot;</span>, <a class="code hl_variable" href="game__vars_8c.html#ac5c9f7210c7cb249636b7f1dc0121b71">gInd_tileset</a>);</div>
-<div class="line"><span class="lineno">  103</span>      VDP_drawText(str, 1, 1);</div>
-<div class="line"><span class="lineno">  104</span>      sprintf(str, <span class="stringliteral">&quot;contagem de frames: %ld&quot;</span>, <a class="code hl_variable" href="game__vars_8c.html#a940f635da7254d2a02a607dab0139dfd">gFrames</a>);</div>
-<div class="line"><span class="lineno">  105</span>      VDP_drawText(str, 1, 2);</div>
-<div class="line"><span class="lineno">  106</span>    }</div>
-<div class="line"><span class="lineno">  107</span> </div>
-<div class="line"><span class="lineno">  108</span>    <span class="comment">// -- FINALIZAÇÕES -- //</span></div>
-<div class="line"><span class="lineno">  109</span>    <span class="comment">// VDP_showFPS(1, 1, 1);</span></div>
-<div class="line"><span class="lineno">  110</span>    SPR_update();          <span class="comment">// Atualização dos sprites na tela</span></div>
-<div class="line"><span class="lineno">  111</span>    SYS_doVBlankProcess(); <span class="comment">// Sincroniza com o VBlank</span></div>
-<div class="line"><span class="lineno">  112</span>  }</div>
-<div class="line"><span class="lineno">  113</span> </div>
-<div class="line"><span class="lineno">  114</span>  <span class="keywordflow">return</span> 0;</div>
-<div class="line"><span class="lineno">  115</span>}</div>
+<div class="line"><span class="lineno">   52</span>  <span class="keywordflow">while</span> (TRUE)</div>
+<div class="line"><span class="lineno">   53</span>  {</div>
+<div class="line"><span class="lineno">   54</span>    <a class="code hl_function" href="input__system_8c.html#a2656744a9ebd96a8887f55208c53bc6e">inputSystem</a>();</div>
+<div class="line"><span class="lineno">   55</span> </div>
+<div class="line"><span class="lineno">   56</span>    <span class="keywordflow">if</span> (TELA_DEMO_INTRO == <a class="code hl_variable" href="game__vars_8c.html#a784a617fe12ac8976bbae900c2343a36">gRoom</a>)</div>
+<div class="line"><span class="lineno">   57</span>    {</div>
+<div class="line"><span class="lineno">   58</span>      <a class="code hl_function" href="intro__demo__room_8c.html#ac46ea98ecb7218ef78a7d4cd50896175">processIntro</a>();</div>
+<div class="line"><span class="lineno">   59</span>    }</div>
+<div class="line"><span class="lineno">   60</span> </div>
+<div class="line"><span class="lineno">   61</span>    <span class="keywordflow">if</span> (TELA_START == <a class="code hl_variable" href="game__vars_8c.html#a784a617fe12ac8976bbae900c2343a36">gRoom</a>)</div>
+<div class="line"><span class="lineno">   62</span>    {</div>
+<div class="line"><span class="lineno">   63</span>      <a class="code hl_function" href="press__start__room_8c.html#acdab073d60ace1b6f9ba4ecb1a63bc6c">processPressStart</a>();</div>
+<div class="line"><span class="lineno">   64</span>    }</div>
+<div class="line"><span class="lineno">   65</span> </div>
+<div class="line"><span class="lineno">   66</span>    <span class="keywordflow">if</span> (SELECAO_PERSONAGENS == <a class="code hl_variable" href="game__vars_8c.html#a784a617fe12ac8976bbae900c2343a36">gRoom</a>)</div>
+<div class="line"><span class="lineno">   67</span>    {</div>
+<div class="line"><span class="lineno">   68</span>      <a class="code hl_function" href="char__select__room_8c.html#a691b28223562237401b71b33874e1455">processSelecaoPersonagens</a>();</div>
+<div class="line"><span class="lineno">   69</span>    }</div>
+<div class="line"><span class="lineno">   70</span> </div>
+<div class="line"><span class="lineno">   71</span>    <span class="keywordflow">if</span>(BONUS_STAGE == <a class="code hl_variable" href="game__vars_8c.html#a784a617fe12ac8976bbae900c2343a36">gRoom</a>)</div>
+<div class="line"><span class="lineno">   72</span>    {</div>
+<div class="line"><span class="lineno">   73</span>      <a class="code hl_function" href="bonus__stage__room_8c.html#a283acd3e436aace9ae52dda764f70ce8">processBonusStage</a>();</div>
+<div class="line"><span class="lineno">   74</span>    }</div>
+<div class="line"><span class="lineno">   75</span> </div>
+<div class="line"><span class="lineno">   76</span>    <span class="keywordflow">if</span> (PALACE_GATES == <a class="code hl_variable" href="game__vars_8c.html#a784a617fe12ac8976bbae900c2343a36">gRoom</a>)</div>
+<div class="line"><span class="lineno">   77</span>    {</div>
+<div class="line"><span class="lineno">   78</span>      <span class="keywordflow">if</span> (<a class="code hl_variable" href="game__vars_8c.html#a940f635da7254d2a02a607dab0139dfd">gFrames</a> == 1)</div>
+<div class="line"><span class="lineno">   79</span>        <a class="code hl_function" href="#abc91f67f185063e878e79cebf91d246e">CLEAR_VDP</a>();</div>
+<div class="line"><span class="lineno">   80</span> </div>
+<div class="line"><span class="lineno">   81</span>      <a class="code hl_function" href="palace__gates__room_8c.html#aa311e5f2262edd690db28a5e1fd05f97">initPalaceGatesRoom</a>();</div>
+<div class="line"><span class="lineno">   82</span> </div>
+<div class="line"><span class="lineno">   83</span>      <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[0].sprite = SPR_addSprite(&amp;spr_subzero, 24, 96, TILE_ATTR(PAL2, 0, FALSE, FALSE));</div>
+<div class="line"><span class="lineno">   84</span>      PAL_setPalette(PAL2, spr_subzero.palette-&gt;data, DMA);</div>
+<div class="line"><span class="lineno">   85</span> </div>
+<div class="line"><span class="lineno">   86</span>      <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[1].sprite = SPR_addSprite(&amp;spr_reptile, 168, 96, TILE_ATTR(PAL3, 0, FALSE, TRUE));</div>
+<div class="line"><span class="lineno">   87</span>      PAL_setPalette(PAL3, spr_reptile.palette-&gt;data, DMA);</div>
+<div class="line"><span class="lineno">   88</span> </div>
+<div class="line"><span class="lineno">   89</span>      <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[0].id = SUBZERO;</div>
+<div class="line"><span class="lineno">   90</span>      <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[1].id = REPTILE;</div>
+<div class="line"><span class="lineno">   91</span>      <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[0].state = PARADO;</div>
+<div class="line"><span class="lineno">   92</span>      <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[1].state = PARADO;</div>
+<div class="line"><span class="lineno">   93</span>      <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[0].paleta = PAL2;</div>
+<div class="line"><span class="lineno">   94</span>      <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[1].paleta = PAL3;</div>
+<div class="line"><span class="lineno">   95</span> </div>
+<div class="line"><span class="lineno">   96</span>      <a class="code hl_variable" href="#ab079fdcdff838058b3a7aded16e25e2e">scrollOffset</a> += 1;</div>
+<div class="line"><span class="lineno">   97</span>      VDP_setScrollingMode(HSCROLL_LINE, VSCROLL_COLUMN);</div>
+<div class="line"><span class="lineno">   98</span> </div>
+<div class="line"><span class="lineno">   99</span>      <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; 48; i++)</div>
+<div class="line"><span class="lineno">  100</span>      {</div>
+<div class="line"><span class="lineno">  101</span>        <a class="code hl_variable" href="#aad3b8401765626643972079764552da1">scrollValues</a>[i] = <a class="code hl_variable" href="#ab079fdcdff838058b3a7aded16e25e2e">scrollOffset</a>;</div>
+<div class="line"><span class="lineno">  102</span>      }</div>
+<div class="line"><span class="lineno">  103</span> </div>
+<div class="line"><span class="lineno">  104</span>      VDP_setHorizontalScrollLine(BG_B, 0, <a class="code hl_variable" href="#aad3b8401765626643972079764552da1">scrollValues</a>, 48, CPU);</div>
+<div class="line"><span class="lineno">  105</span>    }</div>
+<div class="line"><span class="lineno">  106</span> </div>
+<div class="line"><span class="lineno">  107</span>    <span class="comment">// -- DEBUG -- //</span></div>
+<div class="line"><span class="lineno">  108</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="game__vars_8c.html#ad0344eb1bc475981a837e350c08fb53a">debugEnabled</a>)</div>
+<div class="line"><span class="lineno">  109</span>    {</div>
+<div class="line"><span class="lineno">  110</span>      <span class="keywordtype">char</span> str[64];</div>
+<div class="line"><span class="lineno">  111</span>      sprintf(str, <span class="stringliteral">&quot;tiles nos BGs: %d&quot;</span>, <a class="code hl_variable" href="game__vars_8c.html#ac5c9f7210c7cb249636b7f1dc0121b71">gInd_tileset</a>);</div>
+<div class="line"><span class="lineno">  112</span>      VDP_drawText(str, 1, 1);</div>
+<div class="line"><span class="lineno">  113</span>      sprintf(str, <span class="stringliteral">&quot;contagem de frames: %ld&quot;</span>, <a class="code hl_variable" href="game__vars_8c.html#a940f635da7254d2a02a607dab0139dfd">gFrames</a>);</div>
+<div class="line"><span class="lineno">  114</span>      VDP_drawText(str, 1, 2);</div>
+<div class="line"><span class="lineno">  115</span>    }</div>
+<div class="line"><span class="lineno">  116</span> </div>
+<div class="line"><span class="lineno">  117</span>    <span class="comment">// -- FINALIZAÇÕES -- //</span></div>
+<div class="line"><span class="lineno">  118</span>    <span class="comment">// VDP_showFPS(1, 1, 1);</span></div>
+<div class="line"><span class="lineno">  119</span>    SPR_update();          <span class="comment">// Atualização dos sprites na tela</span></div>
+<div class="line"><span class="lineno">  120</span>    SYS_doVBlankProcess(); <span class="comment">// Sincroniza com o VBlank</span></div>
+<div class="line"><span class="lineno">  121</span>  }</div>
+<div class="line"><span class="lineno">  122</span> </div>
+<div class="line"><span class="lineno">  123</span>  <span class="keywordflow">return</span> 0;</div>
+<div class="line"><span class="lineno">  124</span>}</div>
 <div class="ttc" id="abonus__stage__room_8c_html_a283acd3e436aace9ae52dda764f70ce8"><div class="ttname"><a href="bonus__stage__room_8c.html#a283acd3e436aace9ae52dda764f70ce8">processBonusStage</a></div><div class="ttdeci">void processBonusStage()</div><div class="ttdef"><b>Definição</b> <a href="bonus__stage__room_8c_source.html#l00019">bonus_stage_room.c:19</a></div></div>
 <div class="ttc" id="achar__select__room_8c_html_a691b28223562237401b71b33874e1455"><div class="ttname"><a href="char__select__room_8c.html#a691b28223562237401b71b33874e1455">processSelecaoPersonagens</a></div><div class="ttdeci">void processSelecaoPersonagens()</div><div class="ttdef"><b>Definição</b> <a href="char__select__room_8c_source.html#l00103">char_select_room.c:103</a></div></div>
-<div class="ttc" id="agame__vars_8c_html_a5135cf03aefd90677db09304781dbb8c"><div class="ttname"><a href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a></div><div class="ttdeci">Player player[2]</div><div class="ttdef"><b>Definição</b> <a href="game__vars_8c_source.html#l00024">game_vars.c:24</a></div></div>
-<div class="ttc" id="agame__vars_8c_html_a784a617fe12ac8976bbae900c2343a36"><div class="ttname"><a href="game__vars_8c.html#a784a617fe12ac8976bbae900c2343a36">gRoom</a></div><div class="ttdeci">u8 gRoom</div><div class="ttdef"><b>Definição</b> <a href="game__vars_8c_source.html#l00010">game_vars.c:10</a></div></div>
-<div class="ttc" id="agame__vars_8c_html_a940f635da7254d2a02a607dab0139dfd"><div class="ttname"><a href="game__vars_8c.html#a940f635da7254d2a02a607dab0139dfd">gFrames</a></div><div class="ttdeci">u32 gFrames</div><div class="ttdef"><b>Definição</b> <a href="game__vars_8c_source.html#l00016">game_vars.c:16</a></div></div>
-<div class="ttc" id="agame__vars_8c_html_ad0344eb1bc475981a837e350c08fb53a"><div class="ttname"><a href="game__vars_8c.html#ad0344eb1bc475981a837e350c08fb53a">debugEnabled</a></div><div class="ttdeci">bool debugEnabled</div><div class="ttdef"><b>Definição</b> <a href="game__vars_8c_source.html#l00008">game_vars.c:8</a></div></div>
+<div class="ttc" id="agame__vars_8c_html_a5135cf03aefd90677db09304781dbb8c"><div class="ttname"><a href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a></div><div class="ttdeci">Player player[2]</div><div class="ttdef"><b>Definição</b> <a href="game__vars_8c_source.html#l00031">game_vars.c:31</a></div></div>
+<div class="ttc" id="agame__vars_8c_html_a784a617fe12ac8976bbae900c2343a36"><div class="ttname"><a href="game__vars_8c.html#a784a617fe12ac8976bbae900c2343a36">gRoom</a></div><div class="ttdeci">u8 gRoom</div><div class="ttdef"><b>Definição</b> <a href="game__vars_8c_source.html#l00017">game_vars.c:17</a></div></div>
+<div class="ttc" id="agame__vars_8c_html_a940f635da7254d2a02a607dab0139dfd"><div class="ttname"><a href="game__vars_8c.html#a940f635da7254d2a02a607dab0139dfd">gFrames</a></div><div class="ttdeci">u32 gFrames</div><div class="ttdef"><b>Definição</b> <a href="game__vars_8c_source.html#l00023">game_vars.c:23</a></div></div>
+<div class="ttc" id="agame__vars_8c_html_ad0344eb1bc475981a837e350c08fb53a"><div class="ttname"><a href="game__vars_8c.html#ad0344eb1bc475981a837e350c08fb53a">debugEnabled</a></div><div class="ttdeci">bool debugEnabled</div><div class="ttdef"><b>Definição</b> <a href="game__vars_8c_source.html#l00015">game_vars.c:15</a></div></div>
 <div class="ttc" id="ainput__system_8c_html_a2656744a9ebd96a8887f55208c53bc6e"><div class="ttname"><a href="input__system_8c.html#a2656744a9ebd96a8887f55208c53bc6e">inputSystem</a></div><div class="ttdeci">void inputSystem()</div><div class="ttdef"><b>Definição</b> <a href="input__system_8c_source.html#l00004">input_system.c:4</a></div></div>
 <div class="ttc" id="aintro__demo__room_8c_html_ac46ea98ecb7218ef78a7d4cd50896175"><div class="ttname"><a href="intro__demo__room_8c.html#ac46ea98ecb7218ef78a7d4cd50896175">processIntro</a></div><div class="ttdeci">void processIntro()</div><div class="ttdef"><b>Definição</b> <a href="intro__demo__room_8c_source.html#l00045">intro_demo_room.c:45</a></div></div>
-<div class="ttc" id="amain_8c_html_aad3b8401765626643972079764552da1"><div class="ttname"><a href="#aad3b8401765626643972079764552da1">scrollValues</a></div><div class="ttdeci">s16 scrollValues[48]</div><div class="ttdef"><b>Definição</b> <a href="main_8c_source.html#l00018">main.c:18</a></div></div>
-<div class="ttc" id="amain_8c_html_ab079fdcdff838058b3a7aded16e25e2e"><div class="ttname"><a href="#ab079fdcdff838058b3a7aded16e25e2e">scrollOffset</a></div><div class="ttdeci">s16 scrollOffset</div><div class="ttdef"><b>Definição</b> <a href="main_8c_source.html#l00017">main.c:17</a></div></div>
-<div class="ttc" id="amain_8c_html_abc91f67f185063e878e79cebf91d246e"><div class="ttname"><a href="#abc91f67f185063e878e79cebf91d246e">CLEAR_VDP</a></div><div class="ttdeci">void CLEAR_VDP()</div><div class="ttdef"><b>Definição</b> <a href="main_8c_source.html#l00117">main.c:117</a></div></div>
-<div class="ttc" id="amain_8c_html_af1f907fd47e7a9f600f2e5c4bdded9e5"><div class="ttname"><a href="#af1f907fd47e7a9f600f2e5c4bdded9e5">resetGraphicElements</a></div><div class="ttdeci">void resetGraphicElements()</div><div class="ttdef"><b>Definição</b> <a href="main_8c_source.html#l00138">main.c:138</a></div></div>
+<div class="ttc" id="amain_8c_html_aad3b8401765626643972079764552da1"><div class="ttname"><a href="#aad3b8401765626643972079764552da1">scrollValues</a></div><div class="ttdeci">s16 scrollValues[48]</div><div class="ttdef"><b>Definição</b> <a href="main_8c_source.html#l00027">main.c:27</a></div></div>
+<div class="ttc" id="amain_8c_html_ab079fdcdff838058b3a7aded16e25e2e"><div class="ttname"><a href="#ab079fdcdff838058b3a7aded16e25e2e">scrollOffset</a></div><div class="ttdeci">s16 scrollOffset</div><div class="ttdef"><b>Definição</b> <a href="main_8c_source.html#l00026">main.c:26</a></div></div>
+<div class="ttc" id="amain_8c_html_abc91f67f185063e878e79cebf91d246e"><div class="ttname"><a href="#abc91f67f185063e878e79cebf91d246e">CLEAR_VDP</a></div><div class="ttdeci">void CLEAR_VDP()</div><div class="ttdef"><b>Definição</b> <a href="main_8c_source.html#l00126">main.c:126</a></div></div>
+<div class="ttc" id="amain_8c_html_af1f907fd47e7a9f600f2e5c4bdded9e5"><div class="ttname"><a href="#af1f907fd47e7a9f600f2e5c4bdded9e5">resetGraphicElements</a></div><div class="ttdeci">void resetGraphicElements()</div><div class="ttdef"><b>Definição</b> <a href="main_8c_source.html#l00147">main.c:147</a></div></div>
 <div class="ttc" id="apalace__gates__room_8c_html_aa311e5f2262edd690db28a5e1fd05f97"><div class="ttname"><a href="palace__gates__room_8c.html#aa311e5f2262edd690db28a5e1fd05f97">initPalaceGatesRoom</a></div><div class="ttdeci">void initPalaceGatesRoom(void)</div><div class="ttdef"><b>Definição</b> <a href="palace__gates__room_8c_source.html#l00009">palace_gates_room.c:9</a></div></div>
 <div class="ttc" id="apress__start__room_8c_html_acdab073d60ace1b6f9ba4ecb1a63bc6c"><div class="ttname"><a href="press__start__room_8c.html#acdab073d60ace1b6f9ba4ecb1a63bc6c">processPressStart</a></div><div class="ttdeci">void processPressStart()</div><div class="ttdef"><b>Definição</b> <a href="press__start__room_8c_source.html#l00017">press_start_room.c:17</a></div></div>
 </div><!-- fragment --><div class="dynheader">
@@ -429,18 +439,18 @@ Este é o diagrama das funções utilizadas por essa função:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definição na linha <a class="el" href="main_8c_source.html#l00138">138</a> do arquivo <a class="el" href="main_8c_source.html">main.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  139</span>{</div>
-<div class="line"><span class="lineno">  140</span>  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> ind = 0; ind &lt; 25; ind++)</div>
-<div class="line"><span class="lineno">  141</span>  {</div>
-<div class="line"><span class="lineno">  142</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="game__vars_8c.html#aa5e097d9886fbef5de8248a18d1d95ee">GE</a>[ind].sprite)</div>
-<div class="line"><span class="lineno">  143</span>    {</div>
-<div class="line"><span class="lineno">  144</span>      SPR_releaseSprite(<a class="code hl_variable" href="game__vars_8c.html#aa5e097d9886fbef5de8248a18d1d95ee">GE</a>[ind].sprite);</div>
-<div class="line"><span class="lineno">  145</span>      <a class="code hl_variable" href="game__vars_8c.html#aa5e097d9886fbef5de8248a18d1d95ee">GE</a>[ind].sprite = NULL;</div>
-<div class="line"><span class="lineno">  146</span>    }</div>
-<div class="line"><span class="lineno">  147</span>  }</div>
-<div class="line"><span class="lineno">  148</span>}</div>
-<div class="ttc" id="agame__vars_8c_html_aa5e097d9886fbef5de8248a18d1d95ee"><div class="ttname"><a href="game__vars_8c.html#aa5e097d9886fbef5de8248a18d1d95ee">GE</a></div><div class="ttdeci">GraphicElement GE[25]</div><div class="ttdef"><b>Definição</b> <a href="game__vars_8c_source.html#l00023">game_vars.c:23</a></div></div>
+<p class="definition">Definição na linha <a class="el" href="main_8c_source.html#l00147">147</a> do arquivo <a class="el" href="main_8c_source.html">main.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  148</span>{</div>
+<div class="line"><span class="lineno">  149</span>  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> ind = 0; ind &lt; 25; ind++)</div>
+<div class="line"><span class="lineno">  150</span>  {</div>
+<div class="line"><span class="lineno">  151</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="game__vars_8c.html#aa5e097d9886fbef5de8248a18d1d95ee">GE</a>[ind].sprite)</div>
+<div class="line"><span class="lineno">  152</span>    {</div>
+<div class="line"><span class="lineno">  153</span>      SPR_releaseSprite(<a class="code hl_variable" href="game__vars_8c.html#aa5e097d9886fbef5de8248a18d1d95ee">GE</a>[ind].sprite);</div>
+<div class="line"><span class="lineno">  154</span>      <a class="code hl_variable" href="game__vars_8c.html#aa5e097d9886fbef5de8248a18d1d95ee">GE</a>[ind].sprite = NULL;</div>
+<div class="line"><span class="lineno">  155</span>    }</div>
+<div class="line"><span class="lineno">  156</span>  }</div>
+<div class="line"><span class="lineno">  157</span>}</div>
+<div class="ttc" id="agame__vars_8c_html_aa5e097d9886fbef5de8248a18d1d95ee"><div class="ttname"><a href="game__vars_8c.html#aa5e097d9886fbef5de8248a18d1d95ee">GE</a></div><div class="ttdeci">GraphicElement GE[25]</div><div class="ttdef"><b>Definição</b> <a href="game__vars_8c_source.html#l00030">game_vars.c:30</a></div></div>
 </div><!-- fragment --><div class="dynheader">
 Esse é o diagrama das funções que utilizam essa função:</div>
 <div class="dyncontent">
@@ -467,7 +477,7 @@ Esse é o diagrama das funções que utilizam essa função:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definição na linha <a class="el" href="main_8c_source.html#l00015">15</a> do arquivo <a class="el" href="main_8c_source.html">main.c</a>.</p>
+<p class="definition">Definição na linha <a class="el" href="main_8c_source.html#l00024">24</a> do arquivo <a class="el" href="main_8c_source.html">main.c</a>.</p>
 
 </div>
 </div>
@@ -483,7 +493,7 @@ Esse é o diagrama das funções que utilizam essa função:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definição na linha <a class="el" href="main_8c_source.html#l00016">16</a> do arquivo <a class="el" href="main_8c_source.html">main.c</a>.</p>
+<p class="definition">Definição na linha <a class="el" href="main_8c_source.html#l00025">25</a> do arquivo <a class="el" href="main_8c_source.html">main.c</a>.</p>
 
 </div>
 </div>
@@ -499,7 +509,7 @@ Esse é o diagrama das funções que utilizam essa função:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definição na linha <a class="el" href="main_8c_source.html#l00013">13</a> do arquivo <a class="el" href="main_8c_source.html">main.c</a>.</p>
+<p class="definition">Definição na linha <a class="el" href="main_8c_source.html#l00022">22</a> do arquivo <a class="el" href="main_8c_source.html">main.c</a>.</p>
 
 </div>
 </div>
@@ -515,7 +525,7 @@ Esse é o diagrama das funções que utilizam essa função:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definição na linha <a class="el" href="main_8c_source.html#l00014">14</a> do arquivo <a class="el" href="main_8c_source.html">main.c</a>.</p>
+<p class="definition">Definição na linha <a class="el" href="main_8c_source.html#l00023">23</a> do arquivo <a class="el" href="main_8c_source.html">main.c</a>.</p>
 
 </div>
 </div>
@@ -531,7 +541,7 @@ Esse é o diagrama das funções que utilizam essa função:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definição na linha <a class="el" href="main_8c_source.html#l00017">17</a> do arquivo <a class="el" href="main_8c_source.html">main.c</a>.</p>
+<p class="definition">Definição na linha <a class="el" href="main_8c_source.html#l00026">26</a> do arquivo <a class="el" href="main_8c_source.html">main.c</a>.</p>
 
 </div>
 </div>
@@ -547,7 +557,7 @@ Esse é o diagrama das funções que utilizam essa função:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definição na linha <a class="el" href="main_8c_source.html#l00018">18</a> do arquivo <a class="el" href="main_8c_source.html">main.c</a>.</p>
+<p class="definition">Definição na linha <a class="el" href="main_8c_source.html#l00027">27</a> do arquivo <a class="el" href="main_8c_source.html">main.c</a>.</p>
 
 </div>
 </div>

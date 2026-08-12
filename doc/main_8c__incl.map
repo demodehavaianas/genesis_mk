@@ -1,5 +1,5 @@
 <map id="src/main.c" name="src/main.c">
-<area shape="rect" id="Node000001" title=" " alt="" coords="464,5,547,35"/>
+<area shape="rect" id="Node000001" title="Orquestrador principal que gerencia o fluxo do jogo." alt="" coords="464,5,547,35"/>
 <area shape="rect" id="Node000002" title=" " alt="" coords="5,83,86,113"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="464,29,308,50,102,85,101,80,307,45,463,24"/>
 <area shape="rect" id="Node000003" title=" " alt="" coords="110,83,210,113"/>
