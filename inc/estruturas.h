@@ -38,15 +38,16 @@ enum Fighters
 
 /**
  * @brief Enumeração das salas do jogo.
+ *        Cada valor representa uma tela ou fase específica do jogo.
  */
 enum GAME_ROOM
 {
-  TELA_DEMO_INTRO,
-  TELA_TITULO,
-  TELA_START,
-  SELECAO_PERSONAGENS,
-  BONUS_STAGE,
-  PALACE_GATES
+  TELA_DEMO_INTRO, // Tela de introdução do jogo
+  TELA_TITULO, 
+  TELA_START, // Tela de Start e Options do jogo
+  SELECAO_PERSONAGENS, // Tela de seleção de personagens
+  BONUS_STAGE, // Tela do Bonus Stage
+  PALACE_GATES // Tela do Palace Gates - Stage 1
 };
 
 /**
