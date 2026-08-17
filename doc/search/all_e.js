@@ -1,9 +1,20 @@
 var searchData=
 [
-  ['raiden_2ec_0',['raiden.c',['../raiden_8c.html',1,'']]],
-  ['raidenlines_5fbr_1',['raidenLines_BR',['../bio__textlines_8c.html#adb457cfae2d0ed7c6af5c2ec53f49d48',1,'bio_textlines.c']]],
-  ['raidenlines_5fen_2',['raidenLines_EN',['../bio__textlines_8c.html#a55557cae4607ed96bd2713db2b9e0547',1,'bio_textlines.c']]],
-  ['reptile_2ec_3',['reptile.c',['../reptile_8c.html',1,'']]],
-  ['resetgraphicelements_4',['resetGraphicElements',['../main_8c.html#af1f907fd47e7a9f600f2e5c4bdded9e5',1,'main.c']]],
-  ['revealbackground_5',['revealBackground',['../char__select__room_8c.html#a0c43ccbb25a07b7b39a14e5650fa5f9e',1,'char_select_room.c']]]
+  ['saida_0',['saida',['../intro__demo__room_8c.html#a46851a69b6140500d8f59ad9b1683b01',1,'intro_demo_room.c']]],
+  ['scorpion_2ec_1',['scorpion.c',['../scorpion_8c.html',1,'']]],
+  ['scorpionlines_5fbr_2',['scorpionLines_BR',['../bio__textlines_8c.html#a8c94feff9708c243ffa77d737a5e7b71',1,'bio_textlines.c']]],
+  ['scorpionlines_5fen_3',['scorpionLines_EN',['../bio__textlines_8c.html#ae218996bbaf16478e34777d78954ac7b',1,'bio_textlines.c']]],
+  ['screen_5fheight_4',['SCREEN_HEIGHT',['../char__select__room_8c.html#a6974d08a74da681b3957b2fead2608b8',1,'char_select_room.c']]],
+  ['screen_5fwidth_5',['SCREEN_WIDTH',['../char__select__room_8c.html#a2cd109632a6dcccaa80b43561b1ab700',1,'char_select_room.c']]],
+  ['scrolloffset_6',['scrollOffset',['../main_8c.html#ab079fdcdff838058b3a7aded16e25e2e',1,'main.c']]],
+  ['scrollvalues_7',['scrollValues',['../main_8c.html#aad3b8401765626643972079764552da1',1,'main.c']]],
+  ['size_8',['size',['../structCharSelectData.html#a1fc61d0849b32f6bf0a9f144795a7f78',1,'CharSelectData']]],
+  ['softclearplane_9',['softClearPlane',['../intro__demo__room_8c.html#abd84a8f7942f738b8f807b5c83e766dc',1,'intro_demo_room.c']]],
+  ['sonya_2ec_10',['sonya.c',['../sonya_8c.html',1,'']]],
+  ['sonyalines_5fbr_11',['sonyaLines_BR',['../bio__textlines_8c.html#a1fd2b4779a786cd80fec48a3bc00fca8',1,'bio_textlines.c']]],
+  ['sonyalines_5fen_12',['sonyaLines_EN',['../bio__textlines_8c.html#a3001dea0320b90b883b9205917571156',1,'bio_textlines.c']]],
+  ['startline_13',['startLine',['../structVenetianBlindsEffect.html#a74815765916f5d9761d41e815131ddff',1,'VenetianBlindsEffect']]],
+  ['subzero_2ec_14',['subzero.c',['../subzero_8c.html',1,'']]],
+  ['subzerolines_5fbr_15',['subzeroLines_BR',['../bio__textlines_8c.html#afc5cc04711b39c78da75a07456099dc8',1,'bio_textlines.c']]],
+  ['subzerolines_5fen_16',['subzeroLines_EN',['../bio__textlines_8c.html#af1baccebe0dd77d2d631130947a1ff94',1,'bio_textlines.c']]]
 ];

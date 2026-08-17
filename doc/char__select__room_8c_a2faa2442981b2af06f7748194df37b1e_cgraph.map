@@ -1,0 +1,30 @@
+<map id="processSelecaoPersonagens" name="processSelecaoPersonagens">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,272,202,302"/>
+<area shape="rect" id="Node000002" href="$char__select__room_8c.html#ac4e9710c7cee86490478f6f13fe404ca" title="Carrega as informações dos backgrounds." alt="" coords="268,5,394,35"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="107,270,124,226,153,166,194,101,220,71,248,45,254,41,257,45,251,49,223,75,199,104,158,168,129,228,112,272"/>
+<area shape="rect" id="Node000003" href="$char__select__room_8c.html#aaf98ef7cdde3a0dfb2e49919de3298b1" title=" " alt="" coords="309,59,353,88"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="110,271,130,235,161,189,200,140,248,98,270,86,293,78,295,83,272,91,251,102,204,144,165,192,134,238,115,273"/>
+<area shape="rect" id="Node000004" href="$char__select__room_8c.html#a314398bc03447a31029a30830c2564b1" title=" " alt="" coords="291,112,371,142"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="116,270,170,213,207,180,248,151,275,139,278,143,251,156,210,184,173,216,120,273"/>
+<area shape="rect" id="Node000006" href="$char__select__room_8c.html#a2c60c4622273d99eca25ec3a91b72e00" title="move a tela para fora da parte visível a esquerda para iniciar o efeito de Persiana." alt="" coords="282,165,380,195"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="128,269,182,238,249,204,266,197,268,202,251,209,185,242,131,274"/>
+<area shape="rect" id="Node000007" href="$char__select__room_8c.html#a5fe2bce30fe9d451d1fdf0516bceeca8" title=" " alt="" coords="267,219,395,248"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="169,269,251,249,252,255,170,274"/>
+<area shape="rect" id="Node000008" href="$input__system_8c.html#a2656744a9ebd96a8887f55208c53bc6e" title=" " alt="" coords="282,272,380,302"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="202,284,267,284,267,290,202,290"/>
+<area shape="rect" id="Node000009" href="$char__select__room_8c.html#aef0d923955a5f8c15ece5e94e4f34516" title=" " alt="" coords="250,325,412,355"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="170,300,250,319,249,324,169,305"/>
+<area shape="rect" id="Node000010" href="$char__select__room_8c.html#a0ef959c1328c22bc747f0fe922ab81d1" title=" " alt="" coords="274,379,388,408"/>
+<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="131,300,185,331,251,364,265,370,263,375,249,369,182,336,128,304"/>
+<area shape="rect" id="Node000011" href="$char__select__room_8c.html#a5abeb779158f34e168929e54671ef77d" title=" " alt="" coords="290,432,372,462"/>
+<area shape="poly" id="edge10_Node000001_Node000011" title=" " alt="" coords="120,300,173,357,210,390,251,418,277,430,275,435,248,422,207,394,170,361,116,304"/>
+<area shape="rect" id="Node000012" href="$char__select__room_8c.html#a989e04fd12d40df989964ce84d981a5c" title="Revela a tela fazendo o efeito de persiana." alt="" coords="265,485,397,515"/>
+<area shape="poly" id="edge11_Node000001_Node000012" title=" " alt="" coords="115,301,134,335,165,381,204,430,251,471,258,476,255,480,248,476,200,433,161,384,130,338,110,303"/>
+<area shape="rect" id="Node000013" href="$char__select__room_8c.html#a7d5c58c0b00f06187c8e13947ce8b0b5" title=" " alt="" coords="273,539,389,568"/>
+<area shape="poly" id="edge12_Node000001_Node000013" title=" " alt="" coords="112,301,129,345,158,405,199,469,223,499,251,525,260,531,257,535,248,529,220,503,194,473,153,408,124,347,107,303"/>
+<area shape="rect" id="Node000005" href="$anima__system_8c.html#ab609215115971b40d9e47df6e4a8f853" title=" " alt="" coords="460,299,552,328"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="372,131,394,139,414,151,443,182,467,217,498,283,493,285,462,220,439,185,410,156,391,144,370,136"/>
+<area shape="poly" id="edge14_Node000013_Node000005" title=" " alt="" coords="388,539,410,525,445,482,470,433,487,384,497,343,502,344,492,386,475,435,450,485,414,529,391,543"/>
+<area shape="rect" id="Node000014" href="$char__select__room_8c.html#a654fe96fb185a123e5c3e3df2ed5e0ed" title="Executa o áudio do cursor." alt="" coords="462,539,550,568"/>
+<area shape="poly" id="edge13_Node000013_Node000014" title=" " alt="" coords="390,551,447,551,447,556,390,556"/>
+</map>

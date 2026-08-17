@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['freescrollline_0',['freeScrollLine',['../char__select__room_8c.html#a4c282a9dd139d3b5ee59f0ad6d1c3de3',1,'char_select_room.c']]]
+  ['getfighterbio_0',['getFighterBio',['../bio__textlines_8c.html#a8edb0526c4339ce7f0c73d8c6454079c',1,'bio_textlines.c']]]
 ];

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['y_0',['y',['../structCharSelectData.html#a34f85805caf2dbcbc99821827a15b372',1,'CharSelectData']]]
+  ['x_0',['x',['../structCharSelectData.html#afb06a41244038cae16554cecf3e1a722',1,'CharSelectData']]]
 ];

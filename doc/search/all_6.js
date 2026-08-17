@@ -1,22 +1,10 @@
 var searchData=
 [
-  ['galturadopiso_0',['gAlturaDoPiso',['../game__vars_8c.html#add5eb59c4f71be58ef78c256ac2de63d',1,'game_vars.c']]],
-  ['game_5fvars_2ec_1',['game_vars.c',['../game__vars_8c.html',1,'']]],
-  ['gasg_5fsystem_2',['gASG_system',['../game__vars_8c.html#ab6aaeb8394cea6ecbe228b9504e02a0e',1,'game_vars.c']]],
-  ['gbg_5fheight_3',['gBG_Height',['../game__vars_8c.html#aa679cf36be7f137105cedc17391cd822',1,'game_vars.c']]],
-  ['gbg_5fwidth_4',['gBG_Width',['../game__vars_8c.html#a9a5a6215707f5795c18f46c7cef8c2fd',1,'game_vars.c']]],
-  ['gclockl_5',['gClockL',['../game__vars_8c.html#a9c5febcf9a08c2814eda89054190f4b7',1,'game_vars.c']]],
-  ['gclockr_6',['gClockR',['../game__vars_8c.html#a7e8bb1c72c19d49d75b39df17c59c3f8',1,'game_vars.c']]],
-  ['gclocktimer_7',['gClockTimer',['../game__vars_8c.html#a5651fe815d173a5a86a793b794d13ef3',1,'game_vars.c']]],
-  ['gdistancia_8',['gDistancia',['../main_8c.html#a3990abcf74fa5f731cd480f51a1d0926',1,'main.c']]],
-  ['ge_9',['GE',['../game__vars_8c.html#aa5e097d9886fbef5de8248a18d1d95ee',1,'game_vars.c']]],
-  ['getfighterbio_10',['getFighterBio',['../bio__textlines_8c.html#a8edb0526c4339ce7f0c73d8c6454079c',1,'bio_textlines.c']]],
-  ['gframes_11',['gFrames',['../game__vars_8c.html#a940f635da7254d2a02a607dab0139dfd',1,'game_vars.c']]],
-  ['gind_5ftileset_12',['gInd_tileset',['../game__vars_8c.html#ac5c9f7210c7cb249636b7f1dc0121b71',1,'game_vars.c']]],
-  ['gmeiodatela_13',['gMeioDaTela',['../main_8c.html#a44635857695ecd006d4023b31a12eab1',1,'main.c']]],
-  ['gorolines_5fbr_14',['goroLines_BR',['../bio__textlines_8c.html#acc18844befc41cdc62e55f796f7b9fd5',1,'bio_textlines.c']]],
-  ['gorolines_5fen_15',['goroLines_EN',['../bio__textlines_8c.html#a448b2627b574f1bd6d9d07eff8e21130',1,'bio_textlines.c']]],
-  ['gpodemover_16',['gPodeMover',['../game__vars_8c.html#a7db0859ee62e2447701751d5980ede35',1,'game_vars.c']]],
-  ['groom_17',['gRoom',['../game__vars_8c.html#a784a617fe12ac8976bbae900c2343a36',1,'game_vars.c']]],
-  ['gscrollvalue_18',['gScrollValue',['../game__vars_8c.html#aa2d51ef9576be55b8a1ff672efbd0009',1,'game_vars.c']]]
+  ['initpalacegatesroom_0',['initPalaceGatesRoom',['../palace__gates__room_8c.html#aa311e5f2262edd690db28a5e1fd05f97',1,'palace_gates_room.c']]],
+  ['initplayer_1',['initPlayer',['../char__select__room_8c.html#a314398bc03447a31029a30830c2564b1',1,'char_select_room.c']]],
+  ['initscrollline_2',['initScrollLine',['../char__select__room_8c.html#a2c60c4622273d99eca25ec3a91b72e00',1,'char_select_room.c']]],
+  ['initselectorsprite_3',['initSelectorSprite',['../char__select__room_8c.html#a5fe2bce30fe9d451d1fdf0516bceeca8',1,'char_select_room.c']]],
+  ['input_5fsystem_2ec_4',['input_system.c',['../input__system_8c.html',1,'']]],
+  ['inputsystem_5',['inputSystem',['../input__system_8c.html#a2656744a9ebd96a8887f55208c53bc6e',1,'input_system.c']]],
+  ['intro_5fdemo_5froom_2ec_6',['intro_demo_room.c',['../intro__demo__room_8c.html',1,'']]]
 ];

@@ -1,19 +1,8 @@
 var searchData=
 [
-  ['saida_0',['saida',['../intro__demo__room_8c.html#a46851a69b6140500d8f59ad9b1683b01',1,'intro_demo_room.c']]],
-  ['scorpion_2ec_1',['scorpion.c',['../scorpion_8c.html',1,'']]],
-  ['scorpionlines_5fbr_2',['scorpionLines_BR',['../bio__textlines_8c.html#a8c94feff9708c243ffa77d737a5e7b71',1,'bio_textlines.c']]],
-  ['scorpionlines_5fen_3',['scorpionLines_EN',['../bio__textlines_8c.html#ae218996bbaf16478e34777d78954ac7b',1,'bio_textlines.c']]],
-  ['screen_5fheight_4',['SCREEN_HEIGHT',['../char__select__room_8c.html#a6974d08a74da681b3957b2fead2608b8',1,'char_select_room.c']]],
-  ['screen_5fwidth_5',['SCREEN_WIDTH',['../char__select__room_8c.html#a2cd109632a6dcccaa80b43561b1ab700',1,'char_select_room.c']]],
-  ['scrolloffset_6',['scrollOffset',['../main_8c.html#ab079fdcdff838058b3a7aded16e25e2e',1,'main.c']]],
-  ['scrollvalues_7',['scrollValues',['../main_8c.html#aad3b8401765626643972079764552da1',1,'main.c']]],
-  ['size_8',['size',['../structCharSelectData.html#a8325917854d1f766ab0edd0c958cd981',1,'CharSelectData']]],
-  ['softclearplane_9',['softClearPlane',['../intro__demo__room_8c.html#abd84a8f7942f738b8f807b5c83e766dc',1,'intro_demo_room.c']]],
-  ['sonya_2ec_10',['sonya.c',['../sonya_8c.html',1,'']]],
-  ['sonyalines_5fbr_11',['sonyaLines_BR',['../bio__textlines_8c.html#a1fd2b4779a786cd80fec48a3bc00fca8',1,'bio_textlines.c']]],
-  ['sonyalines_5fen_12',['sonyaLines_EN',['../bio__textlines_8c.html#a3001dea0320b90b883b9205917571156',1,'bio_textlines.c']]],
-  ['subzero_2ec_13',['subzero.c',['../subzero_8c.html',1,'']]],
-  ['subzerolines_5fbr_14',['subzeroLines_BR',['../bio__textlines_8c.html#afc5cc04711b39c78da75a07456099dc8',1,'bio_textlines.c']]],
-  ['subzerolines_5fen_15',['subzeroLines_EN',['../bio__textlines_8c.html#af1baccebe0dd77d2d631130947a1ff94',1,'bio_textlines.c']]]
+  ['tilemap_5fheight_0',['TILEMAP_HEIGHT',['../char__select__room_8c.html#a5b1c46fed84ea158a227e1e696cdce02',1,'char_select_room.c']]],
+  ['tilemap_5fwidth_1',['TILEMAP_WIDTH',['../char__select__room_8c.html#a2cd14084ee8d331ac08e405d3f374b37',1,'char_select_room.c']]],
+  ['typewriter_5fprinter_2ec_2',['typewriter_printer.c',['../typewriter__printer_8c.html',1,'']]],
+  ['typewritereffect_3',['typewriterEffect',['../typewriter__printer_8c.html#a7b99e213b81356a73cbd48457b5877ea',1,'typewriter_printer.c']]],
+  ['typewriterwritealllines_4',['typewriterWriteAllLines',['../typewriter__printer_8c.html#ad6e8362eb9b82d100d479b769a6acf9c',1,'typewriter_printer.c']]]
 ];

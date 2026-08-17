@@ -1,8 +1,9 @@
 var searchData=
 [
-  ['initpalacegatesroom_0',['initPalaceGatesRoom',['../palace__gates__room_8c.html#aa311e5f2262edd690db28a5e1fd05f97',1,'palace_gates_room.c']]],
-  ['initplayer_1',['initPlayer',['../char__select__room_8c.html#a1dca549e20947032febfdf3cda5dbd8b',1,'char_select_room.c']]],
-  ['initscrollline_2',['initScrollLine',['../char__select__room_8c.html#ad2b5a2c8eb273c314ef357bf7c46c3d9',1,'char_select_room.c']]],
-  ['initselectorsprite_3',['initSelectorSprite',['../char__select__room_8c.html#a0d815a5b9fde845e473ccd3c2749b91a',1,'char_select_room.c']]],
-  ['inputsystem_4',['inputSystem',['../input__system_8c.html#a2656744a9ebd96a8887f55208c53bc6e',1,'input_system.c']]]
+  ['loadbackground_0',['loadBackground',['../press__start__room_8c.html#ab9e42b0ec1e9c9ffdf1edd5dec1b0ddd',1,'press_start_room.c']]],
+  ['loadbioscreen_1',['loadBioScreen',['../intro__demo__room_8c.html#a152c80724646f7fe60348e27f4a8ca2c',1,'intro_demo_room.c']]],
+  ['loadbrainatworkscreen_2',['loadBrainAtWorkScreen',['../intro__demo__room_8c.html#aaf01eb7af118af02997ccd40dfaebdaa',1,'intro_demo_room.c']]],
+  ['loadgorolivesscreen_3',['loadGoroLivesScreen',['../intro__demo__room_8c.html#a32183ed63a770a246f599a6c8cf6ca32',1,'intro_demo_room.c']]],
+  ['loadmenu_4',['loadMenu',['../press__start__room_8c.html#aac45d571e0fac1638422fe61899a8ad9',1,'press_start_room.c']]],
+  ['loadmidwaytitlemkscreen_5',['loadMidwayTitleMKScreen',['../intro__demo__room_8c.html#a2791cbdef785b738e2b65514d8a90618',1,'intro_demo_room.c']]]
 ];
