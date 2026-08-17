@@ -70,7 +70,7 @@ struct VenetianBlindsEffect
   u16 endLine;     // linha onde termina o efeito
 };
 
-static struct VenetianBlindsEffect persiana[7] = {
+static const struct VenetianBlindsEffect persiana[7] = {
       {0, 13, 31},
       {32, 43, 63},
       {64, 73, 95},
@@ -84,8 +84,7 @@ void exit(void)
 {
   SPR_clear();
 
-  //--IA loop decremental: M68k tem instrução DBRA super-rápida para isso
-  for (s16 i = 4; i >= 1; --i)
+  for (s16 i = 4; i >= 0; --i) // libera os sprites do seletor e dos retratos 0..3
   {
     if (GE[i].sprite)
     {
@@ -95,7 +94,7 @@ void exit(void)
   }
 
   VDP_releaseAllSprites();
-  gFrames = 0u;
+  gFrames = 0;
   gRoom = TELA_DEMO_INTRO;
   VDP_setBackgroundColor(0);
   gInd_tileset = TILE_USER_INDEX;
@@ -123,6 +122,7 @@ void processSelecaoPersonagens(void)
       gPodeMover = FALSE;
       VDP_setPlaneSize(128, 64, TRUE);
       VDP_setScrollingMode(HSCROLL_LINE, VSCROLL_PLANE);
+      gInd_tileset = TILE_USER_INDEX; // Importante para evitar que o próximo tileset sobrescreva o anterior
     }
 
     // toca o gongo e inicia o efeito persinana revelando a tela de fundo
@@ -131,6 +131,7 @@ void processSelecaoPersonagens(void)
       s16 *gScrollLine = (s16 *)MEM_alloc(SCREEN_HEIGHT * sizeof(s16));
 
       XGM2_playPCMEx(snd_gongo, sizeof(snd_gongo), SOUND_PCM_CH2, 0, FALSE, 0);
+
       initScrollLine(gScrollLine);
       drawBackground();
       revealBackground(gScrollLine);
@@ -187,6 +188,7 @@ void processSelecaoPersonagens(void)
   exit();
 }
 
+//TODO: fazer validação para 1 ou 2 jogadores. 
 // faz o efeito de piscar o retrato ao selecionar o personagem
 void playerSelectBlinkEffect(int ind, u8 selectorBlinkTimer[2])
 {
@@ -205,7 +207,7 @@ void playerSelectBlinkEffect(int ind, u8 selectorBlinkTimer[2])
 
     selectorBlinkTimer[ind]++;
 
-    if ((selectorBlinkTimer[ind] & 7u) == 0u)
+    if ((selectorBlinkTimer[ind] & 7u) == 0)
       SPR_nextFrame(s);
 
     // pára a animação
@@ -357,14 +359,14 @@ void playerSelected(int ind)
   if (GE[ind].sprite == NULL || GE[ind].sprite->visibility == HIDDEN)
     return;
 
-  if (player[ind].key_JOY_START_status == 0u)
+  if (player[ind].key_JOY_START_status == 0)
     return;
 
   if (GE[ind + 2].sprite != NULL)
     return;
 
   const CharSelectData *d = &charData[player[ind].id];
-  XGM2_playPCMEx(d->locutor, d->size, SOUND_PCM_CH_AUTO, 0, FALSE, FALSE);
+  XGM2_playPCMEx(d->locutor, d->size, SOUND_PCM_CH3, 0, FALSE, FALSE);
 
   GE[ind + 2].sprite = SPR_addSprite(&spPortrait, d->x + 4, d->y + 4, TILE_ATTR(PAL0, FALSE, FALSE, FALSE));
   SPR_setAnim(GE[ind + 2].sprite, player[ind].id);
@@ -379,17 +381,11 @@ void playerSelected(int ind)
  */
 void initScrollLine(s16 *gScrollLine)
 {
-  // for (u16 x = SCREEN_HEIGHT; x > 0; --x)
-  //   gScrollLine[x - 1u] = -SCREEN_WIDTH;
-
-  if(!gScrollLine) return; // Check for NULL pointer
-  
-  for (u16 x = 0; x < SCREEN_HEIGHT; x++)
+  for(u16 x = SCREEN_HEIGHT; x > 0; --x)
   {
-    gScrollLine[x] = -SCREEN_WIDTH; // inicia as linhas com 320px
+    gScrollLine[x - 1] = -SCREEN_WIDTH;
   }
-
-
+  
   VDP_setHorizontalScrollLine(BG_A, 0, gScrollLine, SCREEN_HEIGHT, DMA);
   VDP_setHorizontalScrollLine(BG_B, 0, gScrollLine, SCREEN_HEIGHT, DMA);
 }
@@ -571,7 +567,7 @@ void initSelectorSprite(void)
  * */
 void playCursor(void)
 {
-  XGM2_playPCMEx(snd_cursor, sizeof(snd_cursor), SOUND_PCM_CH_AUTO, 0, FALSE, 0);
+  XGM2_playPCMEx(snd_cursor, sizeof(snd_cursor), SOUND_PCM_CH2, 0, FALSE, 0);
 }
 
 void playMusic(void)
