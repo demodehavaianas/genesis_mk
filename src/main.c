@@ -37,7 +37,7 @@ int main(bool hardReset)
   // VDP_setHilightShadow(TRUE);
 
   debugEnabled = FALSE;
-  gRoom = TELA_DEMO_INTRO;
+  gRoom = SELECAO_PERSONAGENS;
   gFrames = 0;
   gInd_tileset = 0;
   player[0].id = JOHNNY_CAGE;

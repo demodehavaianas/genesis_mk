@@ -24,15 +24,14 @@
 void updateSelector(int ind);
 void playerSelected(int ind);
 void playerSelectBlinkEffect(int ind, u8 selectorBlinkTimer[2]);
-void initScrollLine(s16 *scrollLine);
-void drawBackground();
-void revealBackground(s16 *scrollLine);
-void initPlayer();
-void initSelectorSprite();
-void playCursor();
-void playMusic();
-void freeScrollLine(s16 *scrollLine);
-void exit();
+void initScrollLine(s16 *gScrollLine);
+void drawBackground(void);
+void revealBackground(s16 *gScrollLine);
+void initPlayer(void);
+void initSelectorSprite(void);
+void playCursor(void);
+void playMusic(void);
+void exit(void);
 
 // Seguir sempre a ordem do Enum
 // CAGE      20, 44
@@ -42,57 +41,62 @@ void exit();
 // SUBZERO  188, 44
 // SCORPION 188, 108
 // SONYA    244, 44
-const u8 OPTIONS_X[7] = {20, 76, 76, 132, 188, 188, 244};
-const u8 OPTIONS_Y[7] = {44, 44, 108, 108, 44, 108, 44};
+static const u8 OPTIONS_X[7] = {20, 76, 76, 132, 188, 188, 244};
+static const u8 OPTIONS_Y[7] = {44, 44, 108, 108, 44, 108, 44};
 
 typedef struct
 {
   const u8 *locutor;
-  int size;
-  u8 x, y;
+  u16 size;
+  u8 x;
+  u8 y;
 } CharSelectData;
 
 // TODO: acertar isso pois não dá para pegar o tamanho dinamicamente.
 static const CharSelectData charData[7] = {
-    {loc_jc, 13056, OPTIONS_X[JOHNNY_CAGE], OPTIONS_Y[JOHNNY_CAGE]},
-    {loc_kano, 8448, OPTIONS_X[KANO], OPTIONS_Y[KANO]},
-    {loc_raiden, 7680, OPTIONS_X[RAIDEN], OPTIONS_Y[RAIDEN]},
-    {loc_liu_kang, 13056, OPTIONS_X[LIU_KANG], OPTIONS_Y[LIU_KANG]},
-    {loc_suzero, 15872, OPTIONS_X[SUBZERO], OPTIONS_Y[SUBZERO]},
-    {loc_scorpion, 13568, OPTIONS_X[SCORPION], OPTIONS_Y[SCORPION]},
-    {loc_sonya, 11264, OPTIONS_X[SONYA], OPTIONS_Y[SONYA]},
+    {loc_jc, 13056u, OPTIONS_X[JOHNNY_CAGE], OPTIONS_Y[JOHNNY_CAGE]},
+    {loc_kano, 8448u, OPTIONS_X[KANO], OPTIONS_Y[KANO]},
+    {loc_raiden, 7680u, OPTIONS_X[RAIDEN], OPTIONS_Y[RAIDEN]},
+    {loc_liu_kang, 13056u, OPTIONS_X[LIU_KANG], OPTIONS_Y[LIU_KANG]},
+    {loc_suzero, 15872u, OPTIONS_X[SUBZERO], OPTIONS_Y[SUBZERO]},
+    {loc_scorpion, 13568u, OPTIONS_X[SCORPION], OPTIONS_Y[SCORPION]},
+    {loc_sonya, 11264u, OPTIONS_X[SONYA], OPTIONS_Y[SONYA]},
 };
 
-void exit()
+struct VenetianBlindsEffect
+{
+  u16 startLine;   // linha onde começa o efeito
+  u16 nextLine;    // linha onde deve começar o próximo efeito
+  u16 endLine;     // linha onde termina o efeito
+};
+
+static const struct VenetianBlindsEffect persiana[7] = {
+      {0, 13, 31},
+      {32, 43, 63},
+      {64, 73, 95},
+      {96, 105, 127},
+      {128, 137, 159},
+      {160, 167, 191},
+      {192, 0, 223},
+};
+
+void exit(void)
 {
   SPR_clear();
-  // VDP_resetSprites();
 
-  if (GE[1].sprite)
+  for (s16 i = 4; i >= 0; --i) // libera os sprites do seletor e dos retratos 0..3
   {
-    SPR_releaseSprite(GE[1].sprite);
-    GE[1].sprite = NULL;
+    if (GE[i].sprite)
+    {
+      SPR_releaseSprite(GE[i].sprite);
+      GE[i].sprite = NULL;
+    }
   }
-  if (GE[2].sprite)
-  {
-    SPR_releaseSprite(GE[2].sprite);
-    GE[2].sprite = NULL;
-  }
-  if (GE[3].sprite)
-  {
-    SPR_releaseSprite(GE[3].sprite);
-    GE[3].sprite = NULL;
-  }
-  if (GE[4].sprite)
-  {
-    SPR_releaseSprite(GE[4].sprite);
-    GE[4].sprite = NULL;
-  }
+
   VDP_releaseAllSprites();
   gFrames = 0;
   gRoom = TELA_DEMO_INTRO;
-  // VDP_resetScreen();
-  VDP_setBackgroundColor(0); // Define preto
+  VDP_setBackgroundColor(0);
   gInd_tileset = TILE_USER_INDEX;
 
   waitMs(1000);
@@ -100,17 +104,15 @@ void exit()
   SYS_enableInts();
 }
 
-void processSelecaoPersonagens()
+void processSelecaoPersonagens(void)
 {
   bool sair = FALSE;
-  u8 selectorBlinkTimer[2] = {0, 0}; // timer para o efeito de piscar o retrato do personagem selecionado
-
+  u8 selectorBlinkTimer[2] = {0, 0};
   s16 countDown = -1;
 
   while (!sair)
   {
     inputSystem();
-
     gFrames++;
 
     // desabilita interações, ajusta planos e modo de scrolling
@@ -120,47 +122,39 @@ void processSelecaoPersonagens()
       gPodeMover = FALSE;
       VDP_setPlaneSize(128, 64, TRUE);
       VDP_setScrollingMode(HSCROLL_LINE, VSCROLL_PLANE);
+      gInd_tileset = TILE_USER_INDEX; // Importante para evitar que o próximo tileset sobrescreva o anterior
     }
 
     // toca o gongo e inicia o efeito persinana revelando a tela de fundo
-    if (gFrames == 20)
+    if (gFrames == 20u)
     {
-      s16 *scrollLine = (s16 *)malloc(SCREEN_HEIGHT * sizeof(s16));
+      s16 *gScrollLine = (s16 *)MEM_alloc(SCREEN_HEIGHT * sizeof(s16));
 
       XGM2_playPCMEx(snd_gongo, sizeof(snd_gongo), SOUND_PCM_CH2, 0, FALSE, 0);
 
-      initScrollLine(scrollLine);
-
+      initScrollLine(gScrollLine);
       drawBackground();
-
-      revealBackground(scrollLine);
+      revealBackground(gScrollLine);
     }
 
     // toca música, inicia o player, sprites ...
-    if (gFrames == 40)
+    if (gFrames == 40u)
     {
       playMusic();
-
       initPlayer();
-
       initSelectorSprite();
-
       VDP_waitVSync();
-      gPodeMover = TRUE; // previnir bug de sprite aparecer errado se ficar movendo o dpad
+      gPodeMover = TRUE;
     }
 
-    // permite interações
-    if (gFrames > 100)
-    {
+    if (gFrames > 100u)
       SYS_enableInts();
-    }
 
-    for (int ind = 0; ind < 2; ind++) // para cada jogador
+    // para cada jogador, atualiza o seletor, verifica se selecionou e aplica efeito de piscar
+    for (s16 ind = 1; ind >= 0; --ind)
     {
       updateSelector(ind);
-
       playerSelected(ind);
-
       playerSelectBlinkEffect(ind, selectorBlinkTimer);
     }
 
@@ -186,17 +180,6 @@ void processSelecaoPersonagens()
       countDown--;
     }
 
-    // Mostra os IDs dos personagens
-    if (debugEnabled)
-    {
-      static char stri[64];
-      sprintf(stri, "p1: %d", player[0].id);
-      VDP_drawText(stri, 1, 1);
-      sprintf(stri, "p2: %d", player[1].id);
-      VDP_drawText(stri, 1, 2);
-      sprintf(stri, "gframes: %ld", gFrames);
-      VDP_drawText(stri, 1, 3);
-    }
 
     SPR_update();
     SYS_doVBlankProcess();
@@ -205,196 +188,186 @@ void processSelecaoPersonagens()
   exit();
 }
 
+//TODO: fazer validação para 1 ou 2 jogadores. 
 // faz o efeito de piscar o retrato ao selecionar o personagem
 void playerSelectBlinkEffect(int ind, u8 selectorBlinkTimer[2])
 {
-  // Se o sprite P&B da foto do personagem estiver visível..
-  if (SPR_isVisible(GE[ind + 2].sprite, TRUE))
+  Sprite *s = GE[ind + 2].sprite;
+  if (s == NULL)
+    return;
+
+  if (SPR_isVisible(s, TRUE))
   {
     // para piscar novamente caso selecionem o mesmo personagem
-    if ((player[0].selecionado && player[1].selecionado))
+    if (player[0].selecionado && player[1].selecionado && player[0].id == player[1].id)
     {
-      if (player[0].id == player[1].id)
-      {
-        SPR_setDepth(GE[ind + 2].sprite, SPR_MIN_DEPTH);
-        SPR_setAnim(GE[ind + 2].sprite, player[ind].id);
-      }
+      SPR_setDepth(s, SPR_MIN_DEPTH);
+      SPR_setAnim(s, player[ind].id);
     }
 
     selectorBlinkTimer[ind]++;
-    // se divisível por 5 ...
-    if (selectorBlinkTimer[ind] % 5 == 0)
-    {
-      SPR_nextFrame(GE[ind + 2].sprite);
-    }
-    // para a animação
-    if (selectorBlinkTimer[ind] > 30)
-    {
-      SPR_setAnimationLoop(GE[ind + 2].sprite, FALSE);
-    }
+
+    if ((selectorBlinkTimer[ind] & 7u) == 0)
+      SPR_nextFrame(s);
+
+    // pára a animação
+    if (selectorBlinkTimer[ind] > 30u)
+      SPR_setAnimationLoop(s, FALSE);
   }
 }
 
-/**
- * @brief Atualiza a posição do cursor de seleção de acordo com o ID
- *
- * @param ind indice usado pelo GraphicElements
- */
 void updateSelector(int ind)
 {
-  if (GE[ind].sprite->visibility == HIDDEN) // se o seletor estiver invisível não permitir mover o cursor.
+  // se o seletor estiver invisível não permitir mover o cursor.
+  if (GE[ind].sprite == NULL || GE[ind].sprite->visibility == HIDDEN)
     return;
 
   int prevId = player[ind].id; // guarda personagem anterior
 
   switch (player[ind].id)
   {
-  case KANO:
+    case KANO:
+      if (player[ind].key_JOY_LEFT_status == 1) // se apertar para esquerda, seleciona CAGE
+      {
+        playCursor();
+        SPR_setPosition(GE[ind].sprite, OPTIONS_X[JOHNNY_CAGE], OPTIONS_Y[JOHNNY_CAGE]);
+        player[ind].id = JOHNNY_CAGE;
+      }
+      else if (player[ind].key_JOY_RIGHT_status == 1) // se apertar para direita, Subzero
+      {
+        playCursor();
+        SPR_setPosition(GE[ind].sprite, OPTIONS_X[SUBZERO], OPTIONS_Y[SUBZERO]);
+        player[ind].id = SUBZERO;
+      }
+      else if (player[ind].key_JOY_DOWN_status == 1)// se apertar para baixo, Raiden
+      {
+        playCursor();
+        SPR_setPosition(GE[ind].sprite, OPTIONS_X[RAIDEN], OPTIONS_Y[RAIDEN]);
+        player[ind].id = RAIDEN;
+      }
+      break;
 
-    if (player[ind].key_JOY_LEFT_status == 1) // se apertar para esquerda, seleciona CAGE
-    {
-      playCursor();
-      SPR_setPosition(GE[ind].sprite, OPTIONS_X[JOHNNY_CAGE], OPTIONS_Y[JOHNNY_CAGE]);
-      player[ind].id = JOHNNY_CAGE;
-    }
-    else if (player[ind].key_JOY_RIGHT_status == 1) // se apertar para direita, Subzero
-    {
-      playCursor();
-      SPR_setPosition(GE[ind].sprite, OPTIONS_X[SUBZERO], OPTIONS_Y[SUBZERO]);
-      player[ind].id = SUBZERO;
-    }
-    else if (player[ind].key_JOY_DOWN_status == 1) // se apertar para baixo, Raiden
-    {
-      playCursor();
-      SPR_setPosition(GE[ind].sprite, OPTIONS_X[RAIDEN], OPTIONS_Y[RAIDEN]);
-      player[ind].id = RAIDEN;
-    }
-    break;
+    case JOHNNY_CAGE:
+      if (player[ind].key_JOY_RIGHT_status == 1)
+      {
+        playCursor();
+        SPR_setPosition(GE[ind].sprite, OPTIONS_X[KANO], OPTIONS_Y[KANO]);
+        player[ind].id = KANO;
+      }
+      else if (player[ind].key_JOY_LEFT_status == 1)
+      {
+        playCursor();
+        SPR_setPosition(GE[ind].sprite, OPTIONS_X[SONYA], OPTIONS_Y[SONYA]);
+        player[ind].id = SONYA;
+      }
+      break;
 
-  case JOHNNY_CAGE:
+    case SUBZERO:
+      if (player[ind].key_JOY_LEFT_status == 1)
+      {
+        playCursor();
+        SPR_setPosition(GE[ind].sprite, OPTIONS_X[KANO], OPTIONS_Y[KANO]);
+        player[ind].id = KANO;
+      }
+      else if (player[ind].key_JOY_RIGHT_status == 1)
+      {
+        playCursor();
+        SPR_setPosition(GE[ind].sprite, OPTIONS_X[SONYA], OPTIONS_Y[SONYA]);
+        player[ind].id = SONYA;
+      }
+      else if (player[ind].key_JOY_DOWN_status == 1)
+      {
+        playCursor();
+        SPR_setPosition(GE[ind].sprite, OPTIONS_X[SCORPION], OPTIONS_Y[SCORPION]);
+        player[ind].id = SCORPION;
+      }
+      break;
 
-    if (player[ind].key_JOY_RIGHT_status == 1)
-    {
-      playCursor();
-      SPR_setPosition(GE[ind].sprite, OPTIONS_X[KANO], OPTIONS_Y[KANO]);
-      player[ind].id = KANO;
-    }
-    else if (player[ind].key_JOY_LEFT_status == 1)
-    {
-      playCursor();
-      SPR_setPosition(GE[ind].sprite, OPTIONS_X[SONYA], OPTIONS_Y[SONYA]);
-      player[ind].id = SONYA;
-    }
-    break;
+    case SONYA:
+      if (player[ind].key_JOY_LEFT_status == 1)
+      {
+        playCursor();
+        SPR_setPosition(GE[ind].sprite, OPTIONS_X[SUBZERO], OPTIONS_Y[SUBZERO]);
+        player[ind].id = SUBZERO;
+      }
+      else if (player[ind].key_JOY_RIGHT_status == 1)
+      {
+        playCursor();
+        SPR_setPosition(GE[ind].sprite, OPTIONS_X[JOHNNY_CAGE], OPTIONS_Y[JOHNNY_CAGE]);
+        player[ind].id = JOHNNY_CAGE;
+      }
+      break;
 
-  case SUBZERO:
+    case SCORPION:
+      if (player[ind].key_JOY_LEFT_status == 1)
+      {
+        playCursor();
+        SPR_setPosition(GE[ind].sprite, OPTIONS_X[LIU_KANG], OPTIONS_Y[LIU_KANG]);
+        player[ind].id = LIU_KANG;
+      }
+      else if (player[ind].key_JOY_UP_status == 1)
+      {
+        playCursor();
+        SPR_setPosition(GE[ind].sprite, OPTIONS_X[SUBZERO], OPTIONS_Y[SUBZERO]);
+        player[ind].id = SUBZERO;
+      }
+      break;
 
-    if (player[ind].key_JOY_LEFT_status == 1)
-    {
-      playCursor();
-      SPR_setPosition(GE[ind].sprite, OPTIONS_X[KANO], OPTIONS_Y[KANO]);
-      player[ind].id = KANO;
-    }
-    else if (player[ind].key_JOY_RIGHT_status == 1)
-    {
-      playCursor();
-      SPR_setPosition(GE[ind].sprite, OPTIONS_X[SONYA], OPTIONS_Y[SONYA]);
-      player[ind].id = SONYA;
-    }
-    else if (player[ind].key_JOY_DOWN_status == 1)
-    {
-      playCursor();
-      SPR_setPosition(GE[ind].sprite, OPTIONS_X[SCORPION], OPTIONS_Y[SCORPION]);
-      player[ind].id = SCORPION;
-    }
-    break;
+    case LIU_KANG:
+      if (player[ind].key_JOY_RIGHT_status == 1)
+      {
+        playCursor();
+        SPR_setPosition(GE[ind].sprite, OPTIONS_X[SCORPION], OPTIONS_Y[SCORPION]);
+        player[ind].id = SCORPION;
+      }
+      else if (player[ind].key_JOY_LEFT_status == 1)
+      {
+        playCursor();
+        SPR_setPosition(GE[ind].sprite, OPTIONS_X[RAIDEN], OPTIONS_Y[RAIDEN]);
+        player[ind].id = RAIDEN;
+      }
+      break;
 
-  case SONYA:
+    case RAIDEN:
+      if (player[ind].key_JOY_RIGHT_status == 1)
+      {
+        playCursor();
+        SPR_setPosition(GE[ind].sprite, OPTIONS_X[LIU_KANG], OPTIONS_Y[LIU_KANG]);
+        player[ind].id = LIU_KANG;
+      }
+      else if (player[ind].key_JOY_UP_status == 1)
+      {
+        playCursor();
+        SPR_setPosition(GE[ind].sprite, OPTIONS_X[KANO], OPTIONS_Y[KANO]);
+        player[ind].id = KANO;
+      }
+      break;
 
-    if (player[ind].key_JOY_LEFT_status == 1)
-    {
-      playCursor();
-      SPR_setPosition(GE[ind].sprite, OPTIONS_X[SUBZERO], OPTIONS_Y[SUBZERO]);
-      player[ind].id = SUBZERO;
-    }
-    else if (player[ind].key_JOY_RIGHT_status == 1)
-    {
-      playCursor();
-      SPR_setPosition(GE[ind].sprite, OPTIONS_X[JOHNNY_CAGE], OPTIONS_Y[JOHNNY_CAGE]);
-      player[ind].id = JOHNNY_CAGE;
-    }
-    break;
-
-  case SCORPION:
-
-    if (player[ind].key_JOY_LEFT_status == 1)
-    {
-      playCursor();
-      SPR_setPosition(GE[ind].sprite, OPTIONS_X[LIU_KANG], OPTIONS_Y[LIU_KANG]);
-      player[ind].id = LIU_KANG;
-    }
-    else if (player[ind].key_JOY_UP_status == 1)
-    {
-      playCursor();
-      SPR_setPosition(GE[ind].sprite, OPTIONS_X[SUBZERO], OPTIONS_Y[SUBZERO]);
-      player[ind].id = SUBZERO;
-    }
-    break;
-
-  case LIU_KANG:
-
-    if (player[ind].key_JOY_RIGHT_status == 1)
-    {
-      playCursor();
-      SPR_setPosition(GE[ind].sprite, OPTIONS_X[SCORPION], OPTIONS_Y[SCORPION]);
-      player[ind].id = SCORPION;
-    }
-    else if (player[ind].key_JOY_LEFT_status == 1)
-    {
-      playCursor();
-      SPR_setPosition(GE[ind].sprite, OPTIONS_X[RAIDEN], OPTIONS_Y[RAIDEN]);
-      player[ind].id = RAIDEN;
-    }
-    break;
-
-  case RAIDEN:
-
-    if (player[ind].key_JOY_RIGHT_status == 1)
-    {
-      playCursor();
-      SPR_setPosition(GE[ind].sprite, OPTIONS_X[LIU_KANG], OPTIONS_Y[LIU_KANG]);
-      player[ind].id = LIU_KANG;
-    }
-    else if (player[ind].key_JOY_UP_status == 1)
-    {
-      playCursor();
-      SPR_setPosition(GE[ind].sprite, OPTIONS_X[KANO], OPTIONS_Y[KANO]);
-      player[ind].id = KANO;
-    }
-    break;
-
-  default:
-    break;
+    default:
+      break;
   }
 
   // se o ID mudou, troca o sprite do personagem
   if (prevId != player[ind].id)
-  {
     playerState(ind, PARADO);
-  }
 }
 
 // TODO: ver o que fazer quando ambos selecionam ao mesmo tempo
 // Verifica se o jogador selecionou um personagem
 void playerSelected(int ind)
 {
-  if (GE[ind].sprite->visibility == HIDDEN)
+  if (GE[ind].sprite == NULL || GE[ind].sprite->visibility == HIDDEN)
     return;
+
   if (player[ind].key_JOY_START_status == 0)
     return;
 
+  if (GE[ind + 2].sprite != NULL)
+    return;
+
   const CharSelectData *d = &charData[player[ind].id];
-  XGM2_playPCMEx(d->locutor, d->size, SOUND_PCM_CH_AUTO, 0, FALSE, FALSE);
+  XGM2_playPCMEx(d->locutor, d->size, SOUND_PCM_CH3, 0, FALSE, FALSE);
+
   GE[ind + 2].sprite = SPR_addSprite(&spPortrait, d->x + 4, d->y + 4, TILE_ATTR(PAL0, FALSE, FALSE, FALSE));
   SPR_setAnim(GE[ind + 2].sprite, player[ind].id);
   SPR_setDepth(GE[ind + 2].sprite, 2);
@@ -406,28 +379,21 @@ void playerSelected(int ind)
  * @brief move a tela para fora da parte visível a esquerda
  * para iniciar o efeito de Persiana.
  */
-void initScrollLine(s16 *scrollLine)
+void initScrollLine(s16 *gScrollLine)
 {
-  // Aloca dinamicamente memória
-  // scrollLine = (s16 *)malloc(SCREEN_HEIGHT * sizeof(s16));
-  if (!scrollLine) // Verifica se a alocação foi bem-sucedida
+  for(u16 x = SCREEN_HEIGHT; x > 0; --x)
   {
-    // Falha na alocação
-    return;
+    gScrollLine[x - 1] = -SCREEN_WIDTH;
   }
-
-  for (int x = 0; x < SCREEN_HEIGHT; x++)
-  {
-    scrollLine[x] = -SCREEN_WIDTH; // inicia as linhas com 320px
-  }
-  VDP_setHorizontalScrollLine(BG_A, 0, scrollLine, SCREEN_HEIGHT, DMA);
-  VDP_setHorizontalScrollLine(BG_B, 0, scrollLine, SCREEN_HEIGHT, DMA);
+  
+  VDP_setHorizontalScrollLine(BG_A, 0, gScrollLine, SCREEN_HEIGHT, DMA);
+  VDP_setHorizontalScrollLine(BG_B, 0, gScrollLine, SCREEN_HEIGHT, DMA);
 }
 
 /**
  * @brief Carrega as informações dos backgrounds
  */
-void drawBackground()
+void drawBackground(void)
 {
   // BACKGROUND A
   VDP_loadTileSet(stage_char_select_a.tileset, gInd_tileset, DMA);
@@ -453,126 +419,107 @@ void drawBackground()
 /**
  * @brief Revela a tela fazendo o efeito de persiana.
  */
-void revealBackground(s16 *scrollLine)
+void revealBackground(s16 *gScrollLine)
 {
-  struct VenetianBlindsEffect
-  {
-    u16 startLine;   // linha onde começa o efeito
-    u16 nextLine;    // linha onde deve começar o próximo efeito
-    u16 endLine;     // linha onde termina o efeito
-    u16 currentLine; // linha atual da iteração
-  };
+  u16 currentLine[7] = {0};
 
-  struct VenetianBlindsEffect persiana[7] = {
-      {0, 13, 31, 0},
-      {32, 43, 63, 0},
-      {64, 73, 95, 0},
-      {96, 105, 127, 0},
-      {128, 137, 159, 0},
-      {160, 167, 191, 0},
-      {192, 0, 223, 0},
-  };
-
-  for (int y = 0; y < SCREEN_HEIGHT / 2; y += 1)
+  for (u16 y = 0; y < 112; y += 1)
   {
     // 0
     if (y >= persiana[0].startLine && y <= persiana[0].endLine)
     {
-      persiana[0].currentLine = y;
-      scrollLine[persiana[0].currentLine] = 0;
-      scrollLine[persiana[0].currentLine + 1] = 0;
-      VDP_setHorizontalScrollLine(BG_A, y, &scrollLine[persiana[0].currentLine], LINE_HEIGHT, DMA);
-      VDP_setHorizontalScrollLine(BG_B, y, &scrollLine[persiana[0].currentLine], LINE_HEIGHT, DMA);
+      currentLine[0] = y;
+      gScrollLine[currentLine[0]] = 0;
+      gScrollLine[currentLine[0] + 1] = 0;
+      VDP_setHorizontalScrollLine(BG_A, y, &gScrollLine[currentLine[0]], LINE_HEIGHT, DMA);
+      VDP_setHorizontalScrollLine(BG_B, y, &gScrollLine[currentLine[0]], LINE_HEIGHT, DMA);
     }
     // 1
-    if (y >= persiana[0].nextLine && persiana[1].currentLine <= persiana[1].endLine)
+    if (y >= persiana[0].nextLine && currentLine[1] <= persiana[1].endLine)
     {
       if (persiana[0].nextLine == y)
-        persiana[1].currentLine = persiana[1].startLine;
+        currentLine[1] = persiana[1].startLine;
       else
-        persiana[1].currentLine += 1;
-      scrollLine[persiana[1].currentLine] = 0;
-      scrollLine[persiana[1].currentLine + 1] = 0;
-      VDP_setHorizontalScrollLine(BG_A, persiana[1].currentLine, &scrollLine[persiana[1].currentLine], LINE_HEIGHT, DMA);
-      VDP_setHorizontalScrollLine(BG_B, persiana[1].currentLine, &scrollLine[persiana[1].currentLine], LINE_HEIGHT, DMA);
+        currentLine[1] += 1;
+      gScrollLine[currentLine[1]] = 0;
+      gScrollLine[currentLine[1] + 1] = 0;
+      VDP_setHorizontalScrollLine(BG_A, currentLine[1], &gScrollLine[currentLine[1]], LINE_HEIGHT, DMA);
+      VDP_setHorizontalScrollLine(BG_B, currentLine[1], &gScrollLine[currentLine[1]], LINE_HEIGHT, DMA);
     }
     // 2
-    if (persiana[1].currentLine >= persiana[1].nextLine && persiana[2].currentLine <= persiana[2].endLine)
+    if (currentLine[1] >= persiana[1].nextLine && currentLine[2] <= persiana[2].endLine)
     {
-      if (persiana[1].nextLine == persiana[1].currentLine)
-        persiana[2].currentLine = persiana[2].startLine;
+      if (persiana[1].nextLine == currentLine[1])
+        currentLine[2] = persiana[2].startLine;
       else
-        persiana[2].currentLine += 1;
-      scrollLine[persiana[2].currentLine] = 0;
-      scrollLine[persiana[2].currentLine + 1] = 0;
-      VDP_setHorizontalScrollLine(BG_A, persiana[2].currentLine, &scrollLine[persiana[2].currentLine], LINE_HEIGHT, DMA);
-      VDP_setHorizontalScrollLine(BG_B, persiana[2].currentLine, &scrollLine[persiana[2].currentLine], LINE_HEIGHT, DMA);
+        currentLine[2] += 1;
+      gScrollLine[currentLine[2]] = 0;
+      gScrollLine[currentLine[2] + 1] = 0;
+      VDP_setHorizontalScrollLine(BG_A, currentLine[2], &gScrollLine[currentLine[2]], LINE_HEIGHT, DMA);
+      VDP_setHorizontalScrollLine(BG_B, currentLine[2], &gScrollLine[currentLine[2]], LINE_HEIGHT, DMA);
     }
     // 3
-    if (persiana[2].currentLine >= persiana[2].nextLine && persiana[3].currentLine <= persiana[3].endLine)
+    if (currentLine[2] >= persiana[2].nextLine && currentLine[3] <= persiana[3].endLine)
     {
-      if (persiana[2].nextLine == persiana[2].currentLine)
-        persiana[3].currentLine = persiana[3].startLine;
+      if (persiana[2].nextLine == currentLine[2])
+        currentLine[3] = persiana[3].startLine;
       else
-        persiana[3].currentLine += 1;
-      scrollLine[persiana[3].currentLine] = 0;
-      scrollLine[persiana[3].currentLine + 1] = 0;
-      VDP_setHorizontalScrollLine(BG_A, persiana[3].currentLine, &scrollLine[persiana[3].currentLine], LINE_HEIGHT, DMA);
-      VDP_setHorizontalScrollLine(BG_B, persiana[3].currentLine, &scrollLine[persiana[3].currentLine], LINE_HEIGHT, DMA);
+        currentLine[3] += 1;
+      gScrollLine[currentLine[3]] = 0;
+      gScrollLine[currentLine[3] + 1] = 0;
+      VDP_setHorizontalScrollLine(BG_A, currentLine[3], &gScrollLine[currentLine[3]], LINE_HEIGHT, DMA);
+      VDP_setHorizontalScrollLine(BG_B, currentLine[3], &gScrollLine[currentLine[3]], LINE_HEIGHT, DMA);
     }
     // 4
-    if (persiana[3].currentLine >= persiana[3].nextLine && persiana[4].currentLine <= persiana[4].endLine)
+    if (currentLine[3] >= persiana[3].nextLine && currentLine[4] <= persiana[4].endLine)
     {
-      if (persiana[3].nextLine == persiana[3].currentLine)
-        persiana[4].currentLine = persiana[4].startLine;
+      if (persiana[3].nextLine == currentLine[3])
+        currentLine[4] = persiana[4].startLine;
       else
-        persiana[4].currentLine += 1;
-      scrollLine[persiana[4].currentLine] = 0;
-      scrollLine[persiana[4].currentLine + 1] = 0;
-      VDP_setHorizontalScrollLine(BG_A, persiana[4].currentLine, &scrollLine[persiana[4].currentLine], LINE_HEIGHT, DMA);
-      VDP_setHorizontalScrollLine(BG_B, persiana[4].currentLine, &scrollLine[persiana[4].currentLine], LINE_HEIGHT, DMA);
+        currentLine[4] += 1;
+      gScrollLine[currentLine[4]] = 0;
+      gScrollLine[currentLine[4] + 1] = 0;
+      VDP_setHorizontalScrollLine(BG_A, currentLine[4], &gScrollLine[currentLine[4]], LINE_HEIGHT, DMA);
+      VDP_setHorizontalScrollLine(BG_B, currentLine[4], &gScrollLine[currentLine[4]], LINE_HEIGHT, DMA);
     }
     // 5
-    if (persiana[4].currentLine >= persiana[4].nextLine && persiana[5].currentLine <= persiana[5].endLine)
+    if (currentLine[4] >= persiana[4].nextLine && currentLine[5] <= persiana[5].endLine)
     {
-      if (persiana[4].nextLine == persiana[4].currentLine)
-        persiana[5].currentLine = persiana[5].startLine;
+      if (persiana[4].nextLine == currentLine[4])
+        currentLine[5] = persiana[5].startLine;
       else
-        persiana[5].currentLine += 1;
-      scrollLine[persiana[5].currentLine] = 0;
-      scrollLine[persiana[5].currentLine + 1] = 0;
-      VDP_setHorizontalScrollLine(BG_A, persiana[5].currentLine, &scrollLine[persiana[5].currentLine], LINE_HEIGHT, DMA);
-      VDP_setHorizontalScrollLine(BG_B, persiana[5].currentLine, &scrollLine[persiana[5].currentLine], LINE_HEIGHT, DMA);
+        currentLine[5] += 1;
+      gScrollLine[currentLine[5]] = 0;
+      gScrollLine[currentLine[5] + 1] = 0;
+      VDP_setHorizontalScrollLine(BG_A, currentLine[5], &gScrollLine[currentLine[5]], LINE_HEIGHT, DMA);
+      VDP_setHorizontalScrollLine(BG_B, currentLine[5], &gScrollLine[currentLine[5]], LINE_HEIGHT, DMA);
     }
     // 6
-    if (persiana[5].currentLine >= persiana[5].nextLine && persiana[6].currentLine <= persiana[6].endLine)
+    if (currentLine[5] >= persiana[5].nextLine && currentLine[6] <= persiana[6].endLine)
     {
-      if (persiana[5].nextLine == persiana[5].currentLine)
-        persiana[6].currentLine = persiana[6].startLine;
+      if (persiana[5].nextLine == currentLine[5])
+        currentLine[6] = persiana[6].startLine;
       else
-        persiana[6].currentLine += 1;
-      scrollLine[persiana[6].currentLine] = 0;
-      scrollLine[persiana[6].currentLine + 1] = 0;
-      VDP_setHorizontalScrollLine(BG_A, persiana[6].currentLine, &scrollLine[persiana[6].currentLine], LINE_HEIGHT, DMA);
-      VDP_setHorizontalScrollLine(BG_B, persiana[6].currentLine, &scrollLine[persiana[6].currentLine], LINE_HEIGHT, DMA);
+        currentLine[6] += 1;
+      gScrollLine[currentLine[6]] = 0;
+      gScrollLine[currentLine[6] + 1] = 0;
+      VDP_setHorizontalScrollLine(BG_A, currentLine[6], &gScrollLine[currentLine[6]], LINE_HEIGHT, DMA);
+      VDP_setHorizontalScrollLine(BG_B, currentLine[6], &gScrollLine[currentLine[6]], LINE_HEIGHT, DMA);
     }
 
     SYS_doVBlankProcess();
   }
 
-  freeScrollLine(scrollLine);
+  if(gScrollLine){
+    MEM_free(gScrollLine);
+    gScrollLine = NULL;
+  }
 }
 
-void initPlayer()
+void initPlayer(void)
 {
-  // for (int ind = 0; ind < 2; ind++)
-  // {
-  //   player[ind].key_JOY_countdown[2] = 0;
-  //   player[ind].key_JOY_countdown[4] = 0;
-  //   player[ind].key_JOY_countdown[6] = 0;
-  //   player[ind].key_JOY_countdown[8] = 0;
-  // }
   gAlturaDoPiso = PLAYER_1_POS_Y;
+
   player[0].id = KANO;
   player[0].state = PARADO;
   player[0].paleta = PAL2;
@@ -594,54 +541,36 @@ void initPlayer()
 
   memset(player[0].key_JOY_countdown, 0, sizeof(player[0].key_JOY_countdown));
   memset(player[1].key_JOY_countdown, 0, sizeof(player[1].key_JOY_countdown));
-
-  // player[0].key_JOY_countdown[2] = 0;
-  // player[0].key_JOY_countdown[4] = 0;
-  // player[0].key_JOY_countdown[6] = 0;
-  // player[0].key_JOY_countdown[8] = 0;
-
-  // player[1].key_JOY_countdown[2] = 0;
-  // player[1].key_JOY_countdown[4] = 0;
-  // player[1].key_JOY_countdown[6] = 0;
-  // player[1].key_JOY_countdown[8] = 0;
 }
 
-void initSelectorSprite()
+void initSelectorSprite(void)
 {
   // indice 0 e 1 do GE serão usados para carregar o gráfico do seletor
   GE[0].sprite = SPR_addSpriteSafe(&player_seletor,
-                               OPTIONS_X[KANO], OPTIONS_Y[KANO],
-                               TILE_ATTR(PAL1, FALSE, FALSE, FALSE));
+                                   OPTIONS_X[KANO], OPTIONS_Y[KANO],
+                                   TILE_ATTR(PAL1, FALSE, FALSE, FALSE));
   SPR_setAnim(GE[0].sprite, CURSOR_P1); // animação P1
   SPR_setDepth(GE[0].sprite, SPR_MIN_DEPTH);
 
   GE[1].sprite = SPR_addSpriteSafe(&player_seletor,
-                               OPTIONS_X[SUBZERO], OPTIONS_Y[SUBZERO],
-                               TILE_ATTR(PAL1, FALSE, FALSE, FALSE));
+                                   OPTIONS_X[SUBZERO], OPTIONS_Y[SUBZERO],
+                                   TILE_ATTR(PAL1, FALSE, FALSE, FALSE));
   SPR_setAnim(GE[1].sprite, CURSOR_P2); // animação P2
-  SPR_setDepth(GE[1].sprite, 1);        // profundidade menor que o seletor do P1
+  SPR_setDepth(GE[1].sprite, 1); // profundidade menor que o seletor do P1
   // inicia a animação dos sprites
   SPR_setAnimationLoop(GE[0].sprite, TRUE);
   SPR_setAnimationLoop(GE[1].sprite, TRUE);
 }
 
 /**
- * @brief Executa o áudio do cursor */
-void playCursor()
+ * @brief Executa o áudio do cursor 
+ * */
+void playCursor(void)
 {
-  XGM2_playPCMEx(snd_cursor, sizeof(snd_cursor), SOUND_PCM_CH_AUTO, 0, FALSE, 0);
+  XGM2_playPCMEx(snd_cursor, sizeof(snd_cursor), SOUND_PCM_CH2, 0, FALSE, 0);
 }
 
-void playMusic()
+void playMusic(void)
 {
   XGM2_play(mus_select_player);
-}
-
-void freeScrollLine(s16 *scrollLine)
-{
-  if (scrollLine)
-  {
-    free(scrollLine); // Libera a memória alocada dinamicamente
-    scrollLine = NULL;
-  }
 }
