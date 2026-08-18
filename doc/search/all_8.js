@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['kano_2ec_0',['kano.c',['../kano_8c.html',1,'']]],
-  ['kanolines_5fbr_1',['kanoLines_BR',['../bio__textlines_8c.html#a0696b949d0309f55c08540ebb02ab205',1,'bio_textlines.c']]],
-  ['kanolines_5fen_2',['kanoLines_EN',['../bio__textlines_8c.html#a8fc1c0e2e5b6bdf310ed48ddb952156e',1,'bio_textlines.c']]]
+  ['johnny_2ec_0',['johnny.c',['../johnny_8c.html',1,'']]],
+  ['johnnycagelines_5fbr_1',['johnnyCageLines_BR',['../bio__textlines_8c.html#a29b7fd5d746a19566df8a927400e4b93',1,'bio_textlines.c']]],
+  ['johnnycagelines_5fen_2',['johnnyCageLines_EN',['../bio__textlines_8c.html#a7590aa6e91c535d8ffaa0123f706f41b',1,'bio_textlines.c']]]
 ];
