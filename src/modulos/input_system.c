@@ -30,22 +30,22 @@ void inputSystem()
             if (!(currentJoyState[jogador] & button))
             {
                 // não esta apertado
-                player[jogador].key_JOY_status[i] = 0;
+                player[jogador].key_JOY_status[i] = BUTTON_RELEASED;
             }
             else if ((currentJoyState[jogador] & button) && !(previousJoyState[jogador] & button))
             {
                 // acabou de apertar
-                player[jogador].key_JOY_status[i] = 1;
+                player[jogador].key_JOY_status[i] = BUTTON_PRESSED;
             }
             else if (currentJoyState[jogador] & button)
             {
                 // mantendo apertado
-                player[jogador].key_JOY_status[i] = 2;
+                player[jogador].key_JOY_status[i] = BUTTON_HELD;
             }
             else if (!(currentJoyState[jogador] & button) && (previousJoyState[jogador] & button))
             {
                 // acabou de soltar
-                player[jogador].key_JOY_status[i] = 3;
+                player[jogador].key_JOY_status[i] = BUTTON_RELEASED_AFTER_PRESS;
             }
 
             if (i == numButtons - 1) // end of loop, assignments
