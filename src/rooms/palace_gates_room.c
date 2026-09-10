@@ -12,9 +12,6 @@
 #define SUBZERO_AXIS_X 22
 #define SUBZERO_AXIS_Y 119
 
-// #define CAMERA_MAX_POS_X (MAP_WIDTH - VDP_getScreenWidth())
-// #define CAMERA_MAX_POS_Y (MAP_HEIGHT - VDP_getScreenHeight())
-
 // Ponteiro para o mapa do Palace Gates
 static Map *bgaMap;
 static Map *bgbMap;
@@ -53,6 +50,9 @@ void initPalaceGatesRoom(void)
         PALACE_GATES_movePlayer(&player[0]);
         PALACE_GATES_movePlayer(&player[1]);
 
+        /* flip so no cruzamento, nunca ao andar para tras */
+        CAMERA_updateFacing(&player[0], &player[1]);
+
         /* 1. camera ve os dois e trava se a dupla abrir demais */
         CAMERA_update(&camera, &player[0], &player[1]);
 
@@ -89,7 +89,10 @@ void PALACE_GATES_init()
     bgaMap = MAP_create(&palace_gates_bga_map, BG_A, TILE_ATTR_FULL(PAL1, FALSE, FALSE, FALSE, gInd_tileset));
     gInd_tileset += palace_gates_bga_tileset.numTile;
 
-    CAMERA_init(&camera, bgaMap, bgbMap);
+    CAMERA_init(&camera, bgaMap, bgbMap, MAP_WIDTH, MAP_HEIGHT);
+    CAMERA_setWalkBounds(&camera, CAMERA_STAGE_MIN_X, CAMERA_STAGE_MAX_X);
+    CAMERA_setParallax(&camera, CAMERA_BGB_MIN_X, CAMERA_BGB_MAX_X);
+    CAMERA_setStart(&camera, CAMERA_START_X, CAMERA_START_Y);
 }
 
 static void PALACE_GATES_setupPlayer(Player *p, const SpriteDefinition *spr,

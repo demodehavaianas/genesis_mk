@@ -1,13 +1,9 @@
 /**
  * camera.h — Camera de luta 2D (SGDK 2.11)
  *
- * Defina no header do estagio, ANTES de incluir este arquivo:
- *
- *   #define MAP_WIDTH  1008
- *   #define MAP_HEIGHT 240
- *   #define CAMERA_STAGE_MIN_X  0      // canto esquerdo do ring (independente)
- *   #define CAMERA_STAGE_MAX_X  1008   // canto direito do ring (independente)
- *   #include "camera.h"
+ * Os limites do estagio NAO podem ser so #define: camera.c e outro
+ * .c e nao ve o palace_gates_room.h. Passe os valores em
+ * CAMERA_init / CAMERA_setWalkBounds / CAMERA_setParallax.
  */
 #ifndef CAMERA_H
 #define CAMERA_H
@@ -15,61 +11,96 @@
 #include <genesis.h>
 #include "estruturas.h"
 
-#ifndef MAP_WIDTH
-#define MAP_WIDTH  1008
-#endif
-#ifndef MAP_HEIGHT
-#define MAP_HEIGHT 240
-#endif
-
-/* Cantos do CENARIO — cada estagio define o seu. Nao usam a margem da tela. */
-#ifndef CAMERA_STAGE_MIN_X
-#define CAMERA_STAGE_MIN_X  0
-#endif
-#ifndef CAMERA_STAGE_MAX_X
-#define CAMERA_STAGE_MAX_X  MAP_WIDTH
-#endif
-
-/* Folga da TELA (anda com a camera). Esquerda e direita independentes. */
-#ifndef CAMERA_SCREEN_MARGIN_L
-#define CAMERA_SCREEN_MARGIN_L  8
-#endif
-#ifndef CAMERA_SCREEN_MARGIN_R
-#define CAMERA_SCREEN_MARGIN_R  8
-#endif
-
-#define CAMERA_MIN_POS_X (CAMERA_STAGE_MIN_X)
-#define CAMERA_MAX_POS_X (CAMERA_STAGE_MAX_X - VDP_getScreenWidth())
-#define CAMERA_MAX_POS_Y (MAP_HEIGHT - VDP_getScreenHeight())
-
 typedef struct
 {
     V2s16 pos;
     s16   shakePower;
     u8    shakeTime;
+
+    s16   walkMinX;     /* onde o SPRITE para (canto esquerdo do ring)  */
+    s16   walkMaxX;     /* onde o SPRITE para (canto direito do ring)   */
+    s16   camMinX;      /* scroll minimo (em geral 0)                   */
+    s16   camMaxX;      /* scroll maximo (mapW - tela)                  */
+    s16   camMaxY;
+
+    s16   bgbMinX;      /* parallax: nao mostrar o ceu vazio a esquerda */
+    s16   bgbMaxX;      /* parallax: nao mostrar o ceu vazio a direita  */
+
     Map  *mapA;
     Map  *mapB;
 } Camera;
 
 /**
- * @brief Inicializa a camera no chao do mapa e posiciona os planes.
+ * @brief Inicializa a camera e guarda as dimensoes reais do mapa.
+ *
+ * Chame depois dos MAP_create. camMinX = 0, camMaxX = mapW - tela.
+ * Os cantos de ANDAR (66 / 912) vao em CAMERA_setWalkBounds.
  *
  * @param cam   Camera
- * @param mapA  MAP do foreground (BG_A)
- * @param mapB  MAP do fundo (BG_B), ou NULL
+ * @param mapA  Foreground (BG_A)
+ * @param mapB  Fundo (BG_B), ou NULL
+ * @param mapW  Largura do tilemap em pixels (Palace Gates: 1008)
+ * @param mapH  Altura do tilemap em pixels (Palace Gates: 240)
  */
-void CAMERA_init(Camera *cam, Map *mapA, Map *mapB);
+void CAMERA_init(Camera *cam, Map *mapA, Map *mapB, u16 mapW, u16 mapH);
 
 /**
- * @brief Recoloca a camera no meio dos dois jogadores (inicio de round).
+ * @brief Define o ponto inicial da camera neste estagio.
+ *
+ * Sem isto o spawn centra no ring. Palace Gates: x=272, y=16
+ * (canto superior-esquerdo da tela em mundo).
+ * Os lutadores nascem DENTRO dessa visao. Depois do round,
+ * CAMERA_update volta a seguir o medio.
+ *
+ * @param cam  Camera
+ * @param x    Mundo X do canto da tela
+ * @param y    Mundo Y do canto da tela
+ */
+void CAMERA_setStart(Camera *cam, s16 x, s16 y);
+
+/**
+ * @brief Define onde o lutador PARA, independente da borda da tela.
+ *
+ * minX/maxX sao em MUNDO. Ex.: Palace Gates 66 e 912 (estatuas).
+ * A camera continua podendo mostrar 0..mapW; so o sprite e bloqueado.
+ *
+ * @param cam   Camera
+ * @param minX  Canto esquerdo (sprite.left >= minX)
+ * @param maxX  Canto direito  (sprite.right <= maxX)
+ */
+void CAMERA_setWalkBounds(Camera *cam, s16 minX, s16 maxX);
+
+/**
+ * @brief Limita o scroll do BG_B para nao revelar o ceu vazio.
+ *
+ * O BGB rola a metade da camera, depois e preso em [minX, maxX].
+ * Palace Gates (arte 184..516): minX=160, maxX=196.
+ *
+ * @param cam   Camera
+ * @param minX  Scroll minimo do BGB
+ * @param maxX  Scroll maximo do BGB
+ */
+void CAMERA_setParallax(Camera *cam, s16 minX, s16 maxX);
+
+/**
+ * @brief Vira os dois um para o outro so quando se cruzam.
+ *
+ * Nao vira ao andar para tras. Chame DEPOIS do movimento,
+ * ANTES de CAMERA_update (a caixa de colisao depende da direcao).
+ *
+ * @param p1  Player 1
+ * @param p2  Player 2
+ */
+void CAMERA_updateFacing(Player *p1, Player *p2);
+
+/**
+ * @brief Recoloca a camera no meio dos dois (inicio de round).
  */
 void CAMERA_snap(Camera *cam, const Player *p1, const Player *p2);
 
 /**
- * @brief Segue o medio X dos dois pivots e prende a camera no cenario.
- *
- * Se a dupla nao cabe na tela, trava o scroll (nao deixa um sair).
- * Y fica no chao (CAMERA_MAX_POS_Y).
+ * @brief Segue o medio X. Se os dois ja estao nas beiradas opostas
+ *        da tela, a camera TRAVA ate alguem andar para o outro.
  *
  * @param cam  Camera
  * @param p1   Player 1
@@ -78,27 +109,16 @@ void CAMERA_snap(Camera *cam, const Player *p1, const Player *p2);
 void CAMERA_update(Camera *cam, const Player *p1, const Player *p2);
 
 /**
- * @brief Paredes que ANDAM com a camera + cantos independentes do cenario.
- *
- * 1. Canto esquerdo: sprite.left  >= CAMERA_STAGE_MIN_X
- * 2. Canto direito:  sprite.right <= CAMERA_STAGE_MAX_X
- *    Os dois cantos nao compartilham margem.
- * 3. Borda esquerda da TELA: sprite.left  >= cam.pos.x + SCREEN_MARGIN_L
- * 4. Borda direita da TELA:  sprite.right <= cam.pos.x + tela - SCREEN_MARGIN_R
- *    Estas duas andam com a camera. Sem isto o player sai da tela
- *    no meio do mapa.
+ * @brief Paredes: cantos do ring (walkMin/Max) + bordas da tela (cam.pos).
  *
  * Chame DEPOIS de CAMERA_update, ANTES de CAMERA_placeSprite.
- *
- * @param cam  Camera ja atualizada neste frame
- * @param p    Player a prender
  */
 void CAMERA_constrainPlayer(const Camera *cam, Player *p);
 
 /**
- * @brief Tremor de tela (onda quadrada).
+ * @brief Tremor estilo Mortal Kombat arcade (onda quadrada).
  *
- * @param power  fraco 3, médio 6, uppercut 12
+ * @param power  soquinho 3, chute 6, uppercut 12
  */
 void CAMERA_shake(Camera *cam, s16 power);
 
@@ -106,14 +126,12 @@ void CAMERA_shake(Camera *cam, s16 power);
  * @brief Posiciona o sprite em tela e aplica HFlip conforme a direcao.
  *
  * Direita:  pos = (x - axisX, y - axisY) - camera.
- * Esquerda: o SGDK espelha o FRAME inteiro (128 px), o pe vai para
- * (definition->w - axisX). A caixa de colisao (w do corpo) espelha
- * em volta do pivot, nao do frame.
+ * Esquerda: SGDK espelha o FRAME (128 px), pe em (definition->w - axisX).
  */
 void CAMERA_placeSprite(const Camera *cam, Player *p);
 
 /**
- * @brief P1 a esquerda, P2 a direita, no centro do estágio. Exige axisX/axisY/w.
+ * @brief P1 a esquerda, P2 a direita, no centro do walk-bounds.
  */
 void CAMERA_spawnPlayers(Camera *cam, Player *p1, Player *p2);
 
