@@ -25,3 +25,12 @@ IMAGE tym_bgb   "stages/bonus/tym_bgb.png" NONE
 # ESTAGIO 2 - PALACE GATES
 IMAGE  pg_bga  "stages/s2/palace_gates_bga_v2.png" NONE
 IMAGE  pg_bgb  "stages/s2/palace_gates_bgb_v3.png" NONE 
+
+PALETTE palace_gates_bga_pal "stages/stg2/palace_gates_bga_v1.png"
+TILESET palace_gates_bga_tileset "stages/stg2/palace_gates_bga_v1.png" BEST ALL
+MAP     palace_gates_bga_map  "stages/stg2/palace_gates_bga_v1.png" palace_gates_bga_tileset BEST 0 
+
+PALETTE palace_gates_bgb_pal "stages/stg2/palace_gates_bgb_v1.png"
+TILESET palace_gates_bgb_tileset "stages/stg2/palace_gates_bgb_v1.png" BEST ALL
+MAP     palace_gates_bgb_map  "stages/stg2/palace_gates_bgb_v1.png" palace_gates_bgb_tileset BEST 0 
+
