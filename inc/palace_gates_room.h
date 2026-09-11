@@ -1,26 +1,20 @@
 #ifndef _PALACE_GATES_H_
 #define _PALACE_GATES_H_
 
-// define a largura e altura do mapa em pixels
-#define MAP_WIDTH 1008
-#define MAP_HEIGHT 240
+#define PALACE_GATES_MAP_W  1008
+#define PALACE_GATES_MAP_H   240
 
-/* cantos do cenário independentes.
-Ajuste se a arte tiver parede/estatua. */
-#define CAMERA_STAGE_MIN_X 66
-#define CAMERA_STAGE_MAX_X 912
+/* aneis: onde o sprite PARA (mundo), nao a borda da tela */
+#define PALACE_GATES_RING_LEFT   66
+#define PALACE_GATES_RING_RIGHT  912
 
-/* canto superior-esquerdo da tela no spawn deste estagio */
-#define CAMERA_START_X  272
-#define CAMERA_START_Y   16
+/* spawn: canto da tela em mundo */
+#define PALACE_GATES_START_X  272
+#define PALACE_GATES_START_Y   16
 
-/*
- * Arte do BGB so existe em x=184 até 516.
- * Scroll do BGB e cam.x/2, preso aqui para a montanha nao
- * abrir ceu vazio a esquerda nem sumir a direita (arcade).
- */
-#define CAMERA_BGB_MIN_X  184
-#define CAMERA_BGB_MAX_X  270
+/* parallax BGB (arte 184..516). 270 = ~86 px de viagem, flui */
+#define PALACE_GATES_FARBG_LEFT   184
+#define PALACE_GATES_FARBG_RIGHT  270
 
 void initPalaceGatesRoom(void);
 

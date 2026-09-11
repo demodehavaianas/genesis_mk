@@ -1,9 +1,7 @@
 /**
  * camera.h — Camera de luta 2D (SGDK 2.11)
  *
- * Os limites do estagio NAO podem ser so #define: camera.c e outro
- * .c e nao ve o palace_gates_room.h. Passe os valores em
- * CAMERA_init / CAMERA_setWalkBounds / CAMERA_setParallax.
+ * Setup uma vez, spawn no round, tick no loop, shake no golpe.
  */
 #ifndef CAMERA_H
 #define CAMERA_H
@@ -11,128 +9,71 @@
 #include <genesis.h>
 #include "estruturas.h"
 
+/** Folga em pixels entre o corpo e a borda visivel da tela. */
+#define CAMERA_SCREEN_MARGIN  8
+/** Pes um pouco acima da borda inferior da tela no spawn. */
+#define CAMERA_FEET_INSET     8
+
+/**
+ * @brief Dados do palco. Cada estagio preenche um destes.
+ *
+ * ring*     = onde o SPRITE para (mundo), independente da tela.
+ * farBg*    = intervalo de scroll do BGB (parallax, sem ceu vazio).
+ * start*    = canto superior-esquerdo da tela no spawn.
+ */
 typedef struct
 {
-    V2s16 pos;
+    u16 mapWidth;
+    u16 mapHeight;
+    s16 ringLeft;
+    s16 ringRight;
+    s16 farBgLeft;
+    s16 farBgRight;
+    s16 startX;
+    s16 startY;
+} CameraStage;
+
+typedef struct
+{
+    V2s16 pos;              /* canto da tela em coordenadas de mundo */
     s16   shakePower;
     u8    shakeTime;
 
-    s16   walkMinX;     /* onde o SPRITE para (canto esquerdo do ring)  */
-    s16   walkMaxX;     /* onde o SPRITE para (canto direito do ring)   */
-    s16   camMinX;      /* scroll minimo (em geral 0)                   */
-    s16   camMaxX;      /* scroll maximo (mapW - tela)                  */
-    s16   camMaxY;
+    s16   ringLeft;         /* sprite.left  nao passa daqui */
+    s16   ringRight;        /* sprite.right nao passa daqui */
+    s16   scrollMinX;       /* 0 */
+    s16   scrollMaxX;       /* mapWidth - tela */
+    s16   scrollMaxY;       /* mapHeight - tela */
 
-    s16   bgbMinX;      /* parallax: nao mostrar o ceu vazio a esquerda */
-    s16   bgbMaxX;      /* parallax: nao mostrar o ceu vazio a direita  */
+    s16   farBgLeft;        /* parallax BGB no canto esquerdo do palco */
+    s16   farBgRight;       /* parallax BGB no canto direito do palco */
 
-    Map  *mapA;
-    Map  *mapB;
+    Map  *fgMap;            /* BG_A, 1:1 com pos */
+    Map  *bgMap;            /* BG_B, interpolado em [farBgLeft, farBgRight] */
 } Camera;
 
 /**
- * @brief Inicializa a camera e guarda as dimensoes reais do mapa.
- *
- * Chame depois dos MAP_create. camMinX = 0, camMaxX = mapW - tela.
- * Os cantos de ANDAR (66 / 912) vao em CAMERA_setWalkBounds.
- *
- * @param cam   Camera
- * @param mapA  Foreground (BG_A)
- * @param mapB  Fundo (BG_B), ou NULL
- * @param mapW  Largura do tilemap em pixels (Palace Gates: 1008)
- * @param mapH  Altura do tilemap em pixels (Palace Gates: 240)
+ * @brief Liga a camera ao palco. Chame depois dos MAP_create.
  */
-void CAMERA_init(Camera *cam, Map *mapA, Map *mapB, u16 mapW, u16 mapH);
+void CAMERA_setup(Camera *cam, Map *fgMap, Map *bgMap, const CameraStage *stage);
 
 /**
- * @brief Define o ponto inicial da camera neste estagio.
- *
- * Sem isto o spawn centra no ring. Palace Gates: x=272, y=16
- * (canto superior-esquerdo da tela em mundo).
- * Os lutadores nascem DENTRO dessa visao. Depois do round,
- * CAMERA_update volta a seguir o medio.
- *
- * @param cam  Camera
- * @param x    Mundo X do canto da tela
- * @param y    Mundo Y do canto da tela
+ * @brief P1 a esquerda e P2 a direita da visao atual (cam.pos).
  */
-void CAMERA_setStart(Camera *cam, s16 x, s16 y);
+void CAMERA_spawn(Camera *cam, Player *p1, Player *p2);
 
 /**
- * @brief Define onde o lutador PARA, independente da borda da tela.
+ * @brief Um frame: virar no cruzamento, seguir, prender nos cantos, desenhar.
  *
- * minX/maxX sao em MUNDO. Ex.: Palace Gates 66 e 912 (estatuas).
- * A camera continua podendo mostrar 0..mapW; so o sprite e bloqueado.
- *
- * @param cam   Camera
- * @param minX  Canto esquerdo (sprite.left >= minX)
- * @param maxX  Canto direito  (sprite.right <= maxX)
+ * Substitui updateFacing + update + constrain + placeSprite.
  */
-void CAMERA_setWalkBounds(Camera *cam, s16 minX, s16 maxX);
+void CAMERA_tick(Camera *cam, Player *p1, Player *p2);
 
 /**
- * @brief Limita o scroll do BG_B para nao revelar o ceu vazio.
+ * @brief Tremor estilo MK arcade (onda quadrada).
  *
- * O BGB rola a metade da camera, depois e preso em [minX, maxX].
- * Palace Gates (arte 184..516): minX=160, maxX=196.
- *
- * @param cam   Camera
- * @param minX  Scroll minimo do BGB
- * @param maxX  Scroll maximo do BGB
- */
-void CAMERA_setParallax(Camera *cam, s16 minX, s16 maxX);
-
-/**
- * @brief Vira os dois um para o outro so quando se cruzam.
- *
- * Nao vira ao andar para tras. Chame DEPOIS do movimento,
- * ANTES de CAMERA_update (a caixa de colisao depende da direcao).
- *
- * @param p1  Player 1
- * @param p2  Player 2
- */
-void CAMERA_updateFacing(Player *p1, Player *p2);
-
-/**
- * @brief Recoloca a camera no meio dos dois (inicio de round).
- */
-void CAMERA_snap(Camera *cam, const Player *p1, const Player *p2);
-
-/**
- * @brief Segue o medio X. Se os dois ja estao nas beiradas opostas
- *        da tela, a camera TRAVA ate alguem andar para o outro.
- *
- * @param cam  Camera
- * @param p1   Player 1
- * @param p2   Player 2
- */
-void CAMERA_update(Camera *cam, const Player *p1, const Player *p2);
-
-/**
- * @brief Paredes: cantos do ring (walkMin/Max) + bordas da tela (cam.pos).
- *
- * Chame DEPOIS de CAMERA_update, ANTES de CAMERA_placeSprite.
- */
-void CAMERA_constrainPlayer(const Camera *cam, Player *p);
-
-/**
- * @brief Tremor estilo Mortal Kombat arcade (onda quadrada).
- *
- * @param power  soquinho 3, chute 6, uppercut 12
+ * @param power  soquinho 2, chute 4, uppercut 8
  */
 void CAMERA_shake(Camera *cam, s16 power);
-
-/**
- * @brief Posiciona o sprite em tela e aplica HFlip conforme a direcao.
- *
- * Direita:  pos = (x - axisX, y - axisY) - camera.
- * Esquerda: SGDK espelha o FRAME (128 px), pe em (definition->w - axisX).
- */
-void CAMERA_placeSprite(const Camera *cam, Player *p);
-
-/**
- * @brief P1 a esquerda, P2 a direita, no centro do walk-bounds.
- */
-void CAMERA_spawnPlayers(Camera *cam, Player *p1, Player *p2);
 
 #endif

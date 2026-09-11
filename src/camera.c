@@ -3,93 +3,135 @@
 #define CAM_MIN(a, b) (((a) < (b)) ? (a) : (b))
 #define CAM_MAX(a, b) (((a) > (b)) ? (a) : (b))
 
-/**
- * @brief Caixa do CORPO em mundo, espelhada se direcao < 0.
- */
-static void camera_boxX(const Player *p, s16 *left, s16 *right)
-{
-    s16 w = (s16)p->w;
-    s16 ax = (s16)p->axisX;
+#define BODY_WIDTH_FALLBACK  32
 
-    if (w < 8)
-        w = 32;
+/**
+ * @brief Caixa do CORPO em mundo, espelhada se o lutador olha pra esquerda.
+ */
+static void camera_bodyBoxX(const Player *p, s16 *bodyLeft, s16 *bodyRight)
+{
+    s16 bodyW  = (s16) p->w;
+    s16 pivotX = (s16) p->axisX;
+
+    if (bodyW < 8)
+        bodyW = BODY_WIDTH_FALLBACK;
 
     if (p->direcao < 0)
     {
-        *right = (s16)(p->x + ax);
-        *left = (s16)(*right - w);
+        *bodyRight = (s16) (p->x + pivotX);
+        *bodyLeft  = (s16) (*bodyRight - bodyW);
     }
     else
     {
-        *left = (s16)(p->x - ax);
-        *right = (s16)(*left + w);
+        *bodyLeft  = (s16) (p->x - pivotX);
+        *bodyRight = (s16) (*bodyLeft + bodyW);
     }
 }
 
 /**
- * @brief axisX de DESENHO. HFlip espelha o frame inteiro, nao o corpo.
+ * @brief Pivot X de desenho. O SGDK espelha o FRAME inteiro, nao o corpo.
  */
-static s16 camera_drawAxisX(const Player *p)
+static s16 camera_drawPivotX(const Player *p)
 {
-    s16 ax = (s16)p->axisX;
+    s16 pivotX = (s16) p->axisX;
     s16 frameW;
 
     if (p->direcao >= 0)
-        return ax;
+        return pivotX;
 
     frameW = (p->sprite && p->sprite->definition)
-                 ? (s16)p->sprite->definition->w
-                 : (s16)(ax + (s16)p->w);
+             ? (s16) p->sprite->definition->w
+             : (s16) (pivotX + (s16) p->w);
 
-    return (s16)(frameW - ax);
+    return (s16) (frameW - pivotX);
 }
 
 /**
- * @brief Medio X. Se a dupla ja ocupa as duas beiradas, nao mexe.
+ * @brief Scroll do BGB: interpola a camera no palco para [farBgLeft, farBgRight].
  */
-static void camera_follow(Camera *cam, const Player *p1, const Player *p2, bool applyShake)
+static s16 camera_farBgX(const Camera *cam)
 {
-    const s16 screenW = (s16)VDP_getScreenWidth();
-    s16 l1, r1, l2, r2;
-    s32 wantX, keepMin, keepMax, camMin, camMax;
-    s16 sx = 0;
-    s16 sy = 0;
+    s32 scrollSpan = (s32) cam->scrollMaxX - (s32) cam->scrollMinX;
+    s32 farBgSpan  = (s32) cam->farBgRight - (s32) cam->farBgLeft;
+    s32 along;
 
-    camera_boxX(p1, &l1, &r1);
-    camera_boxX(p2, &l2, &r2);
+    if (scrollSpan <= 0 || farBgSpan <= 0)
+        return cam->farBgLeft;
 
-    wantX = (((s32)p1->x + (s32)p2->x) >> 1) - (screenW >> 1);
+    along = (s32) cam->pos.x - (s32) cam->scrollMinX;
+    if (along < 0) along = 0;
+    if (along > scrollSpan) along = scrollSpan;
 
-    camMin = (s32)cam->camMinX;
-    camMax = (s32)cam->camMaxX;
-    if (camMax < camMin)
-        camMax = camMin;
+    return (s16) ((s32) cam->farBgLeft + (along * farBgSpan) / scrollSpan);
+}
 
-    keepMin = (s32)CAM_MAX(r1, r2) - (s32)screenW + 8;
-    keepMax = (s32)CAM_MIN(l1, l2) - 8;
-
-    if (keepMin <= keepMax)
+static void camera_scrollPlanes(const Camera *cam, bool splitDma)
+{
+    MAP_scrollTo(cam->fgMap, (u32) cam->pos.x, (u32) cam->pos.y);
+    if (cam->bgMap)
     {
-        /* os dois cabem: segue o medio, preso nas beiradas da dupla */
-        wantX = clamp(wantX, keepMin, keepMax);
+        if (splitDma)
+            SYS_doVBlankProcess();
+        MAP_scrollTo(cam->bgMap, (u32) camera_farBgX(cam), (u32) (cam->pos.y >> 1));
+    }
+}
+
+/**
+ * @brief Vira so quando um cruza o outro. Nao vira ao andar para tras.
+ */
+static void camera_faceEachOther(Player *p1, Player *p2)
+{
+    if (p1->x == p2->x)
+        return;
+
+    if (p1->x < p2->x)
+    {
+        p1->direcao =  1;
+        p2->direcao = -1;
     }
     else
     {
-        /* A num canto da TELA e B no outro: camera PRESA.
-         * So anda de novo quando alguem fecha a distancia
-         * (keepMin volta a ser <= keepMax). */
-        wantX = cam->pos.x;
+        p1->direcao = -1;
+        p2->direcao =  1;
     }
+}
 
-    wantX = clamp(wantX, camMin, camMax);
+/**
+ * @brief Medio X. Trava se cada um ja esta numa beirada oposta da tela.
+ */
+static void camera_follow(Camera *cam, const Player *p1, const Player *p2, bool applyShake)
+{
+    const s16 screenW = (s16) VDP_getScreenWidth();
+    s16 bodyLeft1, bodyRight1, bodyLeft2, bodyRight2;
+    s32 midpointX;
+    s32 keepOnScreenMin;
+    s32 keepOnScreenMax;
+    s16 shakeX = 0;
+    s16 shakeY = 0;
 
-    cam->pos.x = (s16)wantX;
-    cam->pos.y = cam->camMaxY;
+    camera_bodyBoxX(p1, &bodyLeft1, &bodyRight1);
+    camera_bodyBoxX(p2, &bodyLeft2, &bodyRight2);
+
+    midpointX = (((s32) p1->x + (s32) p2->x) >> 1) - (screenW >> 1);
+
+    /* menor X que ainda deixa o da DIREITA visivel / maior X que deixa o da ESQUERDA */
+    keepOnScreenMin = (s32) CAM_MAX(bodyRight1, bodyRight2) - (s32) screenW + CAMERA_SCREEN_MARGIN;
+    keepOnScreenMax = (s32) CAM_MIN(bodyLeft1,  bodyLeft2)  - CAMERA_SCREEN_MARGIN;
+
+    if (keepOnScreenMin <= keepOnScreenMax)
+        midpointX = clamp(midpointX, keepOnScreenMin, keepOnScreenMax);
+    else
+        midpointX = cam->pos.x;   /* os dois nas beiradas: camera presa */
+
+    midpointX = clamp(midpointX, (s32) cam->scrollMinX, (s32) cam->scrollMaxX);
+
+    cam->pos.x = (s16) midpointX;
+    cam->pos.y = cam->scrollMaxY;
 
     if (applyShake && cam->shakeTime)
     {
-        sx = (cam->shakeTime & 1) ? cam->shakePower : (s16)-cam->shakePower;
-        sy = sx >> 1;
+        shakeX = (cam->shakeTime & 1) ? cam->shakePower : (s16) -cam->shakePower;
+        shakeY = shakeX >> 1;
 
         cam->shakeTime--;
         if (((cam->shakeTime & 1) == 0) && (cam->shakePower > 0))
@@ -98,170 +140,121 @@ static void camera_follow(Camera *cam, const Player *p1, const Player *p2, bool 
             cam->shakePower = 0;
     }
 
-    cam->pos.x = (s16)clamp((s32)cam->pos.x + sx, camMin, camMax);
-    cam->pos.y = (s16)clamp((s32)cam->pos.y + sy, 0, (s32)cam->camMaxY);
+    cam->pos.x = (s16) clamp((s32) cam->pos.x + shakeX, (s32) cam->scrollMinX, (s32) cam->scrollMaxX);
+    cam->pos.y = (s16) clamp((s32) cam->pos.y + shakeY, 0, (s32) cam->scrollMaxY);
 }
 
 /**
- * @brief Scroll do BGB: interpola cam.pos.x em [camMin, camMax]
- *        para [bgbMin, bgbMax]. Sem isto o clamp(cam/2) congela
- *        nas pontas e dispara no centro (o "salto").
+ * @brief Ring (ringLeft/Right) + paredes da tela (andam com cam.pos).
  */
-static s16 camera_bgbX(const Camera *cam)
+static void camera_keepInside(const Camera *cam, Player *p)
 {
-    s32 spanCam = (s32)cam->camMaxX - (s32)cam->camMinX;
-    s32 spanBgb = (s32)cam->bgbMaxX - (s32)cam->bgbMinX;
-    s32 t;
+    const s16 screenW = (s16) VDP_getScreenWidth();
+    s16 bodyLeft, bodyRight;
+    s16 screenLeft, screenRight;
 
-    if (spanCam <= 0)
-        return cam->bgbMinX;
+    camera_bodyBoxX(p, &bodyLeft, &bodyRight);
 
-    t = (s32)cam->pos.x - (s32)cam->camMinX;
-    if (t < 0)
-        t = 0;
-    if (t > spanCam)
-        t = spanCam;
-
-    return (s16)((s32)cam->bgbMinX + (t * spanBgb) / spanCam);
-}
-
-/**
- * @brief Scroll BG_A 1:1. BG_B interpolado no intervalo de parallax.
- */
-static void camera_scroll(const Camera *cam, bool forceVBlank)
-{
-    MAP_scrollTo(cam->mapA, (u32)cam->pos.x, (u32)cam->pos.y);
-    if (cam->mapB)
+    if (bodyLeft < cam->ringLeft)
     {
-        if (forceVBlank)
-            SYS_doVBlankProcess();
-        MAP_scrollTo(cam->mapB, (u32)camera_bgbX(cam), (u32)(cam->pos.y >> 1));
+        p->x = (s16) (p->x + (cam->ringLeft - bodyLeft));
+        camera_bodyBoxX(p, &bodyLeft, &bodyRight);
     }
-}
-
-void CAMERA_init(Camera *cam, Map *mapA, Map *mapB, u16 mapW, u16 mapH)
-{
-    const s16 screenW = (s16)VDP_getScreenWidth();
-    const s16 screenH = (s16)VDP_getScreenHeight();
-
-    cam->mapA = mapA;
-    cam->mapB = mapB;
-    cam->shakePower = 0;
-    cam->shakeTime = 0;
-
-    cam->walkMinX = 0;
-    cam->walkMaxX = (s16)mapW;
-    cam->camMinX = 0;
-    cam->camMaxX = (s16)(mapW - screenW);
-    cam->camMaxY = (s16)(mapH - screenH);
-    if (cam->camMaxX < 0)
-        cam->camMaxX = 0;
-    if (cam->camMaxY < 0)
-        cam->camMaxY = 0;
-
-    /* default: BGB rola a metade, preso para nao sair do tilemap */
-    cam->bgbMinX = 0;
-    cam->bgbMaxX = cam->camMaxX >> 1;
-
-    cam->pos.x = cam->camMinX;
-    cam->pos.y = cam->camMaxY;
-
-    MAP_scrollTo(mapA, (u32)cam->pos.x, (u32)cam->pos.y);
-    if (mapB)
+    if (bodyRight > cam->ringRight)
     {
-        SYS_doVBlankProcess();
-        MAP_scrollTo(mapB, (u32)cam->bgbMinX, (u32)(cam->pos.y >> 1));
+        p->x = (s16) (p->x + (cam->ringRight - bodyRight));
+        camera_bodyBoxX(p, &bodyLeft, &bodyRight);
     }
+
+    screenLeft  = (s16) (cam->pos.x + CAMERA_SCREEN_MARGIN);
+    screenRight = (s16) (cam->pos.x + screenW - CAMERA_SCREEN_MARGIN);
+
+    if (bodyLeft < screenLeft)
+    {
+        p->x = (s16) (p->x + (screenLeft - bodyLeft));
+        camera_bodyBoxX(p, &bodyLeft, &bodyRight);
+    }
+    if (bodyRight > screenRight)
+        p->x = (s16) (p->x + (screenRight - bodyRight));
 }
 
-void CAMERA_setStart(Camera *cam, s16 x, s16 y)
+static void camera_drawFighter(const Camera *cam, Player *p)
 {
-    cam->pos.x = clamp(x, cam->camMinX, cam->camMaxX);
-    cam->pos.y = clamp(y, 0, cam->camMaxY);
-}
+    s16 pivotX;
 
-void CAMERA_setWalkBounds(Camera *cam, s16 minX, s16 maxX)
-{
-    cam->walkMinX = minX;
-    cam->walkMaxX = maxX;
-}
-
-void CAMERA_setParallax(Camera *cam, s16 minX, s16 maxX)
-{
-    cam->bgbMinX = minX;
-    cam->bgbMaxX = maxX;
-    if (cam->bgbMaxX < cam->bgbMinX)
-        cam->bgbMaxX = cam->bgbMinX;
-}
-
-void CAMERA_updateFacing(Player *p1, Player *p2)
-{
-    if (p1->x == p2->x)
+    if (p->sprite == NULL)
         return;
 
-    if (p1->x < p2->x)
-    {
-        p1->direcao = 1;
-        p2->direcao = -1;
-    }
-    else
-    {
-        p1->direcao = -1;
-        p2->direcao = 1;
-    }
+    pivotX = camera_drawPivotX(p);
+    SPR_setHFlip(p->sprite, (p->direcao < 0) ? TRUE : FALSE);
+    SPR_setPosition(p->sprite,
+                    (s16) (p->x - pivotX - cam->pos.x),
+                    (s16) (p->y - (s16) p->axisY - cam->pos.y));
 }
 
-void CAMERA_snap(Camera *cam, const Player *p1, const Player *p2)
+void CAMERA_setup(Camera *cam, Map *fgMap, Map *bgMap, const CameraStage *stage)
 {
-    camera_follow(cam, p1, p2, FALSE);
-    camera_scroll(cam, TRUE);
+    const s16 screenW = (s16) VDP_getScreenWidth();
+    const s16 screenH = (s16) VDP_getScreenHeight();
+
+    cam->fgMap      = fgMap;
+    cam->bgMap      = bgMap;
+    cam->shakePower = 0;
+    cam->shakeTime  = 0;
+
+    cam->ringLeft   = stage->ringLeft;
+    cam->ringRight  = stage->ringRight;
+    cam->farBgLeft  = stage->farBgLeft;
+    cam->farBgRight = stage->farBgRight;
+    if (cam->farBgRight < cam->farBgLeft)
+        cam->farBgRight = cam->farBgLeft;
+
+    cam->scrollMinX = 0;
+    cam->scrollMaxX = (s16) (stage->mapWidth  - screenW);
+    cam->scrollMaxY = (s16) (stage->mapHeight - screenH);
+    if (cam->scrollMaxX < 0) cam->scrollMaxX = 0;
+    if (cam->scrollMaxY < 0) cam->scrollMaxY = 0;
+
+    cam->pos.x = clamp(stage->startX, cam->scrollMinX, cam->scrollMaxX);
+    cam->pos.y = clamp(stage->startY, 0, cam->scrollMaxY);
+
+    camera_scrollPlanes(cam, TRUE);
+}
+
+void CAMERA_spawn(Camera *cam, Player *p1, Player *p2)
+{
+    const s16 screenW    = (s16) VDP_getScreenWidth();
+    const s16 screenH    = (s16) VDP_getScreenHeight();
+    const s16 spawnInset = (s16) (screenW >> 2);
+
+    p1->x = (s16) (cam->pos.x + spawnInset);
+    p2->x = (s16) (cam->pos.x + screenW - spawnInset);
+    p1->y = (s16) (cam->pos.y + screenH - CAMERA_FEET_INSET);
+    p2->y = p1->y;
+
+    p1->direcao =  1;
+    p2->direcao = -1;
+
+    camera_scrollPlanes(cam, TRUE);
     SYS_doVBlankProcess();
+    camera_drawFighter(cam, p1);
+    camera_drawFighter(cam, p2);
 }
 
-void CAMERA_update(Camera *cam, const Player *p1, const Player *p2)
+void CAMERA_tick(Camera *cam, Player *p1, Player *p2)
 {
+    camera_faceEachOther(p1, p2);
     camera_follow(cam, p1, p2, TRUE);
-    camera_scroll(cam, FALSE);
-}
-
-void CAMERA_constrainPlayer(const Camera *cam, Player *p)
-{
-    const s16 screenW = (s16)VDP_getScreenWidth();
-    s16 left, right;
-    s16 viewL, viewR;
-
-    camera_boxX(p, &left, &right);
-
-    /* cantos do RING (66 / 912) — independentes da tela */
-    if (left < cam->walkMinX)
-    {
-        p->x = (s16)(p->x + (cam->walkMinX - left));
-        camera_boxX(p, &left, &right);
-    }
-
-    if (right > cam->walkMaxX)
-    {
-        p->x = (s16)(p->x + (cam->walkMaxX - right));
-        camera_boxX(p, &left, &right);
-    }
-
-    /* bordas da TELA — andam com cam.pos */
-    viewL = (s16)(cam->pos.x + 8);
-    viewR = (s16)(cam->pos.x + screenW - 8);
-
-    if (left < viewL)
-    {
-        p->x = (s16)(p->x + (viewL - left));
-        camera_boxX(p, &left, &right);
-    }
-
-    if (right > viewR)
-        p->x = (s16)(p->x + (viewR - right));
+    camera_keepInside(cam, p1);
+    camera_keepInside(cam, p2);
+    camera_scrollPlanes(cam, FALSE);
+    camera_drawFighter(cam, p1);
+    camera_drawFighter(cam, p2);
 }
 
 void CAMERA_shake(Camera *cam, s16 power)
 {
-    u8 duration;
+    u8 frames;
 
     if (power < 1)
         return;
@@ -269,60 +262,8 @@ void CAMERA_shake(Camera *cam, s16 power)
         return;
 
     cam->shakePower = power;
-    duration = (u8)(power + (power >> 1));
-    if (duration < 2)
-        duration = 2;
-    cam->shakeTime = duration;
-}
-
-void CAMERA_placeSprite(const Camera *cam, Player *p)
-{
-    s16 ax;
-
-    if (p->sprite == NULL)
-        return;
-
-    ax = camera_drawAxisX(p);
-
-    SPR_setHFlip(p->sprite, (p->direcao < 0) ? TRUE : FALSE);
-    SPR_setPosition(p->sprite,
-                    (s16)(p->x - ax - cam->pos.x),
-                    (s16)(p->y - (s16)p->axisY - cam->pos.y));
-}
-
-void CAMERA_spawnPlayers(Camera *cam, Player *p1, Player *p2)
-{ /*
-     const s16 screenW = (s16)VDP_getScreenWidth();
-     const s16 screenH = (s16)VDP_getScreenHeight();
-     const s16 dist = (s16)(screenW >> 2);
-     const s16 ringMid = (s16)((cam->walkMinX + cam->walkMaxX) >> 1);
-
-     p1->x = (s16)(ringMid - dist);
-     p2->x = (s16)(ringMid + dist);
-     p1->y = (s16)(cam->camMaxY + screenH - 8);
-     p2->y = p1->y;
-
-     p1->direcao = 1;
-     p2->direcao = -1;
-
-     CAMERA_snap(cam, p1, p2);
-     CAMERA_placeSprite(cam, p1);
-     CAMERA_placeSprite(cam, p2);*/
-    const s16 screenW = (s16)VDP_getScreenWidth();
-    const s16 screenH = (s16)VDP_getScreenHeight();
-    const s16 dist = (s16)(screenW >> 2);
-
-    /* visao ja esta em cam.pos (setStart ou o default do init) */
-    p1->x = (s16)(cam->pos.x + dist);
-    p2->x = (s16)(cam->pos.x + screenW - dist);
-    p1->y = (s16)(cam->pos.y + screenH - 8);
-    p2->y = p1->y;
-
-    p1->direcao = 1;
-    p2->direcao = -1;
-
-    camera_scroll(cam, TRUE);
-    SYS_doVBlankProcess();
-    CAMERA_placeSprite(cam, p1);
-    CAMERA_placeSprite(cam, p2);
+    frames = (u8) (power + (power >> 1));
+    if (frames < 2)
+        frames = 2;
+    cam->shakeTime = frames;
 }
