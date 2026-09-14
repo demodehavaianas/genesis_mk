@@ -6,5 +6,5 @@ SPRITE  spWood         "stages/bonus/wood.png"         17  6 FAST 0
 SPRITE  spMessage1     "stages/bonus/message_1.png"    26  2 FAST 0
 
 # Barra de vida
-PALETTE lifebar_pal    "gfx/lifebar_mk.png"
-TILESET lifebar        "gfx/lifebar_mk.png" 
+PALETTE lifebar_pal    "gfx/lifebar_mk2.png"
+TILESET lifebar        "gfx/lifebar_mk2.png" 

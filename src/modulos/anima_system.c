@@ -1,18 +1,26 @@
-#include "anima_system.h"
-
+#include "modulos/anima_system.h"
 #include "game_vars.h"
 #include "fighters.h"
 
 typedef void (*PlayerStateFunc)(int, u16);
 
-const PlayerStateFunc PLAYER_STATE_FUNCS[7] = {
-    playerState_Johnny,
-    playerState_Kano,
-    playerState_Raiden,
-    playerState_LiuKang,
-    playerState_SubZero,
-    playerState_Scorpion,
-    playerState_Sonya};
+/*
+ * Tabela indexada pelo enum Fighters. Goro/Shang ficam NULL até existirem.
+ * Inicializadores: se alguém inserir um lutador no meio do enum,
+ * o slot certo continua apontando pro handler certo.
+ */
+static const PlayerStateFunc PLAYER_STATE_FUNCS[FIGHTERS_COUNT] = {
+    [JOHNNY_CAGE]   = playerState_Johnny,
+    [KANO]          = playerState_Kano,
+    [RAIDEN]        = playerState_Raiden,
+    [LIU_KANG]      = playerState_LiuKang,
+    [SUBZERO]       = playerState_SubZero,
+    [SCORPION]      = playerState_Scorpion,
+    [SONYA]         = playerState_Sonya,
+    [GORO]          = NULL,
+    [SHANG_TSUNG]   = NULL,
+    [REPTILE]       = playerState_Reptile
+};
 
 void playerState(int ind, u16 state)
 {

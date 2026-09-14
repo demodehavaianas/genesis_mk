@@ -4,7 +4,7 @@
  * @brief Orquestrador principal que gerencia o fluxo do jogo.
  * @version 0.1
  * @date 2025-08-11
- * 
+ *
  */
 
 #include <genesis.h>
@@ -12,11 +12,28 @@
 #include "game_vars.h"
 #include "fighters.h"
 #include "estruturas.h"
-#include "cenarios.h"
-#include "input_system.h"
+#include "rooms/cenarios.h"
+#include "modulos/input_system.h"
 #include "gfx.h"
 #include "sprites.h"
-#include "anima_system.h"
+#include "modulos/anima_system.h"
+#include "modulos/lifebar.h"
+
+#include "stages.h"
+
+// define width and height of tile map in pixels (resolution of map image)
+#define MAP_WIDTH 1008
+#define MAP_HEIGHT 240
+
+// auxiliary macros
+#define CAMERA_MAX_POS_X (MAP_WIDTH - VDP_getScreenWidth())
+#define CAMERA_MAX_POS_Y (MAP_HEIGHT - VDP_getScreenHeight())
+
+typedef struct
+{
+  V2s16 pos;
+  V2s16 prevPos;
+} Camera;
 
 // -- DECLARACAO DE VARIAVEIS -- //
 u16 gDistancia;          // Distancia entre os Players
@@ -26,20 +43,49 @@ s16 camPosXanterior = 0; // Posicao da Camera no frame Anterior
 s16 scrollOffset = 0;
 s16 scrollValues[48];
 
+Map *palaceGatesMap; // Ponteiro para o mapa do Palace Gates
+Map *palaceGatesbMap;
+Camera camera;
+
 void resetGraphicElements();
 void CLEAR_VDP();
+
+void CameraMoveByOffset(s16 x, s16 y)
+{
+  camera.pos.x += x;
+  camera.pos.y += y;
+
+  if (camera.pos.x < 0)
+    camera.pos.x = 0;
+  else if (camera.pos.x > CAMERA_MAX_POS_X)
+    camera.pos.x = CAMERA_MAX_POS_X;
+
+  if (camera.pos.y < 0)
+    camera.pos.y = 0;
+  else if (camera.pos.y > CAMERA_MAX_POS_Y)
+    camera.pos.y = CAMERA_MAX_POS_Y;
+
+  if ((camera.pos.x != camera.prevPos.x) || (camera.pos.y != camera.prevPos.y))
+  {
+    MAP_scrollTo(palaceGatesMap, camera.pos.x, camera.pos.y);
+    MAP_scrollTo(palaceGatesbMap, camera.pos.x - 87, camera.pos.y >> 2);
+    camera.prevPos = camera.pos;
+  }
+}
 
 int main(bool hardReset)
 {
   SPR_init();
   VDP_setScreenWidth320();
   VDP_setScreenHeight224();
-  // VDP_setHilightShadow(TRUE);
+  //VDP_setPlaneSize(64, 32, TRUE);
+  // VDP_setScreenHeight240();
+  //  VDP_setHilightShadow(TRUE);
 
   debugEnabled = FALSE;
-  gRoom = SELECAO_PERSONAGENS;
+  gRoom = PALACE_GATES;
   gFrames = 0;
-  gInd_tileset = 0;
+  gInd_tileset = TILE_USER_INDEX;
   player[0].id = JOHNNY_CAGE;
 
   if (!hardReset)
@@ -68,44 +114,18 @@ int main(bool hardReset)
       processSelecaoPersonagens();
     }
 
-    if(BONUS_STAGE == gRoom)
+    if (BONUS_STAGE == gRoom)
     {
       processBonusStage();
     }
+    // gFrames++;
 
     if (PALACE_GATES == gRoom)
     {
-      if (gFrames == 1)
-        CLEAR_VDP();
-
       initPalaceGatesRoom();
-
-      player[0].sprite = SPR_addSprite(&spr_subzero, 24, 96, TILE_ATTR(PAL2, 0, FALSE, FALSE));
-      PAL_setPalette(PAL2, spr_subzero.palette->data, DMA);
-
-      player[1].sprite = SPR_addSprite(&spr_reptile, 168, 96, TILE_ATTR(PAL3, 0, FALSE, TRUE));
-      PAL_setPalette(PAL3, spr_reptile.palette->data, DMA);
-
-      player[0].id = SUBZERO;
-      player[1].id = REPTILE;
-      player[0].state = PARADO;
-      player[1].state = PARADO;
-      player[0].paleta = PAL2;
-      player[1].paleta = PAL3;
-
-      scrollOffset += 1;
-      VDP_setScrollingMode(HSCROLL_LINE, VSCROLL_COLUMN);
-
-      for (int i = 0; i < 48; i++)
-      {
-        scrollValues[i] = scrollOffset;
-      }
-
-      VDP_setHorizontalScrollLine(BG_B, 0, scrollValues, 48, CPU);
     }
 
-    // -- DEBUG -- //
-    if (debugEnabled)
+    if(debugEnabled)
     {
       char str[64];
       sprintf(str, "tiles nos BGs: %d", gInd_tileset);

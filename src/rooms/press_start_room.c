@@ -1,7 +1,7 @@
 #include <genesis.h>
 
-#include "press_start_room.h"
-#include "input_system.h"
+#include "rooms/press_start_room.h"
+#include "modulos/input_system.h"
 #include "stages.h"
 #include "sprites.h"
 #include "game_vars.h"

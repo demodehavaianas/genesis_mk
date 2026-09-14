@@ -3,6 +3,11 @@
 
 #include <genesis.h>
 
+#define SPRITE_FLAGS (SPR_FLAG_DISABLE_DELAYED_FRAME_UPDATE | \
+                      SPR_FLAG_AUTO_VISIBILITY |              \
+                      SPR_FLAG_AUTO_VRAM_ALLOC |              \
+                      SPR_FLAG_AUTO_TILE_UPLOAD)
+
 void playerState_Kano(int numPlayer, u16 State);
 void playerState_SubZero(int numPlayer, u16 State);
 void playerState_Johnny(int numPlayer, u16 State);

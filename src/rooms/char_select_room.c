@@ -1,13 +1,13 @@
 #include <genesis.h>
 
-#include "char_select_room.h"
-#include "input_system.h"
+#include "rooms/char_select_room.h"
+#include "modulos/input_system.h"
 #include "stages.h"
 #include "sprites.h"
 #include "audio.h"
 #include "game_vars.h"
 #include "fighters.h"
-#include "anima_system.h"
+#include "modulos/anima_system.h"
 
 #define TILEMAP_WIDTH 40
 #define TILEMAP_HEIGHT 28

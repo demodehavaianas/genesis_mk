@@ -4,15 +4,15 @@
 #define PALACE_GATES_MAP_W  1008
 #define PALACE_GATES_MAP_H   240
 
-/* aneis: onde o sprite PARA (mundo), nao a borda da tela */
+/* Limite da tela onde o jogador pode se mover */
 #define PALACE_GATES_RING_LEFT   66
-#define PALACE_GATES_RING_RIGHT  912
+#define PALACE_GATES_RING_RIGHT  927
 
-/* spawn: canto da tela em mundo */
+/* spawn dos lutadores */
 #define PALACE_GATES_START_X  272
 #define PALACE_GATES_START_Y   16
 
-/* parallax BGB (arte 184..516). 270 = ~86 px de viagem, flui */
+/* parallax BGB (arte 184..516). 270 = ~86 px de viagem */
 #define PALACE_GATES_FARBG_LEFT   184
 #define PALACE_GATES_FARBG_RIGHT  270
 

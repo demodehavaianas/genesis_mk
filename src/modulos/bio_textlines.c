@@ -1,4 +1,4 @@
-#include "bio_textlines.h"
+#include "modulos/bio_textlines.h"
 #include "audio.h"
 #include "sprites.h"
 #include "game_vars.h"

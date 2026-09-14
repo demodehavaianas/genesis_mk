@@ -1,4 +1,4 @@
-#include "camera.h"
+#include "modulos/camera.h"
 
 #define CAM_MIN(a, b) (((a) < (b)) ? (a) : (b))
 #define CAM_MAX(a, b) (((a) > (b)) ? (a) : (b))

@@ -1,10 +1,11 @@
 #include <genesis.h>
-#include "palace_gates_room.h"
+#include "rooms/palace_gates_room.h"
 #include "stages.h"
 #include "game_vars.h"
-#include "camera.h"
+#include "modulos/camera.h"
 #include "sprites.h"
-#include "input_system.h"
+#include "modulos/input_system.h"
+#include "modulos/lifebar.h"
 
 #define SUBZERO_BODY_W 52
 #define SUBZERO_BODY_H 117
@@ -26,10 +27,10 @@ static Map *bgaMap;
 static Map *bgbMap;
 static Camera camera;
 
-void PALACE_GATES_init(void);
-void PALACE_GATES_spawnPlayers(void);
-static void PALACE_GATES_setupPlayer(Player *p, const SpriteDefinition *spr, u16 pal, s8 direcao);
-static void PALACE_GATES_movePlayer(Player *p);
+void _init(void);
+void _spawnPlayers(void);
+static void _setupPlayer(Player *p, const SpriteDefinition *spr, u16 pal, s8 direcao);
+static void _movePlayer(Player *p);
 
 void initPalaceGatesRoom(void)
 {
@@ -44,17 +45,25 @@ void initPalaceGatesRoom(void)
         {
             SPR_init();
 
-            PALACE_GATES_init();
+            _init();
 
-            PALACE_GATES_setupPlayer(&player[0], &spr_subzero, PAL2, 1);
-            PALACE_GATES_setupPlayer(&player[1], &spr_subzero, PAL3, -1);
+            VDP_setWindowOnTop(2);
 
-            PALACE_GATES_spawnPlayers();
+            initLifebar();
+
+            _setupPlayer(&player[0], &spr_subzero, PAL2, 1);
+            _setupPlayer(&player[1], &spr_subzero, PAL3, -1);
+
+            _spawnPlayers();
+
             gPodeMover = TRUE;
         }
 
-        PALACE_GATES_movePlayer(&player[0]);
-        PALACE_GATES_movePlayer(&player[1]);
+        drawLifeBar(WINDOW, PAL0, 1, 1, player[0].energia, 160, 17);
+        drawLifeBar(WINDOW, PAL0, 22, 1,player[1].energia, 160, 17);
+
+        _movePlayer(&player[0]);
+        _movePlayer(&player[1]);
 
         CAMERA_tick(&camera, &player[0], &player[1]);
 
@@ -63,7 +72,7 @@ void initPalaceGatesRoom(void)
     }
 }
 
-void PALACE_GATES_init(void)
+void _init(void)
 {
     gInd_tileset = TILE_USER_INDEX;
 
@@ -88,7 +97,7 @@ void PALACE_GATES_init(void)
     CAMERA_setup(&camera, bgaMap, bgbMap, &palaceGatesCam);
 }
 
-static void PALACE_GATES_setupPlayer(Player *p, const SpriteDefinition *spr, u16 pal, s8 direcao)
+static void _setupPlayer(Player *p, const SpriteDefinition *spr, u16 pal, s8 direcao)
 {
     p->sprite = SPR_addSprite(spr, 0, 0, TILE_ATTR(pal, TRUE, FALSE, FALSE));
     PAL_setPalette(pal, spr->palette->data, DMA);
@@ -104,15 +113,16 @@ static void PALACE_GATES_setupPlayer(Player *p, const SpriteDefinition *spr, u16
     p->h = SUBZERO_BODY_H;
     p->axisX = SUBZERO_AXIS_X;
     p->axisY = SUBZERO_AXIS_Y;
+    p->energia = 160;
 }
 
-void PALACE_GATES_spawnPlayers(void)
+void _spawnPlayers(void)
 {
     CAMERA_spawn(&camera, &player[0], &player[1]);
     SPR_update();
 }
 
-static void PALACE_GATES_movePlayer(Player *p)
+static void _movePlayer(Player *p)
 {
     const u8 left = p->key_JOY_LEFT_status;
     const u8 right = p->key_JOY_RIGHT_status;
@@ -122,10 +132,12 @@ static void PALACE_GATES_movePlayer(Player *p)
     else if ((right == BUTTON_PRESSED) || (right == BUTTON_HELD))
         p->x += p->hSpeed;
 
-    if (p->key_JOY_A_status == BUTTON_PRESSED)
+    if (p->key_JOY_A_status == BUTTON_PRESSED) {
         CAMERA_shake(&camera, 2);
+        p->energia -= 10;} // Reduz a energia do jogador ao apertar o botão A}
     if (p->key_JOY_B_status == BUTTON_PRESSED)
         CAMERA_shake(&camera, 4);
     if (p->key_JOY_C_status == BUTTON_PRESSED)
         CAMERA_shake(&camera, 8);
+
 }

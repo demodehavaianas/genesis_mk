@@ -1,11 +1,11 @@
 #include <genesis.h>
-#include "bonus_stage_room.h"
+#include "rooms/bonus_stage_room.h"
 #include "stages.h"
 #include "gfx.h"
 #include "sprites.h"
 #include "game_vars.h"
-#include "typewriter_printer.h"
-#include "bio_textlines.h"
+#include "modulos/typewriter_printer.h"
+#include "modulos/bio_textlines.h"
 
 #define BLOCO_P1_POS_X 16
 #define BLOCO_P2_POS_X 168

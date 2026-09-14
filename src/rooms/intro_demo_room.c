@@ -1,13 +1,13 @@
 #include <genesis.h>
 
-#include "intro_demo_room.h"
-#include "input_system.h"
-#include "typewriter_printer.h"
+#include "rooms/intro_demo_room.h"
+#include "modulos/input_system.h"
+#include "modulos/typewriter_printer.h"
 #include "sprites.h"
 #include "stages.h"
 #include "audio.h"
 #include "gfx.h"
-#include "bio_textlines.h"
+#include "modulos/bio_textlines.h"
 #include "game_vars.h"
 
 void loadBrainAtWorkScreen();

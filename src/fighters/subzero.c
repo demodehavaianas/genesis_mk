@@ -1,7 +1,7 @@
 #include "fighters.h"
-#include "sprites.h"
 #include "estruturas.h"
 #include "game_vars.h"
+#include "sp_subzero.h"
 
 /**
  * @brief Define o estado do personagem Sub-Zero.
@@ -15,8 +15,10 @@ void playerState_SubZero(int numPlayer, u16 State)
     {
     case PARADO:
         player[numPlayer].y = gAlturaDoPiso;
-        player[numPlayer].w = 16 * 8;
-        player[numPlayer].h = 15 * 8;
+        player[numPlayer].w = 56; // 7*8 
+        player[numPlayer].h = 120; // 15*8
+        player[numPlayer].axisX = 28; // 56/2
+        player[numPlayer].axisY = 120; // mesmo que h
         player[numPlayer].dataAnim[1] = 5;
         player[numPlayer].dataAnim[2] = 5;
         player[numPlayer].dataAnim[3] = 5;
@@ -29,21 +31,39 @@ void playerState_SubZero(int numPlayer, u16 State)
         player[numPlayer].dataAnim[10] = 5;
         player[numPlayer].dataAnim[11] = 5;
         player[numPlayer].dataAnim[12] = 5;
-        player[numPlayer].animFrameTotal = 12;
-        player[numPlayer].sprite = SPR_addSpriteExSafe(&spr_subzero, player[numPlayer].x - player[numPlayer].axisX,
-                                                       player[numPlayer].y - player[numPlayer].axisY,
-                                                       TILE_ATTR(player[numPlayer].paleta, FALSE, FALSE, FALSE),
-                                                       SPR_FLAG_DISABLE_DELAYED_FRAME_UPDATE | SPR_FLAG_AUTO_VISIBILITY | SPR_FLAG_AUTO_VRAM_ALLOC | SPR_FLAG_AUTO_TILE_UPLOAD);
+        player[numPlayer].dataAnim[13] = 5;
+        player[numPlayer].dataAnim[14] = 5;
+        player[numPlayer].animFrameTotal = 14;
+        player[numPlayer].sprite = SPR_addSpriteExSafe( &sp_subzero_parado, 
+                                                        player[numPlayer].x - player[numPlayer].axisX,
+                                                        player[numPlayer].y - player[numPlayer].axisY,
+                                                        TILE_ATTR(player[numPlayer].paleta, FALSE, FALSE, FALSE),
+                                                        SPRITE_FLAGS);
         break;
-
+    case ANDAR_PRA_FRENTE:
+    case ANDAR_PRA_TRAS:
+        player[numPlayer].y = gAlturaDoPiso;
+        player[numPlayer].w = 72; // 9*8 
+        player[numPlayer].h = 120; // 15*8
+        player[numPlayer].axisX = 36; // 72/2
+        player[numPlayer].axisY = 120; // mesmo que h
+        player[numPlayer].dataAnim[1] = 5;
+        player[numPlayer].dataAnim[2] = 5;
+        player[numPlayer].dataAnim[3] = 5;
+        player[numPlayer].dataAnim[4] = 5;
+        player[numPlayer].dataAnim[5] = 5;
+        player[numPlayer].dataAnim[6] = 5;
+        player[numPlayer].dataAnim[7] = 5;
+        player[numPlayer].dataAnim[8] = 5;
+        player[numPlayer].dataAnim[9] = 5;
+        player[numPlayer].animFrameTotal = 9;
+        player[numPlayer].sprite = SPR_addSpriteExSafe( &sp_subzero_andar, 
+                                                        player[numPlayer].x - player[numPlayer].axisX,
+                                                        player[numPlayer].y - player[numPlayer].axisY,
+                                                        TILE_ATTR(player[numPlayer].paleta, FALSE, FALSE, FALSE),
+                                                        SPRITE_FLAGS);
+        break;
     default:
         break;
-    }
-
-    if(player[numPlayer].direcao == 1)
-    {
-        PAL_setPalette(PAL2, spr_subzero.palette->data, DMA);
-    } else {
-        PAL_setPalette(PAL3, spr_subzero.palette->data, DMA);
     }
 }

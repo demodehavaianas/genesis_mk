@@ -1,4 +1,4 @@
-#include "typewriter_printer.h"
+#include "modulos/typewriter_printer.h"
 
 void typewriterEffect(const char *text, u16 x, u16 y, u16 delay, VDPPlane plane, u16 numPal)
 {

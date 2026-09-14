@@ -1,4 +1,4 @@
-#include "input_system.h"
+#include "modulos/input_system.h"
 #include "game_vars.h"
 
 void inputSystem()

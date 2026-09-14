@@ -57,11 +57,26 @@ enum PLAYER_STATUS
 {
   PARADO,
   ABAIXANDO,
-  ANDAR_FRENTE,
-  ANDAR_TRAS,
+  ANDAR_PRA_FRENTE,
+  ANDAR_PRA_TRAS,
   INI_PULO_TRAS,
   INI_PULO_NEUTRO,
-  INI_PULO_FRENTE
+  INI_PULO_FRENTE,
+  MUDAR_DE_LADO,
+  BLOQUEIO_EM_PE,
+  BLOQUEIO_AGACHADO,
+  AGACHADO,
+  SOCO_ALTO,
+  SOCO_ALTO_CONTINUO,
+  SOCO_BAIXO,
+  SOCO_BAIXO_CONTINUO,
+  CHUTE_BAIXO,
+  CHUTE_ALTO,
+  RASTEIRA,
+  GIRATORIA,
+  GANCHO,
+  CHUTE_ABAIXADO,
+  VOADORA
 };
 
 /**
@@ -86,7 +101,7 @@ typedef struct
 {
   u8 id;
   Sprite *sprite;
-  int paleta; // PAL0, PAL1, PAL2, etc.
+  u16 paleta; // PAL0, PAL1, PAL2, etc.
   s16 x;      // posição X do jogador
   s16 y;      // posição Y do jogador
   u8 w;       // Largura do Sprite
@@ -96,6 +111,7 @@ typedef struct
   s8 direcao; // Direção para onde está olhando (1 - Direita, -1 - Esquerda)
   u16 state;  // Estado atual do jogador
   u8 hSpeed;  // Velocidade Horizontal
+  u16 energia; // Energia do jogador (0 a 160)
   bool selecionado; //TODO:talvez mudar pra ativo pra ser usado futuramente no topo da torre
 
   u16 animFrame;      // frame de animação atual
