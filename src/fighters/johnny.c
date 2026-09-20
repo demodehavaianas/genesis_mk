@@ -1,5 +1,5 @@
 #include "fighters.h"
-#include "sprites.h"
+#include "sp_johnny.h"
 #include "estruturas.h"
 #include "game_vars.h"
 
@@ -15,8 +15,10 @@ void playerState_Johnny(int numPlayer, u16 State)
     {
     case PARADO:
         player[numPlayer].y = gAlturaDoPiso;
-        player[numPlayer].w = 16 * 8;
-        player[numPlayer].h = 15 * 8;
+        player[numPlayer].w = 72; // 9*8 
+        player[numPlayer].h = 120; // 15*8
+        player[numPlayer].axisX = 36; // 72/2
+        player[numPlayer].axisY = 120; // mesmo que h
         player[numPlayer].dataAnim[1] = 5;
         player[numPlayer].dataAnim[2] = 5;
         player[numPlayer].dataAnim[3] = 5;
@@ -25,20 +27,46 @@ void playerState_Johnny(int numPlayer, u16 State)
         player[numPlayer].dataAnim[6] = 5;
         player[numPlayer].dataAnim[7] = 5;
         player[numPlayer].animFrameTotal = 7;
-        player[numPlayer].sprite = SPR_addSpriteExSafe(&spr_jcage, player[numPlayer].x - player[numPlayer].axisX,
+        player[numPlayer].sprite = SPR_addSpriteExSafe(&sp_johnny_parado, player[numPlayer].x - player[numPlayer].axisX,
                                                        player[numPlayer].y - player[numPlayer].axisY,
                                                        TILE_ATTR(player[numPlayer].paleta, FALSE, FALSE, FALSE),
-                                                       SPR_FLAG_DISABLE_DELAYED_FRAME_UPDATE | SPR_FLAG_AUTO_VISIBILITY | SPR_FLAG_AUTO_VRAM_ALLOC | SPR_FLAG_AUTO_TILE_UPLOAD);
+                                                       SPRITE_FLAGS);
         break;
-
+    case VITORIA:
+        player[numPlayer].w = 64; // 8*8 
+        player[numPlayer].h = 128; // 16*8
+        player[numPlayer].axisX = 32; // 64/2
+        player[numPlayer].axisY = 128; // mesmo que h
+        player[numPlayer].y = gAlturaDoPiso;
+        player[numPlayer].dataAnim[1] = 6;
+        player[numPlayer].dataAnim[2] = 6;
+        player[numPlayer].dataAnim[3] = 6;
+        player[numPlayer].dataAnim[4] = 6;
+        player[numPlayer].dataAnim[5] = 6;
+        player[numPlayer].dataAnim[6] = 6;
+        player[numPlayer].dataAnim[7] = 6;
+        player[numPlayer].dataAnim[8] = 6;
+        player[numPlayer].dataAnim[9] = 6;
+        player[numPlayer].dataAnim[10] = 6;
+        player[numPlayer].dataAnim[11] = 6;
+        player[numPlayer].dataAnim[12] = 6;
+        player[numPlayer].animFrameTotal = 12;
+        player[numPlayer].sprite = SPR_addSpriteExSafe( &sp_johnny_wins, 
+                                                        player[numPlayer].x - player[numPlayer].axisX, 
+                                                        player[numPlayer].y - player[numPlayer].axisY,
+                                                        TILE_ATTR(player[numPlayer].paleta, FALSE, FALSE, FALSE),
+                                                        SPRITE_FLAGS);
+        // para pose de vitória não repetir a animação
+        SPR_setAnimationLoop(player[numPlayer].sprite, FALSE);
+        break;
     default:
         break;
     }
 
     if(player[numPlayer].direcao == 1)
     {
-        PAL_setPalette(PAL2, spr_jcage.palette->data, DMA);
+        PAL_setPalette(PAL2, pal_johnny_p1.data, DMA);
     } else {
-        PAL_setPalette(PAL3, spr_jcage.palette->data, DMA);
+        PAL_setPalette(PAL3, pal_johnny_p1.data, DMA);
     }
 }

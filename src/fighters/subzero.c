@@ -14,11 +14,12 @@ void playerState_SubZero(int numPlayer, u16 State)
     switch (State)
     {
     case PARADO:
-        player[numPlayer].y = gAlturaDoPiso;
+        //player[numPlayer].y = gAlturaDoPiso;
         player[numPlayer].w = 56; // 7*8 
         player[numPlayer].h = 120; // 15*8
         player[numPlayer].axisX = 28; // 56/2
         player[numPlayer].axisY = 120; // mesmo que h
+        player[numPlayer].y = gAlturaDoPiso;
         player[numPlayer].dataAnim[1] = 5;
         player[numPlayer].dataAnim[2] = 5;
         player[numPlayer].dataAnim[3] = 5;
@@ -31,22 +32,39 @@ void playerState_SubZero(int numPlayer, u16 State)
         player[numPlayer].dataAnim[10] = 5;
         player[numPlayer].dataAnim[11] = 5;
         player[numPlayer].dataAnim[12] = 5;
-        player[numPlayer].dataAnim[13] = 5;
-        player[numPlayer].dataAnim[14] = 5;
-        player[numPlayer].animFrameTotal = 14;
+        player[numPlayer].animFrameTotal = 12;
         player[numPlayer].sprite = SPR_addSpriteExSafe( &sp_subzero_parado, 
                                                         player[numPlayer].x - player[numPlayer].axisX,
                                                         player[numPlayer].y - player[numPlayer].axisY,
                                                         TILE_ATTR(player[numPlayer].paleta, FALSE, FALSE, FALSE),
                                                         SPRITE_FLAGS);
         break;
+    case VITORIA:
+        player[numPlayer].w = 64; // 8*8 
+        player[numPlayer].h = 144; // 18*8
+        player[numPlayer].axisX = 32; // 64/2
+        player[numPlayer].axisY = 144; // mesmo que h
+        player[numPlayer].y = gAlturaDoPiso;
+        player[numPlayer].dataAnim[1] = 6;
+        player[numPlayer].dataAnim[2] = 6;
+        player[numPlayer].dataAnim[3] = 6;
+        player[numPlayer].dataAnim[4] = 6;
+        player[numPlayer].animFrameTotal = 4;
+        player[numPlayer].sprite = SPR_addSpriteExSafe( &sp_subzero_wins, 
+                                                        player[numPlayer].x - player[numPlayer].axisX, //288-32
+                                                        player[numPlayer].y - player[numPlayer].axisY,
+                                                        TILE_ATTR(player[numPlayer].paleta, FALSE, FALSE, FALSE),
+                                                        SPRITE_FLAGS);
+        // para pose de vitória não repetir a animação
+        SPR_setAnimationLoop(player[numPlayer].sprite, FALSE);
+        break;
     case ANDAR_PRA_FRENTE:
     case ANDAR_PRA_TRAS:
-        player[numPlayer].y = gAlturaDoPiso;
         player[numPlayer].w = 72; // 9*8 
         player[numPlayer].h = 120; // 15*8
         player[numPlayer].axisX = 36; // 72/2
         player[numPlayer].axisY = 120; // mesmo que h
+        player[numPlayer].y = gAlturaDoPiso;
         player[numPlayer].dataAnim[1] = 5;
         player[numPlayer].dataAnim[2] = 5;
         player[numPlayer].dataAnim[3] = 5;
@@ -65,5 +83,12 @@ void playerState_SubZero(int numPlayer, u16 State)
         break;
     default:
         break;
+    }
+
+        if(player[numPlayer].direcao == 1)
+    {
+        PAL_setPalette(PAL2, pal_subzero_p1.data, DMA);
+    } else {
+        PAL_setPalette(PAL3, pal_subzero_p1.data, DMA);
     }
 }

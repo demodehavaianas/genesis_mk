@@ -29,6 +29,16 @@
 #define CAMERA_MAX_POS_X (MAP_WIDTH - VDP_getScreenWidth())
 #define CAMERA_MAX_POS_Y (MAP_HEIGHT - VDP_getScreenHeight())
 
+static void engine_boot(void)
+{
+  SYS_disableInts();
+  VDP_init();
+  VDP_setScreenWidth320();
+  VDP_setScreenHeight224();
+  SPR_init();
+  VDP_setBackgroundColor(0);
+}
+
 typedef struct
 {
   V2s16 pos;
@@ -75,15 +85,10 @@ void CameraMoveByOffset(s16 x, s16 y)
 
 int main(bool hardReset)
 {
-  SPR_init();
-  VDP_setScreenWidth320();
-  VDP_setScreenHeight224();
-  //VDP_setPlaneSize(64, 32, TRUE);
-  // VDP_setScreenHeight240();
-  //  VDP_setHilightShadow(TRUE);
+  engine_boot();
 
   debugEnabled = FALSE;
-  gRoom = PALACE_GATES;
+  gRoom = SELECAO_PERSONAGENS;
   gFrames = 0;
   gInd_tileset = TILE_USER_INDEX;
   player[0].id = JOHNNY_CAGE;
@@ -125,7 +130,7 @@ int main(bool hardReset)
       initPalaceGatesRoom();
     }
 
-    if(debugEnabled)
+    if (debugEnabled)
     {
       char str[64];
       sprintf(str, "tiles nos BGs: %d", gInd_tileset);

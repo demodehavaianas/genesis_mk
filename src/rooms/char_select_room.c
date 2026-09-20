@@ -14,9 +14,9 @@
 #define SCREEN_WIDTH 320
 #define SCREEN_HEIGHT 224
 #define LINE_HEIGHT 2 // Altura da linha em pixels
-#define PLAYER_1_POS_X 10
-#define PLAYER_1_POS_Y 104
-#define PLAYER_2_POS_X 182
+#define PLAYER_1_POS_X 32 
+#define PLAYER_1_POS_Y 218
+#define PLAYER_2_POS_X 288
 #define PLAYER_2_POS_Y 104
 #define CURSOR_P1 0
 #define CURSOR_P2 1
@@ -368,10 +368,13 @@ void playerSelected(int ind)
   const CharSelectData *d = &charData[player[ind].id];
   XGM2_playPCMEx(d->locutor, d->size, SOUND_PCM_CH3, 0, FALSE, FALSE);
 
+  playerState(ind, VITORIA);
+
   GE[ind + 2].sprite = SPR_addSprite(&spPortrait, d->x + 4, d->y + 4, TILE_ATTR(PAL0, FALSE, FALSE, FALSE));
   SPR_setAnim(GE[ind + 2].sprite, player[ind].id);
   SPR_setDepth(GE[ind + 2].sprite, 2);
   GE[ind].sprite->visibility = HIDDEN;
+
   player[ind].selecionado = TRUE;
 }
 
@@ -533,7 +536,7 @@ void initPlayer(void)
   player[1].paleta = PAL3;
   player[1].direcao = -1;
   player[1].x = PLAYER_2_POS_X;
-  player[1].y = PLAYER_2_POS_Y;
+  //player[1].y = PLAYER_2_POS_Y;
   player[1].selecionado = FALSE;
 
   playerState(0, PARADO);
