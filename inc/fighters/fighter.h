@@ -5,6 +5,7 @@
 #include "estruturas.h"
 
 #define FIGHTERS_COUNT 10 // quantidade de lutadores no jogo. Ver enum Fighters em estruturas.h
+#define MAX_LIFE 160
 
 #define SPRITE_FLAGS (SPR_FLAG_DISABLE_DELAYED_FRAME_UPDATE | \
                       SPR_FLAG_AUTO_VISIBILITY |              \

@@ -4,19 +4,19 @@
 
 /**
  * @brief Define o estado do personagem Sub-Zero.
- * 
+ *
  * @param numPlayer o player que está sendo atualizado (0 para o player 1 ou 1 para o player 2)
- * @param State novo estado da animação do personagem (ex: PARADO, ANDANDO, PULANDO, etc.)
+ * @param state novo estado da animação do personagem (ex: PARADO, ANDANDO, PULANDO, etc.)
  */
-void playerState_SubZero(u8 numPlayer, u16 State)
+void playerState_SubZero(u8 numPlayer, u16 state)
 {
-    switch (State)
+    switch (state)
     {
     case PARADO:
-        //player[numPlayer].y = gAlturaDoPiso;
-        player[numPlayer].w = 56; // 7*8 
-        player[numPlayer].h = 120; // 15*8
-        player[numPlayer].axisX = 28; // 56/2
+        // player[numPlayer].y = gAlturaDoPiso;
+        player[numPlayer].w = 56;      // 7*8
+        player[numPlayer].h = 120;     // 15*8
+        player[numPlayer].axisX = 28;  // 56/2
         player[numPlayer].axisY = 120; // mesmo que h
         player[numPlayer].y = gAlturaDoPiso;
         player[numPlayer].dataAnim[1] = 5;
@@ -32,16 +32,16 @@ void playerState_SubZero(u8 numPlayer, u16 State)
         player[numPlayer].dataAnim[11] = 5;
         player[numPlayer].dataAnim[12] = 5;
         player[numPlayer].animFrameTotal = 12;
-        player[numPlayer].sprite = SPR_addSpriteExSafe( &sp_subzero_parado, 
-                                                        player[numPlayer].x - player[numPlayer].axisX,
-                                                        player[numPlayer].y - player[numPlayer].axisY,
-                                                        TILE_ATTR(player[numPlayer].paleta, FALSE, FALSE, FALSE),
-                                                        SPRITE_FLAGS);
+        player[numPlayer].sprite = SPR_addSpriteExSafe(&sp_subzero_parado,
+                                                       player[numPlayer].x - player[numPlayer].axisX,
+                                                       player[numPlayer].y - player[numPlayer].axisY,
+                                                       TILE_ATTR(player[numPlayer].paleta, FALSE, FALSE, FALSE),
+                                                       SPRITE_FLAGS);
         break;
     case VITORIA:
-        player[numPlayer].w = 64; // 8*8 
-        player[numPlayer].h = 144; // 18*8
-        player[numPlayer].axisX = 32; // 64/2
+        player[numPlayer].w = 64;      // 8*8
+        player[numPlayer].h = 144;     // 18*8
+        player[numPlayer].axisX = 32;  // 64/2
         player[numPlayer].axisY = 144; // mesmo que h
         player[numPlayer].y = gAlturaDoPiso;
         player[numPlayer].dataAnim[1] = 6;
@@ -49,19 +49,19 @@ void playerState_SubZero(u8 numPlayer, u16 State)
         player[numPlayer].dataAnim[3] = 6;
         player[numPlayer].dataAnim[4] = 6;
         player[numPlayer].animFrameTotal = 4;
-        player[numPlayer].sprite = SPR_addSpriteExSafe( &sp_subzero_wins, 
-                                                        player[numPlayer].x - player[numPlayer].axisX, //288-32
-                                                        player[numPlayer].y - player[numPlayer].axisY,
-                                                        TILE_ATTR(player[numPlayer].paleta, FALSE, FALSE, FALSE),
-                                                        SPRITE_FLAGS);
+        player[numPlayer].sprite = SPR_addSpriteExSafe(&sp_subzero_wins,
+                                                       player[numPlayer].x - player[numPlayer].axisX, // 288-32
+                                                       player[numPlayer].y - player[numPlayer].axisY,
+                                                       TILE_ATTR(player[numPlayer].paleta, FALSE, FALSE, FALSE),
+                                                       SPRITE_FLAGS);
         // para pose de vitória não repetir a animação
         SPR_setAnimationLoop(player[numPlayer].sprite, FALSE);
         break;
     case ANDAR_PRA_FRENTE:
     case ANDAR_PRA_TRAS:
-        player[numPlayer].w = 72; // 9*8 
-        player[numPlayer].h = 120; // 15*8
-        player[numPlayer].axisX = 36; // 72/2
+        player[numPlayer].w = 72;      // 9*8
+        player[numPlayer].h = 120;     // 15*8
+        player[numPlayer].axisX = 36;  // 72/2
         player[numPlayer].axisY = 120; // mesmo que h
         player[numPlayer].y = gAlturaDoPiso;
         player[numPlayer].dataAnim[1] = 5;
@@ -74,22 +74,56 @@ void playerState_SubZero(u8 numPlayer, u16 State)
         player[numPlayer].dataAnim[8] = 5;
         player[numPlayer].dataAnim[9] = 5;
         player[numPlayer].animFrameTotal = 9;
-        player[numPlayer].sprite = SPR_addSpriteExSafe( &sp_subzero_andar, 
-                                                        player[numPlayer].x - player[numPlayer].axisX,
-                                                        player[numPlayer].y - player[numPlayer].axisY,
-                                                        TILE_ATTR(player[numPlayer].paleta, FALSE, FALSE, FALSE),
-                                                        SPRITE_FLAGS);
+        player[numPlayer].sprite = SPR_addSpriteExSafe(&sp_subzero_andar,
+                                                       player[numPlayer].x - player[numPlayer].axisX,
+                                                       player[numPlayer].y - player[numPlayer].axisY,
+                                                       TILE_ATTR(player[numPlayer].paleta, FALSE, FALSE, FALSE),
+                                                       SPRITE_FLAGS);
+        break;
+    case ABAIXANDO:
+        player[numPlayer].w = 64;
+        player[numPlayer].h = 104;
+        player[numPlayer].axisX = 32;
+        player[numPlayer].axisY = 104;
+        player[numPlayer].y = gAlturaDoPiso;
+        player[numPlayer].dataAnim[1] = 6;
+        player[numPlayer].dataAnim[2] = 6;
+        player[numPlayer].dataAnim[3] = 6;
+        player[numPlayer].animFrameTotal = 3;
+        player[numPlayer].sprite = SPR_addSpriteExSafe(&sp_subzero_abaixando,
+                                                       player[numPlayer].x - player[numPlayer].axisX,
+                                                       player[numPlayer].y - player[numPlayer].axisY,
+                                                       TILE_ATTR(player[numPlayer].paleta, FALSE, FALSE, FALSE),
+                                                       SPRITE_FLAGS);
+        player[numPlayer].state = ABAIXADO;
+        break;
+    case ABAIXADO:
+        player[numPlayer].w = 64;
+        player[numPlayer].h = 104;
+        player[numPlayer].axisX = 32;
+        player[numPlayer].axisY = 104;
+        player[numPlayer].y = gAlturaDoPiso;
+        player[numPlayer].dataAnim[1] = 0;
+        player[numPlayer].animFrameTotal = 1;
+        player[numPlayer].sprite = SPR_addSpriteExSafe(&sp_subzero_abaixado,
+                                                       player[numPlayer].x - player[numPlayer].axisX,
+                                                       player[numPlayer].y - player[numPlayer].axisY,
+                                                       TILE_ATTR(player[numPlayer].paleta, FALSE, FALSE, FALSE),
+                                                       SPRITE_FLAGS);
         break;
     default:
         break;
     }
 
-        if(player[numPlayer].direcao == 1)
+    if (player[numPlayer].direcao == 1)
     {
         PAL_setPalette(PAL2, pal_subzero_p1.data, DMA);
-    } else {
+    }
+    else
+    {
         PAL_setPalette(PAL3, pal_subzero_p1.data, DMA);
     }
+    //player[numPlayer].state = state;
 }
 
 const FighterOps subzeroOps = {

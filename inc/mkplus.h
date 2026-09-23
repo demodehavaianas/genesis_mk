@@ -15,6 +15,7 @@
 #include "modulos/input_system.h"
 #include "modulos/anima_system.h"
 #include "modulos/lifebar.h"
+#include "modulos/camera.h"
 
 #include "estruturas.h"
 #include "game_vars.h"

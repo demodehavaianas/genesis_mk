@@ -30,13 +30,13 @@ static void engine_boot(void)
   SPR_init();
   VDP_setBackgroundColor(0);
 }
-
+/*
 typedef struct
 {
   V2s16 pos;
   V2s16 prevPos;
 } Camera;
-
+*/
 // -- DECLARACAO DE VARIAVEIS -- //
 u16 gDistancia;          // Distancia entre os Players
 s16 gMeioDaTela = 0;     // Meio da Câmera em X
@@ -45,13 +45,13 @@ s16 camPosXanterior = 0; // Posicao da Camera no frame Anterior
 s16 scrollOffset = 0;
 s16 scrollValues[48];
 
-Map *palaceGatesMap; // Ponteiro para o mapa do Palace Gates
-Map *palaceGatesbMap;
-Camera camera;
+//Map *palaceGatesMap; // Ponteiro para o mapa do Palace Gates
+//Map *palaceGatesbMap;
+//Camera camera;
 
 void resetGraphicElements();
 void CLEAR_VDP();
-
+/*
 void CameraMoveByOffset(s16 x, s16 y)
 {
   camera.pos.x += x;
@@ -74,13 +74,13 @@ void CameraMoveByOffset(s16 x, s16 y)
     camera.prevPos = camera.pos;
   }
 }
-
+*/
 int main(bool hardReset)
 {
   engine_boot();
 
   debugEnabled = FALSE;
-  gRoom = SELECAO_PERSONAGENS;
+  gRoom = PALACE_GATES;
   gFrames = 0;
   gInd_tileset = TILE_USER_INDEX;
   player[0].id = JOHNNY_CAGE;
@@ -115,7 +115,6 @@ int main(bool hardReset)
     {
       processBonusStage();
     }
-    // gFrames++;
 
     if (PALACE_GATES == gRoom)
     {
