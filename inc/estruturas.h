@@ -144,4 +144,12 @@ typedef struct
   u8 key_JOY_status[12];
 } Player;
 
+/**
+ * @brief Estrutura para representar as operações de um lutador usando Strategy Pattern.
+ */
+typedef struct FighterOps {
+  enum Fighters id;
+  void (*set_state)(u8 player, u16 state);
+} FighterOps;
+
 #endif

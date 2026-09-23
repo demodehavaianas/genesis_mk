@@ -3,8 +3,6 @@
 
 #include <genesis.h>
 
-#define FIGHTERS_COUNT 10 // quantidade de lutadores no jogo. Ver enum Fighters em estruturas.h
-
 void anima();
 
 /**

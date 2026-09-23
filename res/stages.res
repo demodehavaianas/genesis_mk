@@ -1,18 +1,18 @@
 # APRESENTACAO
-IMAGE baw_a      "stages/a/01_baw_a.png"       BEST
-IMAGE baw_b      "stages/a/01_baw_b.png"       BEST
-IMAGE midway     "stages/a/03_midway.png"      BEST
-IMAGE mk_title   "stages/a/04_mk_title.png"    BEST
-IMAGE mk_title_b "stages/a/04_mk_title_b.png"  BEST
-IMAGE goro_lives "stages/a/05_goro_lives.png"  BEST
-IMAGE goro_a     "stages/a/06_goro_a.png"      BEST
-IMAGE bio_b      "stages/a/07_bio.png"         BEST
+IMAGE baw_a      "stages/opening/01_baw_a.png"       BEST
+IMAGE baw_b      "stages/opening/01_baw_b.png"       BEST
+IMAGE midway     "stages/opening/03_midway.png"      BEST
+IMAGE mk_title   "stages/opening/04_mk_title.png"    BEST
+IMAGE mk_title_b "stages/opening/04_mk_title_b.png"  BEST
+IMAGE goro_lives "stages/opening/05_goro_lives.png"  BEST
+IMAGE goro_a     "stages/opening/06_goro_a.png"      BEST
+IMAGE bio_b      "stages/opening/07_bio.png"         BEST
 
 # SELECAO DE PERSONAGENS
-IMAGE   stage_char_select_a "stages/b/char_select_a.png"     BEST
-IMAGE   stage_char_select_b "stages/b/char_select_b.png"     BEST
-PALETTE char_select_a_pal   "stages/b/char_select_a_pal.png" NONE
-PALETTE char_select_b_pal   "stages/b/char_select_b_pal.png" NONE
+IMAGE   stage_char_select_a "stages/charselect/char_select_a.png"     BEST
+IMAGE   stage_char_select_b "stages/charselect/char_select_b.png"     BEST
+PALETTE char_select_a_pal   "stages/charselect/char_select_a_pal.png" NONE
+PALETTE char_select_b_pal   "stages/charselect/char_select_b_pal.png" NONE
 
 # TELA DE START DO JOGO
 IMAGE screen_opt_a "stages/scr_opt/screen_options_a.png" NONE

@@ -1,24 +1,5 @@
 #include "mkplus.h"
 
-typedef void (*PlayerStateFunc)(int, u16);
-
-/*
- * Tabela indexada pelo enum Fighters. Goro/Shang ficam NULL até existirem.
- * Inicializadores: se alguém inserir um lutador no meio do enum,
- * o slot certo continua apontando pro handler certo.
- */
-static const PlayerStateFunc PLAYER_STATE_FUNCS[FIGHTERS_COUNT] = {
-    [JOHNNY_CAGE]   = playerState_Johnny,
-    [KANO]          = playerState_Kano,
-    [RAIDEN]        = playerState_Raiden,
-    [LIU_KANG]      = playerState_LiuKang,
-    [SUBZERO]       = playerState_SubZero,
-    [SCORPION]      = playerState_Scorpion,
-    [SONYA]         = playerState_Sonya,
-    [GORO]          = NULL,
-    [SHANG_TSUNG]   = NULL,
-    [REPTILE]       = playerState_Reptile
-};
 
 void playerState(int ind, u16 state)
 {
@@ -34,10 +15,7 @@ void playerState(int ind, u16 state)
     player[ind].animFrameTotal = 1;
     player[ind].state = state;
 
-    if (PLAYER_STATE_FUNCS[player[ind].id])
-    {
-        PLAYER_STATE_FUNCS[player[ind].id](ind, state);
-    }
+    ALL_FIGHTERS[player[ind].id]->set_state(ind, state);
 
     SPR_setHFlip(player[ind].sprite, (player[ind].direcao == 1) ? FALSE : TRUE);
 

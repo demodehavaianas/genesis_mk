@@ -8,7 +8,7 @@
  * @param numPlayer o player que está sendo atualizado (0 para o player 1 ou 1 para o player 2)
  * @param State novo estado da animação do personagem (ex: PARADO, ANDANDO, PULANDO, etc.)
  */
-void playerState_Scorpion(int numPlayer, u16 State)
+void playerState_Scorpion(u8 numPlayer, u16 State)
 {
      switch (State)
     {
@@ -63,3 +63,8 @@ void playerState_Scorpion(int numPlayer, u16 State)
     }
     
 }
+
+const FighterOps scorpionOps = {
+    .id = SCORPION,
+    .set_state = playerState_Scorpion,
+};

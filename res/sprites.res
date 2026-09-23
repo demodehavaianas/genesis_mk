@@ -4,20 +4,9 @@ SPRITE  spPressStart   "sprite/txt/press_start.png"       16 2 BEST 6
 SPRITE  spPortrait     "stages/char_portraits.png"         6 7 FAST 2 
 SPRITE  spMainMenu     "gfx/menu_options.png"             16 9 FAST 0
 
-PALETTE sonya_p1_pal   "sprite/sonya_p1_paleta_mega.pal"
-PALETTE sonya_p2_pal   "sprite/sonya_p2_paleta_mega.pal"
-PALETTE kano_p1_pal    "sprite/kano_paleta_p1.pal"
-PALETTE kano_p2_pal    "sprite/kano_paleta_p2.pal"
-
 # Character Selection Sprites
-#SPRITE  spr_subzero    "sprite/subzero_stance.png"              20 20 NONE 6
-SPRITE spr_jcage       "sprite/jc_stance.png"               16 15 NONE 6
-SPRITE spr_kano        "sprite/kano_stance.png"             16 15 NONE 6
 SPRITE spr_raiden      "sprite/raiden_stance.png"           16 15 NONE 6
 SPRITE spr_subzero     "sprite/subzero_stance.png"          16 15 NONE 5
-SPRITE spr_scorpion    "sprite/scorpion_stance.png"         16 15 NONE 6
-SPRITE spr_sonya       "sprite/sonya_stance.png"            16 15 NONE 6
-SPRITE spr_liu_kang    "sprite/liu_kang_stance.png"         16 15 NONE 6
 SPRITE spr_reptile     "sprite/reptile_stance.png"          16 15 NONE 6
 # Bio Screen Animation
 SPRITE jc_bio          "stages/bio/johnny_cage_bio.png"     12 9 BEST 6
