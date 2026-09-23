@@ -1,6 +1,4 @@
-#include "modulos/anima_system.h"
-#include "game_vars.h"
-#include "fighters.h"
+#include "mkplus.h"
 
 typedef void (*PlayerStateFunc)(int, u16);
 
@@ -47,7 +45,7 @@ void playerState(int ind, u16 state)
 
     SPR_setAnimAndFrame(player[ind].sprite, 0, player[ind].animFrame - 1);
     player[ind].frameTimeTotal = player[ind].dataAnim[1];
-    // SPR_setAnim(player[ind].sprite, 0);
+    //SPR_setAnim(player[ind].sprite, 0);
 }
 
 void anima()

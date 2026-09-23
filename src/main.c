@@ -7,18 +7,10 @@
  *
  */
 
-#include <genesis.h>
+#include "mkplus.h"
 
-#include "game_vars.h"
-#include "fighters.h"
-#include "estruturas.h"
-#include "rooms/cenarios.h"
-#include "modulos/input_system.h"
 #include "gfx.h"
 #include "sprites.h"
-#include "modulos/anima_system.h"
-#include "modulos/lifebar.h"
-
 #include "stages.h"
 
 // define width and height of tile map in pixels (resolution of map image)

@@ -1,9 +1,9 @@
-#include <genesis.h>
-#include "rooms/bonus_stage_room.h"
+#include "mkplus.h"
+
 #include "stages.h"
 #include "gfx.h"
 #include "sprites.h"
-#include "game_vars.h"
+
 #include "modulos/typewriter_printer.h"
 #include "modulos/bio_textlines.h"
 

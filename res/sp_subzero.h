@@ -6,5 +6,6 @@
 extern const Palette pal_subzero_p1;
 extern const SpriteDefinition sp_subzero_parado;
 extern const SpriteDefinition sp_subzero_andar;
+extern const SpriteDefinition sp_subzero_wins;
 
 #endif // _RES_SP_SUBZERO_H_

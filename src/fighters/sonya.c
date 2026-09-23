@@ -1,7 +1,6 @@
-#include "fighters.h"
-#include "sprites.h"
-#include "estruturas.h"
-#include "game_vars.h"
+#include "mkplus.h"
+
+#include "sp_sonya.h"
 
 /**
  * @brief Define o estado do personagem Sonya.
@@ -14,31 +13,54 @@ void playerState_Sonya(int numPlayer, u16 State)
     switch (State)
     {
     case PARADO:
+        player[numPlayer].w = 56;   //7*8
+        player[numPlayer].h = 120; // 15*8
+        player[numPlayer].axisX = 28; // 56/2
+        player[numPlayer].axisY = 120; // mesmo que h
         player[numPlayer].y = gAlturaDoPiso;
-        player[numPlayer].w = 16 * 8;
-        player[numPlayer].h = 15 * 8;
-        player[numPlayer].dataAnim[1] = 5;
-        player[numPlayer].dataAnim[2] = 5;
-        player[numPlayer].dataAnim[3] = 5;
-        player[numPlayer].dataAnim[4] = 5;
-        player[numPlayer].dataAnim[5] = 5;
-        player[numPlayer].dataAnim[6] = 5;
-        player[numPlayer].dataAnim[7] = 5;
+        player[numPlayer].dataAnim[1] = 6;
+        player[numPlayer].dataAnim[2] = 6;
+        player[numPlayer].dataAnim[3] = 6;
+        player[numPlayer].dataAnim[4] = 6;
+        player[numPlayer].dataAnim[5] = 6;
+        player[numPlayer].dataAnim[6] = 6;
+        player[numPlayer].dataAnim[7] = 6;
         player[numPlayer].animFrameTotal = 7;
-        player[numPlayer].sprite = SPR_addSpriteExSafe(&spr_sonya, player[numPlayer].x - player[numPlayer].axisX,
+        player[numPlayer].sprite = SPR_addSpriteExSafe(&sp_sonya_parado, player[numPlayer].x - player[numPlayer].axisX,
                                                        player[numPlayer].y - player[numPlayer].axisY,
                                                        TILE_ATTR(player[numPlayer].paleta, FALSE, FALSE, FALSE),
-                                                       SPR_FLAG_DISABLE_DELAYED_FRAME_UPDATE | SPR_FLAG_AUTO_VISIBILITY | SPR_FLAG_AUTO_VRAM_ALLOC | SPR_FLAG_AUTO_TILE_UPLOAD);
+                                                       SPRITE_FLAGS);
         break;
-
+    case VITORIA:
+        player[numPlayer].w = 88; // 11*8
+        player[numPlayer].h = 136; // 17*8
+        player[numPlayer].axisX = 44; // 88/2
+        player[numPlayer].axisY = 136; // mesmo que h
+        player[numPlayer].y = gAlturaDoPiso;
+        player[numPlayer].dataAnim[1] = 6;
+        player[numPlayer].dataAnim[2] = 6;
+        player[numPlayer].dataAnim[3] = 6;
+        player[numPlayer].dataAnim[4] = 6;
+        player[numPlayer].dataAnim[5] = 6;
+        player[numPlayer].dataAnim[6] = 6;
+        player[numPlayer].dataAnim[7] = 6;
+        player[numPlayer].dataAnim[8] = 6;
+        player[numPlayer].animFrameTotal = 8;
+        player[numPlayer].sprite = SPR_addSpriteExSafe( &sp_sonya_wins, 
+                                                        player[numPlayer].x - player[numPlayer].axisX, //288-32
+                                                        player[numPlayer].y - player[numPlayer].axisY,
+                                                        TILE_ATTR(player[numPlayer].paleta, FALSE, FALSE, FALSE),
+                                                        SPRITE_FLAGS);
+        // para pose de vitória não repetir a animação
+        SPR_setAnimationLoop(player[numPlayer].sprite, FALSE);
     default:
         break;
     }
 
     if(player[numPlayer].direcao == 1)
     {
-        PAL_setPalette(PAL2, sonya_p1_pal.data, DMA);
+        PAL_setPalette(PAL2, pal_sonya_p1.data, DMA);
     } else {
-        PAL_setPalette(PAL3, sonya_p2_pal.data, DMA);
+        PAL_setPalette(PAL3, pal_sonya_p1.data, DMA);
     }
 }

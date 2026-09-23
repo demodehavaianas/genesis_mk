@@ -1,7 +1,6 @@
-#include "fighters.h"
+#include "mkplus.h"
+
 #include "sp_liukang.h"
-#include "estruturas.h"
-#include "game_vars.h"
 
 /**
  * @brief Define o estado do personagem Liu Kang.
@@ -33,7 +32,35 @@ void playerState_LiuKang(int numPlayer, u16 State)
                                                        TILE_ATTR(player[numPlayer].paleta, FALSE, FALSE, FALSE),
                                                        SPRITE_FLAGS);
         break;
-
+    case VITORIA:
+        player[numPlayer].w = 96;      // 12*8
+        player[numPlayer].h = 144;     // 18*8
+        player[numPlayer].axisX = 48;  // 96/2
+        player[numPlayer].axisY = 144; // mesmo que h
+        player[numPlayer].y = gAlturaDoPiso;
+        player[numPlayer].dataAnim[1] = 6;
+        player[numPlayer].dataAnim[2] = 6;
+        player[numPlayer].dataAnim[3] = 6;
+        player[numPlayer].dataAnim[4] = 6;
+        player[numPlayer].dataAnim[5] = 6;
+        player[numPlayer].dataAnim[6] = 6;
+        player[numPlayer].dataAnim[7] = 6;
+        player[numPlayer].dataAnim[8] = 6;
+        player[numPlayer].dataAnim[9] = 6;
+        player[numPlayer].dataAnim[10] = 6;
+        player[numPlayer].dataAnim[11] = 6;
+        player[numPlayer].dataAnim[12] = 6;
+        player[numPlayer].dataAnim[13] = 6;
+        player[numPlayer].dataAnim[14] = 6;
+        player[numPlayer].animFrameTotal = 14;
+        player[numPlayer].sprite = SPR_addSpriteExSafe(&sp_liukang_wins,
+                                                       player[numPlayer].x - player[numPlayer].axisX,
+                                                       player[numPlayer].y - player[numPlayer].axisY,
+                                                       TILE_ATTR(player[numPlayer].paleta, FALSE, FALSE, FALSE),
+                                                       SPRITE_FLAGS);
+        // para pose de vitória não repetir a animação
+        SPR_setAnimationLoop(player[numPlayer].sprite, FALSE);
+        break;
     default:
         break;
     }

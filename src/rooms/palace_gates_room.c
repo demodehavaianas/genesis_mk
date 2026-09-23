@@ -1,11 +1,8 @@
-#include <genesis.h>
-#include "rooms/palace_gates_room.h"
+#include "mkplus.h"
+
 #include "stages.h"
-#include "game_vars.h"
 #include "modulos/camera.h"
 #include "sprites.h"
-#include "modulos/input_system.h"
-#include "modulos/lifebar.h"
 
 #define SUBZERO_BODY_W 52
 #define SUBZERO_BODY_H 117

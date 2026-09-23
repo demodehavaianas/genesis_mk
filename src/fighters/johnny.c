@@ -1,7 +1,7 @@
-#include "fighters.h"
+#include "mkplus.h"
+
 #include "sp_johnny.h"
-#include "estruturas.h"
-#include "game_vars.h"
+
 
 /**
  * @brief Define o estado do personagem Johnny Cage.

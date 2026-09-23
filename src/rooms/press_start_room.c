@@ -1,10 +1,7 @@
-#include <genesis.h>
+#include "mkplus.h"
 
-#include "rooms/press_start_room.h"
-#include "modulos/input_system.h"
 #include "stages.h"
 #include "sprites.h"
-#include "game_vars.h"
 #include "gfx.h"
 
 void loadBackground();

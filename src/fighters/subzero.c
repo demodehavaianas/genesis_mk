@@ -1,6 +1,5 @@
-#include "fighters.h"
-#include "estruturas.h"
-#include "game_vars.h"
+#include "mkplus.h"
+
 #include "sp_subzero.h"
 
 /**
