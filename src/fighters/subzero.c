@@ -31,7 +31,7 @@ void playerState_SubZero(u8 numPlayer, u16 state)
         player[numPlayer].dataAnim[11] = 5;
         player[numPlayer].dataAnim[12] = 5;
         player[numPlayer].animFrameTotal = 12;
-        player[numPlayer].sprite = SPR_addSpriteExSafe(&sp_subzero_parado,
+        player[numPlayer].sprite = SPR_addSpriteExSafe(&sp_sz_parado,
                                                        player[numPlayer].x - player[numPlayer].axisX,
                                                        player[numPlayer].y - player[numPlayer].axisY,
                                                        TILE_ATTR(player[numPlayer].paleta, FALSE, FALSE, FALSE),
@@ -48,7 +48,7 @@ void playerState_SubZero(u8 numPlayer, u16 state)
         player[numPlayer].dataAnim[3] = 6;
         player[numPlayer].dataAnim[4] = 6;
         player[numPlayer].animFrameTotal = 4;
-        player[numPlayer].sprite = SPR_addSpriteExSafe(&sp_subzero_wins,
+        player[numPlayer].sprite = SPR_addSpriteExSafe(&sp_sz_wins,
                                                        player[numPlayer].x - player[numPlayer].axisX, // 288-32
                                                        player[numPlayer].y - player[numPlayer].axisY,
                                                        TILE_ATTR(player[numPlayer].paleta, FALSE, FALSE, FALSE),
@@ -73,7 +73,7 @@ void playerState_SubZero(u8 numPlayer, u16 state)
         player[numPlayer].dataAnim[8] = 5;
         player[numPlayer].dataAnim[9] = 5;
         player[numPlayer].animFrameTotal = 9;
-        player[numPlayer].sprite = SPR_addSpriteExSafe(&sp_subzero_andar,
+        player[numPlayer].sprite = SPR_addSpriteExSafe(&sp_sz_andar,
                                                        player[numPlayer].x - player[numPlayer].axisX,
                                                        player[numPlayer].y - player[numPlayer].axisY,
                                                        TILE_ATTR(player[numPlayer].paleta, FALSE, FALSE, FALSE),
@@ -88,7 +88,7 @@ void playerState_SubZero(u8 numPlayer, u16 state)
         player[numPlayer].dataAnim[1] = 2;
         player[numPlayer].dataAnim[2] = 2;
         player[numPlayer].animFrameTotal = 2;
-        player[numPlayer].sprite = SPR_addSpriteExSafe(&sp_subzero_abaixando,
+        player[numPlayer].sprite = SPR_addSpriteExSafe(&sp_sz_abaixando,
                                                        player[numPlayer].x - player[numPlayer].axisX,
                                                        player[numPlayer].y - player[numPlayer].axisY,
                                                        TILE_ATTR(player[numPlayer].paleta, FALSE, FALSE, FALSE),
@@ -103,7 +103,7 @@ void playerState_SubZero(u8 numPlayer, u16 state)
         // player[numPlayer].y = gAlturaDoPiso;
         player[numPlayer].dataAnim[1] = 6;
         player[numPlayer].animFrameTotal = 1;
-        player[numPlayer].sprite = SPR_addSpriteExSafe(&sp_subzero_abaixado,
+        player[numPlayer].sprite = SPR_addSpriteExSafe(&sp_sz_abaixado,
                                                        player[numPlayer].x - player[numPlayer].axisX,
                                                        player[numPlayer].y - player[numPlayer].axisY,
                                                        TILE_ATTR(player[numPlayer].paleta, FALSE, FALSE, FALSE),
@@ -118,7 +118,7 @@ void playerState_SubZero(u8 numPlayer, u16 state)
         player[numPlayer].dataAnim[1] = 2;
         player[numPlayer].dataAnim[2] = 2;
         player[numPlayer].animFrameTotal = 2;
-        player[numPlayer].sprite = SPR_addSpriteExSafe(&sp_subzero_levantando,
+        player[numPlayer].sprite = SPR_addSpriteExSafe(&sp_sz_levantando,
                                                        player[numPlayer].x - player[numPlayer].axisX,
                                                        player[numPlayer].y - player[numPlayer].axisY,
                                                        TILE_ATTR(player[numPlayer].paleta, FALSE, FALSE, FALSE),
