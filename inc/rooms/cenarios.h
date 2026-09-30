@@ -1,5 +1,5 @@
-#ifndef _CENARIOS_H_
-#define _CENARIOS_H_
+#ifndef MKP_CENARIOS_H
+#define MKP_CENARIOS_H
 
 #include "intro_demo_room.h"
 #include "press_start_room.h"

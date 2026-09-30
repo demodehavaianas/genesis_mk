@@ -64,7 +64,13 @@ void playerState_Scorpion(u8 numPlayer, u16 State)
     
 }
 
+void scorpion_sfx(u8 numPlayer, u16 state)
+{
+
+}
+
 const FighterOps scorpionOps = {
     .id = SCORPION,
     .set_state = playerState_Scorpion,
+    .play_sound = scorpion_sfx,
 };

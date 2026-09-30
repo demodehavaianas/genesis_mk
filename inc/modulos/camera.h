@@ -3,8 +3,8 @@
  *
  * Setup uma vez, spawn no round, tick no loop, shake no golpe.
  */
-#ifndef CAMERA_H
-#define CAMERA_H
+#ifndef MKP_CAMERA_H
+#define MKP_CAMERA_H
 
 #include <genesis.h>
 #include "estruturas.h"
@@ -12,7 +12,7 @@
 /** Folga em pixels entre o corpo e a borda visivel da tela. */
 #define CAMERA_SCREEN_MARGIN  8
 /** Pes um pouco acima da borda inferior da tela no spawn. */
-#define CAMERA_FEET_INSET     8
+#define CAMERA_FEET_INSET     15
 
 /**
  * @brief Dados do palco. Cada estagio preenche um destes.

@@ -73,7 +73,13 @@ void playerState_LiuKang(u8 numPlayer, u16 State)
     }
 }
 
+void liuKang_sfx(u8 numPlayer, u16 state)
+{
+
+}
+
 const FighterOps liuKangOps = {
     .id = LIU_KANG,
     .set_state = playerState_LiuKang,
+    .play_sound = liuKang_sfx,
 };

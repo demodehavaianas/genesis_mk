@@ -45,7 +45,13 @@ void playerState_Raiden(u8 numPlayer, u16 State)
     }
 }
 
+void raiden_sfx(u8 numPlayer, u16 state)
+{
+
+}
+
 const FighterOps raidenOps = {
     .id = RAIDEN,
     .set_state = playerState_Raiden,
+    .play_sound = raiden_sfx,
 };

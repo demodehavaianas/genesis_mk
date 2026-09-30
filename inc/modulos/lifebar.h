@@ -1,5 +1,5 @@
-#ifndef LIFEBAR_SYSTEM_H
-#define LIFEBAR_SYSTEM_H
+#ifndef MKP_LIFEBAR_SYSTEM_H
+#define MKP_LIFEBAR_SYSTEM_H
 
 #include <genesis.h>
 

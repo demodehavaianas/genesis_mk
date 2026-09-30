@@ -47,7 +47,13 @@ void playerState_Reptile(u8 numPlayer, u16 State)
     }
 }
 
+void reptile_sfx(u8 numPlayer, u16 state)
+{
+
+}
+
 const FighterOps reptileOps = {
     .id = REPTILE,
     .set_state = playerState_Reptile,
+    .play_sound = reptile_sfx,
 };

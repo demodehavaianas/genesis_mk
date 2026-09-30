@@ -369,6 +369,8 @@ void playerSelected(int ind)
   SPR_setAnim(GE[ind + 2].sprite, player[ind].id);
   SPR_setDepth(GE[ind + 2].sprite, 2);
   GE[ind].sprite->visibility = HIDDEN;
+  
+  player_bind(&player[ind], player[ind].id);
 
   player[ind].selecionado = TRUE;
 }

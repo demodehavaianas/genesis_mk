@@ -38,7 +38,7 @@ typedef struct
 } Camera;
 */
 // -- DECLARACAO DE VARIAVEIS -- //
-u16 gDistancia;          // Distancia entre os Players
+//u16 gDistancia;          // Distancia entre os Players
 s16 gMeioDaTela = 0;     // Meio da Câmera em X
 s16 camPosX = 0;         // Posicao da Camera
 s16 camPosXanterior = 0; // Posicao da Camera no frame Anterior

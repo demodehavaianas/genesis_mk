@@ -3,6 +3,9 @@
 
 #include <genesis.h>
 
+#include "estruturas.h"
+#include "game_vars.h"
+
 #include "fighters/fighter.h"
 
 #include "rooms/cenarios.h"
@@ -12,12 +15,12 @@
 #include "rooms/palace_gates_room.h"
 #include "rooms/bonus_stage_room.h"
 
-#include "modulos/input_system.h"
 #include "modulos/anima_system.h"
-#include "modulos/lifebar.h"
 #include "modulos/camera.h"
-
-#include "estruturas.h"
-#include "game_vars.h"
+#include "modulos/fsm.h"
+#include "modulos/input_system.h"
+#include "modulos/lifebar.h"
+#include "modulos/physics.h"
+#include "modulos/player_state.h"
 
 #endif

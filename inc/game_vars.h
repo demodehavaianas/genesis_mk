@@ -21,6 +21,7 @@ extern u16 gBG_Width;     // Largura do Cenario em pixels
 extern u16 gBG_Height;    // Altura do Cenario em pixels
 extern s16 gScrollValue;  // Scrolling de Cenario
 extern u32 gFrames;       // Frame Counter
+extern u16 gDistancia;
 extern bool gASG_system;
 extern s8 gClockL;     // Digito esquerdo do Relogio
 extern s8 gClockR;     // Digito direito do Relogio

@@ -65,7 +65,13 @@ void playerState_Kano(u8 numPlayer, u16 State)
     }
 }
 
+void kano_sfx(u8 numPlayer, u16 state)
+{
+
+}
+
 const FighterOps kanoOps = {
     .id = KANO,
     .set_state = playerState_Kano,
+    .play_sound = kano_sfx,
 };

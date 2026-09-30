@@ -1,4 +1,4 @@
-#include "modulos/camera.h"
+#include "mkplus.h"
 
 #define CAM_MIN(a, b) (((a) < (b)) ? (a) : (b))
 #define CAM_MAX(a, b) (((a) > (b)) ? (a) : (b))
@@ -231,10 +231,12 @@ void CAMERA_spawn(Camera *cam, Player *p1, Player *p2)
     p2->x = (s16) (cam->pos.x + screenW - spawnInset);
     p1->y = (s16) (cam->pos.y + screenH - CAMERA_FEET_INSET);
     p2->y = p1->y;
-
+    
     p1->direcao =  1;
     p2->direcao = -1;
 
+    gAlturaDoPiso = p1->y; // adicionar o chao
+    
     camera_scrollPlanes(cam, TRUE);
     SYS_doVBlankProcess();
     camera_drawFighter(cam, p1);

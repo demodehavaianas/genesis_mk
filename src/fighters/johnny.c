@@ -71,7 +71,13 @@ void playerState_Johnny(u8 numPlayer, u16 State)
     }
 }
 
+void johnny_sfx(u8 numPlayer, u16 state)
+{
+
+}
+
 const FighterOps johnnyOps = {
     .id = JOHNNY_CAGE,
     .set_state = playerState_Johnny,
+    .play_sound = johnny_sfx,
 };

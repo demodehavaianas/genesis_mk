@@ -1,7 +1,6 @@
 #include "mkplus.h"
 
 #include "stages.h"
-#include "modulos/camera.h"
 #include "sprites.h"
 
 #define SUBZERO_BODY_W 52
@@ -26,7 +25,7 @@ static Camera camera;
 
 void _init(void);
 void _spawnPlayers(void);
-static void _setupPlayer(Player *p, const SpriteDefinition *spr, u16 pal, s8 direcao);
+//static void _setupPlayer(Player *p, const SpriteDefinition *spr, u16 pal, s8 direcao);
 static void _movePlayer(Player *p);
 
 void initPalaceGatesRoom(void)
@@ -35,7 +34,7 @@ void initPalaceGatesRoom(void)
 
     while (!sair)
     {
-        inputSystem();
+        
         gFrames++;
 
         if (gFrames == 1)
@@ -48,19 +47,45 @@ void initPalaceGatesRoom(void)
 
             initLifebar();
 
-            _setupPlayer(&player[0], &spr_subzero, PAL2, 1);
-            _setupPlayer(&player[1], &spr_subzero, PAL3, -1);
+            //_setupPlayer(&player[0], &spr_subzero, PAL2,  1);
+            //_setupPlayer(&player[1], &spr_subzero, PAL3, -1);
+            player_bind(&player[0], SUBZERO);
+            player[0].paleta = PAL2;
+            player[0].direcao = 1;
+            player[0].energia = MAX_LIFE;
+            player[0].state = PARADO;
+            player[0].hSpeed = 2;
+            player[0].vSpeed = 0;
+            playerState(0, PARADO);
+            //SPR_setVRAMTileIndex(player[0].sprite, gInd_tileset);
+            //gInd_tileset+= player[0].sprite->definition->maxNumTile;
+
+            player_bind(&player[1], SUBZERO);
+            player[1].paleta = PAL3;
+            player[1].direcao = -1;
+            player[1].energia = MAX_LIFE;
+            player[1].state = PARADO;
+            player[1].hSpeed = -2;
+            player[1].vSpeed = 0;
+            playerState(1, PARADO);
+            //SPR_setVRAMTileIndex(player[1].sprite, gInd_tileset);
+            //gInd_tileset+= player[1].sprite->definition->maxNumTile;
 
             _spawnPlayers();
 
             gPodeMover = TRUE;
         }
 
-        drawLifeBar(WINDOW, PAL0, 1, 1, player[0].energia, 160, 17);
-        drawLifeBar(WINDOW, PAL0, 22, 1,player[1].energia, 160, 17);
+        drawLifeBar(WINDOW, PAL0,  1, 1, player[0].energia, 160, 17);
+        drawLifeBar(WINDOW, PAL0, 22, 1, player[1].energia, 160, 17);
 
-        _movePlayer(&player[0]);
-        _movePlayer(&player[1]);
+        inputSystem();
+        animate();
+        fsm_update();
+        physics_update();
+
+        //_movePlayer(&player[0]);
+        //_movePlayer(&player[1]);
 
         CAMERA_tick(&camera, &player[0], &player[1]);
 
@@ -71,7 +96,7 @@ void initPalaceGatesRoom(void)
 
 void _init(void)
 {
-    gInd_tileset = TILE_USER_INDEX;
+    gInd_tileset = 0;
 
     VDP_setScreenWidth320();
     VDP_setPlaneSize(64, 32, TRUE);
@@ -93,7 +118,7 @@ void _init(void)
 
     CAMERA_setup(&camera, bgaMap, bgbMap, &palaceGatesCam);
 }
-
+/*
 static void _setupPlayer(Player *p, const SpriteDefinition *spr, u16 pal, s8 direcao)
 {
     p->sprite = SPR_addSprite(spr, 0, 0, TILE_ATTR(pal, TRUE, FALSE, FALSE));
@@ -112,7 +137,7 @@ static void _setupPlayer(Player *p, const SpriteDefinition *spr, u16 pal, s8 dir
     p->axisY = SUBZERO_AXIS_Y;
     p->energia = 160;
 }
-
+*/
 void _spawnPlayers(void)
 {
     CAMERA_spawn(&camera, &player[0], &player[1]);
@@ -123,18 +148,25 @@ static void _movePlayer(Player *p)
 {
     const u8 left = p->key_JOY_LEFT_status;
     const u8 right = p->key_JOY_RIGHT_status;
+    const u8 down = p->key_JOY_DOWN_status;
 
     if ((left == BUTTON_PRESSED) || (left == BUTTON_HELD))
+    {
         p->x -= p->hSpeed;
+        //ALL_FIGHTERS[SUBZERO]->set_state(0, ANDAR_PRA_FRENTE);
+    }
     else if ((right == BUTTON_PRESSED) || (right == BUTTON_HELD))
+    {
         p->x += p->hSpeed;
+    }
 
-    if (p->key_JOY_A_status == BUTTON_PRESSED) {
+    if (p->key_JOY_A_status == BUTTON_PRESSED)
+    {
         CAMERA_shake(&camera, 2);
-        p->energia -= 10;} // Reduz a energia do jogador ao apertar o botão A}
+        p->energia -= 10;
+    } // Reduz a energia do jogador ao apertar o botão A}
     if (p->key_JOY_B_status == BUTTON_PRESSED)
         CAMERA_shake(&camera, 4);
     if (p->key_JOY_C_status == BUTTON_PRESSED)
         CAMERA_shake(&camera, 8);
-
 }

@@ -12,3 +12,12 @@ const FighterOps* const ALL_FIGHTERS[FIGHTERS_COUNT] = {
     [SHANG_TSUNG]   = NULL,//&shangTsungOps,
     [REPTILE]       = &reptileOps
 };
+
+void player_bind(Player *p, u8 id)
+{
+  if (id >= FIGHTERS_COUNT || ALL_FIGHTERS[id] == NULL)
+    id = SUBZERO;
+
+  p->id  = id;
+  p->ops = ALL_FIGHTERS[id];
+}

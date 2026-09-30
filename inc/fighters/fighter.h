@@ -1,14 +1,13 @@
-#ifndef FIGHTERS_H
-#define FIGHTERS_H
+#ifndef MKP_FIGHTERS_H
+#define MKP_FIGHTERS_H
 
 #include <genesis.h>
 #include "estruturas.h"
 
 #define FIGHTERS_COUNT 10 // quantidade de lutadores no jogo. Ver enum Fighters em estruturas.h
 #define MAX_LIFE 160
-
-#define SPRITE_FLAGS (SPR_FLAG_DISABLE_DELAYED_FRAME_UPDATE | \
-                      SPR_FLAG_AUTO_VISIBILITY |              \
+//SPR_FLAG_DISABLE_DELAYED_FRAME_UPDATE | 
+#define SPRITE_FLAGS (SPR_FLAG_AUTO_VISIBILITY |              \
                       SPR_FLAG_AUTO_VRAM_ALLOC |              \
                       SPR_FLAG_AUTO_TILE_UPLOAD)
 
@@ -29,5 +28,7 @@ extern const FighterOps reptileOps;
  * o slot certo continua apontando pro handler certo.
 */ 
 extern const FighterOps* const ALL_FIGHTERS[FIGHTERS_COUNT];
+
+void player_bind(Player *p, u8 id);
 
 #endif // FIGHTERS_H

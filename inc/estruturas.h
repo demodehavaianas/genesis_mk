@@ -1,14 +1,14 @@
-#ifndef _ESTRUTURAS_H_
-#define _ESTRUTURAS_H_
-
-#include "types.h"
-#include "sprite_eng.h"
-
 /**
  * @file estruturas.h
- * @brief Define as estruturas de dados complexas utilizadas no jogo, 
+ * @brief Define as estruturas de dados complexas utilizadas no jogo,
  *        incluindo jogadores, elementos gráficos e configurações de idioma.
  */
+#ifndef MKP_ESTRUTURAS_H
+#define MKP_ESTRUTURAS_H
+
+#include "maths.h"
+#include "types.h"
+#include "sprite_eng.h"
 
 /**
  * @brief Enumeração dos idiomas suportados pelo jogo.
@@ -42,12 +42,12 @@ enum Fighters
  */
 enum GAME_ROOM
 {
-  TELA_DEMO_INTRO, // Tela de introdução do jogo
-  TELA_TITULO, 
-  TELA_START, // Tela de Start e Options do jogo
-  SELECAO_PERSONAGENS, // Tela de seleção de personagens
-  BONUS_STAGE, // Tela do Bonus Stage
-  PALACE_GATES // Tela do Palace Gates - Stage 1
+  TELA_DEMO_INTRO,      // Tela de introdução do jogo
+  TELA_TITULO,
+  TELA_START,           // Tela de Start e Options do jogo
+  SELECAO_PERSONAGENS,  // Tela de seleção de personagens
+  BONUS_STAGE,          // Tela do Bonus Stage
+  PALACE_GATES          // Tela do Palace Gates - Stage 1
 };
 
 /**
@@ -58,27 +58,38 @@ enum PLAYER_STATUS
   PARADO,
   ABAIXANDO,
   ABAIXADO,
+  LEVANTANDO,
   ANDAR_PRA_FRENTE,
   ANDAR_PRA_TRAS,
+  CORRER,
+  VIRAR, // mudar de lado
+  BLOQUEIO_EM_PE_INI,
+  BLOQUEIO_EM_PE,
+  BLOQUEIO_EM_PE_FIM,
+  BLOQUEIO_ABAIXADO_INI,
+  BLOQUEIO_ABAIXADO,
+  BLOQUEIO_ABAIXADO_FIM,
+  SOCO_ALTO,          // HP
+  SOCO_ALTO_CONTINUO, // HP, HP, HP ...
+  SOCO_PERTO,         // HP encostado
+  SOCO_BAIXO,         // LP
+  SOCO_BAIXO_CONTINUO,// LP, LP, LP ...
+  CHUTE_ALTO,         // HK
+  CHUTE_BAIXO,        // LK
+  CHUTE_PERTO,        // HK encostado
+  RASTEIRA,           // <- + LK
+  GIRATORIA,          // <- + HK
+  GANCHO,             // v + HP
+  CHUTE_ABAIXADO,     // v + HK
   INI_PULO_TRAS,
   INI_PULO_NEUTRO,
+  FIM_PULO_NEUTRO,
+  PULO_NEUTRO_SOLO,
   INI_PULO_FRENTE,
-  MUDAR_DE_LADO,
-  BLOQUEIO_EM_PE,
-  BLOQUEIO_AGACHADO,
-  AGACHADO,
-  SOCO_ALTO,
-  SOCO_ALTO_CONTINUO,
-  SOCO_BAIXO,
-  SOCO_BAIXO_CONTINUO,
-  CHUTE_BAIXO,
-  CHUTE_ALTO,
-  RASTEIRA,
-  GIRATORIA,
-  GANCHO,
-  CHUTE_ABAIXADO,
   VOADORA,
-  VITORIA
+  VITORIA,
+  ESPECIAL_1,
+  ESPECIAL_2,
 };
 
 /**
@@ -97,24 +108,44 @@ typedef struct
 } GraphicElement;
 
 /**
+ * @brief Estrutura para representar as operações de um lutador usando Strategy Pattern.
+ */
+typedef struct FighterOps
+{
+  enum Fighters id;
+  void (*set_state)(u8 player, u16 state);
+  void (*play_sound)(u8 player, u16 state);
+  void (*update_physics)(u8 player);
+} FighterOps;
+
+typedef struct
+{
+  V2s16 pos;
+  Sprite *sprite;
+} projetil;
+
+/**
  * @brief Estrutura para representar um jogador.
  */
 typedef struct
 {
   u8 id;
   Sprite *sprite;
-  u16 paleta; // PAL0, PAL1, PAL2, etc.
-  s16 x;      // posição X do jogador
-  s16 y;      // posição Y do jogador
-  u8 w;       // Largura do Sprite
-  u8 h;       // Altura do Sprite
-  u8 axisX;   // Posição X do ponto pivot
-  u8 axisY;   // Posição Y do ponto pivot
-  s8 direcao; // Direção para onde está olhando (1 - Direita, -1 - Esquerda)
-  u16 state;  // Estado atual do jogador
-  u8 hSpeed;  // Velocidade Horizontal
-  u16 energia; // Energia do jogador (0 a 160)
-  bool selecionado; //TODO:talvez mudar pra ativo pra ser usado futuramente no topo da torre
+  u16 paleta;       // PAL0, PAL1, PAL2, etc.
+  s16 x;            // posição X do jogador
+  s16 y;            // posição Y do jogador
+  u8 w;             // Largura do Sprite
+  u8 h;             // Altura do Sprite
+  u8 axisX;         // Posição X do ponto pivot
+  u8 axisY;         // Posição Y do ponto pivot
+  s8 direcao;       // Direção para onde está olhando (1 - Direita, -1 - Esquerda)
+  u16 state;        // Estado atual do jogador
+  u8 hSpeed;        // Velocidade Horizontal
+  s16 vSpeed;        // Velocidade Vertical
+  u16 energia;      // Energia do jogador (0 a 160)
+  bool selecionado; // TODO:talvez mudar pra ativo pra ser usado futuramente no topo da torre
+  projetil especial;// magia 
+  const FighterOps *ops;
 
   u16 animFrame;      // frame de animação atual
   u16 animFrameTotal; // quantidade total de frames deste estado de animação
@@ -144,13 +175,5 @@ typedef struct
   // 3 - acabou de soltar
   u8 key_JOY_status[12];
 } Player;
-
-/**
- * @brief Estrutura para representar as operações de um lutador usando Strategy Pattern.
- */
-typedef struct FighterOps {
-  enum Fighters id;
-  void (*set_state)(u8 player, u16 state);
-} FighterOps;
 
 #endif

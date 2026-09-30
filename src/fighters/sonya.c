@@ -65,7 +65,13 @@ void playerState_Sonya(u8 numPlayer, u16 State)
     }
 }
 
+void sonya_sfx(u8 numPlayer, u16 state)
+{
+
+}
+
 const FighterOps sonyaOps = {
     .id = SONYA,
     .set_state = playerState_Sonya,
+    .play_sound = sonya_sfx,
 };

@@ -1,5 +1,5 @@
-#ifndef INPUT_SYSTEM_H
-#define INPUT_SYSTEM_H
+#ifndef MKP_INPUT_SYSTEM_H
+#define MKP_INPUT_SYSTEM_H
 
 #include <genesis.h>
 #include "estruturas.h"

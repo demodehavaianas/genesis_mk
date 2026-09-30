@@ -5,10 +5,10 @@
 #define PALACE_GATES_MAP_H   240
 
 /* Limite da tela onde o jogador pode se mover */
-#define PALACE_GATES_RING_LEFT   66
+#define PALACE_GATES_RING_LEFT   56
 #define PALACE_GATES_RING_RIGHT  927
 
-/* spawn dos lutadores */
+/* posição do spawn dos lutadores */
 #define PALACE_GATES_START_X  272
 #define PALACE_GATES_START_Y   16
 
