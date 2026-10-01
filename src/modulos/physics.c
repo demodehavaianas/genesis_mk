@@ -5,7 +5,7 @@ static void physics_pulo_neutro(u8 i);
 
 void physics_update(void)
 {
-    for (u8 i = 0; i < 2; i++)
+    for (u8 i = 0; i < MAX_PLAYERS; i++)
     {
         physics_andar(i);
         physics_pulo_neutro(i);
@@ -34,7 +34,7 @@ static void physics_pulo_neutro(u8 i)
 {
     u16 estado = player[i].state;
 
-    if (estado != INI_PULO_NEUTRO && estado != FIM_PULO_NEUTRO)
+    if (estado != INI_PULO_NEUTRO)// && estado != FIM_PULO_NEUTRO)
         return;
 
     player[i].vSpeed += 1;
@@ -49,5 +49,6 @@ static void physics_pulo_neutro(u8 i)
     }
 
     if (estado == INI_PULO_NEUTRO && player[i].vSpeed >= 0)
-        playerState(i, FIM_PULO_NEUTRO);
+        //playerState(i, FIM_PULO_NEUTRO);
+        playerState(i, INI_PULO_NEUTRO);
 }

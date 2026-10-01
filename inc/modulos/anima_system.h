@@ -5,6 +5,4 @@
 
 void animate();
 
-void FUNCAO_SPR_POSITION(void);
-
 #endif // ANIMA_SYSTEM_H

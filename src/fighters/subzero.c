@@ -141,18 +141,72 @@ void playerState_SubZero(u8 numPlayer, u16 state)
                                                        TILE_ATTR(player[numPlayer].paleta, FALSE, FALSE, FALSE),
                                                        SPRITE_FLAGS);
         break;
+    case SOCO_BAIXO:
+        player[numPlayer].w = 112;
+        player[numPlayer].h = 120;
+        player[numPlayer].axisX = 38;
+        player[numPlayer].axisY = 120;
+        player[numPlayer].dataAnim[1] = 5;
+        player[numPlayer].dataAnim[2] = 5;
+        player[numPlayer].dataAnim[3] = 5;
+        player[numPlayer].dataAnim[4] = 5;
+        player[numPlayer].dataAnim[5] = 5;
+        player[numPlayer].animFrameTotal = 5;
+        player[numPlayer].sprite = SPR_addSpriteExSafe(&sp_sz_sb,
+                                                       player[numPlayer].x - player[numPlayer].axisX,
+                                                       player[numPlayer].y - player[numPlayer].axisY,
+                                                       TILE_ATTR(player[numPlayer].paleta, FALSE, FALSE, FALSE),
+                                                       SPRITE_FLAGS);
+        break;
+    case SOCO_BAIXO_CONTINUO:
+        player[numPlayer].w = 104;
+        player[numPlayer].h = 128;
+        player[numPlayer].axisX = 38;
+        player[numPlayer].axisY = 128;
+        player[numPlayer].dataAnim[1] = 5;
+        player[numPlayer].dataAnim[2] = 5;
+        player[numPlayer].dataAnim[3] = 5;
+        player[numPlayer].dataAnim[4] = 5;
+        player[numPlayer].dataAnim[5] = 5;
+        player[numPlayer].dataAnim[6] = 5;
+        player[numPlayer].dataAnim[7] = 5;
+        player[numPlayer].dataAnim[8] = 5;
+        player[numPlayer].animFrameTotal = 8;
+        player[numPlayer].sprite = SPR_addSpriteExSafe(&sp_sz_sb_c,
+                                                       player[numPlayer].x - player[numPlayer].axisX,
+                                                       player[numPlayer].y - player[numPlayer].axisY,
+                                                       TILE_ATTR(player[numPlayer].paleta, FALSE, FALSE, FALSE),
+                                                       SPRITE_FLAGS);
+        break;
+    case SOCO_ALTO:
+        player[numPlayer].w = 112;
+        player[numPlayer].h = 120;
+        player[numPlayer].axisX = 38;
+        player[numPlayer].axisY = 120;
+        player[numPlayer].dataAnim[1] = 5;
+        player[numPlayer].dataAnim[2] = 5;
+        player[numPlayer].dataAnim[3] = 5;
+        player[numPlayer].dataAnim[4] = 5;
+        player[numPlayer].dataAnim[5] = 5;
+        player[numPlayer].animFrameTotal = 5;
+        player[numPlayer].sprite = SPR_addSpriteExSafe(&sp_sz_sa,
+                                                       player[numPlayer].x - player[numPlayer].axisX,
+                                                       player[numPlayer].y - player[numPlayer].axisY,
+                                                       TILE_ATTR(player[numPlayer].paleta, FALSE, FALSE, FALSE),
+                                                       SPRITE_FLAGS);
+        break;
     case CHUTE_BAIXO:
         player[numPlayer].w = 120;
         player[numPlayer].h = 120;
         player[numPlayer].axisX = 32;
         player[numPlayer].axisY = 120;
-        player[numPlayer].dataAnim[1] = 6;
-        player[numPlayer].dataAnim[2] = 6;
-        player[numPlayer].dataAnim[3] = 6;
-        player[numPlayer].dataAnim[4] = 6;
-        player[numPlayer].dataAnim[5] = 6;
-        player[numPlayer].dataAnim[6] = 6;
-        player[numPlayer].dataAnim[7] = 6;
+        player[numPlayer].dataAnim[1] = 5;
+        player[numPlayer].dataAnim[2] = 5;
+        player[numPlayer].dataAnim[3] = 5;
+        player[numPlayer].dataAnim[4] = 5;
+        player[numPlayer].dataAnim[5] = 5;
+        player[numPlayer].dataAnim[6] = 5;
+        player[numPlayer].dataAnim[7] = 5;
         player[numPlayer].animFrameTotal = 7;
         player[numPlayer].sprite = SPR_addSpriteExSafe(&sp_sz_cb,
                                                        player[numPlayer].x - player[numPlayer].axisX,
@@ -165,16 +219,16 @@ void playerState_SubZero(u8 numPlayer, u16 state)
         player[numPlayer].h = 120;
         player[numPlayer].axisX = 35;
         player[numPlayer].axisY = 120;
-        player[numPlayer].dataAnim[1] = 6;
-        player[numPlayer].dataAnim[2] = 6;
-        player[numPlayer].dataAnim[3] = 6;
-        player[numPlayer].dataAnim[4] = 6;
-        player[numPlayer].dataAnim[5] = 6;
-        player[numPlayer].dataAnim[6] = 6;
-        player[numPlayer].dataAnim[7] = 6;
-        player[numPlayer].dataAnim[8] = 6;
-        player[numPlayer].dataAnim[9] = 6;
-        player[numPlayer].dataAnim[10] = 6;
+        player[numPlayer].dataAnim[1] = 4;
+        player[numPlayer].dataAnim[2] = 4;
+        player[numPlayer].dataAnim[3] = 4;
+        player[numPlayer].dataAnim[4] = 4;
+        player[numPlayer].dataAnim[5] = 4;
+        player[numPlayer].dataAnim[6] = 4;
+        player[numPlayer].dataAnim[7] = 4;
+        player[numPlayer].dataAnim[8] = 4;
+        player[numPlayer].dataAnim[9] = 4;
+        player[numPlayer].dataAnim[10] = 4;
         player[numPlayer].animFrameTotal = 10;
         player[numPlayer].sprite = SPR_addSpriteExSafe(&sp_sz_ca,
                                                        player[numPlayer].x - player[numPlayer].axisX,
@@ -228,14 +282,14 @@ void playerState_SubZero(u8 numPlayer, u16 state)
         player[numPlayer].dataAnim[4] = 5;
         player[numPlayer].dataAnim[5] = 5;
         player[numPlayer].dataAnim[6] = 5;
-        //player[numPlayer].dataAnim[7] = 6;
+        // player[numPlayer].dataAnim[7] = 6;
         player[numPlayer].animFrameTotal = 6;
         player[numPlayer].sprite = SPR_addSpriteExSafe(&sp_sz_rasteira,
                                                        player[numPlayer].x - player[numPlayer].axisX,
                                                        player[numPlayer].y - player[numPlayer].axisY,
                                                        TILE_ATTR(player[numPlayer].paleta, FALSE, FALSE, FALSE),
                                                        SPRITE_FLAGS);
-    break;
+        break;
     case GIRATORIA:
         player[numPlayer].w = 120;
         player[numPlayer].h = 120;
@@ -255,7 +309,7 @@ void playerState_SubZero(u8 numPlayer, u16 state)
                                                        player[numPlayer].y - player[numPlayer].axisY,
                                                        TILE_ATTR(player[numPlayer].paleta, FALSE, FALSE, FALSE),
                                                        SPRITE_FLAGS);
-    break;
+        break;
     case CHUTE_ABAIXADO:
         player[numPlayer].w = 96;
         player[numPlayer].h = 88;
@@ -272,7 +326,7 @@ void playerState_SubZero(u8 numPlayer, u16 state)
                                                        player[numPlayer].y - player[numPlayer].axisY,
                                                        TILE_ATTR(player[numPlayer].paleta, FALSE, FALSE, FALSE),
                                                        SPRITE_FLAGS);
-    break;
+        break;
     case BLOQUEIO_EM_PE_INI:
         player[numPlayer].w = 96;
         player[numPlayer].h = 120;
@@ -286,7 +340,7 @@ void playerState_SubZero(u8 numPlayer, u16 state)
                                                        player[numPlayer].y - player[numPlayer].axisY,
                                                        TILE_ATTR(player[numPlayer].paleta, FALSE, FALSE, FALSE),
                                                        SPRITE_FLAGS);
-    break;
+        break;
     case BLOQUEIO_EM_PE:
         player[numPlayer].w = 96;
         player[numPlayer].h = 120;
@@ -299,7 +353,7 @@ void playerState_SubZero(u8 numPlayer, u16 state)
                                                        player[numPlayer].y - player[numPlayer].axisY,
                                                        TILE_ATTR(player[numPlayer].paleta, FALSE, FALSE, FALSE),
                                                        SPRITE_FLAGS);
-    break;
+        break;
     case BLOQUEIO_EM_PE_FIM:
         player[numPlayer].w = 96;
         player[numPlayer].h = 120;
@@ -313,7 +367,7 @@ void playerState_SubZero(u8 numPlayer, u16 state)
                                                        player[numPlayer].y - player[numPlayer].axisY,
                                                        TILE_ATTR(player[numPlayer].paleta, FALSE, FALSE, FALSE),
                                                        SPRITE_FLAGS);
-    break;
+        break;
     case BLOQUEIO_ABAIXADO_INI:
     case BLOQUEIO_ABAIXADO_FIM:
         player[numPlayer].w = 64;
@@ -327,7 +381,7 @@ void playerState_SubZero(u8 numPlayer, u16 state)
                                                        player[numPlayer].y - player[numPlayer].axisY,
                                                        TILE_ATTR(player[numPlayer].paleta, FALSE, FALSE, FALSE),
                                                        SPRITE_FLAGS);
-    break;
+        break;
     case BLOQUEIO_ABAIXADO:
         player[numPlayer].w = 64;
         player[numPlayer].h = 88;
@@ -340,7 +394,7 @@ void playerState_SubZero(u8 numPlayer, u16 state)
                                                        player[numPlayer].y - player[numPlayer].axisY,
                                                        TILE_ATTR(player[numPlayer].paleta, FALSE, FALSE, FALSE),
                                                        SPRITE_FLAGS);
-    break;
+        break;
     case INI_PULO_NEUTRO:
         player[numPlayer].w = 64;
         player[numPlayer].h = 88;
@@ -353,8 +407,8 @@ void playerState_SubZero(u8 numPlayer, u16 state)
                                                        player[numPlayer].y - player[numPlayer].axisY,
                                                        TILE_ATTR(player[numPlayer].paleta, FALSE, FALSE, FALSE),
                                                        SPRITE_FLAGS);
-    break;
-    case FIM_PULO_NEUTRO:
+        break;
+    /*case FIM_PULO_NEUTRO:
         player[numPlayer].w = 64;
         player[numPlayer].h = 128;
         player[numPlayer].axisX = 32;
@@ -366,7 +420,7 @@ void playerState_SubZero(u8 numPlayer, u16 state)
                                                        player[numPlayer].y - player[numPlayer].axisY,
                                                        TILE_ATTR(player[numPlayer].paleta, FALSE, FALSE, FALSE),
                                                        SPRITE_FLAGS);
-    break;
+        break;*/
     case PULO_NEUTRO_SOLO:
         player[numPlayer].w = 64;
         player[numPlayer].h = 112;
@@ -379,7 +433,7 @@ void playerState_SubZero(u8 numPlayer, u16 state)
                                                        player[numPlayer].y - player[numPlayer].axisY,
                                                        TILE_ATTR(player[numPlayer].paleta, FALSE, FALSE, FALSE),
                                                        SPRITE_FLAGS);
-    break;
+        break;
     default:
         break;
     }

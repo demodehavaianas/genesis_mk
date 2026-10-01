@@ -7,6 +7,7 @@ static void fsm_update_trocando_de_lado(u8 atacante, u8 defensor, u8 i);
 static void fsm_update_defesa(u8 defensor, u8 distancia_player_x_special, u8 atacante, u8 i);
 static void fsm_update_bloqueio(u8 i);
 static void fsm_update_pulo_neutro(u8 i);
+static void fsm_update_golpe_perto(u8 i);;
 
 void fsm_update(void)
 {
@@ -15,7 +16,7 @@ void fsm_update(void)
     else
         gDistancia = player[0].x - player[1].x;
 
-    for (u8 i = 0; i < 2; i++)
+    for (u8 i = 0; i < MAX_PLAYERS; i++)
     {
         u8 atacante;
         u8 defensor;
@@ -38,22 +39,26 @@ void fsm_update(void)
             {
                 playerState(i, CHUTE_ALTO);
             }
-        }
-        else
-        {
-            if (player[i].key_JOY_Z_status == BUTTON_PRESSED &&
+
+            if(player[i].key_JOY_X_status == BUTTON_PRESSED && 
                 (player[i].state == PARADO ||
-                 player[i].state == ANDAR_PRA_FRENTE))
+                 player[i].state == ANDAR_PRA_FRENTE ||
+                 player[i].state == ANDAR_PRA_TRAS))
             {
-                playerState(i, CHUTE_PERTO);
+                playerState(i, SOCO_ALTO);
             }
-            if (player[i].key_JOY_X_status == BUTTON_PRESSED &&
+
+            if(player[i].key_JOY_A_status == BUTTON_PRESSED && 
                 (player[i].state == PARADO ||
-                 player[i].state == ANDAR_PRA_FRENTE))
+                 player[i].state == ANDAR_PRA_FRENTE ||
+                 player[i].state == ANDAR_PRA_TRAS))
             {
-                playerState(i, SOCO_PERTO);
+                playerState(i, SOCO_BAIXO);
             }
+
         }
+
+        fsm_update_golpe_perto(i);
 
         fsm_update_pulo_neutro(i);
 
@@ -69,27 +74,11 @@ void fsm_update(void)
         {
             playerState(i, CHUTE_ABAIXADO);
         }
-/*
-        if( player[i].state == PARADO || 
-            player[i].state == ANDAR_PRA_FRENTE || 
-            player[i].state == ANDAR_PRA_TRAS) 
-        {
-            if(player[i].key_JOY_B_status == BUTTON_PRESSED)
-            {
-                playerState(i, BLOQUEIO_EM_PE_INI);
-            }
-            if(player[i].key_JOY_B_status == BUTTON_HELD){
-                playerState(i, BLOQUEIO_EM_PE);
-            }
-            if(player[i].key_JOY_B_status == BUTTON_RELEASED_AFTER_PRESS){
-                playerState(i, BLOQUEIO_EM_PE_FIM);
-            }
-        }
-*/
+
         fsm_update_trocando_de_lado(atacante, defensor, i);
 
         // defender magia
-        if (player[defensor].especial.pos.x != 0 &&
+        /*if (player[defensor].especial.pos.x != 0 &&
             player[defensor].especial.pos.y != 0)
         {
             if (player[atacante].direcao == 1)
@@ -100,7 +89,7 @@ void fsm_update(void)
             {
                 distancia_player_x_special = player[atacante].especial.pos.x - player[defensor].especial.pos.x;
             }
-        }
+        }*/
 
         // fsm_update_defesa(defensor, distancia_player_x_special, atacante, i);
 
@@ -160,25 +149,42 @@ void fsm_update(void)
     }
 }
 
+static void fsm_update_golpe_perto(u8 i)
+{
+    if (gDistancia < 50)
+    {
+        if ((player[i].key_JOY_Z_status == BUTTON_PRESSED || player[i].key_JOY_C_status == BUTTON_PRESSED) &&
+            (player[i].state == PARADO ||
+             player[i].state == ANDAR_PRA_FRENTE))
+        {
+            playerState(i, CHUTE_PERTO);
+        }
+        if (player[i].key_JOY_X_status == BUTTON_PRESSED &&
+            (player[i].state == PARADO ||
+             player[i].state == ANDAR_PRA_FRENTE))
+        {
+            playerState(i, SOCO_PERTO);
+        }
+    }
+}
+
 static void fsm_update_tras_e_chute(u8 i)
 {
     if (player[i].state == ANDAR_PRA_TRAS || player[i].state == PARADO || player[i].state == ABAIXADO)
     {
         // executa a rasteira
-        if (player[i].key_JOY_C_status == BUTTON_PRESSED && player[i].key_JOY_LEFT_status == BUTTON_HELD && player[i].direcao == 1)
+        if (player[i].key_JOY_C_status == BUTTON_PRESSED && 
+            ((player[i].key_JOY_LEFT_status == BUTTON_HELD && player[i].direcao == 1) || 
+             (player[i].key_JOY_RIGHT_status == BUTTON_HELD && player[i].direcao == -1)))
         {
             playerState(i, RASTEIRA);
         }
-        else if (player[i].key_JOY_C_status == BUTTON_PRESSED && player[i].key_JOY_RIGHT_status == BUTTON_HELD && player[i].direcao == -1)
-        {
-            playerState(i, RASTEIRA);
-        }
+  
+        //TODO: retirar o chute giratório quando estiver abaixado, executar apenas quando estiver em pé.
         // executa o chute giratório
-        if(player[i].key_JOY_Z_status == BUTTON_PRESSED && player[i].key_JOY_LEFT_status == BUTTON_HELD && player[i].direcao == 1)
-        {
-            playerState(i, GIRATORIA);
-        }
-        if(player[i].key_JOY_Z_status == BUTTON_PRESSED && player[i].key_JOY_RIGHT_status == BUTTON_HELD && player[i].direcao == -1)
+        if(player[i].key_JOY_Z_status == BUTTON_PRESSED && 
+            ((player[i].key_JOY_LEFT_status == BUTTON_HELD && player[i].direcao == 1) ||
+             (player[i].key_JOY_RIGHT_status == BUTTON_HELD && player[i].direcao == -1)))
         {
             playerState(i, GIRATORIA);
         }
@@ -203,76 +209,48 @@ static void fsm_update_trocando_de_lado(u8 atacante, u8 defensor, u8 i)
         player[atacante].direcao = 1;
     }
 }
-/*
-static void fsm_update_bloqueio(u8 i)
-{
-    u8 b = player[i].key_JOY_B_status;
-    u16 s = player[i].state;
-
-    // entra: apertou ou está segurando, e só a partir do neutro ou da caminhada 
-    if ((b == BUTTON_PRESSED || b == BUTTON_HELD) &&
-        (s == PARADO || s == ANDAR_PRA_FRENTE || s == ANDAR_PRA_TRAS))
-    {
-        playerState(i, BLOQUEIO_EM_PE_INI);
-        return;
-    }
-
-    // segurou: a pose fica até soltar. Soltar no INI não entra aqui. 
-    if (s == BLOQUEIO_EM_PE && b == BUTTON_RELEASED)
-        playerState(i, BLOQUEIO_EM_PE_FIM);
-
-    // abaixado
-    if ((b == BUTTON_PRESSED || b == BUTTON_HELD) && (s == ABAIXADO))
-    {
-        playerState(i, BLOQUEIO_ABAIXADO_INI);
-        return;
-    }
-
-    if (s == BLOQUEIO_ABAIXADO && b == BUTTON_RELEASED)
-        playerState(i, BLOQUEIO_ABAIXADO_FIM);
-}*/
 
 static void fsm_update_bloqueio(u8 i)
 {
-    u8 b = player[i].key_JOY_B_status;
-    u8 down = player[i].key_JOY_DOWN_status;
-    u16 s = player[i].state;
-    bool bSegura = (b == BUTTON_PRESSED || b == BUTTON_HELD);
-    bool downSegura = (down == BUTTON_PRESSED || down == BUTTON_HELD);
-    bool neutro = (s == PARADO || s == ANDAR_PRA_FRENTE || s == ANDAR_PRA_TRAS);
+    u8 bStatus = player[i].key_JOY_B_status;
+    u8 downStatus = player[i].key_JOY_DOWN_status;
+    u16 state = player[i].state;
+    bool bSegurado = (bStatus == BUTTON_PRESSED || bStatus == BUTTON_HELD);
+    bool downSegurado = (downStatus == BUTTON_PRESSED || downStatus == BUTTON_HELD);
+    bool neutro = (state == PARADO || state == ANDAR_PRA_FRENTE || state == ANDAR_PRA_TRAS);
 
-    // já está bloqueando em pé e apertou baixo: desce bloqueando 
-    if (bSegura && downSegura &&
-        (s == BLOQUEIO_EM_PE_INI || s == BLOQUEIO_EM_PE))
+    // já está bloqueando em pé e apertou para baixo -> abaixa bloqueando 
+    if (bSegurado && downSegurado &&
+        (state == BLOQUEIO_EM_PE_INI || state == BLOQUEIO_EM_PE))
     {
         playerState(i, BLOQUEIO_ABAIXADO_INI);
         return;
     }
 
-    // já está bloqueando abaixado e soltou o baixo: levanta bloqueando
-    if (bSegura && !downSegura &&
-        (s == BLOQUEIO_ABAIXADO_INI || s == BLOQUEIO_ABAIXADO))
+    // já está bloqueando abaixado e soltou o baixo -> levanta bloqueando
+    if (bSegurado && !downSegurado &&
+        (state == BLOQUEIO_ABAIXADO_INI || state == BLOQUEIO_ABAIXADO))
     {
         playerState(i, BLOQUEIO_EM_PE_INI);
         return;
     }
 
-    if (bSegura && downSegura &&
-        (neutro || s == ABAIXANDO || s == ABAIXADO))
+    if (bSegurado && downSegurado &&
+        (neutro || state == ABAIXANDO || state == ABAIXADO))
     {
         playerState(i, BLOQUEIO_ABAIXADO_INI);
         return;
     }
 
-    if (bSegura && !downSegura && neutro)
+    if (bSegurado && !downSegurado && neutro)
     {
         playerState(i, BLOQUEIO_EM_PE_INI);
         return;
     }
 
-    if (s == BLOQUEIO_EM_PE && !bSegura)
+    if (state == BLOQUEIO_EM_PE && !bSegurado)
         playerState(i, BLOQUEIO_EM_PE_FIM);
-    else if (s == BLOQUEIO_ABAIXADO && !bSegura)
+    else if (state == BLOQUEIO_ABAIXADO && !bSegurado)
         playerState(i, BLOQUEIO_ABAIXADO_FIM);
 }
 

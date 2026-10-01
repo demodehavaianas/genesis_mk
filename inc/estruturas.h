@@ -141,7 +141,7 @@ typedef struct
   s8 direcao;       // Direção para onde está olhando (1 - Direita, -1 - Esquerda)
   u16 state;        // Estado atual do jogador
   u8 hSpeed;        // Velocidade Horizontal
-  s16 vSpeed;        // Velocidade Vertical
+  s8 vSpeed;        // Velocidade Vertical
   u16 energia;      // Energia do jogador (0 a 160)
   bool selecionado; // TODO:talvez mudar pra ativo pra ser usado futuramente no topo da torre
   projetil especial;// magia 
