@@ -10,7 +10,6 @@
  */
 
 #include "game_vars.h"
-#include "estruturas.h"
 
 bool debugEnabled;
 bool gPodeMover = FALSE;
@@ -21,6 +20,7 @@ u16 gBG_Width;
 u16 gBG_Height;
 s16 gScrollValue;
 u32 gFrames;
+u16 gDistancia;
 bool gASG_system;
 s8 gClockL = 9;
 s8 gClockR = 9;

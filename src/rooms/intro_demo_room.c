@@ -1,14 +1,11 @@
-#include <genesis.h>
+#include "mkplus.h"
 
-#include "intro_demo_room.h"
-#include "input_system.h"
-#include "typewriter_printer.h"
+#include "modulos/typewriter_printer.h"
 #include "sprites.h"
 #include "stages.h"
 #include "audio.h"
 #include "gfx.h"
-#include "bio_textlines.h"
-#include "game_vars.h"
+#include "modulos/bio_textlines.h"
 
 void loadBrainAtWorkScreen();
 void loadMidwayTitleMKScreen();

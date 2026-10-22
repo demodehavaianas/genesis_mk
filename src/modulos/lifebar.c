@@ -1,4 +1,4 @@
-#include "lifebar.h"
+#include "modulos/lifebar.h"
 
 #include <genesis.h>
 #include "gfx.h"
@@ -13,7 +13,7 @@ void drawLifeBar(u16 plan, u16 numPal, u16 x, u16 y, u16 currentLife, u16 maxLif
 {
     if (maxLife == 0 || length == 0)
         return;
-
+    
     VDP_setTileMapXY(plan, TILE_ATTR_FULL(numPal, TRUE, FALSE, FALSE, TILE_LIFEBAR_BASE), x-1, y);
 
     u16 percent = (currentLife * 100) / maxLife;

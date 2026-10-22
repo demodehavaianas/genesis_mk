@@ -1,7 +1,6 @@
-#include "fighters.h"
+#include "mkplus.h"
+
 #include "sprites.h"
-#include "estruturas.h"
-#include "game_vars.h"
 
 /**
  * @brief Define o estado do personagem Raiden.
@@ -9,7 +8,7 @@
  * @param numPlayer o player que está sendo atualizado (0 para o player 1 ou 1 para o player 2)
  * @param State novo estado da animação do personagem (ex: PARADO, ANDANDO, PULANDO, etc.)
  */
-void playerState_Raiden(int numPlayer, u16 State)
+void playerState_Raiden(u8 numPlayer, u16 State)
 {
      switch (State)
     {
@@ -45,3 +44,14 @@ void playerState_Raiden(int numPlayer, u16 State)
         PAL_setPalette(PAL3, spr_raiden.palette->data, DMA);
     }
 }
+
+void raiden_sfx(u8 numPlayer, u16 state)
+{
+
+}
+
+const FighterOps raidenOps = {
+    .id = RAIDEN,
+    .set_state = playerState_Raiden,
+    .play_sound = raiden_sfx,
+};

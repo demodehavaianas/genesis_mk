@@ -1,7 +1,6 @@
-#include "fighters.h"
+#include "mkplus.h"
+
 #include "sprites.h"
-#include "estruturas.h"
-#include "game_vars.h"
 
 /**
  * @brief Define o estado do personagem Reptile.
@@ -9,7 +8,7 @@
  * @param numPlayer o player que está sendo atualizado (0 para o player 1 ou 1 para o player 2)
  * @param State novo estado da animação do personagem (ex: PARADO, ANDANDO, PULANDO, etc.)
  */
-void playerState_Reptile(int numPlayer, u16 State)
+void playerState_Reptile(u8 numPlayer, u16 State)
 {
     switch (State)
     {
@@ -47,3 +46,14 @@ void playerState_Reptile(int numPlayer, u16 State)
         PAL_setPalette(PAL3, spr_reptile.palette->data, DMA);
     }
 }
+
+void reptile_sfx(u8 numPlayer, u16 state)
+{
+
+}
+
+const FighterOps reptileOps = {
+    .id = REPTILE,
+    .set_state = playerState_Reptile,
+    .play_sound = reptile_sfx,
+};

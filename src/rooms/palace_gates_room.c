@@ -1,38 +1,172 @@
-#include <genesis.h>
-#include "palace_gates_room.h"
-#include "stages.h"
-#include "game_vars.h"
+#include "mkplus.h"
 
-#define PALACE_GATES_W 928
-#define PALACE_GATES_H 232
+#include "stages.h"
+#include "sprites.h"
+
+#define SUBZERO_BODY_W 52
+#define SUBZERO_BODY_H 117
+#define SUBZERO_AXIS_X 22
+#define SUBZERO_AXIS_Y 119
+
+static const CameraStage palaceGatesCam = {
+    .mapWidth = PALACE_GATES_MAP_W,
+    .mapHeight = PALACE_GATES_MAP_H,
+    .ringLeft = PALACE_GATES_RING_LEFT,
+    .ringRight = PALACE_GATES_RING_RIGHT,
+    .farBgLeft = PALACE_GATES_FARBG_LEFT,
+    .farBgRight = PALACE_GATES_FARBG_RIGHT,
+    .startX = PALACE_GATES_START_X,
+    .startY = PALACE_GATES_START_Y,
+};
+
+static Map *bgaMap;
+static Map *bgbMap;
+static Camera camera;
+
+void _init(void);
+void _spawnPlayers(void);
+//static void _setupPlayer(Player *p, const SpriteDefinition *spr, u16 pal, s8 direcao);
+static void _movePlayer(Player *p);
 
 void initPalaceGatesRoom(void)
 {
-    // carrego as informações do cenário.
-    if (gFrames == 1)
+    bool sair = FALSE;
+
+    while (!sair)
     {
-        // defino o tamanho do meu cenário para rolagem
-        gBG_Width = PALACE_GATES_W;
-        gBG_Height = PALACE_GATES_H;
+        
+        gFrames++;
 
-        // 304
-        gScrollValue = (gBG_Width - VDP_getScreenWidth()) / 2;
+        if (gFrames == 1)
+        {
+            SPR_init();
 
-        // s16 startX = (VDP_getScreenWidth() - gBG_Width) / 2;
-        s16 startY = -(gBG_Height - VDP_getScreenHeight());
+            _init();
 
-        // BGA
-        VDP_loadTileSet(pg_bga.tileset, gInd_tileset, DMA);
-        // VDP_setTileMapEx(BG_A, pg_bga.tilemap, TILE_ATTR_FULL(PAL0, FALSE, FALSE, FALSE, gInd_tileset), startX / 8, startY / 8, 0, 0, gBG_Width / 8, 29, DMA);
-        VDP_setTileMapEx(BG_A, pg_bga.tilemap, TILE_ATTR_FULL(PAL0, FALSE, FALSE, FALSE, gInd_tileset),
-                         0, 0, 0, 0, gBG_Width / 8, 29, DMA_QUEUE);
-        PAL_setPalette(PAL0, pg_bga.palette->data, DMA);
-        gInd_tileset += pg_bga.tileset->numTile;
-        // BGB
-        VDP_loadTileSet(pg_bgb.tileset, gInd_tileset, DMA);
-        VDP_setTileMapEx(BG_B, pg_bgb.tilemap, TILE_ATTR_FULL(PAL1, FALSE, FALSE, FALSE, gInd_tileset),
-                         0, startY / 8, 0, 0, 64, 29, DMA);
-        PAL_setPalette(PAL1, pg_bgb.palette->data, DMA);
-        gInd_tileset += pg_bgb.tileset->numTile;
+            VDP_setWindowOnTop(2);
+
+            initLifebar();
+
+            //_setupPlayer(&player[0], &spr_subzero, PAL2,  1);
+            //_setupPlayer(&player[1], &spr_subzero, PAL3, -1);
+            player_bind(&player[0], SUBZERO);
+            player[0].paleta = PAL2;
+            player[0].direcao = 1;
+            player[0].energia = MAX_LIFE;
+            player[0].state = PARADO;
+            player[0].hSpeed = 2;
+            player[0].vSpeed = 0;
+            playerState(0, PARADO);
+            //SPR_setVRAMTileIndex(player[0].sprite, gInd_tileset);
+            //gInd_tileset+= player[0].sprite->definition->maxNumTile;
+
+            player_bind(&player[1], SUBZERO);
+            player[1].paleta = PAL3;
+            player[1].direcao = -1;
+            player[1].energia = MAX_LIFE;
+            player[1].state = PARADO;
+            player[1].hSpeed = -2;
+            player[1].vSpeed = 0;
+            playerState(1, PARADO);
+            //SPR_setVRAMTileIndex(player[1].sprite, gInd_tileset);
+            //gInd_tileset+= player[1].sprite->definition->maxNumTile;
+
+            _spawnPlayers();
+
+            gPodeMover = TRUE;
+        }
+
+        drawLifeBar(WINDOW, PAL0,  1, 1, player[0].energia, 160, 17);
+        drawLifeBar(WINDOW, PAL0, 22, 1, player[1].energia, 160, 17);
+
+        inputSystem();
+        animate();
+        fsm_update();
+        physics_update();
+
+        //_movePlayer(&player[0]);
+        //_movePlayer(&player[1]);
+
+        CAMERA_tick(&camera, &player[0], &player[1]);
+
+        SPR_update();
+        SYS_doVBlankProcess();
     }
+}
+
+void _init(void)
+{
+    gInd_tileset = 0;
+
+    VDP_setScreenWidth320();
+    VDP_setPlaneSize(64, 32, TRUE);
+    VDP_setScrollingMode(HSCROLL_PLANE, VSCROLL_PLANE);
+
+    VDP_loadTileSet(&palace_gates_bgb_tileset, gInd_tileset, DMA);
+    PAL_setPalette(PAL0, palace_gates_bgb_pal.data, DMA);
+    bgbMap = MAP_create(&palace_gates_bgb_map, BG_B,
+                        TILE_ATTR_FULL(PAL0, FALSE, FALSE, FALSE, gInd_tileset));
+    gInd_tileset += palace_gates_bgb_tileset.numTile;
+
+    SYS_doVBlankProcess();
+
+    VDP_loadTileSet(&palace_gates_bga_tileset, gInd_tileset, DMA);
+    PAL_setPalette(PAL1, palace_gates_bga_pal.data, DMA);
+    bgaMap = MAP_create(&palace_gates_bga_map, BG_A,
+                        TILE_ATTR_FULL(PAL1, FALSE, FALSE, FALSE, gInd_tileset));
+    gInd_tileset += palace_gates_bga_tileset.numTile;
+
+    CAMERA_setup(&camera, bgaMap, bgbMap, &palaceGatesCam);
+}
+/*
+static void _setupPlayer(Player *p, const SpriteDefinition *spr, u16 pal, s8 direcao)
+{
+    p->sprite = SPR_addSprite(spr, 0, 0, TILE_ATTR(pal, TRUE, FALSE, FALSE));
+    PAL_setPalette(pal, spr->palette->data, DMA);
+    SPR_setVRAMTileIndex(p->sprite, gInd_tileset);
+    gInd_tileset += spr->maxNumTile;
+
+    p->id = SUBZERO;
+    p->state = PARADO;
+    p->paleta = pal;
+    p->hSpeed = 2;
+    p->direcao = direcao;
+    p->w = SUBZERO_BODY_W;
+    p->h = SUBZERO_BODY_H;
+    p->axisX = SUBZERO_AXIS_X;
+    p->axisY = SUBZERO_AXIS_Y;
+    p->energia = 160;
+}
+*/
+void _spawnPlayers(void)
+{
+    CAMERA_spawn(&camera, &player[0], &player[1]);
+    SPR_update();
+}
+
+static void _movePlayer(Player *p)
+{
+    const u8 left = p->key_JOY_LEFT_status;
+    const u8 right = p->key_JOY_RIGHT_status;
+    const u8 down = p->key_JOY_DOWN_status;
+
+    if ((left == BUTTON_PRESSED) || (left == BUTTON_HELD))
+    {
+        p->x -= p->hSpeed;
+        //ALL_FIGHTERS[SUBZERO]->set_state(0, ANDAR_PRA_FRENTE);
+    }
+    else if ((right == BUTTON_PRESSED) || (right == BUTTON_HELD))
+    {
+        p->x += p->hSpeed;
+    }
+
+    if (p->key_JOY_A_status == BUTTON_PRESSED)
+    {
+        CAMERA_shake(&camera, 2);
+        p->energia -= 10;
+    } // Reduz a energia do jogador ao apertar o botão A}
+    if (p->key_JOY_B_status == BUTTON_PRESSED)
+        CAMERA_shake(&camera, 4);
+    if (p->key_JOY_C_status == BUTTON_PRESSED)
+        CAMERA_shake(&camera, 8);
 }
