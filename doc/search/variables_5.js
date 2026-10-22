@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['kanolines_5fbr_0',['kanoLines_BR',['../bio__textlines_8c.html#a0696b949d0309f55c08540ebb02ab205',1,'bio_textlines.c']]],
-  ['kanolines_5fen_1',['kanoLines_EN',['../bio__textlines_8c.html#a8fc1c0e2e5b6bdf310ed48ddb952156e',1,'bio_textlines.c']]]
+  ['johnnycagelines_5fbr_0',['johnnyCageLines_BR',['../bio__textlines_8c.html#a29b7fd5d746a19566df8a927400e4b93',1,'bio_textlines.c']]],
+  ['johnnycagelines_5fen_1',['johnnyCageLines_EN',['../bio__textlines_8c.html#a7590aa6e91c535d8ffaa0123f706f41b',1,'bio_textlines.c']]],
+  ['johnnyops_2',['johnnyOps',['../johnny_8c.html#ab93c4adb0ed619584253e49027bf8768',1,'johnny.c']]]
 ];

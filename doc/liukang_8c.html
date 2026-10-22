@@ -90,28 +90,23 @@ $(function(){ initResizable(false); });
 <div id="doc-content">
 <div class="header">
   <div class="summary">
-<a href="#func-members">Funções</a>  </div>
+<a href="#func-members">Funções</a> &#124;
+<a href="#var-members">Variáveis</a>  </div>
   <div class="headertitle"><div class="title">Referência do Arquivo liukang.c</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;fighters.h&quot;</code><br />
-<code>#include &quot;sprites.h&quot;</code><br />
-<code>#include &quot;estruturas.h&quot;</code><br />
-<code>#include &quot;game_vars.h&quot;</code><br />
+<div class="textblock"><code>#include &quot;mkplus.h&quot;</code><br />
+<code>#include &quot;sp_liukang.h&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Gráfico de dependência de inclusões para liukang.c:</div>
 <div class="dyncontent">
 <div class="center"><img src="liukang_8c__incl.png" border="0" usemap="#asrc_2fighters_2liukang_8c" alt=""/></div>
 <map name="asrc_2fighters_2liukang_8c" id="asrc_2fighters_2liukang_8c">
-<area shape="rect" title=" " alt="" coords="128,5,280,35"/>
-<area shape="rect" title=" " alt="" coords="5,83,88,113"/>
-<area shape="poly" title=" " alt="" coords="175,38,91,78,89,74,173,33"/>
-<area shape="rect" title=" " alt="" coords="112,83,187,113"/>
-<area shape="poly" title=" " alt="" coords="196,37,170,72,166,69,191,34"/>
-<area shape="rect" title=" " alt="" coords="211,83,309,113"/>
-<area shape="poly" title=" " alt="" coords="217,34,242,69,238,72,212,37"/>
-<area shape="rect" title=" " alt="" coords="332,83,433,113"/>
-<area shape="poly" title=" " alt="" coords="238,33,336,74,334,79,236,38"/>
+<area shape="rect" title=" " alt="" coords="24,5,176,35"/>
+<area shape="rect" title=" " alt="" coords="5,83,83,113"/>
+<area shape="poly" title=" " alt="" coords="92,37,66,72,61,69,87,34"/>
+<area shape="rect" title=" " alt="" coords="107,83,205,113"/>
+<area shape="poly" title=" " alt="" coords="113,34,139,69,134,72,108,37"/>
 </map>
 </div>
 </div>
@@ -119,13 +114,46 @@ Gráfico de dependência de inclusões para liukang.c:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Funções</h2></td></tr>
-<tr class="memitem:a5a3bcbd1a1a0d55543e1c91dd1ab41cb" id="r_a5a3bcbd1a1a0d55543e1c91dd1ab41cb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5a3bcbd1a1a0d55543e1c91dd1ab41cb">playerState_LiuKang</a> (int numPlayer, u16 State)</td></tr>
-<tr class="memdesc:a5a3bcbd1a1a0d55543e1c91dd1ab41cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Define o estado do personagem Liu Kang.  <br /></td></tr>
-<tr class="separator:a5a3bcbd1a1a0d55543e1c91dd1ab41cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a90f2b18ccdeed3cf773beaf95da68473" id="r_a90f2b18ccdeed3cf773beaf95da68473"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a90f2b18ccdeed3cf773beaf95da68473">playerState_LiuKang</a> (u8 numPlayer, u16 State)</td></tr>
+<tr class="memdesc:a90f2b18ccdeed3cf773beaf95da68473"><td class="mdescLeft">&#160;</td><td class="mdescRight">Define o estado do personagem Liu Kang.  <br /></td></tr>
+<tr class="separator:a90f2b18ccdeed3cf773beaf95da68473"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a71738607e9500dee701b8bdd58101953" id="r_a71738607e9500dee701b8bdd58101953"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a71738607e9500dee701b8bdd58101953">liuKang_sfx</a> (u8 numPlayer, u16 state)</td></tr>
+<tr class="separator:a71738607e9500dee701b8bdd58101953"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
+Variáveis</h2></td></tr>
+<tr class="memitem:a6d371715161766ca98e95c93cdc2dc11" id="r_a6d371715161766ca98e95c93cdc2dc11"><td class="memItemLeft" align="right" valign="top">const FighterOps&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6d371715161766ca98e95c93cdc2dc11">liuKangOps</a></td></tr>
+<tr class="separator:a6d371715161766ca98e95c93cdc2dc11"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Funções</h2>
-<a id="a5a3bcbd1a1a0d55543e1c91dd1ab41cb" name="a5a3bcbd1a1a0d55543e1c91dd1ab41cb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5a3bcbd1a1a0d55543e1c91dd1ab41cb">&#9670;&#160;</a></span>playerState_LiuKang()</h2>
+<a id="a71738607e9500dee701b8bdd58101953" name="a71738607e9500dee701b8bdd58101953"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a71738607e9500dee701b8bdd58101953">&#9670;&#160;</a></span>liuKang_sfx()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void liuKang_sfx </td>
+          <td>(</td>
+          <td class="paramtype">u8</td>          <td class="paramname"><span class="paramname"><em>numPlayer</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">u16</td>          <td class="paramname"><span class="paramname"><em>state</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definição na linha <a class="el" href="liukang_8c_source.html#l00076">76</a> do arquivo <a class="el" href="liukang_8c_source.html">liukang.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   77</span>{</div>
+<div class="line"><span class="lineno">   78</span> </div>
+<div class="line"><span class="lineno">   79</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a90f2b18ccdeed3cf773beaf95da68473" name="a90f2b18ccdeed3cf773beaf95da68473"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a90f2b18ccdeed3cf773beaf95da68473">&#9670;&#160;</a></span>playerState_LiuKang()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -133,7 +161,7 @@ Funções</h2></td></tr>
         <tr>
           <td class="memname">void playerState_LiuKang </td>
           <td>(</td>
-          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>numPlayer</em></span>, </td>
+          <td class="paramtype">u8</td>          <td class="paramname"><span class="paramname"><em>numPlayer</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -152,42 +180,101 @@ Funções</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definição na linha <a class="el" href="liukang_8c_source.html#l00012">12</a> do arquivo <a class="el" href="liukang_8c_source.html">liukang.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   13</span>{</div>
-<div class="line"><span class="lineno">   14</span>    <span class="keywordflow">switch</span> (State)</div>
-<div class="line"><span class="lineno">   15</span>    {</div>
-<div class="line"><span class="lineno">   16</span>    <span class="keywordflow">case</span> PARADO:</div>
-<div class="line"><span class="lineno">   17</span>        <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[numPlayer].y = <a class="code hl_variable" href="game__vars_8c.html#add5eb59c4f71be58ef78c256ac2de63d">gAlturaDoPiso</a>;</div>
-<div class="line"><span class="lineno">   18</span>        <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[numPlayer].w = 16 * 8;</div>
-<div class="line"><span class="lineno">   19</span>        <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[numPlayer].h = 15 * 8;</div>
-<div class="line"><span class="lineno">   20</span>        <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[numPlayer].dataAnim[1] = 5;</div>
-<div class="line"><span class="lineno">   21</span>        <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[numPlayer].dataAnim[2] = 5;</div>
-<div class="line"><span class="lineno">   22</span>        <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[numPlayer].dataAnim[3] = 5;</div>
-<div class="line"><span class="lineno">   23</span>        <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[numPlayer].dataAnim[4] = 5;</div>
-<div class="line"><span class="lineno">   24</span>        <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[numPlayer].dataAnim[5] = 5;</div>
-<div class="line"><span class="lineno">   25</span>        <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[numPlayer].dataAnim[6] = 5;</div>
-<div class="line"><span class="lineno">   26</span>        <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[numPlayer].dataAnim[7] = 5;</div>
-<div class="line"><span class="lineno">   27</span>        <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[numPlayer].dataAnim[8] = 5;</div>
-<div class="line"><span class="lineno">   28</span>        <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[numPlayer].animFrameTotal = 8;</div>
-<div class="line"><span class="lineno">   29</span>        <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[numPlayer].sprite = SPR_addSpriteExSafe(&amp;spr_liu_kang, <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[numPlayer].x - <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[numPlayer].axisX,</div>
-<div class="line"><span class="lineno">   30</span>                                                       <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[numPlayer].y - <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[numPlayer].axisY,</div>
-<div class="line"><span class="lineno">   31</span>                                                       TILE_ATTR(<a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[numPlayer].paleta, FALSE, FALSE, FALSE),</div>
-<div class="line"><span class="lineno">   32</span>                                                       SPR_FLAG_DISABLE_DELAYED_FRAME_UPDATE | SPR_FLAG_AUTO_VISIBILITY | SPR_FLAG_AUTO_VRAM_ALLOC | SPR_FLAG_AUTO_TILE_UPLOAD);</div>
-<div class="line"><span class="lineno">   33</span>        <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">   34</span> </div>
-<div class="line"><span class="lineno">   35</span>    <span class="keywordflow">default</span>:</div>
-<div class="line"><span class="lineno">   36</span>        <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">   37</span>    }</div>
-<div class="line"><span class="lineno">   38</span> </div>
-<div class="line"><span class="lineno">   39</span>    <span class="keywordflow">if</span>(<a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[numPlayer].direcao == 1)</div>
-<div class="line"><span class="lineno">   40</span>    {</div>
-<div class="line"><span class="lineno">   41</span>        PAL_setPalette(PAL2, spr_liu_kang.palette-&gt;data, DMA);</div>
-<div class="line"><span class="lineno">   42</span>    } <span class="keywordflow">else</span> {</div>
-<div class="line"><span class="lineno">   43</span>        PAL_setPalette(PAL3, spr_liu_kang.palette-&gt;data, DMA);</div>
-<div class="line"><span class="lineno">   44</span>    }</div>
-<div class="line"><span class="lineno">   45</span>}</div>
+<p class="definition">Definição na linha <a class="el" href="liukang_8c_source.html#l00011">11</a> do arquivo <a class="el" href="liukang_8c_source.html">liukang.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   12</span>{</div>
+<div class="line"><span class="lineno">   13</span>    <span class="keywordflow">switch</span> (State)</div>
+<div class="line"><span class="lineno">   14</span>    {</div>
+<div class="line"><span class="lineno">   15</span>    <span class="keywordflow">case</span> PARADO:</div>
+<div class="line"><span class="lineno">   16</span>        <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[numPlayer].y = <a class="code hl_variable" href="game__vars_8c.html#add5eb59c4f71be58ef78c256ac2de63d">gAlturaDoPiso</a>;</div>
+<div class="line"><span class="lineno">   17</span>        <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[numPlayer].w = 64;      <span class="comment">// 8*8</span></div>
+<div class="line"><span class="lineno">   18</span>        <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[numPlayer].h = 120;     <span class="comment">// 15 * 8</span></div>
+<div class="line"><span class="lineno">   19</span>        <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[numPlayer].axisX = 32;  <span class="comment">// 64/2</span></div>
+<div class="line"><span class="lineno">   20</span>        <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[numPlayer].axisY = 120; <span class="comment">// mesmo que h</span></div>
+<div class="line"><span class="lineno">   21</span>        <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[numPlayer].dataAnim[1] = 5;</div>
+<div class="line"><span class="lineno">   22</span>        <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[numPlayer].dataAnim[2] = 5;</div>
+<div class="line"><span class="lineno">   23</span>        <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[numPlayer].dataAnim[3] = 5;</div>
+<div class="line"><span class="lineno">   24</span>        <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[numPlayer].dataAnim[4] = 5;</div>
+<div class="line"><span class="lineno">   25</span>        <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[numPlayer].dataAnim[5] = 5;</div>
+<div class="line"><span class="lineno">   26</span>        <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[numPlayer].dataAnim[6] = 5;</div>
+<div class="line"><span class="lineno">   27</span>        <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[numPlayer].dataAnim[7] = 5;</div>
+<div class="line"><span class="lineno">   28</span>        <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[numPlayer].dataAnim[8] = 5;</div>
+<div class="line"><span class="lineno">   29</span>        <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[numPlayer].animFrameTotal = 8;</div>
+<div class="line"><span class="lineno">   30</span>        <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[numPlayer].sprite = SPR_addSpriteExSafe(&amp;sp_liukang_parado, <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[numPlayer].x - <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[numPlayer].axisX,</div>
+<div class="line"><span class="lineno">   31</span>                                                       <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[numPlayer].y - <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[numPlayer].axisY,</div>
+<div class="line"><span class="lineno">   32</span>                                                       TILE_ATTR(<a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[numPlayer].paleta, FALSE, FALSE, FALSE),</div>
+<div class="line"><span class="lineno">   33</span>                                                       SPRITE_FLAGS);</div>
+<div class="line"><span class="lineno">   34</span>        <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">   35</span>    <span class="keywordflow">case</span> VITORIA:</div>
+<div class="line"><span class="lineno">   36</span>        <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[numPlayer].w = 96;      <span class="comment">// 12*8</span></div>
+<div class="line"><span class="lineno">   37</span>        <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[numPlayer].h = 144;     <span class="comment">// 18*8</span></div>
+<div class="line"><span class="lineno">   38</span>        <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[numPlayer].axisX = 48;  <span class="comment">// 96/2</span></div>
+<div class="line"><span class="lineno">   39</span>        <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[numPlayer].axisY = 144; <span class="comment">// mesmo que h</span></div>
+<div class="line"><span class="lineno">   40</span>        <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[numPlayer].y = <a class="code hl_variable" href="game__vars_8c.html#add5eb59c4f71be58ef78c256ac2de63d">gAlturaDoPiso</a>;</div>
+<div class="line"><span class="lineno">   41</span>        <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[numPlayer].dataAnim[1] = 6;</div>
+<div class="line"><span class="lineno">   42</span>        <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[numPlayer].dataAnim[2] = 6;</div>
+<div class="line"><span class="lineno">   43</span>        <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[numPlayer].dataAnim[3] = 6;</div>
+<div class="line"><span class="lineno">   44</span>        <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[numPlayer].dataAnim[4] = 6;</div>
+<div class="line"><span class="lineno">   45</span>        <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[numPlayer].dataAnim[5] = 6;</div>
+<div class="line"><span class="lineno">   46</span>        <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[numPlayer].dataAnim[6] = 6;</div>
+<div class="line"><span class="lineno">   47</span>        <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[numPlayer].dataAnim[7] = 6;</div>
+<div class="line"><span class="lineno">   48</span>        <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[numPlayer].dataAnim[8] = 6;</div>
+<div class="line"><span class="lineno">   49</span>        <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[numPlayer].dataAnim[9] = 6;</div>
+<div class="line"><span class="lineno">   50</span>        <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[numPlayer].dataAnim[10] = 6;</div>
+<div class="line"><span class="lineno">   51</span>        <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[numPlayer].dataAnim[11] = 6;</div>
+<div class="line"><span class="lineno">   52</span>        <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[numPlayer].dataAnim[12] = 6;</div>
+<div class="line"><span class="lineno">   53</span>        <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[numPlayer].dataAnim[13] = 6;</div>
+<div class="line"><span class="lineno">   54</span>        <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[numPlayer].dataAnim[14] = 6;</div>
+<div class="line"><span class="lineno">   55</span>        <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[numPlayer].animFrameTotal = 14;</div>
+<div class="line"><span class="lineno">   56</span>        <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[numPlayer].sprite = SPR_addSpriteExSafe(&amp;sp_liukang_wins,</div>
+<div class="line"><span class="lineno">   57</span>                                                       <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[numPlayer].x - <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[numPlayer].axisX,</div>
+<div class="line"><span class="lineno">   58</span>                                                       <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[numPlayer].y - <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[numPlayer].axisY,</div>
+<div class="line"><span class="lineno">   59</span>                                                       TILE_ATTR(<a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[numPlayer].paleta, FALSE, FALSE, FALSE),</div>
+<div class="line"><span class="lineno">   60</span>                                                       SPRITE_FLAGS);</div>
+<div class="line"><span class="lineno">   61</span>        <span class="comment">// para pose de vitória não repetir a animação</span></div>
+<div class="line"><span class="lineno">   62</span>        SPR_setAnimationLoop(<a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[numPlayer].sprite, FALSE);</div>
+<div class="line"><span class="lineno">   63</span>        <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">   64</span>    <span class="keywordflow">default</span>:</div>
+<div class="line"><span class="lineno">   65</span>        <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">   66</span>    }</div>
+<div class="line"><span class="lineno">   67</span> </div>
+<div class="line"><span class="lineno">   68</span>    <span class="keywordflow">if</span>(<a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[numPlayer].direcao == 1)</div>
+<div class="line"><span class="lineno">   69</span>    {</div>
+<div class="line"><span class="lineno">   70</span>        PAL_setPalette(PAL2, pal_liukang_p1.data, DMA);</div>
+<div class="line"><span class="lineno">   71</span>    } <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">   72</span>        PAL_setPalette(PAL3, pal_liukang_p1.data, DMA);</div>
+<div class="line"><span class="lineno">   73</span>    }</div>
+<div class="line"><span class="lineno">   74</span>}</div>
 <div class="ttc" id="agame__vars_8c_html_a5135cf03aefd90677db09304781dbb8c"><div class="ttname"><a href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a></div><div class="ttdeci">Player player[2]</div><div class="ttdef"><b>Definição</b> <a href="game__vars_8c_source.html#l00031">game_vars.c:31</a></div></div>
-<div class="ttc" id="agame__vars_8c_html_add5eb59c4f71be58ef78c256ac2de63d"><div class="ttname"><a href="game__vars_8c.html#add5eb59c4f71be58ef78c256ac2de63d">gAlturaDoPiso</a></div><div class="ttdeci">u8 gAlturaDoPiso</div><div class="ttdef"><b>Definição</b> <a href="game__vars_8c_source.html#l00018">game_vars.c:18</a></div></div>
+<div class="ttc" id="agame__vars_8c_html_add5eb59c4f71be58ef78c256ac2de63d"><div class="ttname"><a href="game__vars_8c.html#add5eb59c4f71be58ef78c256ac2de63d">gAlturaDoPiso</a></div><div class="ttdeci">u8 gAlturaDoPiso</div><div class="ttdef"><b>Definição</b> <a href="game__vars_8c_source.html#l00017">game_vars.c:17</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">Variáveis</h2>
+<a id="a6d371715161766ca98e95c93cdc2dc11" name="a6d371715161766ca98e95c93cdc2dc11"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6d371715161766ca98e95c93cdc2dc11">&#9670;&#160;</a></span>liuKangOps</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const FighterOps liuKangOps</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Valor inicial:</b><div class="fragment"><div class="line">= {</div>
+<div class="line">    .id = LIU_KANG,</div>
+<div class="line">    .set_state = <a class="code hl_function" href="#a90f2b18ccdeed3cf773beaf95da68473">playerState_LiuKang</a>,</div>
+<div class="line">    .play_sound = <a class="code hl_function" href="#a71738607e9500dee701b8bdd58101953">liuKang_sfx</a>,</div>
+<div class="line">}</div>
+<div class="ttc" id="aliukang_8c_html_a71738607e9500dee701b8bdd58101953"><div class="ttname"><a href="#a71738607e9500dee701b8bdd58101953">liuKang_sfx</a></div><div class="ttdeci">void liuKang_sfx(u8 numPlayer, u16 state)</div><div class="ttdef"><b>Definição</b> <a href="liukang_8c_source.html#l00076">liukang.c:76</a></div></div>
+<div class="ttc" id="aliukang_8c_html_a90f2b18ccdeed3cf773beaf95da68473"><div class="ttname"><a href="#a90f2b18ccdeed3cf773beaf95da68473">playerState_LiuKang</a></div><div class="ttdeci">void playerState_LiuKang(u8 numPlayer, u16 State)</div><div class="ttdoc">Define o estado do personagem Liu Kang.</div><div class="ttdef"><b>Definição</b> <a href="liukang_8c_source.html#l00011">liukang.c:11</a></div></div>
+</div><!-- fragment -->
+<p class="definition">Definição na linha <a class="el" href="liukang_8c_source.html#l00081">81</a> do arquivo <a class="el" href="liukang_8c_source.html">liukang.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   81</span>                              {</div>
+<div class="line"><span class="lineno">   82</span>    .id = LIU_KANG,</div>
+<div class="line"><span class="lineno">   83</span>    .set_state = <a class="code hl_function" href="#a90f2b18ccdeed3cf773beaf95da68473">playerState_LiuKang</a>,</div>
+<div class="line"><span class="lineno">   84</span>    .play_sound = <a class="code hl_function" href="#a71738607e9500dee701b8bdd58101953">liuKang_sfx</a>,</div>
+<div class="line"><span class="lineno">   85</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['getfighterbio_0',['getFighterBio',['../bio__textlines_8c.html#a8edb0526c4339ce7f0c73d8c6454079c',1,'bio_textlines.c']]]
+  ['exit_0',['exit',['../char__select__room_8c.html#aaf98ef7cdde3a0dfb2e49919de3298b1',1,'char_select_room.c']]]
 ];

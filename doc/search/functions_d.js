@@ -1,4 +1,22 @@
 var searchData=
 [
-  ['updateselector_0',['updateSelector',['../char__select__room_8c.html#a7d5c58c0b00f06187c8e13947ce8b0b5',1,'char_select_room.c']]]
+  ['physics_5fupdate_0',['physics_update',['../physics_8c.html#ad339c229199dd41f703aed97da81f987',1,'physics.c']]],
+  ['playcursor_1',['playCursor',['../char__select__room_8c.html#a654fe96fb185a123e5c3e3df2ed5e0ed',1,'char_select_room.c']]],
+  ['player_5fbind_2',['player_bind',['../fighter_8c.html#a490dc319f68b5343215c418bb892a20f',1,'fighter.c']]],
+  ['playerselectblinkeffect_3',['playerSelectBlinkEffect',['../char__select__room_8c.html#aef0d923955a5f8c15ece5e94e4f34516',1,'char_select_room.c']]],
+  ['playerselected_4',['playerSelected',['../char__select__room_8c.html#a0ef959c1328c22bc747f0fe922ab81d1',1,'char_select_room.c']]],
+  ['playerstate_5',['playerState',['../player__state_8c.html#a215f450776e74a1c1f35b9f9499c08a5',1,'player_state.c']]],
+  ['playerstate_5fjohnny_6',['playerState_Johnny',['../johnny_8c.html#a9aa0bd2157cf1235e2013862d5a3b70c',1,'johnny.c']]],
+  ['playerstate_5fkano_7',['playerState_Kano',['../kano_8c.html#acccf6b6947ee060af54eb2b80d6d7e2a',1,'kano.c']]],
+  ['playerstate_5fliukang_8',['playerState_LiuKang',['../liukang_8c.html#a90f2b18ccdeed3cf773beaf95da68473',1,'liukang.c']]],
+  ['playerstate_5fraiden_9',['playerState_Raiden',['../raiden_8c.html#acf0113f4ecb0a2118de23b73e6c8c0b4',1,'raiden.c']]],
+  ['playerstate_5freptile_10',['playerState_Reptile',['../reptile_8c.html#a9927b110da191e8b1b478b834bf016fd',1,'reptile.c']]],
+  ['playerstate_5fscorpion_11',['playerState_Scorpion',['../scorpion_8c.html#a3c7604469c504ac26ec64a0fb96b6132',1,'scorpion.c']]],
+  ['playerstate_5fsonya_12',['playerState_Sonya',['../sonya_8c.html#ab230cb49818ac826e56e431490cbade2',1,'sonya.c']]],
+  ['playerstate_5fsubzero_13',['playerState_SubZero',['../subzero_8c.html#a3c465eda9e2f871f874a5c535be6f6cf',1,'subzero.c']]],
+  ['playmusic_14',['playMusic',['../char__select__room_8c.html#a5abeb779158f34e168929e54671ef77d',1,'char_select_room.c']]],
+  ['processbonusstage_15',['processBonusStage',['../bonus__stage__room_8c.html#a283acd3e436aace9ae52dda764f70ce8',1,'bonus_stage_room.c']]],
+  ['processintro_16',['processIntro',['../intro__demo__room_8c.html#ac46ea98ecb7218ef78a7d4cd50896175',1,'intro_demo_room.c']]],
+  ['processpressstart_17',['processPressStart',['../press__start__room_8c.html#acdab073d60ace1b6f9ba4ecb1a63bc6c',1,'press_start_room.c']]],
+  ['processselecaopersonagens_18',['processSelecaoPersonagens',['../char__select__room_8c.html#a2faa2442981b2af06f7748194df37b1e',1,'char_select_room.c']]]
 ];

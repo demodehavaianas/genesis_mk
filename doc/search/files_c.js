@@ -1,4 +1,7 @@
 var searchData=
 [
-  ['typewriter_5fprinter_2ec_0',['typewriter_printer.c',['../typewriter__printer_8c.html',1,'']]]
+  ['scorpion_2ec_0',['scorpion.c',['../scorpion_8c.html',1,'']]],
+  ['sonya_2ec_1',['sonya.c',['../sonya_8c.html',1,'']]],
+  ['stages_2ec_2',['stages.c',['../stages_8c.html',1,'']]],
+  ['subzero_2ec_3',['subzero.c',['../subzero_8c.html',1,'']]]
 ];

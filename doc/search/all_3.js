@@ -1,6 +1,19 @@
 var searchData=
 [
-  ['debugenabled_0',['debugEnabled',['../game__vars_8c.html#ad0344eb1bc475981a837e350c08fb53a',1,'game_vars.c']]],
-  ['drawbackground_1',['drawBackground',['../char__select__room_8c.html#ac4e9710c7cee86490478f6f13fe404ca',1,'char_select_room.c']]],
-  ['drawlifebar_2',['drawLifeBar',['../lifebar_8c.html#acebb1de8f553da7c06ca9fda95d0390b',1,'lifebar.c']]]
+  ['cam_5fmax_0',['CAM_MAX',['../camera_8c.html#a57d911507893f103ddb9c08905f3bcda',1,'camera.c']]],
+  ['cam_5fmin_1',['CAM_MIN',['../camera_8c.html#ad1443d9aa2c35ba9d6917697245209d3',1,'camera.c']]],
+  ['camera_2ec_2',['camera.c',['../camera_8c.html',1,'']]],
+  ['camera_5fmax_5fpos_5fx_3',['CAMERA_MAX_POS_X',['../main_8c.html#af43281eff3486eacc753aeedd006d1ab',1,'main.c']]],
+  ['camera_5fmax_5fpos_5fy_4',['CAMERA_MAX_POS_Y',['../main_8c.html#a68958ec58bc3e0dca4a387662a422838',1,'main.c']]],
+  ['camera_5fsetup_5',['CAMERA_setup',['../camera_8c.html#a1ecc2cac6befc053e13fa9a89b3de8c7',1,'camera.c']]],
+  ['camera_5fshake_6',['CAMERA_shake',['../camera_8c.html#a9f083f71544e45ebda3b5e827d51f985',1,'camera.c']]],
+  ['camera_5fspawn_7',['CAMERA_spawn',['../camera_8c.html#a192ee770079f429e5c3ba27b23811497',1,'camera.c']]],
+  ['camera_5ftick_8',['CAMERA_tick',['../camera_8c.html#ab61a9db3f89caae3390d93eda411e85e',1,'camera.c']]],
+  ['camposx_9',['camPosX',['../main_8c.html#ac153a1190235aa28f97b270e53fdabfa',1,'main.c']]],
+  ['camposxanterior_10',['camPosXanterior',['../main_8c.html#a4c6764931b22714d599186991a86bfe0',1,'main.c']]],
+  ['char_5fselect_5froom_2ec_11',['char_select_room.c',['../char__select__room_8c.html',1,'']]],
+  ['charselectdata_12',['CharSelectData',['../structCharSelectData.html',1,'']]],
+  ['clear_5fvdp_13',['CLEAR_VDP',['../main_8c.html#abc91f67f185063e878e79cebf91d246e',1,'main.c']]],
+  ['cursor_5fp1_14',['CURSOR_P1',['../char__select__room_8c.html#a98e87e5d518a755ada15310a80a0aa7f',1,'char_select_room.c']]],
+  ['cursor_5fp2_15',['CURSOR_P2',['../char__select__room_8c.html#a0460b2a95f5db13cb1e4a2f21e13aff5',1,'char_select_room.c']]]
 ];

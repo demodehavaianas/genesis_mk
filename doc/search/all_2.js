@@ -1,10 +1,11 @@
 var searchData=
 [
-  ['camposx_0',['camPosX',['../main_8c.html#ac153a1190235aa28f97b270e53fdabfa',1,'main.c']]],
-  ['camposxanterior_1',['camPosXanterior',['../main_8c.html#a4c6764931b22714d599186991a86bfe0',1,'main.c']]],
-  ['char_5fselect_5froom_2ec_2',['char_select_room.c',['../char__select__room_8c.html',1,'']]],
-  ['charselectdata_3',['CharSelectData',['../structCharSelectData.html',1,'']]],
-  ['clear_5fvdp_4',['CLEAR_VDP',['../main_8c.html#abc91f67f185063e878e79cebf91d246e',1,'main.c']]],
-  ['cursor_5fp1_5',['CURSOR_P1',['../char__select__room_8c.html#a98e87e5d518a755ada15310a80a0aa7f',1,'char_select_room.c']]],
-  ['cursor_5fp2_6',['CURSOR_P2',['../char__select__room_8c.html#a0460b2a95f5db13cb1e4a2f21e13aff5',1,'char_select_room.c']]]
+  ['bio_5ftextlines_2ec_0',['bio_textlines.c',['../bio__textlines_8c.html',1,'']]],
+  ['bloco_5fanim_5fintegro_1',['BLOCO_ANIM_INTEGRO',['../bonus__stage__room_8c.html#ad159a92ec8d5f5ef115bd439f52bd13c',1,'bonus_stage_room.c']]],
+  ['bloco_5fanim_5fquebrado_2',['BLOCO_ANIM_QUEBRADO',['../bonus__stage__room_8c.html#a9b0805ee22a33afe9848feeaff57e05c',1,'bonus_stage_room.c']]],
+  ['bloco_5fp1_5fpos_5fx_3',['BLOCO_P1_POS_X',['../bonus__stage__room_8c.html#a1627cc1afe20cd3ba02e1a4037610f9e',1,'bonus_stage_room.c']]],
+  ['bloco_5fp2_5fpos_5fx_4',['BLOCO_P2_POS_X',['../bonus__stage__room_8c.html#aec2be2fb3c5ffeb97a9fe1d6e2e00b60',1,'bonus_stage_room.c']]],
+  ['bloco_5fpos_5fy_5',['BLOCO_POS_Y',['../bonus__stage__room_8c.html#aa3bfdc8a0caa802f3edbbb39f1bd286b',1,'bonus_stage_room.c']]],
+  ['body_5fwidth_5ffallback_6',['BODY_WIDTH_FALLBACK',['../camera_8c.html#a1537a672948d0c0a14b37bee5af242a6',1,'camera.c']]],
+  ['bonus_5fstage_5froom_2ec_7',['bonus_stage_room.c',['../bonus__stage__room_8c.html',1,'']]]
 ];

@@ -1,0 +1,432 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt-BR">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.11.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Mortal Kombat Plus: Referência do Arquivo src/modulos/camera.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Mortal Kombat Plus
+   </div>
+   <div id="projectbrief">Documentação gerada automaticamente com Doxygen</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.11.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Busca',false);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){ initResizable(false); });
+/* @license-end */
+</script>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Carregando...</div>
+<div class="SRStatus" id="Searching">Procurando...</div>
+<div class="SRStatus" id="NoMatches">Nenhuma entrada encontrado</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_47a83392b137ed71e1cf45a1606573c3.html">modulos</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div id="doc-content">
+<div class="header">
+  <div class="summary">
+<a href="#define-members">Definições e Macros</a> &#124;
+<a href="#func-members">Funções</a>  </div>
+  <div class="headertitle"><div class="title">Referência do Arquivo camera.c</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &quot;mkplus.h&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Gráfico de dependência de inclusões para camera.c:</div>
+<div class="dyncontent">
+<div class="center"><img src="camera_8c__incl.png" border="0" usemap="#asrc_2modulos_2camera_8c" alt=""/></div>
+<map name="asrc_2modulos_2camera_8c" id="asrc_2modulos_2camera_8c">
+<area shape="rect" title=" " alt="" coords="5,5,162,35"/>
+<area shape="rect" title=" " alt="" coords="45,83,122,113"/>
+<area shape="poly" title=" " alt="" coords="86,36,86,67,81,67,81,36"/>
+</map>
+</div>
+</div>
+<p><a href="camera_8c_source.html">Ir para o código-fonte desse arquivo.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+Definições e Macros</h2></td></tr>
+<tr class="memitem:ad1443d9aa2c35ba9d6917697245209d3" id="r_ad1443d9aa2c35ba9d6917697245209d3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad1443d9aa2c35ba9d6917697245209d3">CAM_MIN</a>(a,  b)&#160;&#160;&#160;(((a) &lt; (b)) ? (a) : (b))</td></tr>
+<tr class="separator:ad1443d9aa2c35ba9d6917697245209d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a57d911507893f103ddb9c08905f3bcda" id="r_a57d911507893f103ddb9c08905f3bcda"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a57d911507893f103ddb9c08905f3bcda">CAM_MAX</a>(a,  b)&#160;&#160;&#160;(((a) &gt; (b)) ? (a) : (b))</td></tr>
+<tr class="separator:a57d911507893f103ddb9c08905f3bcda"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1537a672948d0c0a14b37bee5af242a6" id="r_a1537a672948d0c0a14b37bee5af242a6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1537a672948d0c0a14b37bee5af242a6">BODY_WIDTH_FALLBACK</a>&#160;&#160;&#160;32</td></tr>
+<tr class="separator:a1537a672948d0c0a14b37bee5af242a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Funções</h2></td></tr>
+<tr class="memitem:a1ecc2cac6befc053e13fa9a89b3de8c7" id="r_a1ecc2cac6befc053e13fa9a89b3de8c7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1ecc2cac6befc053e13fa9a89b3de8c7">CAMERA_setup</a> (Camera *cam, Map *fgMap, Map *bgMap, const CameraStage *stage)</td></tr>
+<tr class="separator:a1ecc2cac6befc053e13fa9a89b3de8c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a192ee770079f429e5c3ba27b23811497" id="r_a192ee770079f429e5c3ba27b23811497"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a192ee770079f429e5c3ba27b23811497">CAMERA_spawn</a> (Camera *cam, Player *p1, Player *p2)</td></tr>
+<tr class="separator:a192ee770079f429e5c3ba27b23811497"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab61a9db3f89caae3390d93eda411e85e" id="r_ab61a9db3f89caae3390d93eda411e85e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab61a9db3f89caae3390d93eda411e85e">CAMERA_tick</a> (Camera *cam, Player *p1, Player *p2)</td></tr>
+<tr class="separator:ab61a9db3f89caae3390d93eda411e85e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9f083f71544e45ebda3b5e827d51f985" id="r_a9f083f71544e45ebda3b5e827d51f985"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9f083f71544e45ebda3b5e827d51f985">CAMERA_shake</a> (Camera *cam, s16 power)</td></tr>
+<tr class="separator:a9f083f71544e45ebda3b5e827d51f985"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Definições e macros</h2>
+<a id="a1537a672948d0c0a14b37bee5af242a6" name="a1537a672948d0c0a14b37bee5af242a6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1537a672948d0c0a14b37bee5af242a6">&#9670;&#160;</a></span>BODY_WIDTH_FALLBACK</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BODY_WIDTH_FALLBACK&#160;&#160;&#160;32</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definição na linha <a class="el" href="camera_8c_source.html#l00006">6</a> do arquivo <a class="el" href="camera_8c_source.html">camera.c</a>.</p>
+
+</div>
+</div>
+<a id="a57d911507893f103ddb9c08905f3bcda" name="a57d911507893f103ddb9c08905f3bcda"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a57d911507893f103ddb9c08905f3bcda">&#9670;&#160;</a></span>CAM_MAX</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CAM_MAX</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>a</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>b</em></span>&#160;)&#160;&#160;&#160;(((a) &gt; (b)) ? (a) : (b))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definição na linha <a class="el" href="camera_8c_source.html#l00004">4</a> do arquivo <a class="el" href="camera_8c_source.html">camera.c</a>.</p>
+
+</div>
+</div>
+<a id="ad1443d9aa2c35ba9d6917697245209d3" name="ad1443d9aa2c35ba9d6917697245209d3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad1443d9aa2c35ba9d6917697245209d3">&#9670;&#160;</a></span>CAM_MIN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CAM_MIN</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>a</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>b</em></span>&#160;)&#160;&#160;&#160;(((a) &lt; (b)) ? (a) : (b))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definição na linha <a class="el" href="camera_8c_source.html#l00003">3</a> do arquivo <a class="el" href="camera_8c_source.html">camera.c</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Funções</h2>
+<a id="a1ecc2cac6befc053e13fa9a89b3de8c7" name="a1ecc2cac6befc053e13fa9a89b3de8c7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1ecc2cac6befc053e13fa9a89b3de8c7">&#9670;&#160;</a></span>CAMERA_setup()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CAMERA_setup </td>
+          <td>(</td>
+          <td class="paramtype">Camera *</td>          <td class="paramname"><span class="paramname"><em>cam</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Map *</td>          <td class="paramname"><span class="paramname"><em>fgMap</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Map *</td>          <td class="paramname"><span class="paramname"><em>bgMap</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const CameraStage *</td>          <td class="paramname"><span class="paramname"><em>stage</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definição na linha <a class="el" href="camera_8c_source.html#l00195">195</a> do arquivo <a class="el" href="camera_8c_source.html">camera.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  196</span>{</div>
+<div class="line"><span class="lineno">  197</span>    <span class="keyword">const</span> s16 screenW = (s16) VDP_getScreenWidth();</div>
+<div class="line"><span class="lineno">  198</span>    <span class="keyword">const</span> s16 screenH = (s16) VDP_getScreenHeight();</div>
+<div class="line"><span class="lineno">  199</span> </div>
+<div class="line"><span class="lineno">  200</span>    cam-&gt;fgMap      = fgMap;</div>
+<div class="line"><span class="lineno">  201</span>    cam-&gt;bgMap      = bgMap;</div>
+<div class="line"><span class="lineno">  202</span>    cam-&gt;shakePower = 0;</div>
+<div class="line"><span class="lineno">  203</span>    cam-&gt;shakeTime  = 0;</div>
+<div class="line"><span class="lineno">  204</span> </div>
+<div class="line"><span class="lineno">  205</span>    cam-&gt;ringLeft   = stage-&gt;ringLeft;</div>
+<div class="line"><span class="lineno">  206</span>    cam-&gt;ringRight  = stage-&gt;ringRight;</div>
+<div class="line"><span class="lineno">  207</span>    cam-&gt;farBgLeft  = stage-&gt;farBgLeft;</div>
+<div class="line"><span class="lineno">  208</span>    cam-&gt;farBgRight = stage-&gt;farBgRight;</div>
+<div class="line"><span class="lineno">  209</span>    <span class="keywordflow">if</span> (cam-&gt;farBgRight &lt; cam-&gt;farBgLeft)</div>
+<div class="line"><span class="lineno">  210</span>        cam-&gt;farBgRight = cam-&gt;farBgLeft;</div>
+<div class="line"><span class="lineno">  211</span> </div>
+<div class="line"><span class="lineno">  212</span>    cam-&gt;scrollMinX = 0;</div>
+<div class="line"><span class="lineno">  213</span>    cam-&gt;scrollMaxX = (s16) (stage-&gt;mapWidth  - screenW);</div>
+<div class="line"><span class="lineno">  214</span>    cam-&gt;scrollMaxY = (s16) (stage-&gt;mapHeight - screenH);</div>
+<div class="line"><span class="lineno">  215</span>    <span class="keywordflow">if</span> (cam-&gt;scrollMaxX &lt; 0) cam-&gt;scrollMaxX = 0;</div>
+<div class="line"><span class="lineno">  216</span>    <span class="keywordflow">if</span> (cam-&gt;scrollMaxY &lt; 0) cam-&gt;scrollMaxY = 0;</div>
+<div class="line"><span class="lineno">  217</span> </div>
+<div class="line"><span class="lineno">  218</span>    cam-&gt;pos.x = clamp(stage-&gt;startX, cam-&gt;scrollMinX, cam-&gt;scrollMaxX);</div>
+<div class="line"><span class="lineno">  219</span>    cam-&gt;pos.y = clamp(stage-&gt;startY, 0, cam-&gt;scrollMaxY);</div>
+<div class="line"><span class="lineno">  220</span> </div>
+<div class="line"><span class="lineno">  221</span>    camera_scrollPlanes(cam, TRUE);</div>
+<div class="line"><span class="lineno">  222</span>}</div>
+</div><!-- fragment --><div class="dynheader">
+Esse é o diagrama das funções que utilizam essa função:</div>
+<div class="dyncontent">
+<div class="center"><img src="camera_8c_a1ecc2cac6befc053e13fa9a89b3de8c7_icgraph.png" border="0" usemap="#acamera_8c_a1ecc2cac6befc053e13fa9a89b3de8c7_icgraph" alt=""/></div>
+<map name="acamera_8c_a1ecc2cac6befc053e13fa9a89b3de8c7_icgraph" id="acamera_8c_a1ecc2cac6befc053e13fa9a89b3de8c7_icgraph">
+<area shape="rect" title=" " alt="" coords="398,5,514,35"/>
+<area shape="rect" href="palace__gates__room_8c.html#ad1cbc4315ef293463e6057dfb24c8115" title=" " alt="" coords="304,5,350,35"/>
+<area shape="poly" title=" " alt="" coords="383,23,351,23,351,18,383,18"/>
+<area shape="rect" href="palace__gates__room_8c.html#aa311e5f2262edd690db28a5e1fd05f97" title=" " alt="" coords="105,5,256,35"/>
+<area shape="poly" title=" " alt="" coords="289,23,256,23,256,18,289,18"/>
+<area shape="rect" href="main_8c.html#af2eb07b318158270774fcc967eec3c80" title=" " alt="" coords="5,5,57,35"/>
+<area shape="poly" title=" " alt="" coords="89,23,57,23,57,18,89,18"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a9f083f71544e45ebda3b5e827d51f985" name="a9f083f71544e45ebda3b5e827d51f985"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9f083f71544e45ebda3b5e827d51f985">&#9670;&#160;</a></span>CAMERA_shake()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CAMERA_shake </td>
+          <td>(</td>
+          <td class="paramtype">Camera *</td>          <td class="paramname"><span class="paramname"><em>cam</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">s16</td>          <td class="paramname"><span class="paramname"><em>power</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definição na linha <a class="el" href="camera_8c_source.html#l00257">257</a> do arquivo <a class="el" href="camera_8c_source.html">camera.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  258</span>{</div>
+<div class="line"><span class="lineno">  259</span>    u8 frames;</div>
+<div class="line"><span class="lineno">  260</span> </div>
+<div class="line"><span class="lineno">  261</span>    <span class="keywordflow">if</span> (power &lt; 1)</div>
+<div class="line"><span class="lineno">  262</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  263</span>    <span class="keywordflow">if</span> (power &lt; cam-&gt;shakePower)</div>
+<div class="line"><span class="lineno">  264</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  265</span> </div>
+<div class="line"><span class="lineno">  266</span>    cam-&gt;shakePower = power;</div>
+<div class="line"><span class="lineno">  267</span>    frames = (u8) (power + (power &gt;&gt; 1));</div>
+<div class="line"><span class="lineno">  268</span>    <span class="keywordflow">if</span> (frames &lt; 2)</div>
+<div class="line"><span class="lineno">  269</span>        frames = 2;</div>
+<div class="line"><span class="lineno">  270</span>    cam-&gt;shakeTime = frames;</div>
+<div class="line"><span class="lineno">  271</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a192ee770079f429e5c3ba27b23811497" name="a192ee770079f429e5c3ba27b23811497"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a192ee770079f429e5c3ba27b23811497">&#9670;&#160;</a></span>CAMERA_spawn()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CAMERA_spawn </td>
+          <td>(</td>
+          <td class="paramtype">Camera *</td>          <td class="paramname"><span class="paramname"><em>cam</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Player *</td>          <td class="paramname"><span class="paramname"><em>p1</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Player *</td>          <td class="paramname"><span class="paramname"><em>p2</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definição na linha <a class="el" href="camera_8c_source.html#l00224">224</a> do arquivo <a class="el" href="camera_8c_source.html">camera.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  225</span>{</div>
+<div class="line"><span class="lineno">  226</span>    <span class="keyword">const</span> s16 screenW    = (s16) VDP_getScreenWidth();</div>
+<div class="line"><span class="lineno">  227</span>    <span class="keyword">const</span> s16 screenH    = (s16) VDP_getScreenHeight();</div>
+<div class="line"><span class="lineno">  228</span>    <span class="keyword">const</span> s16 spawnInset = (s16) (screenW &gt;&gt; 2);</div>
+<div class="line"><span class="lineno">  229</span> </div>
+<div class="line"><span class="lineno">  230</span>    p1-&gt;x = (s16) (cam-&gt;pos.x + spawnInset);</div>
+<div class="line"><span class="lineno">  231</span>    p2-&gt;x = (s16) (cam-&gt;pos.x + screenW - spawnInset);</div>
+<div class="line"><span class="lineno">  232</span>    p1-&gt;y = (s16) (cam-&gt;pos.y + screenH - CAMERA_FEET_INSET);</div>
+<div class="line"><span class="lineno">  233</span>    p2-&gt;y = p1-&gt;y;</div>
+<div class="line"><span class="lineno">  234</span>    </div>
+<div class="line"><span class="lineno">  235</span>    p1-&gt;direcao =  1;</div>
+<div class="line"><span class="lineno">  236</span>    p2-&gt;direcao = -1;</div>
+<div class="line"><span class="lineno">  237</span> </div>
+<div class="line"><span class="lineno">  238</span>    <a class="code hl_variable" href="game__vars_8c.html#add5eb59c4f71be58ef78c256ac2de63d">gAlturaDoPiso</a> = p1-&gt;y; <span class="comment">// adicionar o chao</span></div>
+<div class="line"><span class="lineno">  239</span>    </div>
+<div class="line"><span class="lineno">  240</span>    camera_scrollPlanes(cam, TRUE);</div>
+<div class="line"><span class="lineno">  241</span>    SYS_doVBlankProcess();</div>
+<div class="line"><span class="lineno">  242</span>    camera_drawFighter(cam, p1);</div>
+<div class="line"><span class="lineno">  243</span>    camera_drawFighter(cam, p2);</div>
+<div class="line"><span class="lineno">  244</span>}</div>
+<div class="ttc" id="agame__vars_8c_html_add5eb59c4f71be58ef78c256ac2de63d"><div class="ttname"><a href="game__vars_8c.html#add5eb59c4f71be58ef78c256ac2de63d">gAlturaDoPiso</a></div><div class="ttdeci">u8 gAlturaDoPiso</div><div class="ttdef"><b>Definição</b> <a href="game__vars_8c_source.html#l00017">game_vars.c:17</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+Esse é o diagrama das funções que utilizam essa função:</div>
+<div class="dyncontent">
+<div class="center"><img src="camera_8c_a192ee770079f429e5c3ba27b23811497_icgraph.png" border="0" usemap="#acamera_8c_a192ee770079f429e5c3ba27b23811497_icgraph" alt=""/></div>
+<map name="acamera_8c_a192ee770079f429e5c3ba27b23811497_icgraph" id="acamera_8c_a192ee770079f429e5c3ba27b23811497_icgraph">
+<area shape="rect" title=" " alt="" coords="471,32,591,62"/>
+<area shape="rect" href="palace__gates__room_8c.html#ae56ac97c35c894a0d7aa90b99497d025" title=" " alt="" coords="308,5,419,35"/>
+<area shape="poly" title=" " alt="" coords="455,37,419,32,420,26,456,32"/>
+<area shape="rect" href="stages_8c.html#a2ed420f5c69409e9a355d51ffe0bda9f" title=" " alt="" coords="304,59,423,88"/>
+<area shape="poly" title=" " alt="" coords="456,61,424,67,423,61,455,56"/>
+<area shape="rect" href="palace__gates__room_8c.html#aa311e5f2262edd690db28a5e1fd05f97" title=" " alt="" coords="105,5,256,35"/>
+<area shape="poly" title=" " alt="" coords="292,23,256,23,256,18,292,18"/>
+<area shape="rect" href="main_8c.html#af2eb07b318158270774fcc967eec3c80" title=" " alt="" coords="5,5,57,35"/>
+<area shape="poly" title=" " alt="" coords="89,23,57,23,57,18,89,18"/>
+<area shape="rect" href="stages_8c.html#a2858154e2009b0e6e616f313177762bc" title=" " alt="" coords="160,59,201,88"/>
+<area shape="poly" title=" " alt="" coords="288,76,201,76,201,71,288,71"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ab61a9db3f89caae3390d93eda411e85e" name="ab61a9db3f89caae3390d93eda411e85e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab61a9db3f89caae3390d93eda411e85e">&#9670;&#160;</a></span>CAMERA_tick()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CAMERA_tick </td>
+          <td>(</td>
+          <td class="paramtype">Camera *</td>          <td class="paramname"><span class="paramname"><em>cam</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Player *</td>          <td class="paramname"><span class="paramname"><em>p1</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Player *</td>          <td class="paramname"><span class="paramname"><em>p2</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definição na linha <a class="el" href="camera_8c_source.html#l00246">246</a> do arquivo <a class="el" href="camera_8c_source.html">camera.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  247</span>{</div>
+<div class="line"><span class="lineno">  248</span>    camera_faceEachOther(p1, p2);</div>
+<div class="line"><span class="lineno">  249</span>    camera_follow(cam, p1, p2, TRUE);</div>
+<div class="line"><span class="lineno">  250</span>    camera_keepInside(cam, p1);</div>
+<div class="line"><span class="lineno">  251</span>    camera_keepInside(cam, p2);</div>
+<div class="line"><span class="lineno">  252</span>    camera_scrollPlanes(cam, FALSE);</div>
+<div class="line"><span class="lineno">  253</span>    camera_drawFighter(cam, p1);</div>
+<div class="line"><span class="lineno">  254</span>    camera_drawFighter(cam, p2);</div>
+<div class="line"><span class="lineno">  255</span>}</div>
+</div><!-- fragment --><div class="dynheader">
+Esse é o diagrama das funções que utilizam essa função:</div>
+<div class="dyncontent">
+<div class="center"><img src="camera_8c_ab61a9db3f89caae3390d93eda411e85e_icgraph.png" border="0" usemap="#acamera_8c_ab61a9db3f89caae3390d93eda411e85e_icgraph" alt=""/></div>
+<map name="acamera_8c_ab61a9db3f89caae3390d93eda411e85e_icgraph" id="acamera_8c_ab61a9db3f89caae3390d93eda411e85e_icgraph">
+<area shape="rect" title=" " alt="" coords="304,32,405,62"/>
+<area shape="rect" href="stages_8c.html#a2858154e2009b0e6e616f313177762bc" title=" " alt="" coords="160,5,201,35"/>
+<area shape="poly" title=" " alt="" coords="288,39,201,26,201,21,289,34"/>
+<area shape="rect" href="palace__gates__room_8c.html#aa311e5f2262edd690db28a5e1fd05f97" title=" " alt="" coords="105,59,256,88"/>
+<area shape="poly" title=" " alt="" coords="289,60,257,65,256,59,288,54"/>
+<area shape="rect" href="main_8c.html#af2eb07b318158270774fcc967eec3c80" title=" " alt="" coords="5,59,57,88"/>
+<area shape="poly" title=" " alt="" coords="89,76,57,76,57,71,89,71"/>
+</map>
+</div>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gerado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.11.0
+</small></address>
+</div><!-- doc-content -->
+</body>
+</html>

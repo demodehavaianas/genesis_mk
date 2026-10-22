@@ -1,0 +1,139 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt-BR">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.11.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Mortal Kombat Plus: Código-Fonte de src/fighters/fighter.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Mortal Kombat Plus
+   </div>
+   <div id="projectbrief">Documentação gerada automaticamente com Doxygen</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.11.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Busca',false);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){ initResizable(false); });
+/* @license-end */
+</script>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Carregando...</div>
+<div class="SRStatus" id="Searching">Procurando...</div>
+<div class="SRStatus" id="NoMatches">Nenhuma entrada encontrado</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_fff365dbb743aeae7eed9c4831420723.html">fighters</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div id="doc-content">
+<div class="header">
+  <div class="headertitle"><div class="title">fighter.c</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="fighter_8c.html">Ir para a documentação desse arquivo.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include &quot;fighters/fighter.h&quot;</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
+<div class="foldopen" id="foldopen00003" data-start="{" data-end="};">
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno"><a class="line" href="fighter_8c.html#a58d96e002b8d85fc9cbd8922ced07aac">    3</a></span><span class="keyword">const</span> FighterOps* <span class="keyword">const</span> <a class="code hl_variable" href="fighter_8c.html#a58d96e002b8d85fc9cbd8922ced07aac">ALL_FIGHTERS</a>[FIGHTERS_COUNT] = {</div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span>    [JOHNNY_CAGE]   = &amp;<a class="code hl_variable" href="johnny_8c.html#ab93c4adb0ed619584253e49027bf8768">johnnyOps</a>,</div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span>    [KANO]          = &amp;<a class="code hl_variable" href="kano_8c.html#afbf1786ac6829d84b6b3d6cf400faf2a">kanoOps</a>,</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>    [RAIDEN]        = &amp;<a class="code hl_variable" href="raiden_8c.html#a0a477e2001c8aeab2a092e7ccb66f759">raidenOps</a>,</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>    [LIU_KANG]      = &amp;<a class="code hl_variable" href="liukang_8c.html#a6d371715161766ca98e95c93cdc2dc11">liuKangOps</a>,</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>    [SUBZERO]       = &amp;<a class="code hl_variable" href="subzero_8c.html#ad78296ee0c7bdd097a46c171103c322c">subzeroOps</a>,</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    [SCORPION]      = &amp;<a class="code hl_variable" href="scorpion_8c.html#a1706ee493f76c8a2b841de51f3c3c7c4">scorpionOps</a>,</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    [SONYA]         = &amp;<a class="code hl_variable" href="sonya_8c.html#a86b731799576b684ee9d06d5c6c6743f">sonyaOps</a>,</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    [GORO]          = NULL,<span class="comment">//&amp;goroOps,</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    [SHANG_TSUNG]   = NULL,<span class="comment">//&amp;shangTsungOps,</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    [REPTILE]       = &amp;<a class="code hl_variable" href="reptile_8c.html#a1b4e1980eb2d8e99161af4f1d8ff9264">reptileOps</a></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>};</div>
+</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
+<div class="foldopen" id="foldopen00016" data-start="{" data-end="}">
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="fighter_8c.html#a490dc319f68b5343215c418bb892a20f">   16</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="fighter_8c.html#a490dc319f68b5343215c418bb892a20f">player_bind</a>(Player *p, u8 <span class="keywordtype">id</span>)</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>{</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>  <span class="keywordflow">if</span> (<span class="keywordtype">id</span> &gt;= FIGHTERS_COUNT || <a class="code hl_variable" href="fighter_8c.html#a58d96e002b8d85fc9cbd8922ced07aac">ALL_FIGHTERS</a>[<span class="keywordtype">id</span>] == NULL)</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    <span class="keywordtype">id</span> = SUBZERO;</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>  p-&gt;id  = id;</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>  p-&gt;ops = <a class="code hl_variable" href="fighter_8c.html#a58d96e002b8d85fc9cbd8922ced07aac">ALL_FIGHTERS</a>[id];</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>}</div>
+</div>
+<div class="ttc" id="afighter_8c_html_a490dc319f68b5343215c418bb892a20f"><div class="ttname"><a href="fighter_8c.html#a490dc319f68b5343215c418bb892a20f">player_bind</a></div><div class="ttdeci">void player_bind(Player *p, u8 id)</div><div class="ttdef"><b>Definição</b> <a href="#l00016">fighter.c:16</a></div></div>
+<div class="ttc" id="afighter_8c_html_a58d96e002b8d85fc9cbd8922ced07aac"><div class="ttname"><a href="fighter_8c.html#a58d96e002b8d85fc9cbd8922ced07aac">ALL_FIGHTERS</a></div><div class="ttdeci">const FighterOps *const ALL_FIGHTERS[FIGHTERS_COUNT]</div><div class="ttdef"><b>Definição</b> <a href="#l00003">fighter.c:3</a></div></div>
+<div class="ttc" id="ajohnny_8c_html_ab93c4adb0ed619584253e49027bf8768"><div class="ttname"><a href="johnny_8c.html#ab93c4adb0ed619584253e49027bf8768">johnnyOps</a></div><div class="ttdeci">const FighterOps johnnyOps</div><div class="ttdef"><b>Definição</b> <a href="johnny_8c_source.html#l00079">johnny.c:79</a></div></div>
+<div class="ttc" id="akano_8c_html_afbf1786ac6829d84b6b3d6cf400faf2a"><div class="ttname"><a href="kano_8c.html#afbf1786ac6829d84b6b3d6cf400faf2a">kanoOps</a></div><div class="ttdeci">const FighterOps kanoOps</div><div class="ttdef"><b>Definição</b> <a href="kano_8c_source.html#l00073">kano.c:73</a></div></div>
+<div class="ttc" id="aliukang_8c_html_a6d371715161766ca98e95c93cdc2dc11"><div class="ttname"><a href="liukang_8c.html#a6d371715161766ca98e95c93cdc2dc11">liuKangOps</a></div><div class="ttdeci">const FighterOps liuKangOps</div><div class="ttdef"><b>Definição</b> <a href="liukang_8c_source.html#l00081">liukang.c:81</a></div></div>
+<div class="ttc" id="araiden_8c_html_a0a477e2001c8aeab2a092e7ccb66f759"><div class="ttname"><a href="raiden_8c.html#a0a477e2001c8aeab2a092e7ccb66f759">raidenOps</a></div><div class="ttdeci">const FighterOps raidenOps</div><div class="ttdef"><b>Definição</b> <a href="raiden_8c_source.html#l00053">raiden.c:53</a></div></div>
+<div class="ttc" id="areptile_8c_html_a1b4e1980eb2d8e99161af4f1d8ff9264"><div class="ttname"><a href="reptile_8c.html#a1b4e1980eb2d8e99161af4f1d8ff9264">reptileOps</a></div><div class="ttdeci">const FighterOps reptileOps</div><div class="ttdef"><b>Definição</b> <a href="reptile_8c_source.html#l00055">reptile.c:55</a></div></div>
+<div class="ttc" id="ascorpion_8c_html_a1706ee493f76c8a2b841de51f3c3c7c4"><div class="ttname"><a href="scorpion_8c.html#a1706ee493f76c8a2b841de51f3c3c7c4">scorpionOps</a></div><div class="ttdeci">const FighterOps scorpionOps</div><div class="ttdef"><b>Definição</b> <a href="scorpion_8c_source.html#l00072">scorpion.c:72</a></div></div>
+<div class="ttc" id="asonya_8c_html_a86b731799576b684ee9d06d5c6c6743f"><div class="ttname"><a href="sonya_8c.html#a86b731799576b684ee9d06d5c6c6743f">sonyaOps</a></div><div class="ttdeci">const FighterOps sonyaOps</div><div class="ttdef"><b>Definição</b> <a href="sonya_8c_source.html#l00073">sonya.c:73</a></div></div>
+<div class="ttc" id="asubzero_8c_html_ad78296ee0c7bdd097a46c171103c322c"><div class="ttname"><a href="subzero_8c.html#ad78296ee0c7bdd097a46c171103c322c">subzeroOps</a></div><div class="ttdeci">const FighterOps subzeroOps</div><div class="ttdef"><b>Definição</b> <a href="subzero_8c_source.html#l00460">subzero.c:460</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gerado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.11.0
+</small></address>
+</div><!-- doc-content -->
+</body>
+</html>

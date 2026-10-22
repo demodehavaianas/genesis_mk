@@ -1,0 +1,31 @@
+<map id="initPalaceGatesRoom" name="initPalaceGatesRoom">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,269,157,299"/>
+<area shape="rect" id="Node000002" href="$palace__gates__room_8c.html#ad1cbc4315ef293463e6057dfb24c8115" title=" " alt="" coords="239,5,286,35"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="84,268,98,225,122,166,156,102,178,72,203,45,223,31,226,35,206,49,182,76,161,105,127,168,103,227,89,270"/>
+<area shape="rect" id="Node000004" href="$palace__gates__room_8c.html#ae56ac97c35c894a0d7aa90b99497d025" title=" " alt="" coords="207,59,318,88"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="87,268,129,189,162,141,203,98,207,95,210,99,206,102,166,145,133,192,91,270"/>
+<area shape="rect" id="Node000006" href="$anima__system_8c.html#a3e73164d603e05e94b8eedeb557a3245" title=" " alt="" coords="227,112,298,142"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="93,267,139,216,203,158,217,148,220,152,206,162,143,220,97,271"/>
+<area shape="rect" id="Node000007" href="$player__state_8c.html#a215f450776e74a1c1f35b9f9499c08a5" title=" " alt="" coords="382,164,474,194"/>
+<area shape="poly" id="edge15_Node000001_Node000007" title=" " alt="" coords="98,267,144,233,173,216,204,202,245,190,287,182,366,176,366,181,288,187,246,195,206,207,175,220,147,237,102,271"/>
+<area shape="rect" id="Node000008" href="$camera_8c.html#ab61a9db3f89caae3390d93eda411e85e" title=" " alt="" coords="212,216,313,246"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="133,266,196,247,197,253,135,271"/>
+<area shape="rect" id="Node000009" href="$lifebar_8c.html#acebb1de8f553da7c06ca9fda95d0390b" title=" " alt="" coords="214,269,311,299"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="157,282,198,282,198,287,157,287"/>
+<area shape="rect" id="Node000010" href="$fsm_8c.html#a03b85798baf7d4a187454d1c3f3ecd8d" title=" " alt="" coords="215,323,310,352"/>
+<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="135,297,201,317,200,322,133,302"/>
+<area shape="rect" id="Node000011" href="$lifebar_8c.html#ab6afde5df38328422957d4bd3f38a07b" title=" " alt="" coords="220,376,305,406"/>
+<area shape="poly" id="edge11_Node000001_Node000011" title=" " alt="" coords="105,297,206,362,214,366,212,371,203,366,102,302"/>
+<area shape="rect" id="Node000012" href="$input__system_8c.html#a2656744a9ebd96a8887f55208c53bc6e" title=" " alt="" coords="213,429,312,459"/>
+<area shape="poly" id="edge12_Node000001_Node000012" title=" " alt="" coords="95,298,140,354,172,386,206,415,212,419,209,424,203,420,168,390,136,357,91,301"/>
+<area shape="rect" id="Node000013" href="$physics_8c.html#ad339c229199dd41f703aed97da81f987" title=" " alt="" coords="205,483,320,512"/>
+<area shape="poly" id="edge13_Node000001_Node000013" title=" " alt="" coords="91,298,133,377,166,426,206,469,210,472,207,476,203,473,162,429,128,380,86,300"/>
+<area shape="rect" id="Node000014" href="$fighter_8c.html#a490dc319f68b5343215c418bb892a20f" title=" " alt="" coords="216,536,309,566"/>
+<area shape="poly" id="edge14_Node000001_Node000014" title=" " alt="" coords="89,298,102,341,126,401,161,465,182,495,207,522,210,525,206,529,203,526,178,498,156,468,121,403,97,343,84,300"/>
+<area shape="rect" id="Node000003" href="$camera_8c.html#a1ecc2cac6befc053e13fa9a89b3de8c7" title=" " alt="" coords="370,5,485,35"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="286,18,354,18,354,23,286,23"/>
+<area shape="rect" id="Node000005" href="$camera_8c.html#a192ee770079f429e5c3ba27b23811497" title=" " alt="" coords="368,59,487,88"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="318,71,353,71,353,76,318,76"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="299,135,367,157,366,162,298,141"/>
+<area shape="poly" id="edge10_Node000010_Node000007" title=" " alt="" coords="301,320,318,309,345,284,369,257,407,205,411,209,374,260,349,288,322,313,303,324"/>
+</map>

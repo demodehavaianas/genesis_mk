@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['johnny_2ec_0',['johnny.c',['../johnny_8c.html',1,'']]],
-  ['johnnycagelines_5fbr_1',['johnnyCageLines_BR',['../bio__textlines_8c.html#a29b7fd5d746a19566df8a927400e4b93',1,'bio_textlines.c']]],
-  ['johnnycagelines_5fen_2',['johnnyCageLines_EN',['../bio__textlines_8c.html#a7590aa6e91c535d8ffaa0123f706f41b',1,'bio_textlines.c']]]
+  ['hidelifebar_0',['hideLifeBar',['../lifebar_8c.html#a35e0ef8ccf011b03e08700a4b9dcb613',1,'lifebar.c']]]
 ];

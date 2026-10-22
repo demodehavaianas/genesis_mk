@@ -94,7 +94,7 @@ $(function(){ initResizable(false); });
   <div class="headertitle"><div class="title">Referência do Arquivo lifebar.c</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;lifebar.h&quot;</code><br />
+<div class="textblock"><code>#include &quot;modulos/lifebar.h&quot;</code><br />
 <code>#include &lt;genesis.h&gt;</code><br />
 <code>#include &quot;gfx.h&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
@@ -102,13 +102,13 @@ Gráfico de dependência de inclusões para lifebar.c:</div>
 <div class="dyncontent">
 <div class="center"><img src="lifebar_8c__incl.png" border="0" usemap="#asrc_2modulos_2lifebar_8c" alt=""/></div>
 <map name="asrc_2modulos_2lifebar_8c" id="asrc_2modulos_2lifebar_8c">
-<area shape="rect" title=" " alt="" coords="66,5,215,35"/>
-<area shape="rect" title=" " alt="" coords="5,83,76,113"/>
-<area shape="poly" title=" " alt="" coords="123,38,73,76,69,71,120,33"/>
-<area shape="rect" title=" " alt="" coords="100,83,181,113"/>
-<area shape="poly" title=" " alt="" coords="143,36,143,67,138,67,138,36"/>
-<area shape="rect" title=" " alt="" coords="205,83,258,113"/>
-<area shape="poly" title=" " alt="" coords="159,34,204,71,201,75,156,38"/>
+<area shape="rect" title=" " alt="" coords="123,5,272,35"/>
+<area shape="rect" title=" " alt="" coords="5,83,134,113"/>
+<area shape="poly" title=" " alt="" coords="175,38,107,77,105,73,172,33"/>
+<area shape="rect" title=" " alt="" coords="157,83,238,113"/>
+<area shape="poly" title=" " alt="" coords="200,36,200,67,195,67,195,36"/>
+<area shape="rect" title=" " alt="" coords="262,83,315,113"/>
+<area shape="poly" title=" " alt="" coords="216,34,261,71,258,75,213,38"/>
 </map>
 </div>
 </div>
@@ -172,7 +172,7 @@ Funções</h2></td></tr>
 <div class="fragment"><div class="line"><span class="lineno">   13</span>{</div>
 <div class="line"><span class="lineno">   14</span>    <span class="keywordflow">if</span> (maxLife == 0 || length == 0)</div>
 <div class="line"><span class="lineno">   15</span>        <span class="keywordflow">return</span>;</div>
-<div class="line"><span class="lineno">   16</span> </div>
+<div class="line"><span class="lineno">   16</span>    </div>
 <div class="line"><span class="lineno">   17</span>    VDP_setTileMapXY(plan, TILE_ATTR_FULL(numPal, TRUE, FALSE, FALSE, TILE_LIFEBAR_BASE), x-1, y);</div>
 <div class="line"><span class="lineno">   18</span> </div>
 <div class="line"><span class="lineno">   19</span>    u16 percent = (currentLife * 100) / maxLife;</div>
@@ -209,7 +209,21 @@ Funções</h2></td></tr>
 <div class="line"><span class="lineno">   50</span>    <span class="comment">// Terminal no final da barra</span></div>
 <div class="line"><span class="lineno">   51</span>    VDP_setTileMapXY(plan, TILE_ATTR_FULL(numPal, TRUE, FALSE, TRUE, TILE_LIFEBAR_BASE + LIFEBAR_END), x + length, y);</div>
 <div class="line"><span class="lineno">   52</span>}</div>
-</div><!-- fragment -->
+</div><!-- fragment --><div class="dynheader">
+Esse é o diagrama das funções que utilizam essa função:</div>
+<div class="dyncontent">
+<div class="center"><img src="lifebar_8c_acebb1de8f553da7c06ca9fda95d0390b_icgraph.png" border="0" usemap="#alifebar_8c_acebb1de8f553da7c06ca9fda95d0390b_icgraph" alt=""/></div>
+<map name="alifebar_8c_acebb1de8f553da7c06ca9fda95d0390b_icgraph" id="alifebar_8c_acebb1de8f553da7c06ca9fda95d0390b_icgraph">
+<area shape="rect" title=" " alt="" coords="304,32,400,62"/>
+<area shape="rect" href="stages_8c.html#a2858154e2009b0e6e616f313177762bc" title=" " alt="" coords="160,5,201,35"/>
+<area shape="poly" title=" " alt="" coords="288,40,200,26,201,21,289,34"/>
+<area shape="rect" href="palace__gates__room_8c.html#aa311e5f2262edd690db28a5e1fd05f97" title=" " alt="" coords="105,59,256,88"/>
+<area shape="poly" title=" " alt="" coords="289,59,257,64,256,59,288,54"/>
+<area shape="rect" href="main_8c.html#af2eb07b318158270774fcc967eec3c80" title=" " alt="" coords="5,59,57,88"/>
+<area shape="poly" title=" " alt="" coords="89,76,57,76,57,71,89,71"/>
+</map>
+</div>
+
 </div>
 </div>
 <a id="a35e0ef8ccf011b03e08700a4b9dcb613" name="a35e0ef8ccf011b03e08700a4b9dcb613"></a>
@@ -275,7 +289,21 @@ Funções</h2></td></tr>
 <div class="fragment"><div class="line"><span class="lineno">    7</span>{</div>
 <div class="line"><span class="lineno">    8</span>    VDP_loadTileSet(&amp;lifebar, TILE_LIFEBAR_BASE, DMA);</div>
 <div class="line"><span class="lineno">    9</span>}</div>
-</div><!-- fragment -->
+</div><!-- fragment --><div class="dynheader">
+Esse é o diagrama das funções que utilizam essa função:</div>
+<div class="dyncontent">
+<div class="center"><img src="lifebar_8c_ab6afde5df38328422957d4bd3f38a07b_icgraph.png" border="0" usemap="#alifebar_8c_ab6afde5df38328422957d4bd3f38a07b_icgraph" alt=""/></div>
+<map name="alifebar_8c_ab6afde5df38328422957d4bd3f38a07b_icgraph" id="alifebar_8c_ab6afde5df38328422957d4bd3f38a07b_icgraph">
+<area shape="rect" title=" " alt="" coords="304,32,388,62"/>
+<area shape="rect" href="stages_8c.html#a2858154e2009b0e6e616f313177762bc" title=" " alt="" coords="160,5,201,35"/>
+<area shape="poly" title=" " alt="" coords="288,40,201,26,202,21,289,35"/>
+<area shape="rect" href="palace__gates__room_8c.html#aa311e5f2262edd690db28a5e1fd05f97" title=" " alt="" coords="105,59,256,88"/>
+<area shape="poly" title=" " alt="" coords="289,59,257,64,256,59,288,53"/>
+<area shape="rect" href="main_8c.html#af2eb07b318158270774fcc967eec3c80" title=" " alt="" coords="5,59,57,88"/>
+<area shape="poly" title=" " alt="" coords="89,76,57,76,57,71,89,71"/>
+</map>
+</div>
+
 </div>
 </div>
 </div><!-- contents -->

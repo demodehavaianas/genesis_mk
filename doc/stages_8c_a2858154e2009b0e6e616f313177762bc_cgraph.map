@@ -1,0 +1,24 @@
+<map id="init" name="init">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,192,46,222"/>
+<area shape="rect" id="Node000002" href="$stages_8c.html#a2ed420f5c69409e9a355d51ffe0bda9f" title=" " alt="" coords="94,5,213,35"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="27,191,46,123,65,82,92,45,95,42,98,46,96,49,69,84,51,124,32,192"/>
+<area shape="rect" id="Node000004" href="$anima__system_8c.html#a3e73164d603e05e94b8eedeb557a3245" title=" " alt="" coords="118,59,189,88"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="31,190,54,146,71,121,92,98,102,91,105,95,95,102,75,124,58,148,35,193"/>
+<area shape="rect" id="Node000006" href="$camera_8c.html#ab61a9db3f89caae3390d93eda411e85e" title=" " alt="" coords="103,112,204,142"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="42,189,92,151,100,147,103,151,95,156,45,194"/>
+<area shape="rect" id="Node000007" href="$lifebar_8c.html#acebb1de8f553da7c06ca9fda95d0390b" title=" " alt="" coords="105,165,202,195"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="45,200,89,191,91,196,46,205"/>
+<area shape="rect" id="Node000008" href="$fsm_8c.html#a03b85798baf7d4a187454d1c3f3ecd8d" title=" " alt="" coords="106,219,201,248"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="46,208,91,218,90,223,45,213"/>
+<area shape="rect" id="Node000009" href="$lifebar_8c.html#ab6afde5df38328422957d4bd3f38a07b" title=" " alt="" coords="111,272,196,302"/>
+<area shape="poly" id="edge9_Node000001_Node000009" title=" " alt="" coords="45,220,95,258,103,262,100,267,92,262,42,224"/>
+<area shape="rect" id="Node000010" href="$input__system_8c.html#a2656744a9ebd96a8887f55208c53bc6e" title=" " alt="" coords="104,325,203,355"/>
+<area shape="poly" id="edge10_Node000001_Node000010" title=" " alt="" coords="35,221,58,265,75,290,95,312,100,315,96,319,92,315,71,293,54,268,31,223"/>
+<area shape="rect" id="Node000011" href="$physics_8c.html#ad339c229199dd41f703aed97da81f987" title=" " alt="" coords="96,379,211,408"/>
+<area shape="poly" id="edge11_Node000001_Node000011" title=" " alt="" coords="32,221,51,289,69,329,96,365,98,368,95,372,92,369,65,332,46,291,27,223"/>
+<area shape="rect" id="Node000003" href="$camera_8c.html#a192ee770079f429e5c3ba27b23811497" title=" " alt="" coords="261,5,380,35"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="214,18,246,18,246,23,214,23"/>
+<area shape="rect" id="Node000005" href="$player__state_8c.html#a215f450776e74a1c1f35b9f9499c08a5" title=" " alt="" coords="275,139,367,168"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="190,86,214,98,277,129,275,134,212,103,188,91"/>
+<area shape="poly" id="edge8_Node000008_Node000005" title=" " alt="" coords="188,216,212,204,275,173,277,178,214,209,190,221"/>
+</map>

@@ -1,0 +1,308 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt-BR">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.11.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Mortal Kombat Plus: Referência do Arquivo src/modulos/fsm.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Mortal Kombat Plus
+   </div>
+   <div id="projectbrief">Documentação gerada automaticamente com Doxygen</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.11.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Busca',false);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){ initResizable(false); });
+/* @license-end */
+</script>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Carregando...</div>
+<div class="SRStatus" id="Searching">Procurando...</div>
+<div class="SRStatus" id="NoMatches">Nenhuma entrada encontrado</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_47a83392b137ed71e1cf45a1606573c3.html">modulos</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div id="doc-content">
+<div class="header">
+  <div class="summary">
+<a href="#func-members">Funções</a>  </div>
+  <div class="headertitle"><div class="title">Referência do Arquivo fsm.c</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &quot;mkplus.h&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Gráfico de dependência de inclusões para fsm.c:</div>
+<div class="dyncontent">
+<div class="center"><img src="fsm_8c__incl.png" border="0" usemap="#asrc_2modulos_2fsm_8c" alt=""/></div>
+<map name="asrc_2modulos_2fsm_8c" id="asrc_2modulos_2fsm_8c">
+<area shape="rect" title=" " alt="" coords="5,5,140,35"/>
+<area shape="rect" title=" " alt="" coords="34,83,111,113"/>
+<area shape="poly" title=" " alt="" coords="75,36,75,67,70,67,70,36"/>
+</map>
+</div>
+</div>
+<p><a href="fsm_8c_source.html">Ir para o código-fonte desse arquivo.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Funções</h2></td></tr>
+<tr class="memitem:a03b85798baf7d4a187454d1c3f3ecd8d" id="r_a03b85798baf7d4a187454d1c3f3ecd8d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a03b85798baf7d4a187454d1c3f3ecd8d">fsm_update</a> (void)</td></tr>
+<tr class="separator:a03b85798baf7d4a187454d1c3f3ecd8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Funções</h2>
+<a id="a03b85798baf7d4a187454d1c3f3ecd8d" name="a03b85798baf7d4a187454d1c3f3ecd8d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a03b85798baf7d4a187454d1c3f3ecd8d">&#9670;&#160;</a></span>fsm_update()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void fsm_update </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definição na linha <a class="el" href="fsm_8c_source.html#l00013">13</a> do arquivo <a class="el" href="fsm_8c_source.html">fsm.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   14</span>{</div>
+<div class="line"><span class="lineno">   15</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[0].direcao == 1)</div>
+<div class="line"><span class="lineno">   16</span>        <a class="code hl_variable" href="game__vars_8c.html#a3990abcf74fa5f731cd480f51a1d0926">gDistancia</a> = <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[1].x - <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[0].x;</div>
+<div class="line"><span class="lineno">   17</span>    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">   18</span>        <a class="code hl_variable" href="game__vars_8c.html#a3990abcf74fa5f731cd480f51a1d0926">gDistancia</a> = <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[0].x - <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[1].x;</div>
+<div class="line"><span class="lineno">   19</span> </div>
+<div class="line"><span class="lineno">   20</span>    <span class="keywordflow">for</span> (u8 i = 0; i &lt; MAX_PLAYERS; i++)</div>
+<div class="line"><span class="lineno">   21</span>    {</div>
+<div class="line"><span class="lineno">   22</span>        u8 atacante;</div>
+<div class="line"><span class="lineno">   23</span>        u8 defensor;</div>
+<div class="line"><span class="lineno">   24</span>        u8 distancia_player_x_special = 250u;</div>
+<div class="line"><span class="lineno">   25</span> </div>
+<div class="line"><span class="lineno">   26</span>        <span class="keywordflow">if</span> (i == 0) { atacante = 0; defensor = 1; }</div>
+<div class="line"><span class="lineno">   27</span>        <span class="keywordflow">else</span> { atacante = 1; defensor = 0; }</div>
+<div class="line"><span class="lineno">   28</span> </div>
+<div class="line"><span class="lineno">   29</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="game__vars_8c.html#a3990abcf74fa5f731cd480f51a1d0926">gDistancia</a> &gt; 50)</div>
+<div class="line"><span class="lineno">   30</span>        {</div>
+<div class="line"><span class="lineno">   31</span>            <span class="keywordflow">if</span> (<a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[i].key_JOY_C_status == BUTTON_PRESSED &amp;&amp;</div>
+<div class="line"><span class="lineno">   32</span>                (<a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[i].state == PARADO ||</div>
+<div class="line"><span class="lineno">   33</span>                 <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[i].state == ANDAR_PRA_FRENTE))</div>
+<div class="line"><span class="lineno">   34</span>            {</div>
+<div class="line"><span class="lineno">   35</span>                <a class="code hl_function" href="player__state_8c.html#a215f450776e74a1c1f35b9f9499c08a5">playerState</a>(i, CHUTE_BAIXO);</div>
+<div class="line"><span class="lineno">   36</span>            }</div>
+<div class="line"><span class="lineno">   37</span>            <span class="keywordflow">if</span> (<a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[i].key_JOY_Z_status == BUTTON_PRESSED &amp;&amp;</div>
+<div class="line"><span class="lineno">   38</span>                (<a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[i].state == PARADO ||</div>
+<div class="line"><span class="lineno">   39</span>                 <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[i].state == ANDAR_PRA_FRENTE))</div>
+<div class="line"><span class="lineno">   40</span>            {</div>
+<div class="line"><span class="lineno">   41</span>                <a class="code hl_function" href="player__state_8c.html#a215f450776e74a1c1f35b9f9499c08a5">playerState</a>(i, CHUTE_ALTO);</div>
+<div class="line"><span class="lineno">   42</span>            }</div>
+<div class="line"><span class="lineno">   43</span> </div>
+<div class="line"><span class="lineno">   44</span>            <span class="keywordflow">if</span>(<a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[i].key_JOY_X_status == BUTTON_PRESSED &amp;&amp; </div>
+<div class="line"><span class="lineno">   45</span>                (<a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[i].state == PARADO ||</div>
+<div class="line"><span class="lineno">   46</span>                 <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[i].state == ANDAR_PRA_FRENTE ||</div>
+<div class="line"><span class="lineno">   47</span>                 <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[i].state == ANDAR_PRA_TRAS))</div>
+<div class="line"><span class="lineno">   48</span>            {</div>
+<div class="line"><span class="lineno">   49</span>                <a class="code hl_function" href="player__state_8c.html#a215f450776e74a1c1f35b9f9499c08a5">playerState</a>(i, SOCO_ALTO);</div>
+<div class="line"><span class="lineno">   50</span>            }</div>
+<div class="line"><span class="lineno">   51</span><span class="comment">/*</span></div>
+<div class="line"><span class="lineno">   52</span><span class="comment">            if(player[i].key_JOY_A_status == BUTTON_PRESSED &amp;&amp; </span></div>
+<div class="line"><span class="lineno">   53</span><span class="comment">                (player[i].state == PARADO ||</span></div>
+<div class="line"><span class="lineno">   54</span><span class="comment">                 player[i].state == ANDAR_PRA_FRENTE ||</span></div>
+<div class="line"><span class="lineno">   55</span><span class="comment">                 player[i].state == ANDAR_PRA_TRAS))</span></div>
+<div class="line"><span class="lineno">   56</span><span class="comment">            {</span></div>
+<div class="line"><span class="lineno">   57</span><span class="comment">                playerState(i, SOCO_BAIXO);</span></div>
+<div class="line"><span class="lineno">   58</span><span class="comment">            }</span></div>
+<div class="line"><span class="lineno">   59</span><span class="comment">*/</span></div>
+<div class="line"><span class="lineno">   60</span>        }</div>
+<div class="line"><span class="lineno">   61</span> </div>
+<div class="line"><span class="lineno">   62</span>        fsm_update_golpe_perto(i);</div>
+<div class="line"><span class="lineno">   63</span> </div>
+<div class="line"><span class="lineno">   64</span>        fsm_update_pulo_neutro(i);</div>
+<div class="line"><span class="lineno">   65</span> </div>
+<div class="line"><span class="lineno">   66</span>        fsm_update_andando(i);</div>
+<div class="line"><span class="lineno">   67</span> </div>
+<div class="line"><span class="lineno">   68</span>        fsm_update_tras_e_chute(i);</div>
+<div class="line"><span class="lineno">   69</span> </div>
+<div class="line"><span class="lineno">   70</span>        fsm_update_bloqueio(i);</div>
+<div class="line"><span class="lineno">   71</span> </div>
+<div class="line"><span class="lineno">   72</span>        fsm_update_abaixando_levantando(i);</div>
+<div class="line"><span class="lineno">   73</span> </div>
+<div class="line"><span class="lineno">   74</span>        <span class="keywordflow">if</span>(<a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[i].state == ABAIXADO &amp;&amp; (<a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[i].key_JOY_Z_status == BUTTON_PRESSED || <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[i].key_JOY_C_status == BUTTON_PRESSED))</div>
+<div class="line"><span class="lineno">   75</span>        {</div>
+<div class="line"><span class="lineno">   76</span>            <a class="code hl_function" href="player__state_8c.html#a215f450776e74a1c1f35b9f9499c08a5">playerState</a>(i, CHUTE_ABAIXADO);</div>
+<div class="line"><span class="lineno">   77</span>        }</div>
+<div class="line"><span class="lineno">   78</span> </div>
+<div class="line"><span class="lineno">   79</span>        fsm_update_trocando_de_lado(atacante, defensor, i);</div>
+<div class="line"><span class="lineno">   80</span> </div>
+<div class="line"><span class="lineno">   81</span>        <span class="comment">// defender magia</span></div>
+<div class="line"><span class="lineno">   82</span>        <span class="comment">/*if (player[defensor].especial.pos.x != 0 &amp;&amp;</span></div>
+<div class="line"><span class="lineno">   83</span><span class="comment">            player[defensor].especial.pos.y != 0)</span></div>
+<div class="line"><span class="lineno">   84</span><span class="comment">        {</span></div>
+<div class="line"><span class="lineno">   85</span><span class="comment">            if (player[atacante].direcao == 1)</span></div>
+<div class="line"><span class="lineno">   86</span><span class="comment">            {</span></div>
+<div class="line"><span class="lineno">   87</span><span class="comment">                distancia_player_x_special = player[defensor].especial.pos.x - player[atacante].especial.pos.x + 25;</span></div>
+<div class="line"><span class="lineno">   88</span><span class="comment">            }</span></div>
+<div class="line"><span class="lineno">   89</span><span class="comment">            if (player[atacante].direcao == -1)</span></div>
+<div class="line"><span class="lineno">   90</span><span class="comment">            {</span></div>
+<div class="line"><span class="lineno">   91</span><span class="comment">                distancia_player_x_special = player[atacante].especial.pos.x - player[defensor].especial.pos.x;</span></div>
+<div class="line"><span class="lineno">   92</span><span class="comment">            }</span></div>
+<div class="line"><span class="lineno">   93</span><span class="comment">        }*/</span></div>
+<div class="line"><span class="lineno">   94</span> </div>
+<div class="line"><span class="lineno">   95</span>        <span class="comment">// fsm_update_defesa(defensor, distancia_player_x_special, atacante, i);</span></div>
+<div class="line"><span class="lineno">   96</span> </div>
+<div class="line"><span class="lineno">   97</span>        <span class="comment">// comentando por estar dando bug ao alterar animação</span></div>
+<div class="line"><span class="lineno">   98</span>        <span class="comment">// key_JOY_countdown é um timer regressivo,</span></div>
+<div class="line"><span class="lineno">   99</span>        <span class="comment">// ativado quando se aperta algum botao direcional,</span></div>
+<div class="line"><span class="lineno">  100</span>        <span class="comment">// usado para Corrida e Esquiva, entre outros...</span></div>
+<div class="line"><span class="lineno">  101</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[i].key_JOY_countdown[8] &gt; 0)</div>
+<div class="line"><span class="lineno">  102</span>        {</div>
+<div class="line"><span class="lineno">  103</span>            <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[i].key_JOY_countdown[8]--;</div>
+<div class="line"><span class="lineno">  104</span>        }</div>
+<div class="line"><span class="lineno">  105</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[i].key_JOY_countdown[2] &gt; 0)</div>
+<div class="line"><span class="lineno">  106</span>        {</div>
+<div class="line"><span class="lineno">  107</span>            <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[i].key_JOY_countdown[2]--;</div>
+<div class="line"><span class="lineno">  108</span>        }</div>
+<div class="line"><span class="lineno">  109</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[i].key_JOY_countdown[4] &gt; 0)</div>
+<div class="line"><span class="lineno">  110</span>        {</div>
+<div class="line"><span class="lineno">  111</span>            <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[i].key_JOY_countdown[4]--;</div>
+<div class="line"><span class="lineno">  112</span>        }</div>
+<div class="line"><span class="lineno">  113</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[i].key_JOY_countdown[6] &gt; 0)</div>
+<div class="line"><span class="lineno">  114</span>        {</div>
+<div class="line"><span class="lineno">  115</span>            <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[i].key_JOY_countdown[6]--;</div>
+<div class="line"><span class="lineno">  116</span>        }</div>
+<div class="line"><span class="lineno">  117</span><span class="comment">/*</span></div>
+<div class="line"><span class="lineno">  118</span><span class="comment">        // ativacao de &#39;key_JOY_countdown&#39;...</span></div>
+<div class="line"><span class="lineno">  119</span><span class="comment">        if (player[i].state == ANDAR_PRA_TRAS ||</span></div>
+<div class="line"><span class="lineno">  120</span><span class="comment">            player[i].state == ANDAR_PRA_FRENTE ||</span></div>
+<div class="line"><span class="lineno">  121</span><span class="comment">            player[i].state == ABAIXANDO ||</span></div>
+<div class="line"><span class="lineno">  122</span><span class="comment">            player[i].state == INI_PULO_TRAS ||</span></div>
+<div class="line"><span class="lineno">  123</span><span class="comment">            player[i].state == INI_PULO_NEUTRO ||</span></div>
+<div class="line"><span class="lineno">  124</span><span class="comment">            player[i].state == INI_PULO_FRENTE)</span></div>
+<div class="line"><span class="lineno">  125</span><span class="comment">        {</span></div>
+<div class="line"><span class="lineno">  126</span><span class="comment">            if (player[i].key_JOY_UP_status == 1)</span></div>
+<div class="line"><span class="lineno">  127</span><span class="comment">            {</span></div>
+<div class="line"><span class="lineno">  128</span><span class="comment">                player[i].key_JOY_countdown[8] = 12;</span></div>
+<div class="line"><span class="lineno">  129</span><span class="comment">                player[i].key_JOY_countdown[2] = 0;</span></div>
+<div class="line"><span class="lineno">  130</span><span class="comment">            }</span></div>
+<div class="line"><span class="lineno">  131</span><span class="comment">            if (player[i].key_JOY_LEFT_status == 1)</span></div>
+<div class="line"><span class="lineno">  132</span><span class="comment">            {</span></div>
+<div class="line"><span class="lineno">  133</span><span class="comment">                player[i].key_JOY_countdown[4] = 12;</span></div>
+<div class="line"><span class="lineno">  134</span><span class="comment">                player[i].key_JOY_countdown[6] = 0;</span></div>
+<div class="line"><span class="lineno">  135</span><span class="comment">            }</span></div>
+<div class="line"><span class="lineno">  136</span><span class="comment">            if (player[i].key_JOY_RIGHT_status == 1)</span></div>
+<div class="line"><span class="lineno">  137</span><span class="comment">            {</span></div>
+<div class="line"><span class="lineno">  138</span><span class="comment">                player[i].key_JOY_countdown[6] = 12;</span></div>
+<div class="line"><span class="lineno">  139</span><span class="comment">                player[i].key_JOY_countdown[4] = 0;</span></div>
+<div class="line"><span class="lineno">  140</span><span class="comment">            }</span></div>
+<div class="line"><span class="lineno">  141</span><span class="comment">            if (player[i].key_JOY_DOWN_status == 1)</span></div>
+<div class="line"><span class="lineno">  142</span><span class="comment">            {</span></div>
+<div class="line"><span class="lineno">  143</span><span class="comment">                player[i].key_JOY_countdown[2] = 12;</span></div>
+<div class="line"><span class="lineno">  144</span><span class="comment">                player[i].key_JOY_countdown[8] = 0;</span></div>
+<div class="line"><span class="lineno">  145</span><span class="comment">                player[i].key_JOY_countdown[4] = 0;</span></div>
+<div class="line"><span class="lineno">  146</span><span class="comment">                player[i].key_JOY_countdown[6] = 0;</span></div>
+<div class="line"><span class="lineno">  147</span><span class="comment">            }</span></div>
+<div class="line"><span class="lineno">  148</span><span class="comment">        }</span></div>
+<div class="line"><span class="lineno">  149</span><span class="comment">    */</span></div>
+<div class="line"><span class="lineno">  150</span>    }</div>
+<div class="line"><span class="lineno">  151</span>}</div>
+<div class="ttc" id="agame__vars_8c_html_a3990abcf74fa5f731cd480f51a1d0926"><div class="ttname"><a href="game__vars_8c.html#a3990abcf74fa5f731cd480f51a1d0926">gDistancia</a></div><div class="ttdeci">u16 gDistancia</div><div class="ttdef"><b>Definição</b> <a href="game__vars_8c_source.html#l00023">game_vars.c:23</a></div></div>
+<div class="ttc" id="agame__vars_8c_html_a5135cf03aefd90677db09304781dbb8c"><div class="ttname"><a href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a></div><div class="ttdeci">Player player[2]</div><div class="ttdef"><b>Definição</b> <a href="game__vars_8c_source.html#l00031">game_vars.c:31</a></div></div>
+<div class="ttc" id="aplayer__state_8c_html_a215f450776e74a1c1f35b9f9499c08a5"><div class="ttname"><a href="player__state_8c.html#a215f450776e74a1c1f35b9f9499c08a5">playerState</a></div><div class="ttdeci">void playerState(u8 ind, u16 state)</div><div class="ttdef"><b>Definição</b> <a href="player__state_8c_source.html#l00003">player_state.c:3</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+Este é o diagrama das funções utilizadas por essa função:</div>
+<div class="dyncontent">
+<div class="center"><img src="fsm_8c_a03b85798baf7d4a187454d1c3f3ecd8d_cgraph.png" border="0" usemap="#afsm_8c_a03b85798baf7d4a187454d1c3f3ecd8d_cgraph" alt=""/></div>
+<map name="afsm_8c_a03b85798baf7d4a187454d1c3f3ecd8d_cgraph" id="afsm_8c_a03b85798baf7d4a187454d1c3f3ecd8d_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,100,35"/>
+<area shape="rect" href="player__state_8c.html#a215f450776e74a1c1f35b9f9499c08a5" title=" " alt="" coords="148,5,240,35"/>
+<area shape="poly" title=" " alt="" coords="100,18,132,18,132,23,100,23"/>
+</map>
+</div>
+<div class="dynheader">
+Esse é o diagrama das funções que utilizam essa função:</div>
+<div class="dyncontent">
+<div class="center"><img src="fsm_8c_a03b85798baf7d4a187454d1c3f3ecd8d_icgraph.png" border="0" usemap="#afsm_8c_a03b85798baf7d4a187454d1c3f3ecd8d_icgraph" alt=""/></div>
+<map name="afsm_8c_a03b85798baf7d4a187454d1c3f3ecd8d_icgraph" id="afsm_8c_a03b85798baf7d4a187454d1c3f3ecd8d_icgraph">
+<area shape="rect" title=" " alt="" coords="304,32,398,62"/>
+<area shape="rect" href="stages_8c.html#a2858154e2009b0e6e616f313177762bc" title=" " alt="" coords="160,5,201,35"/>
+<area shape="poly" title=" " alt="" coords="288,40,201,26,202,21,289,34"/>
+<area shape="rect" href="palace__gates__room_8c.html#aa311e5f2262edd690db28a5e1fd05f97" title=" " alt="" coords="105,59,256,88"/>
+<area shape="poly" title=" " alt="" coords="289,59,257,64,256,59,288,54"/>
+<area shape="rect" href="main_8c.html#af2eb07b318158270774fcc967eec3c80" title=" " alt="" coords="5,59,57,88"/>
+<area shape="poly" title=" " alt="" coords="89,76,57,76,57,71,89,71"/>
+</map>
+</div>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gerado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.11.0
+</small></address>
+</div><!-- doc-content -->
+</body>
+</html>

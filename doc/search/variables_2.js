@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['endline_0',['endLine',['../structVenetianBlindsEffect.html#aae234f985fe53a2f6bf5cf344486f582',1,'VenetianBlindsEffect']]]
+  ['debugenabled_0',['debugEnabled',['../game__vars_8c.html#ad0344eb1bc475981a837e350c08fb53a',1,'game_vars.c']]]
 ];

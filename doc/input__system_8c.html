@@ -94,18 +94,18 @@ $(function(){ initResizable(false); });
   <div class="headertitle"><div class="title">Referência do Arquivo input_system.c</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;input_system.h&quot;</code><br />
+<div class="textblock"><code>#include &quot;modulos/input_system.h&quot;</code><br />
 <code>#include &quot;game_vars.h&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Gráfico de dependência de inclusões para input_system.c:</div>
 <div class="dyncontent">
 <div class="center"><img src="input__system_8c__incl.png" border="0" usemap="#asrc_2modulos_2input__system_8c" alt=""/></div>
 <map name="asrc_2modulos_2input__system_8c" id="asrc_2modulos_2input__system_8c">
-<area shape="rect" title=" " alt="" coords="32,5,225,35"/>
-<area shape="rect" title=" " alt="" coords="5,83,121,113"/>
-<area shape="poly" title=" " alt="" coords="118,37,87,73,83,69,114,34"/>
-<area shape="rect" title=" " alt="" coords="145,83,245,113"/>
-<area shape="poly" title=" " alt="" coords="143,34,174,69,170,73,139,37"/>
+<area shape="rect" title=" " alt="" coords="75,5,269,35"/>
+<area shape="rect" title=" " alt="" coords="5,83,179,113"/>
+<area shape="poly" title=" " alt="" coords="159,38,120,74,116,70,155,34"/>
+<area shape="rect" title=" " alt="" coords="203,83,304,113"/>
+<area shape="poly" title=" " alt="" coords="189,34,229,70,225,74,185,38"/>
 </map>
 </div>
 </div>
@@ -136,86 +136,92 @@ Funções</h2></td></tr>
 <div class="fragment"><div class="line"><span class="lineno">    5</span>{</div>
 <div class="line"><span class="lineno">    6</span>    <span class="keyword">static</span> u16 currentJoyState[2] = {0};</div>
 <div class="line"><span class="lineno">    7</span>    <span class="keyword">static</span> u16 previousJoyState[2] = {0};</div>
-<div class="line"><span class="lineno">    8</span>    u16 buttons[] = {BUTTON_UP, BUTTON_DOWN, BUTTON_LEFT, BUTTON_RIGHT, BUTTON_A, BUTTON_B, BUTTON_C, BUTTON_X, BUTTON_Y, BUTTON_Z, BUTTON_START, BUTTON_MODE};</div>
-<div class="line"><span class="lineno">    9</span>    </div>
-<div class="line"><span class="lineno">   10</span>    <span class="keywordflow">if</span>(<a class="code hl_variable" href="game__vars_8c.html#a7db0859ee62e2447701751d5980ede35">gPodeMover</a>) <span class="comment">// travar o controle dos jogadores</span></div>
-<div class="line"><span class="lineno">   11</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> jogador = 0; jogador &lt; 2; jogador++)</div>
-<div class="line"><span class="lineno">   12</span>    {</div>
-<div class="line"><span class="lineno">   13</span>        previousJoyState[jogador] = currentJoyState[jogador];</div>
-<div class="line"><span class="lineno">   14</span> </div>
-<div class="line"><span class="lineno">   15</span>        <span class="keywordflow">if</span> (jogador == 0)</div>
-<div class="line"><span class="lineno">   16</span>        {</div>
-<div class="line"><span class="lineno">   17</span>            currentJoyState[jogador] = JOY_readJoypad(JOY_1);</div>
-<div class="line"><span class="lineno">   18</span>        }</div>
-<div class="line"><span class="lineno">   19</span>        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (jogador == 1)</div>
-<div class="line"><span class="lineno">   20</span>        {</div>
-<div class="line"><span class="lineno">   21</span>            currentJoyState[jogador] = JOY_readJoypad(JOY_2);</div>
-<div class="line"><span class="lineno">   22</span>        }</div>
-<div class="line"><span class="lineno">   23</span> </div>
-<div class="line"><span class="lineno">   24</span>        <span class="keywordtype">int</span> numButtons = <span class="keyword">sizeof</span>(buttons) / <span class="keyword">sizeof</span>(buttons[0]);</div>
-<div class="line"><span class="lineno">   25</span> </div>
-<div class="line"><span class="lineno">   26</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; numButtons; i++)</div>
-<div class="line"><span class="lineno">   27</span>        {</div>
-<div class="line"><span class="lineno">   28</span>            u16 button = buttons[i];</div>
-<div class="line"><span class="lineno">   29</span> </div>
-<div class="line"><span class="lineno">   30</span>            <span class="keywordflow">if</span> (!(currentJoyState[jogador] &amp; button))</div>
-<div class="line"><span class="lineno">   31</span>            {</div>
-<div class="line"><span class="lineno">   32</span>                <span class="comment">// não esta apertado</span></div>
-<div class="line"><span class="lineno">   33</span>                <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[jogador].key_JOY_status[i] = BUTTON_RELEASED;</div>
-<div class="line"><span class="lineno">   34</span>            }</div>
-<div class="line"><span class="lineno">   35</span>            <span class="keywordflow">else</span> <span class="keywordflow">if</span> ((currentJoyState[jogador] &amp; button) &amp;&amp; !(previousJoyState[jogador] &amp; button))</div>
-<div class="line"><span class="lineno">   36</span>            {</div>
-<div class="line"><span class="lineno">   37</span>                <span class="comment">// acabou de apertar</span></div>
-<div class="line"><span class="lineno">   38</span>                <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[jogador].key_JOY_status[i] = BUTTON_PRESSED;</div>
-<div class="line"><span class="lineno">   39</span>            }</div>
-<div class="line"><span class="lineno">   40</span>            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (currentJoyState[jogador] &amp; button)</div>
-<div class="line"><span class="lineno">   41</span>            {</div>
-<div class="line"><span class="lineno">   42</span>                <span class="comment">// mantendo apertado</span></div>
-<div class="line"><span class="lineno">   43</span>                <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[jogador].key_JOY_status[i] = BUTTON_HELD;</div>
-<div class="line"><span class="lineno">   44</span>            }</div>
-<div class="line"><span class="lineno">   45</span>            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (!(currentJoyState[jogador] &amp; button) &amp;&amp; (previousJoyState[jogador] &amp; button))</div>
-<div class="line"><span class="lineno">   46</span>            {</div>
-<div class="line"><span class="lineno">   47</span>                <span class="comment">// acabou de soltar</span></div>
-<div class="line"><span class="lineno">   48</span>                <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[jogador].key_JOY_status[i] = BUTTON_RELEASED_AFTER_PRESS;</div>
-<div class="line"><span class="lineno">   49</span>            }</div>
-<div class="line"><span class="lineno">   50</span> </div>
-<div class="line"><span class="lineno">   51</span>            <span class="keywordflow">if</span> (i == numButtons - 1) <span class="comment">// end of loop, assignments</span></div>
-<div class="line"><span class="lineno">   52</span>            {</div>
-<div class="line"><span class="lineno">   53</span>                <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[jogador].key_JOY_UP_status = <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[jogador].key_JOY_status[0];</div>
-<div class="line"><span class="lineno">   54</span>                <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[jogador].key_JOY_DOWN_status = <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[jogador].key_JOY_status[1];</div>
-<div class="line"><span class="lineno">   55</span>                <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[jogador].key_JOY_LEFT_status = <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[jogador].key_JOY_status[2];</div>
-<div class="line"><span class="lineno">   56</span>                <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[jogador].key_JOY_RIGHT_status = <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[jogador].key_JOY_status[3];</div>
-<div class="line"><span class="lineno">   57</span>                <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[jogador].key_JOY_A_status = <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[jogador].key_JOY_status[4];</div>
-<div class="line"><span class="lineno">   58</span>                <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[jogador].key_JOY_B_status = <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[jogador].key_JOY_status[5];</div>
-<div class="line"><span class="lineno">   59</span>                <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[jogador].key_JOY_C_status = <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[jogador].key_JOY_status[6];</div>
-<div class="line"><span class="lineno">   60</span>                <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[jogador].key_JOY_X_status = <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[jogador].key_JOY_status[7];</div>
-<div class="line"><span class="lineno">   61</span>                <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[jogador].key_JOY_Y_status = <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[jogador].key_JOY_status[8];</div>
-<div class="line"><span class="lineno">   62</span>                <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[jogador].key_JOY_Z_status = <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[jogador].key_JOY_status[9];</div>
-<div class="line"><span class="lineno">   63</span>                <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[jogador].key_JOY_START_status = <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[jogador].key_JOY_status[10];</div>
-<div class="line"><span class="lineno">   64</span>                <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[jogador].key_JOY_MODE_status = <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[jogador].key_JOY_status[11];</div>
-<div class="line"><span class="lineno">   65</span>            }</div>
-<div class="line"><span class="lineno">   66</span>        }</div>
-<div class="line"><span class="lineno">   67</span>    }</div>
-<div class="line"><span class="lineno">   68</span>}</div>
+<div class="line"><span class="lineno">    8</span>    </div>
+<div class="line"><span class="lineno">    9</span>    u16 buttons[] = {BUTTON_UP, BUTTON_DOWN, BUTTON_LEFT, BUTTON_RIGHT, BUTTON_A, BUTTON_B, BUTTON_C, BUTTON_X, BUTTON_Y, BUTTON_Z, BUTTON_START, BUTTON_MODE};</div>
+<div class="line"><span class="lineno">   10</span> </div>
+<div class="line"><span class="lineno">   11</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="game__vars_8c.html#a7db0859ee62e2447701751d5980ede35">gPodeMover</a>) <span class="comment">// travar o controle dos jogadores</span></div>
+<div class="line"><span class="lineno">   12</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> jogador = 0; jogador &lt; 2; jogador++)</div>
+<div class="line"><span class="lineno">   13</span>        {</div>
+<div class="line"><span class="lineno">   14</span>            previousJoyState[jogador] = currentJoyState[jogador];</div>
+<div class="line"><span class="lineno">   15</span> </div>
+<div class="line"><span class="lineno">   16</span>            <span class="keywordflow">if</span> (jogador == 0)</div>
+<div class="line"><span class="lineno">   17</span>            {</div>
+<div class="line"><span class="lineno">   18</span>                currentJoyState[jogador] = JOY_readJoypad(JOY_1);</div>
+<div class="line"><span class="lineno">   19</span>            }</div>
+<div class="line"><span class="lineno">   20</span>            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (jogador == 1)</div>
+<div class="line"><span class="lineno">   21</span>            {</div>
+<div class="line"><span class="lineno">   22</span>                currentJoyState[jogador] = JOY_readJoypad(JOY_2);</div>
+<div class="line"><span class="lineno">   23</span>            }</div>
+<div class="line"><span class="lineno">   24</span> </div>
+<div class="line"><span class="lineno">   25</span>            <span class="keywordtype">int</span> numButtons = <span class="keyword">sizeof</span>(buttons) / <span class="keyword">sizeof</span>(buttons[0]);</div>
+<div class="line"><span class="lineno">   26</span> </div>
+<div class="line"><span class="lineno">   27</span>            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; numButtons; i++)</div>
+<div class="line"><span class="lineno">   28</span>            {</div>
+<div class="line"><span class="lineno">   29</span>                u16 button = buttons[i];</div>
+<div class="line"><span class="lineno">   30</span> </div>
+<div class="line"><span class="lineno">   31</span>                <span class="keywordflow">if</span> (!(currentJoyState[jogador] &amp; button))</div>
+<div class="line"><span class="lineno">   32</span>                {</div>
+<div class="line"><span class="lineno">   33</span>                    <span class="comment">// não esta apertado</span></div>
+<div class="line"><span class="lineno">   34</span>                    <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[jogador].key_JOY_status[i] = BUTTON_RELEASED;</div>
+<div class="line"><span class="lineno">   35</span>                }</div>
+<div class="line"><span class="lineno">   36</span>                <span class="keywordflow">else</span> <span class="keywordflow">if</span> ((currentJoyState[jogador] &amp; button) &amp;&amp; !(previousJoyState[jogador] &amp; button))</div>
+<div class="line"><span class="lineno">   37</span>                {</div>
+<div class="line"><span class="lineno">   38</span>                    <span class="comment">// acabou de apertar</span></div>
+<div class="line"><span class="lineno">   39</span>                    <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[jogador].key_JOY_status[i] = BUTTON_PRESSED;</div>
+<div class="line"><span class="lineno">   40</span>                }</div>
+<div class="line"><span class="lineno">   41</span>                <span class="keywordflow">else</span> <span class="keywordflow">if</span> (currentJoyState[jogador] &amp; button)</div>
+<div class="line"><span class="lineno">   42</span>                {</div>
+<div class="line"><span class="lineno">   43</span>                    <span class="comment">// mantendo apertado</span></div>
+<div class="line"><span class="lineno">   44</span>                    <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[jogador].key_JOY_status[i] = BUTTON_HELD;</div>
+<div class="line"><span class="lineno">   45</span>                }</div>
+<div class="line"><span class="lineno">   46</span>                <span class="keywordflow">else</span> <span class="keywordflow">if</span> (!(currentJoyState[jogador] &amp; button) &amp;&amp; (previousJoyState[jogador] &amp; button))</div>
+<div class="line"><span class="lineno">   47</span>                {</div>
+<div class="line"><span class="lineno">   48</span>                    <span class="comment">// acabou de soltar</span></div>
+<div class="line"><span class="lineno">   49</span>                    <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[jogador].key_JOY_status[i] = BUTTON_RELEASED_AFTER_PRESS;</div>
+<div class="line"><span class="lineno">   50</span>                }</div>
+<div class="line"><span class="lineno">   51</span> </div>
+<div class="line"><span class="lineno">   52</span>                <span class="keywordflow">if</span> (i == numButtons - 1) <span class="comment">// end of loop, assignments</span></div>
+<div class="line"><span class="lineno">   53</span>                {</div>
+<div class="line"><span class="lineno">   54</span>                    <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[jogador].key_JOY_UP_status = <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[jogador].key_JOY_status[0];</div>
+<div class="line"><span class="lineno">   55</span>                    <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[jogador].key_JOY_DOWN_status = <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[jogador].key_JOY_status[1];</div>
+<div class="line"><span class="lineno">   56</span>                    <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[jogador].key_JOY_LEFT_status = <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[jogador].key_JOY_status[2];</div>
+<div class="line"><span class="lineno">   57</span>                    <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[jogador].key_JOY_RIGHT_status = <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[jogador].key_JOY_status[3];</div>
+<div class="line"><span class="lineno">   58</span>                    <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[jogador].key_JOY_A_status = <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[jogador].key_JOY_status[4];</div>
+<div class="line"><span class="lineno">   59</span>                    <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[jogador].key_JOY_B_status = <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[jogador].key_JOY_status[5];</div>
+<div class="line"><span class="lineno">   60</span>                    <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[jogador].key_JOY_C_status = <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[jogador].key_JOY_status[6];</div>
+<div class="line"><span class="lineno">   61</span>                    <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[jogador].key_JOY_X_status = <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[jogador].key_JOY_status[7];</div>
+<div class="line"><span class="lineno">   62</span>                    <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[jogador].key_JOY_Y_status = <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[jogador].key_JOY_status[8];</div>
+<div class="line"><span class="lineno">   63</span>                    <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[jogador].key_JOY_Z_status = <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[jogador].key_JOY_status[9];</div>
+<div class="line"><span class="lineno">   64</span>                    <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[jogador].key_JOY_START_status = <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[jogador].key_JOY_status[10];</div>
+<div class="line"><span class="lineno">   65</span>                    <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[jogador].key_JOY_MODE_status = <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[jogador].key_JOY_status[11];</div>
+<div class="line"><span class="lineno">   66</span>                }</div>
+<div class="line"><span class="lineno">   67</span>            }</div>
+<div class="line"><span class="lineno">   68</span>        }</div>
+<div class="line"><span class="lineno">   69</span>}</div>
 <div class="ttc" id="agame__vars_8c_html_a5135cf03aefd90677db09304781dbb8c"><div class="ttname"><a href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a></div><div class="ttdeci">Player player[2]</div><div class="ttdef"><b>Definição</b> <a href="game__vars_8c_source.html#l00031">game_vars.c:31</a></div></div>
-<div class="ttc" id="agame__vars_8c_html_a7db0859ee62e2447701751d5980ede35"><div class="ttname"><a href="game__vars_8c.html#a7db0859ee62e2447701751d5980ede35">gPodeMover</a></div><div class="ttdeci">bool gPodeMover</div><div class="ttdef"><b>Definição</b> <a href="game__vars_8c_source.html#l00016">game_vars.c:16</a></div></div>
+<div class="ttc" id="agame__vars_8c_html_a7db0859ee62e2447701751d5980ede35"><div class="ttname"><a href="game__vars_8c.html#a7db0859ee62e2447701751d5980ede35">gPodeMover</a></div><div class="ttdeci">bool gPodeMover</div><div class="ttdef"><b>Definição</b> <a href="game__vars_8c_source.html#l00015">game_vars.c:15</a></div></div>
 </div><!-- fragment --><div class="dynheader">
 Esse é o diagrama das funções que utilizam essa função:</div>
 <div class="dyncontent">
 <div class="center"><img src="input__system_8c_a2656744a9ebd96a8887f55208c53bc6e_icgraph.png" border="0" usemap="#ainput__system_8c_a2656744a9ebd96a8887f55208c53bc6e_icgraph" alt=""/></div>
 <map name="ainput__system_8c_a2656744a9ebd96a8887f55208c53bc6e_icgraph" id="ainput__system_8c_a2656744a9ebd96a8887f55208c53bc6e_icgraph">
-<area shape="rect" title=" " alt="" coords="349,63,447,92"/>
-<area shape="rect" href="main_8c.html#af2eb07b318158270774fcc967eec3c80" title=" " alt="" coords="5,63,57,92"/>
-<area shape="poly" title=" " alt="" coords="363,56,333,39,300,27,246,14,202,8,159,12,106,27,74,43,48,64,45,60,71,39,104,22,158,7,202,3,247,8,302,22,335,34,365,51"/>
-<area shape="rect" href="intro__demo__room_8c.html#ac46ea98ecb7218ef78a7d4cd50896175" title=" " alt="" coords="153,36,253,66"/>
-<area shape="poly" title=" " alt="" coords="333,71,253,60,253,55,334,66"/>
-<area shape="rect" href="press__start__room_8c.html#acdab073d60ace1b6f9ba4ecb1a63bc6c" title=" " alt="" coords="137,89,269,119"/>
-<area shape="poly" title=" " alt="" coords="334,89,269,98,269,92,334,83"/>
-<area shape="rect" href="char__select__room_8c.html#a2faa2442981b2af06f7748194df37b1e" title=" " alt="" coords="105,143,301,172"/>
-<area shape="poly" title=" " alt="" coords="361,103,302,133,269,145,268,140,300,128,359,98"/>
-<area shape="poly" title=" " alt="" coords="138,64,58,76,57,71,137,58"/>
-<area shape="poly" title=" " alt="" coords="122,94,57,84,58,79,122,89"/>
-<area shape="poly" title=" " alt="" coords="118,139,103,133,73,115,47,95,51,90,76,110,106,128,120,135"/>
+<area shape="rect" title=" " alt="" coords="349,137,447,167"/>
+<area shape="rect" href="stages_8c.html#a2858154e2009b0e6e616f313177762bc" title=" " alt="" coords="183,5,223,35"/>
+<area shape="poly" title=" " alt="" coords="376,126,343,86,323,66,300,49,260,33,223,25,224,20,262,28,302,45,326,62,347,82,380,123"/>
+<area shape="rect" href="palace__gates__room_8c.html#aa311e5f2262edd690db28a5e1fd05f97" title=" " alt="" coords="127,59,279,88"/>
+<area shape="poly" title=" " alt="" coords="352,133,300,109,251,91,253,86,302,104,354,128"/>
+<area shape="rect" href="main_8c.html#af2eb07b318158270774fcc967eec3c80" title=" " alt="" coords="5,163,57,192"/>
+<area shape="poly" title=" " alt="" coords="334,148,226,144,165,146,105,153,58,168,56,163,104,148,165,141,226,138,334,143"/>
+<area shape="rect" href="intro__demo__room_8c.html#ac46ea98ecb7218ef78a7d4cd50896175" title=" " alt="" coords="153,163,253,192"/>
+<area shape="poly" title=" " alt="" coords="334,163,253,174,253,168,333,158"/>
+<area shape="rect" href="press__start__room_8c.html#acdab073d60ace1b6f9ba4ecb1a63bc6c" title=" " alt="" coords="137,216,269,246"/>
+<area shape="poly" title=" " alt="" coords="361,177,302,207,269,218,268,213,300,202,358,173"/>
+<area shape="rect" href="char__select__room_8c.html#a2faa2442981b2af06f7748194df37b1e" title=" " alt="" coords="105,269,301,299"/>
+<area shape="poly" title=" " alt="" coords="380,182,347,222,326,242,302,260,279,271,276,266,300,255,323,238,343,219,376,178"/>
+<area shape="poly" title=" " alt="" coords="130,97,106,109,72,136,46,164,42,161,68,132,103,105,128,92"/>
+<area shape="poly" title=" " alt="" coords="137,180,57,180,57,175,137,175"/>
+<area shape="poly" title=" " alt="" coords="127,214,104,207,56,190,58,185,106,202,129,209"/>
+<area shape="poly" title=" " alt="" coords="113,265,103,260,66,228,40,195,44,191,70,224,106,255,116,260"/>
 </map>
 </div>
 

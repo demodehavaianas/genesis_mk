@@ -90,75 +90,61 @@ $(function(){ initResizable(false); });
 <div id="doc-content">
 <div class="header">
   <div class="summary">
-<a href="#typedef-members">Definições de Tipos</a> &#124;
-<a href="#func-members">Funções</a> &#124;
-<a href="#var-members">Variáveis</a>  </div>
+<a href="#define-members">Definições e Macros</a> &#124;
+<a href="#func-members">Funções</a>  </div>
   <div class="headertitle"><div class="title">Referência do Arquivo anima_system.c</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;anima_system.h&quot;</code><br />
-<code>#include &quot;game_vars.h&quot;</code><br />
-<code>#include &quot;fighters.h&quot;</code><br />
+<div class="textblock"><code>#include &quot;mkplus.h&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Gráfico de dependência de inclusões para anima_system.c:</div>
 <div class="dyncontent">
 <div class="center"><img src="anima__system_8c__incl.png" border="0" usemap="#asrc_2modulos_2anima__system_8c" alt=""/></div>
 <map name="asrc_2modulos_2anima__system_8c" id="asrc_2modulos_2anima__system_8c">
-<area shape="rect" title=" " alt="" coords="101,5,299,35"/>
-<area shape="rect" title=" " alt="" coords="5,83,126,113"/>
-<area shape="poly" title=" " alt="" coords="176,38,105,77,103,73,174,33"/>
-<area shape="rect" title=" " alt="" coords="150,83,250,113"/>
-<area shape="poly" title=" " alt="" coords="203,36,203,67,198,67,198,36"/>
-<area shape="rect" title=" " alt="" coords="275,83,357,113"/>
-<area shape="poly" title=" " alt="" coords="223,33,283,72,280,77,221,38"/>
+<area shape="rect" title=" " alt="" coords="5,5,204,35"/>
+<area shape="rect" title=" " alt="" coords="66,83,143,113"/>
+<area shape="poly" title=" " alt="" coords="107,36,107,67,102,67,102,36"/>
 </map>
 </div>
 </div>
 <p><a href="anima__system_8c_source.html">Ir para o código-fonte desse arquivo.</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
-Definições de Tipos</h2></td></tr>
-<tr class="memitem:abe5fa2071132c66cf3e714a2ac38037c" id="r_abe5fa2071132c66cf3e714a2ac38037c"><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abe5fa2071132c66cf3e714a2ac38037c">PlayerStateFunc</a>) (int, u16)</td></tr>
-<tr class="separator:abe5fa2071132c66cf3e714a2ac38037c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+Definições e Macros</h2></td></tr>
+<tr class="memitem:ac098d88c62d656f7f9bd6089600829ff" id="r_ac098d88c62d656f7f9bd6089600829ff"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac098d88c62d656f7f9bd6089600829ff">SOCO_TIMER</a>&#160;&#160;&#160;1</td></tr>
+<tr class="separator:ac098d88c62d656f7f9bd6089600829ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Funções</h2></td></tr>
-<tr class="memitem:ab609215115971b40d9e47df6e4a8f853" id="r_ab609215115971b40d9e47df6e4a8f853"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab609215115971b40d9e47df6e4a8f853">playerState</a> (int ind, u16 state)</td></tr>
-<tr class="separator:ab609215115971b40d9e47df6e4a8f853"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a628b00b919856c9e5c3bc6e4e492f8b4" id="r_a628b00b919856c9e5c3bc6e4e492f8b4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a628b00b919856c9e5c3bc6e4e492f8b4">anima</a> ()</td></tr>
-<tr class="separator:a628b00b919856c9e5c3bc6e4e492f8b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
-Variáveis</h2></td></tr>
-<tr class="memitem:aadbba599ec6da804710a19884e08e608" id="r_aadbba599ec6da804710a19884e08e608"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="#abe5fa2071132c66cf3e714a2ac38037c">PlayerStateFunc</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aadbba599ec6da804710a19884e08e608">PLAYER_STATE_FUNCS</a> [7]</td></tr>
-<tr class="separator:aadbba599ec6da804710a19884e08e608"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3e73164d603e05e94b8eedeb557a3245" id="r_a3e73164d603e05e94b8eedeb557a3245"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3e73164d603e05e94b8eedeb557a3245">animate</a> ()</td></tr>
+<tr class="separator:a3e73164d603e05e94b8eedeb557a3245"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Definições dos tipos</h2>
-<a id="abe5fa2071132c66cf3e714a2ac38037c" name="abe5fa2071132c66cf3e714a2ac38037c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abe5fa2071132c66cf3e714a2ac38037c">&#9670;&#160;</a></span>PlayerStateFunc</h2>
+<h2 class="groupheader">Definições e macros</h2>
+<a id="ac098d88c62d656f7f9bd6089600829ff" name="ac098d88c62d656f7f9bd6089600829ff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac098d88c62d656f7f9bd6089600829ff">&#9670;&#160;</a></span>SOCO_TIMER</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef void(* PlayerStateFunc) (int, u16)</td>
+          <td class="memname">#define SOCO_TIMER&#160;&#160;&#160;1</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definição na linha <a class="el" href="anima__system_8c_source.html#l00006">6</a> do arquivo <a class="el" href="anima__system_8c_source.html">anima_system.c</a>.</p>
+<p class="definition">Definição na linha <a class="el" href="anima__system_8c_source.html#l00003">3</a> do arquivo <a class="el" href="anima__system_8c_source.html">anima_system.c</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Funções</h2>
-<a id="a628b00b919856c9e5c3bc6e4e492f8b4" name="a628b00b919856c9e5c3bc6e4e492f8b4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a628b00b919856c9e5c3bc6e4e492f8b4">&#9670;&#160;</a></span>anima()</h2>
+<a id="a3e73164d603e05e94b8eedeb557a3245" name="a3e73164d603e05e94b8eedeb557a3245"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3e73164d603e05e94b8eedeb557a3245">&#9670;&#160;</a></span>animate()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void anima </td>
+          <td class="memname">void animate </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
@@ -166,173 +152,220 @@ Variáveis</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definição na linha <a class="el" href="anima__system_8c_source.html#l00045">45</a> do arquivo <a class="el" href="anima__system_8c_source.html">anima_system.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   46</span>{</div>
-<div class="line"><span class="lineno">   47</span>    <a class="code hl_variable" href="game__vars_8c.html#ab6aaeb8394cea6ecbe228b9504e02a0e">gASG_system</a> = FALSE;</div>
-<div class="line"><span class="lineno">   48</span> </div>
-<div class="line"><span class="lineno">   49</span>    <span class="comment">// jogadores 1 e 2</span></div>
-<div class="line"><span class="lineno">   50</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> ind = 0; ind &lt; 2; ind++)</div>
-<div class="line"><span class="lineno">   51</span>    {</div>
-<div class="line"><span class="lineno">   52</span>        <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[ind].frameTimeAtual++;</div>
-<div class="line"><span class="lineno">   53</span> </div>
-<div class="line"><span class="lineno">   54</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[ind].frameTimeAtual &gt; <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[ind].frameTimeTotal &amp;&amp; <a class="code hl_variable" href="game__vars_8c.html#ab6aaeb8394cea6ecbe228b9504e02a0e">gASG_system</a> == FALSE)</div>
-<div class="line"><span class="lineno">   55</span>        {</div>
-<div class="line"><span class="lineno">   56</span>            <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[ind].animFrame++;</div>
-<div class="line"><span class="lineno">   57</span> </div>
-<div class="line"><span class="lineno">   58</span>            <span class="keywordflow">if</span> (<a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[ind].animFrame &gt; <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[ind].animFrameTotal)</div>
-<div class="line"><span class="lineno">   59</span>            {</div>
-<div class="line"><span class="lineno">   60</span>                <a class="code hl_variable" href="game__vars_8c.html#ab6aaeb8394cea6ecbe228b9504e02a0e">gASG_system</a> = TRUE;</div>
+<p class="definition">Definição na linha <a class="el" href="anima__system_8c_source.html#l00015">15</a> do arquivo <a class="el" href="anima__system_8c_source.html">anima_system.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   16</span>{</div>
+<div class="line"><span class="lineno">   17</span>    <span class="comment">//if(player[0].hitPause == 0 &amp;&amp; player[1].hitPause == 0){</span></div>
+<div class="line"><span class="lineno">   18</span>    <a class="code hl_variable" href="game__vars_8c.html#ab6aaeb8394cea6ecbe228b9504e02a0e">gASG_system</a> = FALSE;</div>
+<div class="line"><span class="lineno">   19</span> </div>
+<div class="line"><span class="lineno">   20</span>    <span class="comment">// jogadores 1 e 2</span></div>
+<div class="line"><span class="lineno">   21</span>    <span class="keywordflow">for</span> (u8 i = 0; i &lt; MAX_PLAYERS; i++)</div>
+<div class="line"><span class="lineno">   22</span>    {</div>
+<div class="line"><span class="lineno">   23</span>        <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[i].frameTimeAtual++;</div>
+<div class="line"><span class="lineno">   24</span> </div>
+<div class="line"><span class="lineno">   25</span>        <span class="comment">// hora de trocar o frame</span></div>
+<div class="line"><span class="lineno">   26</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[i].frameTimeAtual &gt; <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[i].frameTimeTotal &amp;&amp; <a class="code hl_variable" href="game__vars_8c.html#ab6aaeb8394cea6ecbe228b9504e02a0e">gASG_system</a> == FALSE)</div>
+<div class="line"><span class="lineno">   27</span>        {</div>
+<div class="line"><span class="lineno">   28</span>            <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[i].animFrame++;</div>
+<div class="line"><span class="lineno">   29</span> </div>
+<div class="line"><span class="lineno">   30</span>            <span class="comment">//hora de trocar ou recarregar a animacao</span></div>
+<div class="line"><span class="lineno">   31</span>            <span class="keywordflow">if</span> (<a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[i].animFrame &gt; <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[i].animFrameTotal)</div>
+<div class="line"><span class="lineno">   32</span>            {</div>
+<div class="line"><span class="lineno">   33</span>                <span class="keywordflow">if</span> (<a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[i].state == SOCO_BAIXO_CONTINUO)</div>
+<div class="line"><span class="lineno">   34</span>                {</div>
+<div class="line"><span class="lineno">   35</span>                    <span class="comment">/* 0..7 acabou. Sem A novo, para. Com A, volta no quadro 1 (não no 0). */</span></div>
+<div class="line"><span class="lineno">   36</span>                    <span class="keywordflow">if</span> (<a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[i].key_JOY_countdown[<a class="code hl_define" href="#ac098d88c62d656f7f9bd6089600829ff">SOCO_TIMER</a>] == 0)</div>
+<div class="line"><span class="lineno">   37</span>                    {</div>
+<div class="line"><span class="lineno">   38</span>                        <a class="code hl_variable" href="game__vars_8c.html#ab6aaeb8394cea6ecbe228b9504e02a0e">gASG_system</a> = TRUE;</div>
+<div class="line"><span class="lineno">   39</span>                        <a class="code hl_function" href="player__state_8c.html#a215f450776e74a1c1f35b9f9499c08a5">playerState</a>(i, PARADO);</div>
+<div class="line"><span class="lineno">   40</span>                    }</div>
+<div class="line"><span class="lineno">   41</span>                    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">   42</span>                        <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[i].animFrame = 2;</div>
+<div class="line"><span class="lineno">   43</span>                }</div>
+<div class="line"><span class="lineno">   44</span>                <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">   45</span>                <span class="comment">//--------------------- refactory</span></div>
+<div class="line"><span class="lineno">   46</span>                <span class="keywordflow">if</span> (<a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[i].state == BLOQUEIO_EM_PE     ||</div>
+<div class="line"><span class="lineno">   47</span>                    <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[i].state == BLOQUEIO_ABAIXADO  ||</div>
+<div class="line"><span class="lineno">   48</span>                    <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[i].state == INI_PULO_NEUTRO    </div>
+<div class="line"><span class="lineno">   49</span>                   <span class="comment">// || player[i].state == FIM_PULO_NEUTRO</span></div>
+<div class="line"><span class="lineno">   50</span>                )</div>
+<div class="line"><span class="lineno">   51</span>                {</div>
+<div class="line"><span class="lineno">   52</span>                    <span class="comment">//player[i].animFrame = 1;</span></div>
+<div class="line"><span class="lineno">   53</span>                    <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[i].animFrame = <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[i].animFrameTotal;</div>
+<div class="line"><span class="lineno">   54</span>                }</div>
+<div class="line"><span class="lineno">   55</span>                <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">   56</span>                {</div>
+<div class="line"><span class="lineno">   57</span>                    <span class="keywordtype">bool</span> bSegura = (<a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[i].key_JOY_B_status == BUTTON_PRESSED ||</div>
+<div class="line"><span class="lineno">   58</span>                                    <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[i].key_JOY_B_status == BUTTON_HELD);</div>
+<div class="line"><span class="lineno">   59</span>                    <span class="keywordtype">bool</span> downSegura = (<a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[i].key_JOY_DOWN_status == BUTTON_PRESSED ||</div>
+<div class="line"><span class="lineno">   60</span>                                    <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[i].key_JOY_DOWN_status == BUTTON_HELD);</div>
 <div class="line"><span class="lineno">   61</span> </div>
-<div class="line"><span class="lineno">   62</span>                <span class="keywordflow">if</span> (<a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[ind].state == PARADO)</div>
-<div class="line"><span class="lineno">   63</span>                {</div>
-<div class="line"><span class="lineno">   64</span>                    <a class="code hl_function" href="#ab609215115971b40d9e47df6e4a8f853">playerState</a>(ind, PARADO);</div>
-<div class="line"><span class="lineno">   65</span>                }</div>
-<div class="line"><span class="lineno">   66</span>            }</div>
-<div class="line"><span class="lineno">   67</span>            <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[ind].frameTimeAtual = 1;</div>
-<div class="line"><span class="lineno">   68</span>            <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[ind].frameTimeTotal = <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[ind].dataAnim[<a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[ind].animFrame];</div>
-<div class="line"><span class="lineno">   69</span> </div>
-<div class="line"><span class="lineno">   70</span>            <span class="keywordflow">if</span> (<a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[ind].sprite)</div>
-<div class="line"><span class="lineno">   71</span>            {</div>
-<div class="line"><span class="lineno">   72</span>                u16 totalReal = <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[ind].sprite-&gt;animation-&gt;numFrame;</div>
-<div class="line"><span class="lineno">   73</span> </div>
-<div class="line"><span class="lineno">   74</span>                <span class="keywordflow">if</span> (<a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[ind].animFrame - 1 &lt; totalReal)</div>
-<div class="line"><span class="lineno">   75</span>                {</div>
-<div class="line"><span class="lineno">   76</span>                    SPR_setAnimAndFrame(<a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[ind].sprite, 0, <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[ind].animFrame - 1);</div>
-<div class="line"><span class="lineno">   77</span>                }</div>
-<div class="line"><span class="lineno">   78</span>            }</div>
-<div class="line"><span class="lineno">   79</span>        }</div>
-<div class="line"><span class="lineno">   80</span>        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[ind].frameTimeAtual &gt; <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[ind].frameTimeTotal &amp;&amp; <a class="code hl_variable" href="game__vars_8c.html#ab6aaeb8394cea6ecbe228b9504e02a0e">gASG_system</a> == TRUE)</div>
-<div class="line"><span class="lineno">   81</span>        {</div>
-<div class="line"><span class="lineno">   82</span>            <span class="keywordflow">if</span> (<a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[ind].frameTimeAtual &gt; 1)</div>
-<div class="line"><span class="lineno">   83</span>            {</div>
-<div class="line"><span class="lineno">   84</span>                <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[ind].frameTimeAtual--;</div>
-<div class="line"><span class="lineno">   85</span>            }</div>
-<div class="line"><span class="lineno">   86</span>        }</div>
-<div class="line"><span class="lineno">   87</span>    }</div>
-<div class="line"><span class="lineno">   88</span>}</div>
-<div class="ttc" id="aanima__system_8c_html_ab609215115971b40d9e47df6e4a8f853"><div class="ttname"><a href="#ab609215115971b40d9e47df6e4a8f853">playerState</a></div><div class="ttdeci">void playerState(int ind, u16 state)</div><div class="ttdef"><b>Definição</b> <a href="anima__system_8c_source.html#l00017">anima_system.c:17</a></div></div>
+<div class="line"><span class="lineno">   62</span>                    <a class="code hl_variable" href="game__vars_8c.html#ab6aaeb8394cea6ecbe228b9504e02a0e">gASG_system</a> = TRUE;</div>
+<div class="line"><span class="lineno">   63</span> </div>
+<div class="line"><span class="lineno">   64</span>                    <span class="keywordflow">switch</span> (<a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[i].state)</div>
+<div class="line"><span class="lineno">   65</span>                    {</div>
+<div class="line"><span class="lineno">   66</span>                        <span class="keywordflow">case</span> PARADO:</div>
+<div class="line"><span class="lineno">   67</span>                        <span class="keywordflow">case</span> LEVANTANDO:</div>
+<div class="line"><span class="lineno">   68</span>                        <span class="keywordflow">case</span> VIRAR:</div>
+<div class="line"><span class="lineno">   69</span>                        <span class="keywordflow">case</span> SOCO_ALTO:</div>
+<div class="line"><span class="lineno">   70</span>                        <span class="keywordflow">case</span> SOCO_BAIXO:</div>
+<div class="line"><span class="lineno">   71</span>                        <span class="keywordflow">case</span> CHUTE_ALTO:</div>
+<div class="line"><span class="lineno">   72</span>                        <span class="keywordflow">case</span> CHUTE_BAIXO:</div>
+<div class="line"><span class="lineno">   73</span>                        <span class="keywordflow">case</span> SOCO_PERTO:</div>
+<div class="line"><span class="lineno">   74</span>                        <span class="keywordflow">case</span> CHUTE_PERTO:</div>
+<div class="line"><span class="lineno">   75</span>                        <span class="keywordflow">case</span> GIRATORIA:</div>
+<div class="line"><span class="lineno">   76</span>                        <span class="keywordflow">case</span> BLOQUEIO_EM_PE_FIM:</div>
+<div class="line"><span class="lineno">   77</span>                            <a class="code hl_function" href="player__state_8c.html#a215f450776e74a1c1f35b9f9499c08a5">playerState</a>(i, PARADO);</div>
+<div class="line"><span class="lineno">   78</span>                            <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">   79</span> </div>
+<div class="line"><span class="lineno">   80</span>                        <span class="keywordflow">case</span> ANDAR_PRA_FRENTE:</div>
+<div class="line"><span class="lineno">   81</span>                            <a class="code hl_function" href="player__state_8c.html#a215f450776e74a1c1f35b9f9499c08a5">playerState</a>(i, ANDAR_PRA_FRENTE);</div>
+<div class="line"><span class="lineno">   82</span>                            <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">   83</span> </div>
+<div class="line"><span class="lineno">   84</span>                        <span class="keywordflow">case</span> ANDAR_PRA_TRAS:</div>
+<div class="line"><span class="lineno">   85</span>                            <a class="code hl_function" href="player__state_8c.html#a215f450776e74a1c1f35b9f9499c08a5">playerState</a>(i, ANDAR_PRA_TRAS);</div>
+<div class="line"><span class="lineno">   86</span>                            <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">   87</span> </div>
+<div class="line"><span class="lineno">   88</span>                        <span class="keywordflow">case</span> ABAIXANDO:</div>
+<div class="line"><span class="lineno">   89</span>                        <span class="keywordflow">case</span> ABAIXADO:</div>
+<div class="line"><span class="lineno">   90</span>                        <span class="keywordflow">case</span> CHUTE_ABAIXADO:</div>
+<div class="line"><span class="lineno">   91</span>                            <a class="code hl_function" href="player__state_8c.html#a215f450776e74a1c1f35b9f9499c08a5">playerState</a>(i, ABAIXADO);</div>
+<div class="line"><span class="lineno">   92</span>                            <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">   93</span> </div>
+<div class="line"><span class="lineno">   94</span>                        <span class="keywordflow">case</span> BLOQUEIO_EM_PE_INI:</div>
+<div class="line"><span class="lineno">   95</span>                            <a class="code hl_function" href="player__state_8c.html#a215f450776e74a1c1f35b9f9499c08a5">playerState</a>(i, bSegura ? BLOQUEIO_EM_PE : BLOQUEIO_EM_PE_FIM);</div>
+<div class="line"><span class="lineno">   96</span>                            <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">   97</span> </div>
+<div class="line"><span class="lineno">   98</span>                        <span class="keywordflow">case</span> BLOQUEIO_ABAIXADO_INI:</div>
+<div class="line"><span class="lineno">   99</span>                            <a class="code hl_function" href="player__state_8c.html#a215f450776e74a1c1f35b9f9499c08a5">playerState</a>(i, bSegura ? BLOQUEIO_ABAIXADO : BLOQUEIO_ABAIXADO_FIM);</div>
+<div class="line"><span class="lineno">  100</span>                            <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  101</span> </div>
+<div class="line"><span class="lineno">  102</span>                        <span class="keywordflow">case</span> BLOQUEIO_ABAIXADO_FIM:</div>
+<div class="line"><span class="lineno">  103</span>                            <a class="code hl_function" href="player__state_8c.html#a215f450776e74a1c1f35b9f9499c08a5">playerState</a>(i, downSegura ? ABAIXADO : LEVANTANDO);</div>
+<div class="line"><span class="lineno">  104</span>                            <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  105</span>                        </div>
+<div class="line"><span class="lineno">  106</span>                        <span class="keywordflow">case</span> RASTEIRA:</div>
+<div class="line"><span class="lineno">  107</span>                            <span class="keywordflow">if</span>(<a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[i].key_JOY_DOWN_status == BUTTON_RELEASED) </div>
+<div class="line"><span class="lineno">  108</span>                                <a class="code hl_function" href="player__state_8c.html#a215f450776e74a1c1f35b9f9499c08a5">playerState</a>(i, PARADO);</div>
+<div class="line"><span class="lineno">  109</span>                            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[i].key_JOY_DOWN_status == BUTTON_HELD) </div>
+<div class="line"><span class="lineno">  110</span>                                <a class="code hl_function" href="player__state_8c.html#a215f450776e74a1c1f35b9f9499c08a5">playerState</a>(i, ABAIXADO);</div>
+<div class="line"><span class="lineno">  111</span>                            <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  112</span>                        </div>
+<div class="line"><span class="lineno">  113</span>                        <span class="keywordflow">case</span> PULO_NEUTRO_SOLO:</div>
+<div class="line"><span class="lineno">  114</span>                            <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[i].vSpeed = 0;</div>
+<div class="line"><span class="lineno">  115</span>                            <a class="code hl_function" href="player__state_8c.html#a215f450776e74a1c1f35b9f9499c08a5">playerState</a>(i, PARADO);</div>
+<div class="line"><span class="lineno">  116</span>                            <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  117</span>                    }</div>
+<div class="line"><span class="lineno">  118</span>                }</div>
+<div class="line"><span class="lineno">  119</span>                <span class="comment">//---------------------</span></div>
+<div class="line"><span class="lineno">  120</span>                <span class="comment">/*gASG_system = TRUE;</span></div>
+<div class="line"><span class="lineno">  121</span><span class="comment"></span> </div>
+<div class="line"><span class="lineno">  122</span><span class="comment">                if(player[i].state == PARADO)             playerState(i, PARADO);//</span></div>
+<div class="line"><span class="lineno">  123</span><span class="comment">                if(player[i].state == ANDAR_PRA_FRENTE)   playerState(i, ANDAR_PRA_FRENTE);//</span></div>
+<div class="line"><span class="lineno">  124</span><span class="comment">                if(player[i].state == ANDAR_PRA_TRAS)     playerState(i, ANDAR_PRA_TRAS);//</span></div>
+<div class="line"><span class="lineno">  125</span><span class="comment">                if(player[i].state == ABAIXANDO)          playerState(i, ABAIXADO);//</span></div>
+<div class="line"><span class="lineno">  126</span><span class="comment">                if(player[i].state == ABAIXADO)           playerState(i, ABAIXADO);//</span></div>
+<div class="line"><span class="lineno">  127</span><span class="comment">                if(player[i].state == LEVANTANDO)         playerState(i, PARADO);//</span></div>
+<div class="line"><span class="lineno">  128</span><span class="comment">                if(player[i].state == VIRAR)              playerState(i, PARADO);//</span></div>
+<div class="line"><span class="lineno">  129</span><span class="comment">                if(player[i].state == CHUTE_BAIXO)        playerState(i, PARADO);//</span></div>
+<div class="line"><span class="lineno">  130</span><span class="comment">                if(player[i].state == CHUTE_ALTO)         playerState(i, PARADO);//</span></div>
+<div class="line"><span class="lineno">  131</span><span class="comment">                if(player[i].state == SOCO_PERTO)         playerState(i, PARADO);//</span></div>
+<div class="line"><span class="lineno">  132</span><span class="comment">                if(player[i].state == CHUTE_PERTO)        playerState(i, PARADO);//</span></div>
+<div class="line"><span class="lineno">  133</span><span class="comment">                if(player[i].state == RASTEIRA &amp;&amp; </span></div>
+<div class="line"><span class="lineno">  134</span><span class="comment">                   player[i].key_JOY_DOWN_status == BUTTON_RELEASED) playerState(i, PARADO); //</span></div>
+<div class="line"><span class="lineno">  135</span><span class="comment">                if(player[i].state == RASTEIRA &amp;&amp; </span></div>
+<div class="line"><span class="lineno">  136</span><span class="comment">                   player[i].key_JOY_DOWN_status == BUTTON_HELD)     playerState(i, ABAIXADO); //</span></div>
+<div class="line"><span class="lineno">  137</span><span class="comment">                if(player[i].state == GIRATORIA)          playerState(i, PARADO);//</span></div>
+<div class="line"><span class="lineno">  138</span><span class="comment">                if(player[i].state == CHUTE_ABAIXADO)     playerState(i, ABAIXADO);//</span></div>
+<div class="line"><span class="lineno">  139</span><span class="comment"></span> </div>
+<div class="line"><span class="lineno">  140</span><span class="comment">                if (player[i].state == BLOQUEIO_EM_PE_INI)</span></div>
+<div class="line"><span class="lineno">  141</span><span class="comment">                {</span></div>
+<div class="line"><span class="lineno">  142</span><span class="comment">                    if (player[i].key_JOY_B_status == BUTTON_PRESSED ||</span></div>
+<div class="line"><span class="lineno">  143</span><span class="comment">                        player[i].key_JOY_B_status == BUTTON_HELD)</span></div>
+<div class="line"><span class="lineno">  144</span><span class="comment">                        playerState(i, BLOQUEIO_EM_PE); // ainda segurando </span></div>
+<div class="line"><span class="lineno">  145</span><span class="comment">                    else</span></div>
+<div class="line"><span class="lineno">  146</span><span class="comment">                        playerState(i, BLOQUEIO_EM_PE_FIM); // soltou durante os 2 quadros </span></div>
+<div class="line"><span class="lineno">  147</span><span class="comment">                }</span></div>
+<div class="line"><span class="lineno">  148</span><span class="comment">                else if (player[i].state == BLOQUEIO_EM_PE)</span></div>
+<div class="line"><span class="lineno">  149</span><span class="comment">                {</span></div>
+<div class="line"><span class="lineno">  150</span><span class="comment">                    player[i].animFrame = 1; // 1 quadro só: segura, não recria o sprite </span></div>
+<div class="line"><span class="lineno">  151</span><span class="comment">                }</span></div>
+<div class="line"><span class="lineno">  152</span><span class="comment">                else if (player[i].state == BLOQUEIO_EM_PE_FIM)</span></div>
+<div class="line"><span class="lineno">  153</span><span class="comment">                    playerState(i, PARADO);</span></div>
+<div class="line"><span class="lineno">  154</span><span class="comment">                //--</span></div>
+<div class="line"><span class="lineno">  155</span><span class="comment">                if (player[i].state == BLOQUEIO_ABAIXADO_INI)</span></div>
+<div class="line"><span class="lineno">  156</span><span class="comment">                {</span></div>
+<div class="line"><span class="lineno">  157</span><span class="comment">                    if (player[i].key_JOY_B_status == BUTTON_PRESSED ||</span></div>
+<div class="line"><span class="lineno">  158</span><span class="comment">                        player[i].key_JOY_B_status == BUTTON_HELD)</span></div>
+<div class="line"><span class="lineno">  159</span><span class="comment">                        playerState(i, BLOQUEIO_ABAIXADO);</span></div>
+<div class="line"><span class="lineno">  160</span><span class="comment">                    else</span></div>
+<div class="line"><span class="lineno">  161</span><span class="comment">                        playerState(i, BLOQUEIO_ABAIXADO_FIM);</span></div>
+<div class="line"><span class="lineno">  162</span><span class="comment">                }</span></div>
+<div class="line"><span class="lineno">  163</span><span class="comment">                else if (player[i].state == BLOQUEIO_ABAIXADO)</span></div>
+<div class="line"><span class="lineno">  164</span><span class="comment">                {</span></div>
+<div class="line"><span class="lineno">  165</span><span class="comment">                    player[i].animFrame = 1; // pose de 1 quadro: não recria o sprite</span></div>
+<div class="line"><span class="lineno">  166</span><span class="comment">                }</span></div>
+<div class="line"><span class="lineno">  167</span><span class="comment">                else if (player[i].state == BLOQUEIO_ABAIXADO_FIM)</span></div>
+<div class="line"><span class="lineno">  168</span><span class="comment">                {</span></div>
+<div class="line"><span class="lineno">  169</span><span class="comment">                    if (player[i].key_JOY_DOWN_status == BUTTON_PRESSED ||</span></div>
+<div class="line"><span class="lineno">  170</span><span class="comment">                        player[i].key_JOY_DOWN_status == BUTTON_HELD)</span></div>
+<div class="line"><span class="lineno">  171</span><span class="comment">                        playerState(i, ABAIXADO);</span></div>
+<div class="line"><span class="lineno">  172</span><span class="comment">                    else</span></div>
+<div class="line"><span class="lineno">  173</span><span class="comment">                        playerState(i, LEVANTANDO);</span></div>
+<div class="line"><span class="lineno">  174</span><span class="comment">                }*/</span></div>
+<div class="line"><span class="lineno">  175</span>            }</div>
+<div class="line"><span class="lineno">  176</span> </div>
+<div class="line"><span class="lineno">  177</span>            <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[i].frameTimeAtual = 1;</div>
+<div class="line"><span class="lineno">  178</span>            <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[i].frameTimeTotal = <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[i].dataAnim[<a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[i].animFrame];</div>
+<div class="line"><span class="lineno">  179</span> </div>
+<div class="line"><span class="lineno">  180</span>            {</div>
+<div class="line"><span class="lineno">  181</span>                u16 frame = (u16)(<a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[i].animFrame - 1);</div>
+<div class="line"><span class="lineno">  182</span>                <span class="keywordflow">if</span> (<a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[i].state == SOCO_BAIXO)</div>
+<div class="line"><span class="lineno">  183</span>                    frame = soco_baixo_frame(<a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[i].animFrame);</div>
+<div class="line"><span class="lineno">  184</span>                SPR_setAnimAndFrame(<a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[i].sprite, 0, frame);</div>
+<div class="line"><span class="lineno">  185</span>            }</div>
+<div class="line"><span class="lineno">  186</span>            </div>
+<div class="line"><span class="lineno">  187</span>            <span class="comment">//SPR_setAnimAndFrame(player[i].sprite, 0, player[i].animFrame-1);</span></div>
+<div class="line"><span class="lineno">  188</span> </div>
+<div class="line"><span class="lineno">  189</span>            <span class="comment">//FUNCAO_FSM_HITBOXES(i); //Atualiza as Hurt / Hitboxes</span></div>
+<div class="line"><span class="lineno">  190</span>        }</div>
+<div class="line"><span class="lineno">  191</span>        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[i].frameTimeAtual &gt; <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[i].frameTimeTotal &amp;&amp; <a class="code hl_variable" href="game__vars_8c.html#ab6aaeb8394cea6ecbe228b9504e02a0e">gASG_system</a> == TRUE)</div>
+<div class="line"><span class="lineno">  192</span>        {</div>
+<div class="line"><span class="lineno">  193</span>            <span class="keywordflow">if</span> (<a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[i].frameTimeAtual &gt; 1)</div>
+<div class="line"><span class="lineno">  194</span>            {</div>
+<div class="line"><span class="lineno">  195</span>                <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[i].frameTimeAtual--;</div>
+<div class="line"><span class="lineno">  196</span>            }</div>
+<div class="line"><span class="lineno">  197</span>        }</div>
+<div class="line"><span class="lineno">  198</span>    }</div>
+<div class="line"><span class="lineno">  199</span>}</div>
+<div class="ttc" id="aanima__system_8c_html_ac098d88c62d656f7f9bd6089600829ff"><div class="ttname"><a href="#ac098d88c62d656f7f9bd6089600829ff">SOCO_TIMER</a></div><div class="ttdeci">#define SOCO_TIMER</div><div class="ttdef"><b>Definição</b> <a href="anima__system_8c_source.html#l00003">anima_system.c:3</a></div></div>
 <div class="ttc" id="agame__vars_8c_html_a5135cf03aefd90677db09304781dbb8c"><div class="ttname"><a href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a></div><div class="ttdeci">Player player[2]</div><div class="ttdef"><b>Definição</b> <a href="game__vars_8c_source.html#l00031">game_vars.c:31</a></div></div>
 <div class="ttc" id="agame__vars_8c_html_ab6aaeb8394cea6ecbe228b9504e02a0e"><div class="ttname"><a href="game__vars_8c.html#ab6aaeb8394cea6ecbe228b9504e02a0e">gASG_system</a></div><div class="ttdeci">bool gASG_system</div><div class="ttdef"><b>Definição</b> <a href="game__vars_8c_source.html#l00024">game_vars.c:24</a></div></div>
+<div class="ttc" id="aplayer__state_8c_html_a215f450776e74a1c1f35b9f9499c08a5"><div class="ttname"><a href="player__state_8c.html#a215f450776e74a1c1f35b9f9499c08a5">playerState</a></div><div class="ttdeci">void playerState(u8 ind, u16 state)</div><div class="ttdef"><b>Definição</b> <a href="player__state_8c_source.html#l00003">player_state.c:3</a></div></div>
 </div><!-- fragment --><div class="dynheader">
 Este é o diagrama das funções utilizadas por essa função:</div>
 <div class="dyncontent">
-<div class="center"><img src="anima__system_8c_a628b00b919856c9e5c3bc6e4e492f8b4_cgraph.png" border="0" usemap="#aanima__system_8c_a628b00b919856c9e5c3bc6e4e492f8b4_cgraph" alt=""/></div>
-<map name="aanima__system_8c_a628b00b919856c9e5c3bc6e4e492f8b4_cgraph" id="aanima__system_8c_a628b00b919856c9e5c3bc6e4e492f8b4_cgraph">
-<area shape="rect" title=" " alt="" coords="5,5,64,35"/>
-<area shape="rect" href="anima__system_8c.html#ab609215115971b40d9e47df6e4a8f853" title=" " alt="" coords="112,5,204,35"/>
-<area shape="poly" title=" " alt="" coords="64,18,96,18,96,23,64,23"/>
+<div class="center"><img src="anima__system_8c_a3e73164d603e05e94b8eedeb557a3245_cgraph.png" border="0" usemap="#aanima__system_8c_a3e73164d603e05e94b8eedeb557a3245_cgraph" alt=""/></div>
+<map name="aanima__system_8c_a3e73164d603e05e94b8eedeb557a3245_cgraph" id="aanima__system_8c_a3e73164d603e05e94b8eedeb557a3245_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,77,35"/>
+<area shape="rect" href="player__state_8c.html#a215f450776e74a1c1f35b9f9499c08a5" title=" " alt="" coords="125,5,217,35"/>
+<area shape="poly" title=" " alt="" coords="77,18,109,18,109,23,77,23"/>
 </map>
 </div>
-
-</div>
-</div>
-<a id="ab609215115971b40d9e47df6e4a8f853" name="ab609215115971b40d9e47df6e4a8f853"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab609215115971b40d9e47df6e4a8f853">&#9670;&#160;</a></span>playerState()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void playerState </td>
-          <td>(</td>
-          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>ind</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">u16</td>          <td class="paramname"><span class="paramname"><em>state</em></span>&#160;)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definição na linha <a class="el" href="anima__system_8c_source.html#l00017">17</a> do arquivo <a class="el" href="anima__system_8c_source.html">anima_system.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   18</span>{</div>
-<div class="line"><span class="lineno">   19</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[ind].sprite)</div>
-<div class="line"><span class="lineno">   20</span>    {</div>
-<div class="line"><span class="lineno">   21</span>        SPR_releaseSprite(<a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[ind].sprite);</div>
-<div class="line"><span class="lineno">   22</span>        <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[ind].sprite = NULL;</div>
-<div class="line"><span class="lineno">   23</span>    }</div>
-<div class="line"><span class="lineno">   24</span> </div>
-<div class="line"><span class="lineno">   25</span>    <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[ind].animFrame = 1;</div>
-<div class="line"><span class="lineno">   26</span>    <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[ind].frameTimeAtual = 1;</div>
-<div class="line"><span class="lineno">   27</span>    <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[ind].dataAnim[1] = 1;</div>
-<div class="line"><span class="lineno">   28</span>    <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[ind].animFrameTotal = 1;</div>
-<div class="line"><span class="lineno">   29</span>    <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[ind].state = state;</div>
-<div class="line"><span class="lineno">   30</span> </div>
-<div class="line"><span class="lineno">   31</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="#aadbba599ec6da804710a19884e08e608">PLAYER_STATE_FUNCS</a>[<a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[ind].<span class="keywordtype">id</span>])</div>
-<div class="line"><span class="lineno">   32</span>    {</div>
-<div class="line"><span class="lineno">   33</span>        <a class="code hl_variable" href="#aadbba599ec6da804710a19884e08e608">PLAYER_STATE_FUNCS</a>[<a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[ind].id](ind, state);</div>
-<div class="line"><span class="lineno">   34</span>    }</div>
-<div class="line"><span class="lineno">   35</span> </div>
-<div class="line"><span class="lineno">   36</span>    SPR_setHFlip(<a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[ind].sprite, (<a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[ind].direcao == 1) ? FALSE : TRUE);</div>
-<div class="line"><span class="lineno">   37</span> </div>
-<div class="line"><span class="lineno">   38</span>    SPR_setDepth(<a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[ind].sprite, SPR_MIN_DEPTH);</div>
-<div class="line"><span class="lineno">   39</span> </div>
-<div class="line"><span class="lineno">   40</span>    SPR_setAnimAndFrame(<a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[ind].sprite, 0, <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[ind].animFrame - 1);</div>
-<div class="line"><span class="lineno">   41</span>    <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[ind].frameTimeTotal = <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[ind].dataAnim[1];</div>
-<div class="line"><span class="lineno">   42</span>    <span class="comment">// SPR_setAnim(player[ind].sprite, 0);</span></div>
-<div class="line"><span class="lineno">   43</span>}</div>
-<div class="ttc" id="aanima__system_8c_html_aadbba599ec6da804710a19884e08e608"><div class="ttname"><a href="#aadbba599ec6da804710a19884e08e608">PLAYER_STATE_FUNCS</a></div><div class="ttdeci">const PlayerStateFunc PLAYER_STATE_FUNCS[7]</div><div class="ttdef"><b>Definição</b> <a href="anima__system_8c_source.html#l00008">anima_system.c:8</a></div></div>
-</div><!-- fragment --><div class="dynheader">
+<div class="dynheader">
 Esse é o diagrama das funções que utilizam essa função:</div>
 <div class="dyncontent">
-<div class="center"><img src="anima__system_8c_ab609215115971b40d9e47df6e4a8f853_icgraph.png" border="0" usemap="#aanima__system_8c_ab609215115971b40d9e47df6e4a8f853_icgraph" alt=""/></div>
-<map name="aanima__system_8c_ab609215115971b40d9e47df6e4a8f853_icgraph" id="aanima__system_8c_ab609215115971b40d9e47df6e4a8f853_icgraph">
-<area shape="rect" title=" " alt="" coords="513,59,606,88"/>
-<area shape="rect" href="anima__system_8c.html#a628b00b919856c9e5c3bc6e4e492f8b4" title=" " alt="" coords="378,5,436,35"/>
-<area shape="poly" title=" " alt="" coords="500,56,436,33,437,28,502,51"/>
-<area shape="rect" href="char__select__room_8c.html#a314398bc03447a31029a30830c2564b1" title=" " alt="" coords="368,59,447,88"/>
-<area shape="poly" title=" " alt="" coords="498,76,447,76,447,71,498,71"/>
-<area shape="rect" href="char__select__room_8c.html#a7d5c58c0b00f06187c8e13947ce8b0b5" title=" " alt="" coords="349,112,465,142"/>
-<area shape="poly" title=" " alt="" coords="502,96,453,114,451,109,500,91"/>
-<area shape="rect" href="char__select__room_8c.html#a2faa2442981b2af06f7748194df37b1e" title=" " alt="" coords="105,85,301,115"/>
-<area shape="poly" title=" " alt="" coords="352,83,302,90,301,85,352,78"/>
-<area shape="rect" href="main_8c.html#af2eb07b318158270774fcc967eec3c80" title=" " alt="" coords="5,85,57,115"/>
-<area shape="poly" title=" " alt="" coords="89,103,57,103,57,98,89,98"/>
-<area shape="poly" title=" " alt="" coords="333,120,301,116,302,110,334,115"/>
+<div class="center"><img src="anima__system_8c_a3e73164d603e05e94b8eedeb557a3245_icgraph.png" border="0" usemap="#aanima__system_8c_a3e73164d603e05e94b8eedeb557a3245_icgraph" alt=""/></div>
+<map name="aanima__system_8c_a3e73164d603e05e94b8eedeb557a3245_icgraph" id="aanima__system_8c_a3e73164d603e05e94b8eedeb557a3245_icgraph">
+<area shape="rect" title=" " alt="" coords="304,32,375,62"/>
+<area shape="rect" href="stages_8c.html#a2858154e2009b0e6e616f313177762bc" title=" " alt="" coords="160,5,201,35"/>
+<area shape="poly" title=" " alt="" coords="288,41,201,26,202,21,289,36"/>
+<area shape="rect" href="palace__gates__room_8c.html#aa311e5f2262edd690db28a5e1fd05f97" title=" " alt="" coords="105,59,256,88"/>
+<area shape="poly" title=" " alt="" coords="289,58,257,63,256,58,288,53"/>
+<area shape="rect" href="main_8c.html#af2eb07b318158270774fcc967eec3c80" title=" " alt="" coords="5,59,57,88"/>
+<area shape="poly" title=" " alt="" coords="89,76,57,76,57,71,89,71"/>
 </map>
 </div>
 
-</div>
-</div>
-<h2 class="groupheader">Variáveis</h2>
-<a id="aadbba599ec6da804710a19884e08e608" name="aadbba599ec6da804710a19884e08e608"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aadbba599ec6da804710a19884e08e608">&#9670;&#160;</a></span>PLAYER_STATE_FUNCS</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const <a class="el" href="#abe5fa2071132c66cf3e714a2ac38037c">PlayerStateFunc</a> PLAYER_STATE_FUNCS[7]</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<b>Valor inicial:</b><div class="fragment"><div class="line">= {</div>
-<div class="line">    <a class="code hl_function" href="johnny_8c.html#a5635dc6c5ae4a8d650ea136bf881121f">playerState_Johnny</a>,</div>
-<div class="line">    <a class="code hl_function" href="kano_8c.html#ae49ceb6de430e1dde8484e8d524f0df7">playerState_Kano</a>,</div>
-<div class="line">    <a class="code hl_function" href="raiden_8c.html#abed78657293fad361e593e9052c3b148">playerState_Raiden</a>,</div>
-<div class="line">    <a class="code hl_function" href="liukang_8c.html#a5a3bcbd1a1a0d55543e1c91dd1ab41cb">playerState_LiuKang</a>,</div>
-<div class="line">    <a class="code hl_function" href="subzero_8c.html#abe9f0634a3089727d50dd795e49f8ee8">playerState_SubZero</a>,</div>
-<div class="line">    <a class="code hl_function" href="scorpion_8c.html#a677895a9db6e2f52ccb683d663f430d0">playerState_Scorpion</a>,</div>
-<div class="line">    <a class="code hl_function" href="sonya_8c.html#a94b4d88d6e407cc231b1f692e18f513a">playerState_Sonya</a>}</div>
-<div class="ttc" id="ajohnny_8c_html_a5635dc6c5ae4a8d650ea136bf881121f"><div class="ttname"><a href="johnny_8c.html#a5635dc6c5ae4a8d650ea136bf881121f">playerState_Johnny</a></div><div class="ttdeci">void playerState_Johnny(int numPlayer, u16 State)</div><div class="ttdoc">Define o estado do personagem Johnny Cage.</div><div class="ttdef"><b>Definição</b> <a href="johnny_8c_source.html#l00012">johnny.c:12</a></div></div>
-<div class="ttc" id="akano_8c_html_ae49ceb6de430e1dde8484e8d524f0df7"><div class="ttname"><a href="kano_8c.html#ae49ceb6de430e1dde8484e8d524f0df7">playerState_Kano</a></div><div class="ttdeci">void playerState_Kano(int numPlayer, u16 State)</div><div class="ttdoc">Define o estado do personagem Kano.</div><div class="ttdef"><b>Definição</b> <a href="kano_8c_source.html#l00012">kano.c:12</a></div></div>
-<div class="ttc" id="aliukang_8c_html_a5a3bcbd1a1a0d55543e1c91dd1ab41cb"><div class="ttname"><a href="liukang_8c.html#a5a3bcbd1a1a0d55543e1c91dd1ab41cb">playerState_LiuKang</a></div><div class="ttdeci">void playerState_LiuKang(int numPlayer, u16 State)</div><div class="ttdoc">Define o estado do personagem Liu Kang.</div><div class="ttdef"><b>Definição</b> <a href="liukang_8c_source.html#l00012">liukang.c:12</a></div></div>
-<div class="ttc" id="araiden_8c_html_abed78657293fad361e593e9052c3b148"><div class="ttname"><a href="raiden_8c.html#abed78657293fad361e593e9052c3b148">playerState_Raiden</a></div><div class="ttdeci">void playerState_Raiden(int numPlayer, u16 State)</div><div class="ttdoc">Define o estado do personagem Raiden.</div><div class="ttdef"><b>Definição</b> <a href="raiden_8c_source.html#l00012">raiden.c:12</a></div></div>
-<div class="ttc" id="ascorpion_8c_html_a677895a9db6e2f52ccb683d663f430d0"><div class="ttname"><a href="scorpion_8c.html#a677895a9db6e2f52ccb683d663f430d0">playerState_Scorpion</a></div><div class="ttdeci">void playerState_Scorpion(int numPlayer, u16 State)</div><div class="ttdoc">Define o estado do personagem Scorpion.</div><div class="ttdef"><b>Definição</b> <a href="scorpion_8c_source.html#l00012">scorpion.c:12</a></div></div>
-<div class="ttc" id="asonya_8c_html_a94b4d88d6e407cc231b1f692e18f513a"><div class="ttname"><a href="sonya_8c.html#a94b4d88d6e407cc231b1f692e18f513a">playerState_Sonya</a></div><div class="ttdeci">void playerState_Sonya(int numPlayer, u16 State)</div><div class="ttdoc">Define o estado do personagem Sonya.</div><div class="ttdef"><b>Definição</b> <a href="sonya_8c_source.html#l00012">sonya.c:12</a></div></div>
-<div class="ttc" id="asubzero_8c_html_abe9f0634a3089727d50dd795e49f8ee8"><div class="ttname"><a href="subzero_8c.html#abe9f0634a3089727d50dd795e49f8ee8">playerState_SubZero</a></div><div class="ttdeci">void playerState_SubZero(int numPlayer, u16 State)</div><div class="ttdoc">Define o estado do personagem Sub-Zero.</div><div class="ttdef"><b>Definição</b> <a href="subzero_8c_source.html#l00012">subzero.c:12</a></div></div>
-</div><!-- fragment -->
-<p class="definition">Definição na linha <a class="el" href="anima__system_8c_source.html#l00008">8</a> do arquivo <a class="el" href="anima__system_8c_source.html">anima_system.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">    8</span>                                              {</div>
-<div class="line"><span class="lineno">    9</span>    <a class="code hl_function" href="johnny_8c.html#a5635dc6c5ae4a8d650ea136bf881121f">playerState_Johnny</a>,</div>
-<div class="line"><span class="lineno">   10</span>    <a class="code hl_function" href="kano_8c.html#ae49ceb6de430e1dde8484e8d524f0df7">playerState_Kano</a>,</div>
-<div class="line"><span class="lineno">   11</span>    <a class="code hl_function" href="raiden_8c.html#abed78657293fad361e593e9052c3b148">playerState_Raiden</a>,</div>
-<div class="line"><span class="lineno">   12</span>    <a class="code hl_function" href="liukang_8c.html#a5a3bcbd1a1a0d55543e1c91dd1ab41cb">playerState_LiuKang</a>,</div>
-<div class="line"><span class="lineno">   13</span>    <a class="code hl_function" href="subzero_8c.html#abe9f0634a3089727d50dd795e49f8ee8">playerState_SubZero</a>,</div>
-<div class="line"><span class="lineno">   14</span>    <a class="code hl_function" href="scorpion_8c.html#a677895a9db6e2f52ccb683d663f430d0">playerState_Scorpion</a>,</div>
-<div class="line"><span class="lineno">   15</span>    <a class="code hl_function" href="sonya_8c.html#a94b4d88d6e407cc231b1f692e18f513a">playerState_Sonya</a>};</div>
-</div><!-- fragment -->
 </div>
 </div>
 </div><!-- contents -->

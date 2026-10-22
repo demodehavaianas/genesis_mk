@@ -1,0 +1,7 @@
+<map id="playerSelected" name="playerSelected">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,32,119,62"/>
+<area shape="rect" id="Node000002" href="$fighter_8c.html#a490dc319f68b5343215c418bb892a20f" title=" " alt="" coords="167,5,260,35"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="119,34,151,28,151,34,120,39"/>
+<area shape="rect" id="Node000003" href="$player__state_8c.html#a215f450776e74a1c1f35b9f9499c08a5" title=" " alt="" coords="167,59,260,88"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="120,54,152,60,151,65,119,59"/>
+</map>

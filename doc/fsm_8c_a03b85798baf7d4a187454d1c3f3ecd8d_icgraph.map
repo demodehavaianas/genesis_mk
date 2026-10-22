@@ -1,0 +1,9 @@
+<map id="fsm_update" name="fsm_update">
+<area shape="rect" id="Node000001" title=" " alt="" coords="304,32,398,62"/>
+<area shape="rect" id="Node000002" href="$stages_8c.html#a2858154e2009b0e6e616f313177762bc" title=" " alt="" coords="160,5,201,35"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="288,40,201,26,202,21,289,34"/>
+<area shape="rect" id="Node000003" href="$palace__gates__room_8c.html#aa311e5f2262edd690db28a5e1fd05f97" title=" " alt="" coords="105,59,256,88"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="289,59,257,64,256,59,288,54"/>
+<area shape="rect" id="Node000004" href="$main_8c.html#af2eb07b318158270774fcc967eec3c80" title=" " alt="" coords="5,59,57,88"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="89,76,57,76,57,71,89,71"/>
+</map>

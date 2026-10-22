@@ -96,39 +96,24 @@ $(function(){ initResizable(false); });
   <div class="headertitle"><div class="title">Referência do Arquivo char_select_room.c</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;genesis.h&gt;</code><br />
-<code>#include &quot;char_select_room.h&quot;</code><br />
-<code>#include &quot;input_system.h&quot;</code><br />
+<div class="textblock"><code>#include &quot;mkplus.h&quot;</code><br />
 <code>#include &quot;stages.h&quot;</code><br />
 <code>#include &quot;sprites.h&quot;</code><br />
 <code>#include &quot;audio.h&quot;</code><br />
-<code>#include &quot;game_vars.h&quot;</code><br />
-<code>#include &quot;fighters.h&quot;</code><br />
-<code>#include &quot;anima_system.h&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Gráfico de dependência de inclusões para char_select_room.c:</div>
 <div class="dyncontent">
 <div class="center"><img src="char__select__room_8c__incl.png" border="0" usemap="#asrc_2rooms_2char__select__room_8c" alt=""/></div>
 <map name="asrc_2rooms_2char__select__room_8c" id="asrc_2rooms_2char__select__room_8c">
-<area shape="rect" title=" " alt="" coords="471,5,628,54"/>
-<area shape="rect" title=" " alt="" coords="5,102,86,132"/>
-<area shape="poly" title=" " alt="" coords="471,44,305,68,102,104,101,99,304,62,470,38"/>
-<area shape="rect" title=" " alt="" coords="110,102,251,132"/>
-<area shape="poly" title=" " alt="" coords="471,52,257,101,256,95,470,46"/>
-<area shape="rect" title=" " alt="" coords="275,102,390,132"/>
-<area shape="poly" title=" " alt="" coords="490,57,384,98,382,93,488,52"/>
-<area shape="rect" title=" " alt="" coords="414,102,488,132"/>
-<area shape="poly" title=" " alt="" coords="524,57,481,93,477,89,520,53"/>
-<area shape="rect" title=" " alt="" coords="512,102,587,132"/>
-<area shape="poly" title=" " alt="" coords="552,55,552,86,547,86,547,55"/>
-<area shape="rect" title=" " alt="" coords="612,102,679,132"/>
-<area shape="poly" title=" " alt="" coords="578,53,620,89,616,93,574,57"/>
-<area shape="rect" title=" " alt="" coords="703,102,804,132"/>
-<area shape="poly" title=" " alt="" coords="607,52,707,93,704,98,605,57"/>
-<area shape="rect" title=" " alt="" coords="828,102,911,132"/>
-<area shape="poly" title=" " alt="" coords="629,49,814,98,813,103,628,54"/>
-<area shape="rect" title=" " alt="" coords="935,102,1055,132"/>
-<area shape="poly" title=" " alt="" coords="629,43,920,99,919,104,628,49"/>
+<area shape="rect" title=" " alt="" coords="115,5,272,54"/>
+<area shape="rect" title=" " alt="" coords="5,102,83,132"/>
+<area shape="poly" title=" " alt="" coords="153,57,83,96,81,92,150,52"/>
+<area shape="rect" title=" " alt="" coords="107,102,181,132"/>
+<area shape="poly" title=" " alt="" coords="182,56,162,90,158,87,177,53"/>
+<area shape="rect" title=" " alt="" coords="205,102,280,132"/>
+<area shape="poly" title=" " alt="" coords="209,53,229,87,224,90,205,56"/>
+<area shape="rect" title=" " alt="" coords="305,102,372,132"/>
+<area shape="poly" title=" " alt="" coords="235,52,303,92,300,96,232,57"/>
 </map>
 </div>
 </div>
@@ -153,11 +138,11 @@ Definições e Macros</h2></td></tr>
 <tr class="separator:a6974d08a74da681b3957b2fead2608b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a810562d232296df8a4bb3991849dc23d" id="r_a810562d232296df8a4bb3991849dc23d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a810562d232296df8a4bb3991849dc23d">LINE_HEIGHT</a>&#160;&#160;&#160;2</td></tr>
 <tr class="separator:a810562d232296df8a4bb3991849dc23d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adfd7161599c48c9e339ea98722ced220" id="r_adfd7161599c48c9e339ea98722ced220"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adfd7161599c48c9e339ea98722ced220">PLAYER_1_POS_X</a>&#160;&#160;&#160;10</td></tr>
+<tr class="memitem:adfd7161599c48c9e339ea98722ced220" id="r_adfd7161599c48c9e339ea98722ced220"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adfd7161599c48c9e339ea98722ced220">PLAYER_1_POS_X</a>&#160;&#160;&#160;32</td></tr>
 <tr class="separator:adfd7161599c48c9e339ea98722ced220"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a81c347ec83f0d64c6fe39526029cb2d2" id="r_a81c347ec83f0d64c6fe39526029cb2d2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a81c347ec83f0d64c6fe39526029cb2d2">PLAYER_1_POS_Y</a>&#160;&#160;&#160;104</td></tr>
+<tr class="memitem:a81c347ec83f0d64c6fe39526029cb2d2" id="r_a81c347ec83f0d64c6fe39526029cb2d2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a81c347ec83f0d64c6fe39526029cb2d2">PLAYER_1_POS_Y</a>&#160;&#160;&#160;218</td></tr>
 <tr class="separator:a81c347ec83f0d64c6fe39526029cb2d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4a02c780d3b0cdfbf0233a3b61a4a4cc" id="r_a4a02c780d3b0cdfbf0233a3b61a4a4cc"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4a02c780d3b0cdfbf0233a3b61a4a4cc">PLAYER_2_POS_X</a>&#160;&#160;&#160;182</td></tr>
+<tr class="memitem:a4a02c780d3b0cdfbf0233a3b61a4a4cc" id="r_a4a02c780d3b0cdfbf0233a3b61a4a4cc"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4a02c780d3b0cdfbf0233a3b61a4a4cc">PLAYER_2_POS_X</a>&#160;&#160;&#160;288</td></tr>
 <tr class="separator:a4a02c780d3b0cdfbf0233a3b61a4a4cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac75b161bb8ede82c624783eb6d63a468" id="r_ac75b161bb8ede82c624783eb6d63a468"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac75b161bb8ede82c624783eb6d63a468">PLAYER_2_POS_Y</a>&#160;&#160;&#160;104</td></tr>
 <tr class="separator:ac75b161bb8ede82c624783eb6d63a468"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -210,7 +195,7 @@ Funções</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definição na linha <a class="el" href="char__select__room_8c_source.html#l00021">21</a> do arquivo <a class="el" href="char__select__room_8c_source.html">char_select_room.c</a>.</p>
+<p class="definition">Definição na linha <a class="el" href="char__select__room_8c_source.html#l00016">16</a> do arquivo <a class="el" href="char__select__room_8c_source.html">char_select_room.c</a>.</p>
 
 </div>
 </div>
@@ -226,7 +211,7 @@ Funções</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definição na linha <a class="el" href="char__select__room_8c_source.html#l00022">22</a> do arquivo <a class="el" href="char__select__room_8c_source.html">char_select_room.c</a>.</p>
+<p class="definition">Definição na linha <a class="el" href="char__select__room_8c_source.html#l00017">17</a> do arquivo <a class="el" href="char__select__room_8c_source.html">char_select_room.c</a>.</p>
 
 </div>
 </div>
@@ -242,7 +227,7 @@ Funções</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definição na linha <a class="el" href="char__select__room_8c_source.html#l00016">16</a> do arquivo <a class="el" href="char__select__room_8c_source.html">char_select_room.c</a>.</p>
+<p class="definition">Definição na linha <a class="el" href="char__select__room_8c_source.html#l00011">11</a> do arquivo <a class="el" href="char__select__room_8c_source.html">char_select_room.c</a>.</p>
 
 </div>
 </div>
@@ -253,12 +238,12 @@ Funções</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define PLAYER_1_POS_X&#160;&#160;&#160;10</td>
+          <td class="memname">#define PLAYER_1_POS_X&#160;&#160;&#160;32</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definição na linha <a class="el" href="char__select__room_8c_source.html#l00017">17</a> do arquivo <a class="el" href="char__select__room_8c_source.html">char_select_room.c</a>.</p>
+<p class="definition">Definição na linha <a class="el" href="char__select__room_8c_source.html#l00012">12</a> do arquivo <a class="el" href="char__select__room_8c_source.html">char_select_room.c</a>.</p>
 
 </div>
 </div>
@@ -269,12 +254,12 @@ Funções</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define PLAYER_1_POS_Y&#160;&#160;&#160;104</td>
+          <td class="memname">#define PLAYER_1_POS_Y&#160;&#160;&#160;218</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definição na linha <a class="el" href="char__select__room_8c_source.html#l00018">18</a> do arquivo <a class="el" href="char__select__room_8c_source.html">char_select_room.c</a>.</p>
+<p class="definition">Definição na linha <a class="el" href="char__select__room_8c_source.html#l00013">13</a> do arquivo <a class="el" href="char__select__room_8c_source.html">char_select_room.c</a>.</p>
 
 </div>
 </div>
@@ -285,12 +270,12 @@ Funções</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define PLAYER_2_POS_X&#160;&#160;&#160;182</td>
+          <td class="memname">#define PLAYER_2_POS_X&#160;&#160;&#160;288</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definição na linha <a class="el" href="char__select__room_8c_source.html#l00019">19</a> do arquivo <a class="el" href="char__select__room_8c_source.html">char_select_room.c</a>.</p>
+<p class="definition">Definição na linha <a class="el" href="char__select__room_8c_source.html#l00014">14</a> do arquivo <a class="el" href="char__select__room_8c_source.html">char_select_room.c</a>.</p>
 
 </div>
 </div>
@@ -306,7 +291,7 @@ Funções</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definição na linha <a class="el" href="char__select__room_8c_source.html#l00020">20</a> do arquivo <a class="el" href="char__select__room_8c_source.html">char_select_room.c</a>.</p>
+<p class="definition">Definição na linha <a class="el" href="char__select__room_8c_source.html#l00015">15</a> do arquivo <a class="el" href="char__select__room_8c_source.html">char_select_room.c</a>.</p>
 
 </div>
 </div>
@@ -322,7 +307,7 @@ Funções</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definição na linha <a class="el" href="char__select__room_8c_source.html#l00015">15</a> do arquivo <a class="el" href="char__select__room_8c_source.html">char_select_room.c</a>.</p>
+<p class="definition">Definição na linha <a class="el" href="char__select__room_8c_source.html#l00010">10</a> do arquivo <a class="el" href="char__select__room_8c_source.html">char_select_room.c</a>.</p>
 
 </div>
 </div>
@@ -338,7 +323,7 @@ Funções</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definição na linha <a class="el" href="char__select__room_8c_source.html#l00014">14</a> do arquivo <a class="el" href="char__select__room_8c_source.html">char_select_room.c</a>.</p>
+<p class="definition">Definição na linha <a class="el" href="char__select__room_8c_source.html#l00009">9</a> do arquivo <a class="el" href="char__select__room_8c_source.html">char_select_room.c</a>.</p>
 
 </div>
 </div>
@@ -354,7 +339,7 @@ Funções</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definição na linha <a class="el" href="char__select__room_8c_source.html#l00013">13</a> do arquivo <a class="el" href="char__select__room_8c_source.html">char_select_room.c</a>.</p>
+<p class="definition">Definição na linha <a class="el" href="char__select__room_8c_source.html#l00008">8</a> do arquivo <a class="el" href="char__select__room_8c_source.html">char_select_room.c</a>.</p>
 
 </div>
 </div>
@@ -370,7 +355,7 @@ Funções</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definição na linha <a class="el" href="char__select__room_8c_source.html#l00012">12</a> do arquivo <a class="el" href="char__select__room_8c_source.html">char_select_room.c</a>.</p>
+<p class="definition">Definição na linha <a class="el" href="char__select__room_8c_source.html#l00007">7</a> do arquivo <a class="el" href="char__select__room_8c_source.html">char_select_room.c</a>.</p>
 
 </div>
 </div>
@@ -414,9 +399,9 @@ Funções</h2></td></tr>
 <div class="line"><span class="lineno">  415</span>  PAL_setPalette(PAL1, char_select_b_pal.data, DMA);</div>
 <div class="line"><span class="lineno">  416</span>  <a class="code hl_variable" href="game__vars_8c.html#ac5c9f7210c7cb249636b7f1dc0121b71">gInd_tileset</a> += stage_char_select_b.tileset-&gt;numTile;</div>
 <div class="line"><span class="lineno">  417</span>}</div>
-<div class="ttc" id="achar__select__room_8c_html_a2cd14084ee8d331ac08e405d3f374b37"><div class="ttname"><a href="#a2cd14084ee8d331ac08e405d3f374b37">TILEMAP_WIDTH</a></div><div class="ttdeci">#define TILEMAP_WIDTH</div><div class="ttdef"><b>Definição</b> <a href="char__select__room_8c_source.html#l00012">char_select_room.c:12</a></div></div>
-<div class="ttc" id="achar__select__room_8c_html_a5b1c46fed84ea158a227e1e696cdce02"><div class="ttname"><a href="#a5b1c46fed84ea158a227e1e696cdce02">TILEMAP_HEIGHT</a></div><div class="ttdeci">#define TILEMAP_HEIGHT</div><div class="ttdef"><b>Definição</b> <a href="char__select__room_8c_source.html#l00013">char_select_room.c:13</a></div></div>
-<div class="ttc" id="agame__vars_8c_html_ac5c9f7210c7cb249636b7f1dc0121b71"><div class="ttname"><a href="game__vars_8c.html#ac5c9f7210c7cb249636b7f1dc0121b71">gInd_tileset</a></div><div class="ttdeci">u16 gInd_tileset</div><div class="ttdef"><b>Definição</b> <a href="game__vars_8c_source.html#l00019">game_vars.c:19</a></div></div>
+<div class="ttc" id="achar__select__room_8c_html_a2cd14084ee8d331ac08e405d3f374b37"><div class="ttname"><a href="#a2cd14084ee8d331ac08e405d3f374b37">TILEMAP_WIDTH</a></div><div class="ttdeci">#define TILEMAP_WIDTH</div><div class="ttdef"><b>Definição</b> <a href="char__select__room_8c_source.html#l00007">char_select_room.c:7</a></div></div>
+<div class="ttc" id="achar__select__room_8c_html_a5b1c46fed84ea158a227e1e696cdce02"><div class="ttname"><a href="#a5b1c46fed84ea158a227e1e696cdce02">TILEMAP_HEIGHT</a></div><div class="ttdeci">#define TILEMAP_HEIGHT</div><div class="ttdef"><b>Definição</b> <a href="char__select__room_8c_source.html#l00008">char_select_room.c:8</a></div></div>
+<div class="ttc" id="agame__vars_8c_html_ac5c9f7210c7cb249636b7f1dc0121b71"><div class="ttname"><a href="game__vars_8c.html#ac5c9f7210c7cb249636b7f1dc0121b71">gInd_tileset</a></div><div class="ttdeci">u16 gInd_tileset</div><div class="ttdef"><b>Definição</b> <a href="game__vars_8c_source.html#l00018">game_vars.c:18</a></div></div>
 </div><!-- fragment --><div class="dynheader">
 Esse é o diagrama das funções que utilizam essa função:</div>
 <div class="dyncontent">
@@ -447,31 +432,31 @@ Esse é o diagrama das funções que utilizam essa função:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definição na linha <a class="el" href="char__select__room_8c_source.html#l00083">83</a> do arquivo <a class="el" href="char__select__room_8c_source.html">char_select_room.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   84</span>{</div>
-<div class="line"><span class="lineno">   85</span>  SPR_clear();</div>
-<div class="line"><span class="lineno">   86</span> </div>
-<div class="line"><span class="lineno">   87</span>  <span class="keywordflow">for</span> (s16 i = 4; i &gt;= 0; --i) <span class="comment">// libera os sprites do seletor e dos retratos 0..3</span></div>
-<div class="line"><span class="lineno">   88</span>  {</div>
-<div class="line"><span class="lineno">   89</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="game__vars_8c.html#aa5e097d9886fbef5de8248a18d1d95ee">GE</a>[i].sprite)</div>
-<div class="line"><span class="lineno">   90</span>    {</div>
-<div class="line"><span class="lineno">   91</span>      SPR_releaseSprite(<a class="code hl_variable" href="game__vars_8c.html#aa5e097d9886fbef5de8248a18d1d95ee">GE</a>[i].sprite);</div>
-<div class="line"><span class="lineno">   92</span>      <a class="code hl_variable" href="game__vars_8c.html#aa5e097d9886fbef5de8248a18d1d95ee">GE</a>[i].sprite = NULL;</div>
-<div class="line"><span class="lineno">   93</span>    }</div>
-<div class="line"><span class="lineno">   94</span>  }</div>
-<div class="line"><span class="lineno">   95</span> </div>
-<div class="line"><span class="lineno">   96</span>  VDP_releaseAllSprites();</div>
-<div class="line"><span class="lineno">   97</span>  <a class="code hl_variable" href="game__vars_8c.html#a940f635da7254d2a02a607dab0139dfd">gFrames</a> = 0;</div>
-<div class="line"><span class="lineno">   98</span>  <a class="code hl_variable" href="game__vars_8c.html#a784a617fe12ac8976bbae900c2343a36">gRoom</a> = TELA_DEMO_INTRO;</div>
-<div class="line"><span class="lineno">   99</span>  VDP_setBackgroundColor(0);</div>
-<div class="line"><span class="lineno">  100</span>  <a class="code hl_variable" href="game__vars_8c.html#ac5c9f7210c7cb249636b7f1dc0121b71">gInd_tileset</a> = TILE_USER_INDEX;</div>
-<div class="line"><span class="lineno">  101</span> </div>
-<div class="line"><span class="lineno">  102</span>  waitMs(1000);</div>
-<div class="line"><span class="lineno">  103</span>  VDP_waitVSync();</div>
-<div class="line"><span class="lineno">  104</span>  SYS_enableInts();</div>
-<div class="line"><span class="lineno">  105</span>}</div>
-<div class="ttc" id="agame__vars_8c_html_a784a617fe12ac8976bbae900c2343a36"><div class="ttname"><a href="game__vars_8c.html#a784a617fe12ac8976bbae900c2343a36">gRoom</a></div><div class="ttdeci">u8 gRoom</div><div class="ttdef"><b>Definição</b> <a href="game__vars_8c_source.html#l00017">game_vars.c:17</a></div></div>
-<div class="ttc" id="agame__vars_8c_html_a940f635da7254d2a02a607dab0139dfd"><div class="ttname"><a href="game__vars_8c.html#a940f635da7254d2a02a607dab0139dfd">gFrames</a></div><div class="ttdeci">u32 gFrames</div><div class="ttdef"><b>Definição</b> <a href="game__vars_8c_source.html#l00023">game_vars.c:23</a></div></div>
+<p class="definition">Definição na linha <a class="el" href="char__select__room_8c_source.html#l00078">78</a> do arquivo <a class="el" href="char__select__room_8c_source.html">char_select_room.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   79</span>{</div>
+<div class="line"><span class="lineno">   80</span>  SPR_clear();</div>
+<div class="line"><span class="lineno">   81</span> </div>
+<div class="line"><span class="lineno">   82</span>  <span class="keywordflow">for</span> (s16 i = 4; i &gt;= 0; --i) <span class="comment">// libera os sprites do seletor e dos retratos 0..3</span></div>
+<div class="line"><span class="lineno">   83</span>  {</div>
+<div class="line"><span class="lineno">   84</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="game__vars_8c.html#aa5e097d9886fbef5de8248a18d1d95ee">GE</a>[i].sprite)</div>
+<div class="line"><span class="lineno">   85</span>    {</div>
+<div class="line"><span class="lineno">   86</span>      SPR_releaseSprite(<a class="code hl_variable" href="game__vars_8c.html#aa5e097d9886fbef5de8248a18d1d95ee">GE</a>[i].sprite);</div>
+<div class="line"><span class="lineno">   87</span>      <a class="code hl_variable" href="game__vars_8c.html#aa5e097d9886fbef5de8248a18d1d95ee">GE</a>[i].sprite = NULL;</div>
+<div class="line"><span class="lineno">   88</span>    }</div>
+<div class="line"><span class="lineno">   89</span>  }</div>
+<div class="line"><span class="lineno">   90</span> </div>
+<div class="line"><span class="lineno">   91</span>  VDP_releaseAllSprites();</div>
+<div class="line"><span class="lineno">   92</span>  <a class="code hl_variable" href="game__vars_8c.html#a940f635da7254d2a02a607dab0139dfd">gFrames</a> = 0;</div>
+<div class="line"><span class="lineno">   93</span>  <a class="code hl_variable" href="game__vars_8c.html#a784a617fe12ac8976bbae900c2343a36">gRoom</a> = TELA_DEMO_INTRO;</div>
+<div class="line"><span class="lineno">   94</span>  VDP_setBackgroundColor(0);</div>
+<div class="line"><span class="lineno">   95</span>  <a class="code hl_variable" href="game__vars_8c.html#ac5c9f7210c7cb249636b7f1dc0121b71">gInd_tileset</a> = TILE_USER_INDEX;</div>
+<div class="line"><span class="lineno">   96</span> </div>
+<div class="line"><span class="lineno">   97</span>  waitMs(1000);</div>
+<div class="line"><span class="lineno">   98</span>  VDP_waitVSync();</div>
+<div class="line"><span class="lineno">   99</span>  SYS_enableInts();</div>
+<div class="line"><span class="lineno">  100</span>}</div>
+<div class="ttc" id="agame__vars_8c_html_a784a617fe12ac8976bbae900c2343a36"><div class="ttname"><a href="game__vars_8c.html#a784a617fe12ac8976bbae900c2343a36">gRoom</a></div><div class="ttdeci">u8 gRoom</div><div class="ttdef"><b>Definição</b> <a href="game__vars_8c_source.html#l00016">game_vars.c:16</a></div></div>
+<div class="ttc" id="agame__vars_8c_html_a940f635da7254d2a02a607dab0139dfd"><div class="ttname"><a href="game__vars_8c.html#a940f635da7254d2a02a607dab0139dfd">gFrames</a></div><div class="ttdeci">u32 gFrames</div><div class="ttdef"><b>Definição</b> <a href="game__vars_8c_source.html#l00022">game_vars.c:22</a></div></div>
 <div class="ttc" id="agame__vars_8c_html_aa5e097d9886fbef5de8248a18d1d95ee"><div class="ttname"><a href="game__vars_8c.html#aa5e097d9886fbef5de8248a18d1d95ee">GE</a></div><div class="ttdeci">GraphicElement GE[25]</div><div class="ttdef"><b>Definição</b> <a href="game__vars_8c_source.html#l00030">game_vars.c:30</a></div></div>
 </div><!-- fragment --><div class="dynheader">
 Esse é o diagrama das funções que utilizam essa função:</div>
@@ -520,29 +505,28 @@ Esse é o diagrama das funções que utilizam essa função:</div>
 <div class="line"><span class="lineno">  533</span>  <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[1].paleta = PAL3;</div>
 <div class="line"><span class="lineno">  534</span>  <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[1].direcao = -1;</div>
 <div class="line"><span class="lineno">  535</span>  <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[1].x = <a class="code hl_define" href="#a4a02c780d3b0cdfbf0233a3b61a4a4cc">PLAYER_2_POS_X</a>;</div>
-<div class="line"><span class="lineno">  536</span>  <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[1].y = <a class="code hl_define" href="#ac75b161bb8ede82c624783eb6d63a468">PLAYER_2_POS_Y</a>;</div>
+<div class="line"><span class="lineno">  536</span>  <span class="comment">//player[1].y = PLAYER_2_POS_Y;</span></div>
 <div class="line"><span class="lineno">  537</span>  <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[1].selecionado = FALSE;</div>
 <div class="line"><span class="lineno">  538</span> </div>
-<div class="line"><span class="lineno">  539</span>  <a class="code hl_function" href="anima__system_8c.html#ab609215115971b40d9e47df6e4a8f853">playerState</a>(0, PARADO);</div>
-<div class="line"><span class="lineno">  540</span>  <a class="code hl_function" href="anima__system_8c.html#ab609215115971b40d9e47df6e4a8f853">playerState</a>(1, PARADO);</div>
+<div class="line"><span class="lineno">  539</span>  <a class="code hl_function" href="player__state_8c.html#a215f450776e74a1c1f35b9f9499c08a5">playerState</a>(0, PARADO);</div>
+<div class="line"><span class="lineno">  540</span>  <a class="code hl_function" href="player__state_8c.html#a215f450776e74a1c1f35b9f9499c08a5">playerState</a>(1, PARADO);</div>
 <div class="line"><span class="lineno">  541</span> </div>
 <div class="line"><span class="lineno">  542</span>  memset(<a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[0].key_JOY_countdown, 0, <span class="keyword">sizeof</span>(<a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[0].key_JOY_countdown));</div>
 <div class="line"><span class="lineno">  543</span>  memset(<a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[1].key_JOY_countdown, 0, <span class="keyword">sizeof</span>(<a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[1].key_JOY_countdown));</div>
 <div class="line"><span class="lineno">  544</span>}</div>
-<div class="ttc" id="aanima__system_8c_html_ab609215115971b40d9e47df6e4a8f853"><div class="ttname"><a href="anima__system_8c.html#ab609215115971b40d9e47df6e4a8f853">playerState</a></div><div class="ttdeci">void playerState(int ind, u16 state)</div><div class="ttdef"><b>Definição</b> <a href="anima__system_8c_source.html#l00017">anima_system.c:17</a></div></div>
-<div class="ttc" id="achar__select__room_8c_html_a4a02c780d3b0cdfbf0233a3b61a4a4cc"><div class="ttname"><a href="#a4a02c780d3b0cdfbf0233a3b61a4a4cc">PLAYER_2_POS_X</a></div><div class="ttdeci">#define PLAYER_2_POS_X</div><div class="ttdef"><b>Definição</b> <a href="char__select__room_8c_source.html#l00019">char_select_room.c:19</a></div></div>
-<div class="ttc" id="achar__select__room_8c_html_a81c347ec83f0d64c6fe39526029cb2d2"><div class="ttname"><a href="#a81c347ec83f0d64c6fe39526029cb2d2">PLAYER_1_POS_Y</a></div><div class="ttdeci">#define PLAYER_1_POS_Y</div><div class="ttdef"><b>Definição</b> <a href="char__select__room_8c_source.html#l00018">char_select_room.c:18</a></div></div>
-<div class="ttc" id="achar__select__room_8c_html_ac75b161bb8ede82c624783eb6d63a468"><div class="ttname"><a href="#ac75b161bb8ede82c624783eb6d63a468">PLAYER_2_POS_Y</a></div><div class="ttdeci">#define PLAYER_2_POS_Y</div><div class="ttdef"><b>Definição</b> <a href="char__select__room_8c_source.html#l00020">char_select_room.c:20</a></div></div>
-<div class="ttc" id="achar__select__room_8c_html_adfd7161599c48c9e339ea98722ced220"><div class="ttname"><a href="#adfd7161599c48c9e339ea98722ced220">PLAYER_1_POS_X</a></div><div class="ttdeci">#define PLAYER_1_POS_X</div><div class="ttdef"><b>Definição</b> <a href="char__select__room_8c_source.html#l00017">char_select_room.c:17</a></div></div>
+<div class="ttc" id="achar__select__room_8c_html_a4a02c780d3b0cdfbf0233a3b61a4a4cc"><div class="ttname"><a href="#a4a02c780d3b0cdfbf0233a3b61a4a4cc">PLAYER_2_POS_X</a></div><div class="ttdeci">#define PLAYER_2_POS_X</div><div class="ttdef"><b>Definição</b> <a href="char__select__room_8c_source.html#l00014">char_select_room.c:14</a></div></div>
+<div class="ttc" id="achar__select__room_8c_html_a81c347ec83f0d64c6fe39526029cb2d2"><div class="ttname"><a href="#a81c347ec83f0d64c6fe39526029cb2d2">PLAYER_1_POS_Y</a></div><div class="ttdeci">#define PLAYER_1_POS_Y</div><div class="ttdef"><b>Definição</b> <a href="char__select__room_8c_source.html#l00013">char_select_room.c:13</a></div></div>
+<div class="ttc" id="achar__select__room_8c_html_adfd7161599c48c9e339ea98722ced220"><div class="ttname"><a href="#adfd7161599c48c9e339ea98722ced220">PLAYER_1_POS_X</a></div><div class="ttdeci">#define PLAYER_1_POS_X</div><div class="ttdef"><b>Definição</b> <a href="char__select__room_8c_source.html#l00012">char_select_room.c:12</a></div></div>
 <div class="ttc" id="agame__vars_8c_html_a5135cf03aefd90677db09304781dbb8c"><div class="ttname"><a href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a></div><div class="ttdeci">Player player[2]</div><div class="ttdef"><b>Definição</b> <a href="game__vars_8c_source.html#l00031">game_vars.c:31</a></div></div>
-<div class="ttc" id="agame__vars_8c_html_add5eb59c4f71be58ef78c256ac2de63d"><div class="ttname"><a href="game__vars_8c.html#add5eb59c4f71be58ef78c256ac2de63d">gAlturaDoPiso</a></div><div class="ttdeci">u8 gAlturaDoPiso</div><div class="ttdef"><b>Definição</b> <a href="game__vars_8c_source.html#l00018">game_vars.c:18</a></div></div>
+<div class="ttc" id="agame__vars_8c_html_add5eb59c4f71be58ef78c256ac2de63d"><div class="ttname"><a href="game__vars_8c.html#add5eb59c4f71be58ef78c256ac2de63d">gAlturaDoPiso</a></div><div class="ttdeci">u8 gAlturaDoPiso</div><div class="ttdef"><b>Definição</b> <a href="game__vars_8c_source.html#l00017">game_vars.c:17</a></div></div>
+<div class="ttc" id="aplayer__state_8c_html_a215f450776e74a1c1f35b9f9499c08a5"><div class="ttname"><a href="player__state_8c.html#a215f450776e74a1c1f35b9f9499c08a5">playerState</a></div><div class="ttdeci">void playerState(u8 ind, u16 state)</div><div class="ttdef"><b>Definição</b> <a href="player__state_8c_source.html#l00003">player_state.c:3</a></div></div>
 </div><!-- fragment --><div class="dynheader">
 Este é o diagrama das funções utilizadas por essa função:</div>
 <div class="dyncontent">
 <div class="center"><img src="char__select__room_8c_a314398bc03447a31029a30830c2564b1_cgraph.png" border="0" usemap="#achar__select__room_8c_a314398bc03447a31029a30830c2564b1_cgraph" alt=""/></div>
 <map name="achar__select__room_8c_a314398bc03447a31029a30830c2564b1_cgraph" id="achar__select__room_8c_a314398bc03447a31029a30830c2564b1_cgraph">
 <area shape="rect" title=" " alt="" coords="5,5,85,35"/>
-<area shape="rect" href="anima__system_8c.html#ab609215115971b40d9e47df6e4a8f853" title=" " alt="" coords="133,5,225,35"/>
+<area shape="rect" href="player__state_8c.html#a215f450776e74a1c1f35b9f9499c08a5" title=" " alt="" coords="133,5,225,35"/>
 <area shape="poly" title=" " alt="" coords="85,18,117,18,117,23,85,23"/>
 </map>
 </div>
@@ -588,8 +572,8 @@ Esse é o diagrama das funções que utilizam essa função:</div>
 <div class="line"><span class="lineno">  389</span>  VDP_setHorizontalScrollLine(BG_A, 0, gScrollLine, <a class="code hl_define" href="#a6974d08a74da681b3957b2fead2608b8">SCREEN_HEIGHT</a>, DMA);</div>
 <div class="line"><span class="lineno">  390</span>  VDP_setHorizontalScrollLine(BG_B, 0, gScrollLine, <a class="code hl_define" href="#a6974d08a74da681b3957b2fead2608b8">SCREEN_HEIGHT</a>, DMA);</div>
 <div class="line"><span class="lineno">  391</span>}</div>
-<div class="ttc" id="achar__select__room_8c_html_a2cd109632a6dcccaa80b43561b1ab700"><div class="ttname"><a href="#a2cd109632a6dcccaa80b43561b1ab700">SCREEN_WIDTH</a></div><div class="ttdeci">#define SCREEN_WIDTH</div><div class="ttdef"><b>Definição</b> <a href="char__select__room_8c_source.html#l00014">char_select_room.c:14</a></div></div>
-<div class="ttc" id="achar__select__room_8c_html_a6974d08a74da681b3957b2fead2608b8"><div class="ttname"><a href="#a6974d08a74da681b3957b2fead2608b8">SCREEN_HEIGHT</a></div><div class="ttdeci">#define SCREEN_HEIGHT</div><div class="ttdef"><b>Definição</b> <a href="char__select__room_8c_source.html#l00015">char_select_room.c:15</a></div></div>
+<div class="ttc" id="achar__select__room_8c_html_a2cd109632a6dcccaa80b43561b1ab700"><div class="ttname"><a href="#a2cd109632a6dcccaa80b43561b1ab700">SCREEN_WIDTH</a></div><div class="ttdeci">#define SCREEN_WIDTH</div><div class="ttdef"><b>Definição</b> <a href="char__select__room_8c_source.html#l00009">char_select_room.c:9</a></div></div>
+<div class="ttc" id="achar__select__room_8c_html_a6974d08a74da681b3957b2fead2608b8"><div class="ttname"><a href="#a6974d08a74da681b3957b2fead2608b8">SCREEN_HEIGHT</a></div><div class="ttdeci">#define SCREEN_HEIGHT</div><div class="ttdef"><b>Definição</b> <a href="char__select__room_8c_source.html#l00010">char_select_room.c:10</a></div></div>
 </div><!-- fragment --><div class="dynheader">
 Esse é o diagrama das funções que utilizam essa função:</div>
 <div class="dyncontent">
@@ -638,8 +622,8 @@ Esse é o diagrama das funções que utilizam essa função:</div>
 <div class="line"><span class="lineno">  561</span>  SPR_setAnimationLoop(<a class="code hl_variable" href="game__vars_8c.html#aa5e097d9886fbef5de8248a18d1d95ee">GE</a>[0].sprite, TRUE);</div>
 <div class="line"><span class="lineno">  562</span>  SPR_setAnimationLoop(<a class="code hl_variable" href="game__vars_8c.html#aa5e097d9886fbef5de8248a18d1d95ee">GE</a>[1].sprite, TRUE);</div>
 <div class="line"><span class="lineno">  563</span>}</div>
-<div class="ttc" id="achar__select__room_8c_html_a0460b2a95f5db13cb1e4a2f21e13aff5"><div class="ttname"><a href="#a0460b2a95f5db13cb1e4a2f21e13aff5">CURSOR_P2</a></div><div class="ttdeci">#define CURSOR_P2</div><div class="ttdef"><b>Definição</b> <a href="char__select__room_8c_source.html#l00022">char_select_room.c:22</a></div></div>
-<div class="ttc" id="achar__select__room_8c_html_a98e87e5d518a755ada15310a80a0aa7f"><div class="ttname"><a href="#a98e87e5d518a755ada15310a80a0aa7f">CURSOR_P1</a></div><div class="ttdeci">#define CURSOR_P1</div><div class="ttdef"><b>Definição</b> <a href="char__select__room_8c_source.html#l00021">char_select_room.c:21</a></div></div>
+<div class="ttc" id="achar__select__room_8c_html_a0460b2a95f5db13cb1e4a2f21e13aff5"><div class="ttname"><a href="#a0460b2a95f5db13cb1e4a2f21e13aff5">CURSOR_P2</a></div><div class="ttdeci">#define CURSOR_P2</div><div class="ttdef"><b>Definição</b> <a href="char__select__room_8c_source.html#l00017">char_select_room.c:17</a></div></div>
+<div class="ttc" id="achar__select__room_8c_html_a98e87e5d518a755ada15310a80a0aa7f"><div class="ttname"><a href="#a98e87e5d518a755ada15310a80a0aa7f">CURSOR_P1</a></div><div class="ttdeci">#define CURSOR_P1</div><div class="ttdef"><b>Definição</b> <a href="char__select__room_8c_source.html#l00016">char_select_room.c:16</a></div></div>
 </div><!-- fragment --><div class="dynheader">
 Esse é o diagrama das funções que utilizam essa função:</div>
 <div class="dyncontent">
@@ -712,31 +696,31 @@ Esse é o diagrama das funções que utilizam essa função:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definição na linha <a class="el" href="char__select__room_8c_source.html#l00193">193</a> do arquivo <a class="el" href="char__select__room_8c_source.html">char_select_room.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  194</span>{</div>
-<div class="line"><span class="lineno">  195</span>  Sprite *s = <a class="code hl_variable" href="game__vars_8c.html#aa5e097d9886fbef5de8248a18d1d95ee">GE</a>[ind + 2].sprite;</div>
-<div class="line"><span class="lineno">  196</span>  <span class="keywordflow">if</span> (s == NULL)</div>
-<div class="line"><span class="lineno">  197</span>    <span class="keywordflow">return</span>;</div>
-<div class="line"><span class="lineno">  198</span> </div>
-<div class="line"><span class="lineno">  199</span>  <span class="keywordflow">if</span> (SPR_isVisible(s, TRUE))</div>
-<div class="line"><span class="lineno">  200</span>  {</div>
-<div class="line"><span class="lineno">  201</span>    <span class="comment">// para piscar novamente caso selecionem o mesmo personagem</span></div>
-<div class="line"><span class="lineno">  202</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[0].selecionado &amp;&amp; <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[1].selecionado &amp;&amp; <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[0].<span class="keywordtype">id</span> == <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[1].<span class="keywordtype">id</span>)</div>
-<div class="line"><span class="lineno">  203</span>    {</div>
-<div class="line"><span class="lineno">  204</span>      SPR_setDepth(s, SPR_MIN_DEPTH);</div>
-<div class="line"><span class="lineno">  205</span>      SPR_setAnim(s, <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[ind].<span class="keywordtype">id</span>);</div>
-<div class="line"><span class="lineno">  206</span>    }</div>
+<p class="definition">Definição na linha <a class="el" href="char__select__room_8c_source.html#l00188">188</a> do arquivo <a class="el" href="char__select__room_8c_source.html">char_select_room.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  189</span>{</div>
+<div class="line"><span class="lineno">  190</span>  Sprite *s = <a class="code hl_variable" href="game__vars_8c.html#aa5e097d9886fbef5de8248a18d1d95ee">GE</a>[ind + 2].sprite;</div>
+<div class="line"><span class="lineno">  191</span>  <span class="keywordflow">if</span> (s == NULL)</div>
+<div class="line"><span class="lineno">  192</span>    <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  193</span> </div>
+<div class="line"><span class="lineno">  194</span>  <span class="keywordflow">if</span> (SPR_isVisible(s, TRUE))</div>
+<div class="line"><span class="lineno">  195</span>  {</div>
+<div class="line"><span class="lineno">  196</span>    <span class="comment">// para piscar novamente caso selecionem o mesmo personagem</span></div>
+<div class="line"><span class="lineno">  197</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[0].selecionado &amp;&amp; <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[1].selecionado &amp;&amp; <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[0].<span class="keywordtype">id</span> == <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[1].<span class="keywordtype">id</span>)</div>
+<div class="line"><span class="lineno">  198</span>    {</div>
+<div class="line"><span class="lineno">  199</span>      SPR_setDepth(s, SPR_MIN_DEPTH);</div>
+<div class="line"><span class="lineno">  200</span>      SPR_setAnim(s, <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[ind].<span class="keywordtype">id</span>);</div>
+<div class="line"><span class="lineno">  201</span>    }</div>
+<div class="line"><span class="lineno">  202</span> </div>
+<div class="line"><span class="lineno">  203</span>    selectorBlinkTimer[ind]++;</div>
+<div class="line"><span class="lineno">  204</span> </div>
+<div class="line"><span class="lineno">  205</span>    <span class="keywordflow">if</span> ((selectorBlinkTimer[ind] &amp; 7u) == 0)</div>
+<div class="line"><span class="lineno">  206</span>      SPR_nextFrame(s);</div>
 <div class="line"><span class="lineno">  207</span> </div>
-<div class="line"><span class="lineno">  208</span>    selectorBlinkTimer[ind]++;</div>
-<div class="line"><span class="lineno">  209</span> </div>
-<div class="line"><span class="lineno">  210</span>    <span class="keywordflow">if</span> ((selectorBlinkTimer[ind] &amp; 7u) == 0)</div>
-<div class="line"><span class="lineno">  211</span>      SPR_nextFrame(s);</div>
-<div class="line"><span class="lineno">  212</span> </div>
-<div class="line"><span class="lineno">  213</span>    <span class="comment">// pára a animação</span></div>
-<div class="line"><span class="lineno">  214</span>    <span class="keywordflow">if</span> (selectorBlinkTimer[ind] &gt; 30u)</div>
-<div class="line"><span class="lineno">  215</span>      SPR_setAnimationLoop(s, FALSE);</div>
-<div class="line"><span class="lineno">  216</span>  }</div>
-<div class="line"><span class="lineno">  217</span>}</div>
+<div class="line"><span class="lineno">  208</span>    <span class="comment">// pára a animação</span></div>
+<div class="line"><span class="lineno">  209</span>    <span class="keywordflow">if</span> (selectorBlinkTimer[ind] &gt; 30u)</div>
+<div class="line"><span class="lineno">  210</span>      SPR_setAnimationLoop(s, FALSE);</div>
+<div class="line"><span class="lineno">  211</span>  }</div>
+<div class="line"><span class="lineno">  212</span>}</div>
 </div><!-- fragment --><div class="dynheader">
 Esse é o diagrama das funções que utilizam essa função:</div>
 <div class="dyncontent">
@@ -767,32 +751,50 @@ Esse é o diagrama das funções que utilizam essa função:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definição na linha <a class="el" href="char__select__room_8c_source.html#l00357">357</a> do arquivo <a class="el" href="char__select__room_8c_source.html">char_select_room.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  358</span>{</div>
-<div class="line"><span class="lineno">  359</span>  <span class="keywordflow">if</span> (<a class="code hl_variable" href="game__vars_8c.html#aa5e097d9886fbef5de8248a18d1d95ee">GE</a>[ind].sprite == NULL || <a class="code hl_variable" href="game__vars_8c.html#aa5e097d9886fbef5de8248a18d1d95ee">GE</a>[ind].sprite-&gt;visibility == HIDDEN)</div>
-<div class="line"><span class="lineno">  360</span>    <span class="keywordflow">return</span>;</div>
-<div class="line"><span class="lineno">  361</span> </div>
-<div class="line"><span class="lineno">  362</span>  <span class="keywordflow">if</span> (<a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[ind].key_JOY_START_status == 0)</div>
-<div class="line"><span class="lineno">  363</span>    <span class="keywordflow">return</span>;</div>
-<div class="line"><span class="lineno">  364</span> </div>
-<div class="line"><span class="lineno">  365</span>  <span class="keywordflow">if</span> (<a class="code hl_variable" href="game__vars_8c.html#aa5e097d9886fbef5de8248a18d1d95ee">GE</a>[ind + 2].sprite != NULL)</div>
-<div class="line"><span class="lineno">  366</span>    <span class="keywordflow">return</span>;</div>
+<p class="definition">Definição na linha <a class="el" href="char__select__room_8c_source.html#l00352">352</a> do arquivo <a class="el" href="char__select__room_8c_source.html">char_select_room.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  353</span>{</div>
+<div class="line"><span class="lineno">  354</span>  <span class="keywordflow">if</span> (<a class="code hl_variable" href="game__vars_8c.html#aa5e097d9886fbef5de8248a18d1d95ee">GE</a>[ind].sprite == NULL || <a class="code hl_variable" href="game__vars_8c.html#aa5e097d9886fbef5de8248a18d1d95ee">GE</a>[ind].sprite-&gt;visibility == HIDDEN)</div>
+<div class="line"><span class="lineno">  355</span>    <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  356</span> </div>
+<div class="line"><span class="lineno">  357</span>  <span class="keywordflow">if</span> (<a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[ind].key_JOY_START_status == 0)</div>
+<div class="line"><span class="lineno">  358</span>    <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  359</span> </div>
+<div class="line"><span class="lineno">  360</span>  <span class="keywordflow">if</span> (<a class="code hl_variable" href="game__vars_8c.html#aa5e097d9886fbef5de8248a18d1d95ee">GE</a>[ind + 2].sprite != NULL)</div>
+<div class="line"><span class="lineno">  361</span>    <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  362</span> </div>
+<div class="line"><span class="lineno">  363</span>  <span class="keyword">const</span> <a class="code hl_struct" href="structCharSelectData.html">CharSelectData</a> *d = &amp;charData[<a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[ind].id];</div>
+<div class="line"><span class="lineno">  364</span>  XGM2_playPCMEx(d-&gt;<a class="code hl_variable" href="structCharSelectData.html#a8a349f2a251edf1fc6fcf27d8f496daa">locutor</a>, d-&gt;<a class="code hl_variable" href="structCharSelectData.html#a1fc61d0849b32f6bf0a9f144795a7f78">size</a>, SOUND_PCM_CH3, 0, FALSE, FALSE);</div>
+<div class="line"><span class="lineno">  365</span> </div>
+<div class="line"><span class="lineno">  366</span>  <a class="code hl_function" href="player__state_8c.html#a215f450776e74a1c1f35b9f9499c08a5">playerState</a>(ind, VITORIA);</div>
 <div class="line"><span class="lineno">  367</span> </div>
-<div class="line"><span class="lineno">  368</span>  <span class="keyword">const</span> <a class="code hl_struct" href="structCharSelectData.html">CharSelectData</a> *d = &amp;charData[<a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[ind].id];</div>
-<div class="line"><span class="lineno">  369</span>  XGM2_playPCMEx(d-&gt;<a class="code hl_variable" href="structCharSelectData.html#a8a349f2a251edf1fc6fcf27d8f496daa">locutor</a>, d-&gt;<a class="code hl_variable" href="structCharSelectData.html#a1fc61d0849b32f6bf0a9f144795a7f78">size</a>, SOUND_PCM_CH3, 0, FALSE, FALSE);</div>
-<div class="line"><span class="lineno">  370</span> </div>
-<div class="line"><span class="lineno">  371</span>  <a class="code hl_variable" href="game__vars_8c.html#aa5e097d9886fbef5de8248a18d1d95ee">GE</a>[ind + 2].sprite = SPR_addSprite(&amp;spPortrait, d-&gt;<a class="code hl_variable" href="structCharSelectData.html#afb06a41244038cae16554cecf3e1a722">x</a> + 4, d-&gt;<a class="code hl_variable" href="structCharSelectData.html#a34f85805caf2dbcbc99821827a15b372">y</a> + 4, TILE_ATTR(PAL0, FALSE, FALSE, FALSE));</div>
-<div class="line"><span class="lineno">  372</span>  SPR_setAnim(<a class="code hl_variable" href="game__vars_8c.html#aa5e097d9886fbef5de8248a18d1d95ee">GE</a>[ind + 2].sprite, <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[ind].<span class="keywordtype">id</span>);</div>
-<div class="line"><span class="lineno">  373</span>  SPR_setDepth(<a class="code hl_variable" href="game__vars_8c.html#aa5e097d9886fbef5de8248a18d1d95ee">GE</a>[ind + 2].sprite, 2);</div>
-<div class="line"><span class="lineno">  374</span>  <a class="code hl_variable" href="game__vars_8c.html#aa5e097d9886fbef5de8248a18d1d95ee">GE</a>[ind].sprite-&gt;visibility = HIDDEN;</div>
+<div class="line"><span class="lineno">  368</span>  <a class="code hl_variable" href="game__vars_8c.html#aa5e097d9886fbef5de8248a18d1d95ee">GE</a>[ind + 2].sprite = SPR_addSprite(&amp;spPortrait, d-&gt;<a class="code hl_variable" href="structCharSelectData.html#afb06a41244038cae16554cecf3e1a722">x</a> + 4, d-&gt;<a class="code hl_variable" href="structCharSelectData.html#a34f85805caf2dbcbc99821827a15b372">y</a> + 4, TILE_ATTR(PAL0, FALSE, FALSE, FALSE));</div>
+<div class="line"><span class="lineno">  369</span>  SPR_setAnim(<a class="code hl_variable" href="game__vars_8c.html#aa5e097d9886fbef5de8248a18d1d95ee">GE</a>[ind + 2].sprite, <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[ind].<span class="keywordtype">id</span>);</div>
+<div class="line"><span class="lineno">  370</span>  SPR_setDepth(<a class="code hl_variable" href="game__vars_8c.html#aa5e097d9886fbef5de8248a18d1d95ee">GE</a>[ind + 2].sprite, 2);</div>
+<div class="line"><span class="lineno">  371</span>  <a class="code hl_variable" href="game__vars_8c.html#aa5e097d9886fbef5de8248a18d1d95ee">GE</a>[ind].sprite-&gt;visibility = HIDDEN;</div>
+<div class="line"><span class="lineno">  372</span>  </div>
+<div class="line"><span class="lineno">  373</span>  <a class="code hl_function" href="fighter_8c.html#a490dc319f68b5343215c418bb892a20f">player_bind</a>(&amp;<a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[ind], <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[ind].<span class="keywordtype">id</span>);</div>
+<div class="line"><span class="lineno">  374</span> </div>
 <div class="line"><span class="lineno">  375</span>  <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[ind].selecionado = TRUE;</div>
 <div class="line"><span class="lineno">  376</span>}</div>
-<div class="ttc" id="astructCharSelectData_html"><div class="ttname"><a href="structCharSelectData.html">CharSelectData</a></div><div class="ttdef"><b>Definição</b> <a href="char__select__room_8c_source.html#l00047">char_select_room.c:48</a></div></div>
-<div class="ttc" id="astructCharSelectData_html_a1fc61d0849b32f6bf0a9f144795a7f78"><div class="ttname"><a href="structCharSelectData.html#a1fc61d0849b32f6bf0a9f144795a7f78">CharSelectData::size</a></div><div class="ttdeci">u16 size</div><div class="ttdef"><b>Definição</b> <a href="char__select__room_8c_source.html#l00050">char_select_room.c:50</a></div></div>
-<div class="ttc" id="astructCharSelectData_html_a34f85805caf2dbcbc99821827a15b372"><div class="ttname"><a href="structCharSelectData.html#a34f85805caf2dbcbc99821827a15b372">CharSelectData::y</a></div><div class="ttdeci">u8 y</div><div class="ttdef"><b>Definição</b> <a href="char__select__room_8c_source.html#l00052">char_select_room.c:52</a></div></div>
-<div class="ttc" id="astructCharSelectData_html_a8a349f2a251edf1fc6fcf27d8f496daa"><div class="ttname"><a href="structCharSelectData.html#a8a349f2a251edf1fc6fcf27d8f496daa">CharSelectData::locutor</a></div><div class="ttdeci">const u8 * locutor</div><div class="ttdef"><b>Definição</b> <a href="char__select__room_8c_source.html#l00049">char_select_room.c:49</a></div></div>
-<div class="ttc" id="astructCharSelectData_html_afb06a41244038cae16554cecf3e1a722"><div class="ttname"><a href="structCharSelectData.html#afb06a41244038cae16554cecf3e1a722">CharSelectData::x</a></div><div class="ttdeci">u8 x</div><div class="ttdef"><b>Definição</b> <a href="char__select__room_8c_source.html#l00051">char_select_room.c:51</a></div></div>
+<div class="ttc" id="afighter_8c_html_a490dc319f68b5343215c418bb892a20f"><div class="ttname"><a href="fighter_8c.html#a490dc319f68b5343215c418bb892a20f">player_bind</a></div><div class="ttdeci">void player_bind(Player *p, u8 id)</div><div class="ttdef"><b>Definição</b> <a href="fighter_8c_source.html#l00016">fighter.c:16</a></div></div>
+<div class="ttc" id="astructCharSelectData_html"><div class="ttname"><a href="structCharSelectData.html">CharSelectData</a></div><div class="ttdef"><b>Definição</b> <a href="char__select__room_8c_source.html#l00042">char_select_room.c:43</a></div></div>
+<div class="ttc" id="astructCharSelectData_html_a1fc61d0849b32f6bf0a9f144795a7f78"><div class="ttname"><a href="structCharSelectData.html#a1fc61d0849b32f6bf0a9f144795a7f78">CharSelectData::size</a></div><div class="ttdeci">u16 size</div><div class="ttdef"><b>Definição</b> <a href="char__select__room_8c_source.html#l00045">char_select_room.c:45</a></div></div>
+<div class="ttc" id="astructCharSelectData_html_a34f85805caf2dbcbc99821827a15b372"><div class="ttname"><a href="structCharSelectData.html#a34f85805caf2dbcbc99821827a15b372">CharSelectData::y</a></div><div class="ttdeci">u8 y</div><div class="ttdef"><b>Definição</b> <a href="char__select__room_8c_source.html#l00047">char_select_room.c:47</a></div></div>
+<div class="ttc" id="astructCharSelectData_html_a8a349f2a251edf1fc6fcf27d8f496daa"><div class="ttname"><a href="structCharSelectData.html#a8a349f2a251edf1fc6fcf27d8f496daa">CharSelectData::locutor</a></div><div class="ttdeci">const u8 * locutor</div><div class="ttdef"><b>Definição</b> <a href="char__select__room_8c_source.html#l00044">char_select_room.c:44</a></div></div>
+<div class="ttc" id="astructCharSelectData_html_afb06a41244038cae16554cecf3e1a722"><div class="ttname"><a href="structCharSelectData.html#afb06a41244038cae16554cecf3e1a722">CharSelectData::x</a></div><div class="ttdeci">u8 x</div><div class="ttdef"><b>Definição</b> <a href="char__select__room_8c_source.html#l00046">char_select_room.c:46</a></div></div>
 </div><!-- fragment --><div class="dynheader">
+Este é o diagrama das funções utilizadas por essa função:</div>
+<div class="dyncontent">
+<div class="center"><img src="char__select__room_8c_a0ef959c1328c22bc747f0fe922ab81d1_cgraph.png" border="0" usemap="#achar__select__room_8c_a0ef959c1328c22bc747f0fe922ab81d1_cgraph" alt=""/></div>
+<map name="achar__select__room_8c_a0ef959c1328c22bc747f0fe922ab81d1_cgraph" id="achar__select__room_8c_a0ef959c1328c22bc747f0fe922ab81d1_cgraph">
+<area shape="rect" title=" " alt="" coords="5,32,119,62"/>
+<area shape="rect" href="fighter_8c.html#a490dc319f68b5343215c418bb892a20f" title=" " alt="" coords="167,5,260,35"/>
+<area shape="poly" title=" " alt="" coords="119,34,151,28,151,34,120,39"/>
+<area shape="rect" href="player__state_8c.html#a215f450776e74a1c1f35b9f9499c08a5" title=" " alt="" coords="167,59,260,88"/>
+<area shape="poly" title=" " alt="" coords="120,54,152,60,151,65,119,59"/>
+</map>
+</div>
+<div class="dynheader">
 Esse é o diagrama das funções que utilizam essa função:</div>
 <div class="dyncontent">
 <div class="center"><img src="char__select__room_8c_a0ef959c1328c22bc747f0fe922ab81d1_icgraph.png" border="0" usemap="#achar__select__room_8c_a0ef959c1328c22bc747f0fe922ab81d1_icgraph" alt=""/></div>
@@ -856,100 +858,100 @@ Esse é o diagrama das funções que utilizam essa função:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definição na linha <a class="el" href="char__select__room_8c_source.html#l00107">107</a> do arquivo <a class="el" href="char__select__room_8c_source.html">char_select_room.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  108</span>{</div>
-<div class="line"><span class="lineno">  109</span>  <span class="keywordtype">bool</span> sair = FALSE;</div>
-<div class="line"><span class="lineno">  110</span>  u8 selectorBlinkTimer[2] = {0, 0};</div>
-<div class="line"><span class="lineno">  111</span>  s16 countDown = -1;</div>
+<p class="definition">Definição na linha <a class="el" href="char__select__room_8c_source.html#l00102">102</a> do arquivo <a class="el" href="char__select__room_8c_source.html">char_select_room.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  103</span>{</div>
+<div class="line"><span class="lineno">  104</span>  <span class="keywordtype">bool</span> sair = FALSE;</div>
+<div class="line"><span class="lineno">  105</span>  u8 selectorBlinkTimer[2] = {0, 0};</div>
+<div class="line"><span class="lineno">  106</span>  s16 countDown = -1;</div>
+<div class="line"><span class="lineno">  107</span> </div>
+<div class="line"><span class="lineno">  108</span>  <span class="keywordflow">while</span> (!sair)</div>
+<div class="line"><span class="lineno">  109</span>  {</div>
+<div class="line"><span class="lineno">  110</span>    <a class="code hl_function" href="input__system_8c.html#a2656744a9ebd96a8887f55208c53bc6e">inputSystem</a>();</div>
+<div class="line"><span class="lineno">  111</span>    <a class="code hl_variable" href="game__vars_8c.html#a940f635da7254d2a02a607dab0139dfd">gFrames</a>++;</div>
 <div class="line"><span class="lineno">  112</span> </div>
-<div class="line"><span class="lineno">  113</span>  <span class="keywordflow">while</span> (!sair)</div>
-<div class="line"><span class="lineno">  114</span>  {</div>
-<div class="line"><span class="lineno">  115</span>    <a class="code hl_function" href="input__system_8c.html#a2656744a9ebd96a8887f55208c53bc6e">inputSystem</a>();</div>
-<div class="line"><span class="lineno">  116</span>    <a class="code hl_variable" href="game__vars_8c.html#a940f635da7254d2a02a607dab0139dfd">gFrames</a>++;</div>
-<div class="line"><span class="lineno">  117</span> </div>
-<div class="line"><span class="lineno">  118</span>    <span class="comment">// desabilita interações, ajusta planos e modo de scrolling</span></div>
-<div class="line"><span class="lineno">  119</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="game__vars_8c.html#a940f635da7254d2a02a607dab0139dfd">gFrames</a> == 1)</div>
-<div class="line"><span class="lineno">  120</span>    {</div>
-<div class="line"><span class="lineno">  121</span>      SYS_disableInts();</div>
-<div class="line"><span class="lineno">  122</span>      <a class="code hl_variable" href="game__vars_8c.html#a7db0859ee62e2447701751d5980ede35">gPodeMover</a> = FALSE;</div>
-<div class="line"><span class="lineno">  123</span>      VDP_setPlaneSize(128, 64, TRUE);</div>
-<div class="line"><span class="lineno">  124</span>      VDP_setScrollingMode(HSCROLL_LINE, VSCROLL_PLANE);</div>
-<div class="line"><span class="lineno">  125</span>      <a class="code hl_variable" href="game__vars_8c.html#ac5c9f7210c7cb249636b7f1dc0121b71">gInd_tileset</a> = TILE_USER_INDEX; <span class="comment">// Importante para evitar que o próximo tileset sobrescreva o anterior</span></div>
-<div class="line"><span class="lineno">  126</span>    }</div>
+<div class="line"><span class="lineno">  113</span>    <span class="comment">// desabilita interações, ajusta planos e modo de scrolling</span></div>
+<div class="line"><span class="lineno">  114</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="game__vars_8c.html#a940f635da7254d2a02a607dab0139dfd">gFrames</a> == 1)</div>
+<div class="line"><span class="lineno">  115</span>    {</div>
+<div class="line"><span class="lineno">  116</span>      SYS_disableInts();</div>
+<div class="line"><span class="lineno">  117</span>      <a class="code hl_variable" href="game__vars_8c.html#a7db0859ee62e2447701751d5980ede35">gPodeMover</a> = FALSE;</div>
+<div class="line"><span class="lineno">  118</span>      VDP_setPlaneSize(128, 64, TRUE);</div>
+<div class="line"><span class="lineno">  119</span>      VDP_setScrollingMode(HSCROLL_LINE, VSCROLL_PLANE);</div>
+<div class="line"><span class="lineno">  120</span>      <a class="code hl_variable" href="game__vars_8c.html#ac5c9f7210c7cb249636b7f1dc0121b71">gInd_tileset</a> = TILE_USER_INDEX; <span class="comment">// Importante para evitar que o próximo tileset sobrescreva o anterior</span></div>
+<div class="line"><span class="lineno">  121</span>    }</div>
+<div class="line"><span class="lineno">  122</span> </div>
+<div class="line"><span class="lineno">  123</span>    <span class="comment">// toca o gongo e inicia o efeito persinana revelando a tela de fundo</span></div>
+<div class="line"><span class="lineno">  124</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="game__vars_8c.html#a940f635da7254d2a02a607dab0139dfd">gFrames</a> == 20u)</div>
+<div class="line"><span class="lineno">  125</span>    {</div>
+<div class="line"><span class="lineno">  126</span>      s16 *gScrollLine = (s16 *)MEM_alloc(<a class="code hl_define" href="#a6974d08a74da681b3957b2fead2608b8">SCREEN_HEIGHT</a> * <span class="keyword">sizeof</span>(s16));</div>
 <div class="line"><span class="lineno">  127</span> </div>
-<div class="line"><span class="lineno">  128</span>    <span class="comment">// toca o gongo e inicia o efeito persinana revelando a tela de fundo</span></div>
-<div class="line"><span class="lineno">  129</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="game__vars_8c.html#a940f635da7254d2a02a607dab0139dfd">gFrames</a> == 20u)</div>
-<div class="line"><span class="lineno">  130</span>    {</div>
-<div class="line"><span class="lineno">  131</span>      s16 *gScrollLine = (s16 *)MEM_alloc(<a class="code hl_define" href="#a6974d08a74da681b3957b2fead2608b8">SCREEN_HEIGHT</a> * <span class="keyword">sizeof</span>(s16));</div>
-<div class="line"><span class="lineno">  132</span> </div>
-<div class="line"><span class="lineno">  133</span>      XGM2_playPCMEx(snd_gongo, <span class="keyword">sizeof</span>(snd_gongo), SOUND_PCM_CH2, 0, FALSE, 0);</div>
+<div class="line"><span class="lineno">  128</span>      XGM2_playPCMEx(snd_gongo, <span class="keyword">sizeof</span>(snd_gongo), SOUND_PCM_CH2, 0, FALSE, 0);</div>
+<div class="line"><span class="lineno">  129</span> </div>
+<div class="line"><span class="lineno">  130</span>      <a class="code hl_function" href="#a2c60c4622273d99eca25ec3a91b72e00">initScrollLine</a>(gScrollLine);</div>
+<div class="line"><span class="lineno">  131</span>      <a class="code hl_function" href="#ac4e9710c7cee86490478f6f13fe404ca">drawBackground</a>();</div>
+<div class="line"><span class="lineno">  132</span>      <a class="code hl_function" href="#a989e04fd12d40df989964ce84d981a5c">revealBackground</a>(gScrollLine);</div>
+<div class="line"><span class="lineno">  133</span>    }</div>
 <div class="line"><span class="lineno">  134</span> </div>
-<div class="line"><span class="lineno">  135</span>      <a class="code hl_function" href="#a2c60c4622273d99eca25ec3a91b72e00">initScrollLine</a>(gScrollLine);</div>
-<div class="line"><span class="lineno">  136</span>      <a class="code hl_function" href="#ac4e9710c7cee86490478f6f13fe404ca">drawBackground</a>();</div>
-<div class="line"><span class="lineno">  137</span>      <a class="code hl_function" href="#a989e04fd12d40df989964ce84d981a5c">revealBackground</a>(gScrollLine);</div>
-<div class="line"><span class="lineno">  138</span>    }</div>
-<div class="line"><span class="lineno">  139</span> </div>
-<div class="line"><span class="lineno">  140</span>    <span class="comment">// toca música, inicia o player, sprites ...</span></div>
-<div class="line"><span class="lineno">  141</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="game__vars_8c.html#a940f635da7254d2a02a607dab0139dfd">gFrames</a> == 40u)</div>
-<div class="line"><span class="lineno">  142</span>    {</div>
-<div class="line"><span class="lineno">  143</span>      <a class="code hl_function" href="#a5abeb779158f34e168929e54671ef77d">playMusic</a>();</div>
-<div class="line"><span class="lineno">  144</span>      <a class="code hl_function" href="#a314398bc03447a31029a30830c2564b1">initPlayer</a>();</div>
-<div class="line"><span class="lineno">  145</span>      <a class="code hl_function" href="#a5fe2bce30fe9d451d1fdf0516bceeca8">initSelectorSprite</a>();</div>
-<div class="line"><span class="lineno">  146</span>      VDP_waitVSync();</div>
-<div class="line"><span class="lineno">  147</span>      <a class="code hl_variable" href="game__vars_8c.html#a7db0859ee62e2447701751d5980ede35">gPodeMover</a> = TRUE;</div>
-<div class="line"><span class="lineno">  148</span>    }</div>
-<div class="line"><span class="lineno">  149</span> </div>
-<div class="line"><span class="lineno">  150</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="game__vars_8c.html#a940f635da7254d2a02a607dab0139dfd">gFrames</a> &gt; 100u)</div>
-<div class="line"><span class="lineno">  151</span>      SYS_enableInts();</div>
-<div class="line"><span class="lineno">  152</span> </div>
-<div class="line"><span class="lineno">  153</span>    <span class="comment">// para cada jogador, atualiza o seletor, verifica se selecionou e aplica efeito de piscar</span></div>
-<div class="line"><span class="lineno">  154</span>    <span class="keywordflow">for</span> (s16 ind = 1; ind &gt;= 0; --ind)</div>
-<div class="line"><span class="lineno">  155</span>    {</div>
-<div class="line"><span class="lineno">  156</span>      <a class="code hl_function" href="#a7d5c58c0b00f06187c8e13947ce8b0b5">updateSelector</a>(ind);</div>
-<div class="line"><span class="lineno">  157</span>      <a class="code hl_function" href="#a0ef959c1328c22bc747f0fe922ab81d1">playerSelected</a>(ind);</div>
-<div class="line"><span class="lineno">  158</span>      <a class="code hl_function" href="#aef0d923955a5f8c15ece5e94e4f34516">playerSelectBlinkEffect</a>(ind, selectorBlinkTimer);</div>
-<div class="line"><span class="lineno">  159</span>    }</div>
-<div class="line"><span class="lineno">  160</span> </div>
-<div class="line"><span class="lineno">  161</span>    <span class="comment">// TODO: repensar uma forma melhor</span></div>
-<div class="line"><span class="lineno">  162</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[0].selecionado &amp;&amp; <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[1].selecionado)</div>
-<div class="line"><span class="lineno">  163</span>    {</div>
-<div class="line"><span class="lineno">  164</span>      <span class="keywordflow">if</span> (countDown == -1)</div>
-<div class="line"><span class="lineno">  165</span>      {</div>
-<div class="line"><span class="lineno">  166</span>        countDown = 150;</div>
-<div class="line"><span class="lineno">  167</span>      }</div>
-<div class="line"><span class="lineno">  168</span>      <span class="keywordflow">else</span> <span class="keywordflow">if</span> (countDown == 0)</div>
-<div class="line"><span class="lineno">  169</span>      {</div>
-<div class="line"><span class="lineno">  170</span>        sair = TRUE;</div>
-<div class="line"><span class="lineno">  171</span>      }</div>
-<div class="line"><span class="lineno">  172</span>      <span class="keywordflow">else</span> <span class="keywordflow">if</span> (countDown == 50)</div>
-<div class="line"><span class="lineno">  173</span>      {</div>
-<div class="line"><span class="lineno">  174</span>        SYS_disableInts();</div>
-<div class="line"><span class="lineno">  175</span>        PAL_fadeOutAll(18, FALSE);</div>
-<div class="line"><span class="lineno">  176</span>        XGM2_stop();</div>
-<div class="line"><span class="lineno">  177</span>        VDP_clearPlane(BG_A, TRUE);</div>
-<div class="line"><span class="lineno">  178</span>        VDP_clearPlane(BG_B, TRUE);</div>
-<div class="line"><span class="lineno">  179</span>      }</div>
-<div class="line"><span class="lineno">  180</span>      countDown--;</div>
-<div class="line"><span class="lineno">  181</span>    }</div>
+<div class="line"><span class="lineno">  135</span>    <span class="comment">// toca música, inicia o player, sprites ...</span></div>
+<div class="line"><span class="lineno">  136</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="game__vars_8c.html#a940f635da7254d2a02a607dab0139dfd">gFrames</a> == 40u)</div>
+<div class="line"><span class="lineno">  137</span>    {</div>
+<div class="line"><span class="lineno">  138</span>      <a class="code hl_function" href="#a5abeb779158f34e168929e54671ef77d">playMusic</a>();</div>
+<div class="line"><span class="lineno">  139</span>      <a class="code hl_function" href="#a314398bc03447a31029a30830c2564b1">initPlayer</a>();</div>
+<div class="line"><span class="lineno">  140</span>      <a class="code hl_function" href="#a5fe2bce30fe9d451d1fdf0516bceeca8">initSelectorSprite</a>();</div>
+<div class="line"><span class="lineno">  141</span>      VDP_waitVSync();</div>
+<div class="line"><span class="lineno">  142</span>      <a class="code hl_variable" href="game__vars_8c.html#a7db0859ee62e2447701751d5980ede35">gPodeMover</a> = TRUE;</div>
+<div class="line"><span class="lineno">  143</span>    }</div>
+<div class="line"><span class="lineno">  144</span> </div>
+<div class="line"><span class="lineno">  145</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="game__vars_8c.html#a940f635da7254d2a02a607dab0139dfd">gFrames</a> &gt; 100u)</div>
+<div class="line"><span class="lineno">  146</span>      SYS_enableInts();</div>
+<div class="line"><span class="lineno">  147</span> </div>
+<div class="line"><span class="lineno">  148</span>    <span class="comment">// para cada jogador, atualiza o seletor, verifica se selecionou e aplica efeito de piscar</span></div>
+<div class="line"><span class="lineno">  149</span>    <span class="keywordflow">for</span> (s16 ind = 1; ind &gt;= 0; --ind)</div>
+<div class="line"><span class="lineno">  150</span>    {</div>
+<div class="line"><span class="lineno">  151</span>      <a class="code hl_function" href="#a7d5c58c0b00f06187c8e13947ce8b0b5">updateSelector</a>(ind);</div>
+<div class="line"><span class="lineno">  152</span>      <a class="code hl_function" href="#a0ef959c1328c22bc747f0fe922ab81d1">playerSelected</a>(ind);</div>
+<div class="line"><span class="lineno">  153</span>      <a class="code hl_function" href="#aef0d923955a5f8c15ece5e94e4f34516">playerSelectBlinkEffect</a>(ind, selectorBlinkTimer);</div>
+<div class="line"><span class="lineno">  154</span>    }</div>
+<div class="line"><span class="lineno">  155</span> </div>
+<div class="line"><span class="lineno">  156</span>    <span class="comment">// TODO: repensar uma forma melhor</span></div>
+<div class="line"><span class="lineno">  157</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[0].selecionado &amp;&amp; <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[1].selecionado)</div>
+<div class="line"><span class="lineno">  158</span>    {</div>
+<div class="line"><span class="lineno">  159</span>      <span class="keywordflow">if</span> (countDown == -1)</div>
+<div class="line"><span class="lineno">  160</span>      {</div>
+<div class="line"><span class="lineno">  161</span>        countDown = 150;</div>
+<div class="line"><span class="lineno">  162</span>      }</div>
+<div class="line"><span class="lineno">  163</span>      <span class="keywordflow">else</span> <span class="keywordflow">if</span> (countDown == 0)</div>
+<div class="line"><span class="lineno">  164</span>      {</div>
+<div class="line"><span class="lineno">  165</span>        sair = TRUE;</div>
+<div class="line"><span class="lineno">  166</span>      }</div>
+<div class="line"><span class="lineno">  167</span>      <span class="keywordflow">else</span> <span class="keywordflow">if</span> (countDown == 50)</div>
+<div class="line"><span class="lineno">  168</span>      {</div>
+<div class="line"><span class="lineno">  169</span>        SYS_disableInts();</div>
+<div class="line"><span class="lineno">  170</span>        PAL_fadeOutAll(18, FALSE);</div>
+<div class="line"><span class="lineno">  171</span>        XGM2_stop();</div>
+<div class="line"><span class="lineno">  172</span>        VDP_clearPlane(BG_A, TRUE);</div>
+<div class="line"><span class="lineno">  173</span>        VDP_clearPlane(BG_B, TRUE);</div>
+<div class="line"><span class="lineno">  174</span>      }</div>
+<div class="line"><span class="lineno">  175</span>      countDown--;</div>
+<div class="line"><span class="lineno">  176</span>    }</div>
+<div class="line"><span class="lineno">  177</span> </div>
+<div class="line"><span class="lineno">  178</span> </div>
+<div class="line"><span class="lineno">  179</span>    SPR_update();</div>
+<div class="line"><span class="lineno">  180</span>    SYS_doVBlankProcess();</div>
+<div class="line"><span class="lineno">  181</span>  }</div>
 <div class="line"><span class="lineno">  182</span> </div>
-<div class="line"><span class="lineno">  183</span> </div>
-<div class="line"><span class="lineno">  184</span>    SPR_update();</div>
-<div class="line"><span class="lineno">  185</span>    SYS_doVBlankProcess();</div>
-<div class="line"><span class="lineno">  186</span>  }</div>
-<div class="line"><span class="lineno">  187</span> </div>
-<div class="line"><span class="lineno">  188</span>  <a class="code hl_function" href="#aaf98ef7cdde3a0dfb2e49919de3298b1">exit</a>();</div>
-<div class="line"><span class="lineno">  189</span>}</div>
-<div class="ttc" id="achar__select__room_8c_html_a0ef959c1328c22bc747f0fe922ab81d1"><div class="ttname"><a href="#a0ef959c1328c22bc747f0fe922ab81d1">playerSelected</a></div><div class="ttdeci">void playerSelected(int ind)</div><div class="ttdef"><b>Definição</b> <a href="char__select__room_8c_source.html#l00357">char_select_room.c:357</a></div></div>
+<div class="line"><span class="lineno">  183</span>  <a class="code hl_function" href="#aaf98ef7cdde3a0dfb2e49919de3298b1">exit</a>();</div>
+<div class="line"><span class="lineno">  184</span>}</div>
+<div class="ttc" id="achar__select__room_8c_html_a0ef959c1328c22bc747f0fe922ab81d1"><div class="ttname"><a href="#a0ef959c1328c22bc747f0fe922ab81d1">playerSelected</a></div><div class="ttdeci">void playerSelected(int ind)</div><div class="ttdef"><b>Definição</b> <a href="char__select__room_8c_source.html#l00352">char_select_room.c:352</a></div></div>
 <div class="ttc" id="achar__select__room_8c_html_a2c60c4622273d99eca25ec3a91b72e00"><div class="ttname"><a href="#a2c60c4622273d99eca25ec3a91b72e00">initScrollLine</a></div><div class="ttdeci">void initScrollLine(s16 *gScrollLine)</div><div class="ttdoc">move a tela para fora da parte visível a esquerda para iniciar o efeito de Persiana.</div><div class="ttdef"><b>Definição</b> <a href="char__select__room_8c_source.html#l00382">char_select_room.c:382</a></div></div>
 <div class="ttc" id="achar__select__room_8c_html_a314398bc03447a31029a30830c2564b1"><div class="ttname"><a href="#a314398bc03447a31029a30830c2564b1">initPlayer</a></div><div class="ttdeci">void initPlayer(void)</div><div class="ttdef"><b>Definição</b> <a href="char__select__room_8c_source.html#l00519">char_select_room.c:519</a></div></div>
 <div class="ttc" id="achar__select__room_8c_html_a5abeb779158f34e168929e54671ef77d"><div class="ttname"><a href="#a5abeb779158f34e168929e54671ef77d">playMusic</a></div><div class="ttdeci">void playMusic(void)</div><div class="ttdef"><b>Definição</b> <a href="char__select__room_8c_source.html#l00573">char_select_room.c:573</a></div></div>
 <div class="ttc" id="achar__select__room_8c_html_a5fe2bce30fe9d451d1fdf0516bceeca8"><div class="ttname"><a href="#a5fe2bce30fe9d451d1fdf0516bceeca8">initSelectorSprite</a></div><div class="ttdeci">void initSelectorSprite(void)</div><div class="ttdef"><b>Definição</b> <a href="char__select__room_8c_source.html#l00546">char_select_room.c:546</a></div></div>
-<div class="ttc" id="achar__select__room_8c_html_a7d5c58c0b00f06187c8e13947ce8b0b5"><div class="ttname"><a href="#a7d5c58c0b00f06187c8e13947ce8b0b5">updateSelector</a></div><div class="ttdeci">void updateSelector(int ind)</div><div class="ttdef"><b>Definição</b> <a href="char__select__room_8c_source.html#l00219">char_select_room.c:219</a></div></div>
+<div class="ttc" id="achar__select__room_8c_html_a7d5c58c0b00f06187c8e13947ce8b0b5"><div class="ttname"><a href="#a7d5c58c0b00f06187c8e13947ce8b0b5">updateSelector</a></div><div class="ttdeci">void updateSelector(int ind)</div><div class="ttdef"><b>Definição</b> <a href="char__select__room_8c_source.html#l00214">char_select_room.c:214</a></div></div>
 <div class="ttc" id="achar__select__room_8c_html_a989e04fd12d40df989964ce84d981a5c"><div class="ttname"><a href="#a989e04fd12d40df989964ce84d981a5c">revealBackground</a></div><div class="ttdeci">void revealBackground(s16 *gScrollLine)</div><div class="ttdoc">Revela a tela fazendo o efeito de persiana.</div><div class="ttdef"><b>Definição</b> <a href="char__select__room_8c_source.html#l00422">char_select_room.c:422</a></div></div>
-<div class="ttc" id="achar__select__room_8c_html_aaf98ef7cdde3a0dfb2e49919de3298b1"><div class="ttname"><a href="#aaf98ef7cdde3a0dfb2e49919de3298b1">exit</a></div><div class="ttdeci">void exit(void)</div><div class="ttdef"><b>Definição</b> <a href="char__select__room_8c_source.html#l00083">char_select_room.c:83</a></div></div>
+<div class="ttc" id="achar__select__room_8c_html_aaf98ef7cdde3a0dfb2e49919de3298b1"><div class="ttname"><a href="#aaf98ef7cdde3a0dfb2e49919de3298b1">exit</a></div><div class="ttdeci">void exit(void)</div><div class="ttdef"><b>Definição</b> <a href="char__select__room_8c_source.html#l00078">char_select_room.c:78</a></div></div>
 <div class="ttc" id="achar__select__room_8c_html_ac4e9710c7cee86490478f6f13fe404ca"><div class="ttname"><a href="#ac4e9710c7cee86490478f6f13fe404ca">drawBackground</a></div><div class="ttdeci">void drawBackground(void)</div><div class="ttdoc">Carrega as informações dos backgrounds.</div><div class="ttdef"><b>Definição</b> <a href="char__select__room_8c_source.html#l00396">char_select_room.c:396</a></div></div>
-<div class="ttc" id="achar__select__room_8c_html_aef0d923955a5f8c15ece5e94e4f34516"><div class="ttname"><a href="#aef0d923955a5f8c15ece5e94e4f34516">playerSelectBlinkEffect</a></div><div class="ttdeci">void playerSelectBlinkEffect(int ind, u8 selectorBlinkTimer[2])</div><div class="ttdef"><b>Definição</b> <a href="char__select__room_8c_source.html#l00193">char_select_room.c:193</a></div></div>
-<div class="ttc" id="agame__vars_8c_html_a7db0859ee62e2447701751d5980ede35"><div class="ttname"><a href="game__vars_8c.html#a7db0859ee62e2447701751d5980ede35">gPodeMover</a></div><div class="ttdeci">bool gPodeMover</div><div class="ttdef"><b>Definição</b> <a href="game__vars_8c_source.html#l00016">game_vars.c:16</a></div></div>
+<div class="ttc" id="achar__select__room_8c_html_aef0d923955a5f8c15ece5e94e4f34516"><div class="ttname"><a href="#aef0d923955a5f8c15ece5e94e4f34516">playerSelectBlinkEffect</a></div><div class="ttdeci">void playerSelectBlinkEffect(int ind, u8 selectorBlinkTimer[2])</div><div class="ttdef"><b>Definição</b> <a href="char__select__room_8c_source.html#l00188">char_select_room.c:188</a></div></div>
+<div class="ttc" id="agame__vars_8c_html_a7db0859ee62e2447701751d5980ede35"><div class="ttname"><a href="game__vars_8c.html#a7db0859ee62e2447701751d5980ede35">gPodeMover</a></div><div class="ttdeci">bool gPodeMover</div><div class="ttdef"><b>Definição</b> <a href="game__vars_8c_source.html#l00015">game_vars.c:15</a></div></div>
 <div class="ttc" id="ainput__system_8c_html_a2656744a9ebd96a8887f55208c53bc6e"><div class="ttname"><a href="input__system_8c.html#a2656744a9ebd96a8887f55208c53bc6e">inputSystem</a></div><div class="ttdeci">void inputSystem()</div><div class="ttdef"><b>Definição</b> <a href="input__system_8c_source.html#l00004">input_system.c:4</a></div></div>
 </div><!-- fragment --><div class="dynheader">
 Este é o diagrama das funções utilizadas por essa função:</div>
@@ -961,8 +963,8 @@ Este é o diagrama das funções utilizadas por essa função:</div>
 <area shape="poly" title=" " alt="" coords="107,270,124,226,153,166,194,101,220,71,248,45,254,41,257,45,251,49,223,75,199,104,158,168,129,228,112,272"/>
 <area shape="rect" href="char__select__room_8c.html#aaf98ef7cdde3a0dfb2e49919de3298b1" title=" " alt="" coords="309,59,353,88"/>
 <area shape="poly" title=" " alt="" coords="110,271,130,235,161,189,200,140,248,98,270,86,293,78,295,83,272,91,251,102,204,144,165,192,134,238,115,273"/>
-<area shape="rect" href="char__select__room_8c.html#a314398bc03447a31029a30830c2564b1" title=" " alt="" coords="291,112,371,142"/>
-<area shape="poly" title=" " alt="" coords="116,270,170,213,207,180,248,151,275,139,278,143,251,156,210,184,173,216,120,273"/>
+<area shape="rect" href="char__select__room_8c.html#a314398bc03447a31029a30830c2564b1" title=" " alt="" coords="291,379,371,408"/>
+<area shape="poly" title=" " alt="" coords="131,300,185,331,251,364,278,375,276,380,249,369,182,336,128,304"/>
 <area shape="rect" href="char__select__room_8c.html#a2c60c4622273d99eca25ec3a91b72e00" title="move a tela para fora da parte visível a esquerda para iniciar o efeito de Persiana." alt="" coords="282,165,380,195"/>
 <area shape="poly" title=" " alt="" coords="128,269,182,238,249,204,266,197,268,202,251,209,185,242,131,274"/>
 <area shape="rect" href="char__select__room_8c.html#a5fe2bce30fe9d451d1fdf0516bceeca8" title=" " alt="" coords="267,219,395,248"/>
@@ -971,19 +973,22 @@ Este é o diagrama das funções utilizadas por essa função:</div>
 <area shape="poly" title=" " alt="" coords="202,284,267,284,267,290,202,290"/>
 <area shape="rect" href="char__select__room_8c.html#aef0d923955a5f8c15ece5e94e4f34516" title=" " alt="" coords="250,325,412,355"/>
 <area shape="poly" title=" " alt="" coords="170,300,250,319,249,324,169,305"/>
-<area shape="rect" href="char__select__room_8c.html#a0ef959c1328c22bc747f0fe922ab81d1" title=" " alt="" coords="274,379,388,408"/>
-<area shape="poly" title=" " alt="" coords="131,300,185,331,251,364,265,370,263,375,249,369,182,336,128,304"/>
+<area shape="rect" href="char__select__room_8c.html#a0ef959c1328c22bc747f0fe922ab81d1" title=" " alt="" coords="274,112,388,142"/>
+<area shape="poly" title=" " alt="" coords="116,270,170,213,207,180,248,151,259,146,261,150,251,156,210,184,173,216,120,273"/>
 <area shape="rect" href="char__select__room_8c.html#a5abeb779158f34e168929e54671ef77d" title=" " alt="" coords="290,432,372,462"/>
 <area shape="poly" title=" " alt="" coords="120,300,173,357,210,390,251,418,277,430,275,435,248,422,207,394,170,361,116,304"/>
 <area shape="rect" href="char__select__room_8c.html#a989e04fd12d40df989964ce84d981a5c" title="Revela a tela fazendo o efeito de persiana." alt="" coords="265,485,397,515"/>
 <area shape="poly" title=" " alt="" coords="115,301,134,335,165,381,204,430,251,471,258,476,255,480,248,476,200,433,161,384,130,338,110,303"/>
 <area shape="rect" href="char__select__room_8c.html#a7d5c58c0b00f06187c8e13947ce8b0b5" title=" " alt="" coords="273,539,389,568"/>
 <area shape="poly" title=" " alt="" coords="112,301,129,345,158,405,199,469,223,499,251,525,260,531,257,535,248,529,220,503,194,473,153,408,124,347,107,303"/>
-<area shape="rect" href="anima__system_8c.html#ab609215115971b40d9e47df6e4a8f853" title=" " alt="" coords="460,299,552,328"/>
-<area shape="poly" title=" " alt="" coords="372,131,394,139,414,151,443,182,467,217,498,283,493,285,462,220,439,185,410,156,391,144,370,136"/>
-<area shape="poly" title=" " alt="" coords="388,539,410,525,445,482,470,433,487,384,497,343,502,344,492,386,475,435,450,485,414,529,391,543"/>
-<area shape="rect" href="char__select__room_8c.html#a654fe96fb185a123e5c3e3df2ed5e0ed" title="Executa o áudio do cursor." alt="" coords="462,539,550,568"/>
-<area shape="poly" title=" " alt="" coords="390,551,447,551,447,556,390,556"/>
+<area shape="rect" href="player__state_8c.html#a215f450776e74a1c1f35b9f9499c08a5" title=" " alt="" coords="461,379,553,408"/>
+<area shape="poly" title=" " alt="" coords="371,391,445,391,445,396,371,396"/>
+<area shape="poly" title=" " alt="" coords="390,136,414,151,435,175,453,202,479,260,496,316,504,363,499,364,491,318,474,262,448,205,431,179,410,156,387,141"/>
+<area shape="rect" href="fighter_8c.html#a490dc319f68b5343215c418bb892a20f" title=" " alt="" coords="460,112,553,142"/>
+<area shape="poly" title=" " alt="" coords="388,124,445,124,445,130,388,130"/>
+<area shape="poly" title=" " alt="" coords="388,537,410,525,436,501,458,474,490,421,494,424,462,477,440,505,414,529,391,542"/>
+<area shape="rect" href="char__select__room_8c.html#a654fe96fb185a123e5c3e3df2ed5e0ed" title="Executa o áudio do cursor." alt="" coords="463,539,551,568"/>
+<area shape="poly" title=" " alt="" coords="389,551,447,551,447,556,389,556"/>
 </map>
 </div>
 <div class="dynheader">
@@ -1112,8 +1117,8 @@ Esse é o diagrama das funções que utilizam essa função:</div>
 <div class="line"><span class="lineno">  515</span>    gScrollLine = NULL;</div>
 <div class="line"><span class="lineno">  516</span>  }</div>
 <div class="line"><span class="lineno">  517</span>}</div>
-<div class="ttc" id="achar__select__room_8c_html_a810562d232296df8a4bb3991849dc23d"><div class="ttname"><a href="#a810562d232296df8a4bb3991849dc23d">LINE_HEIGHT</a></div><div class="ttdeci">#define LINE_HEIGHT</div><div class="ttdef"><b>Definição</b> <a href="char__select__room_8c_source.html#l00016">char_select_room.c:16</a></div></div>
-<div class="ttc" id="astructVenetianBlindsEffect_html_a74815765916f5d9761d41e815131ddff"><div class="ttname"><a href="structVenetianBlindsEffect.html#a74815765916f5d9761d41e815131ddff">VenetianBlindsEffect::startLine</a></div><div class="ttdeci">u16 startLine</div><div class="ttdef"><b>Definição</b> <a href="char__select__room_8c_source.html#l00068">char_select_room.c:68</a></div></div>
+<div class="ttc" id="achar__select__room_8c_html_a810562d232296df8a4bb3991849dc23d"><div class="ttname"><a href="#a810562d232296df8a4bb3991849dc23d">LINE_HEIGHT</a></div><div class="ttdeci">#define LINE_HEIGHT</div><div class="ttdef"><b>Definição</b> <a href="char__select__room_8c_source.html#l00011">char_select_room.c:11</a></div></div>
+<div class="ttc" id="astructVenetianBlindsEffect_html_a74815765916f5d9761d41e815131ddff"><div class="ttname"><a href="structVenetianBlindsEffect.html#a74815765916f5d9761d41e815131ddff">VenetianBlindsEffect::startLine</a></div><div class="ttdeci">u16 startLine</div><div class="ttdef"><b>Definição</b> <a href="char__select__room_8c_source.html#l00063">char_select_room.c:63</a></div></div>
 </div><!-- fragment --><div class="dynheader">
 Esse é o diagrama das funções que utilizam essa função:</div>
 <div class="dyncontent">
@@ -1144,141 +1149,141 @@ Esse é o diagrama das funções que utilizam essa função:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definição na linha <a class="el" href="char__select__room_8c_source.html#l00219">219</a> do arquivo <a class="el" href="char__select__room_8c_source.html">char_select_room.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  220</span>{</div>
-<div class="line"><span class="lineno">  221</span>  <span class="comment">// se o seletor estiver invisível não permitir mover o cursor.</span></div>
-<div class="line"><span class="lineno">  222</span>  <span class="keywordflow">if</span> (<a class="code hl_variable" href="game__vars_8c.html#aa5e097d9886fbef5de8248a18d1d95ee">GE</a>[ind].sprite == NULL || <a class="code hl_variable" href="game__vars_8c.html#aa5e097d9886fbef5de8248a18d1d95ee">GE</a>[ind].sprite-&gt;visibility == HIDDEN)</div>
-<div class="line"><span class="lineno">  223</span>    <span class="keywordflow">return</span>;</div>
-<div class="line"><span class="lineno">  224</span> </div>
-<div class="line"><span class="lineno">  225</span>  <span class="keywordtype">int</span> prevId = <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[ind].id; <span class="comment">// guarda personagem anterior</span></div>
-<div class="line"><span class="lineno">  226</span> </div>
-<div class="line"><span class="lineno">  227</span>  <span class="keywordflow">switch</span> (<a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[ind].<span class="keywordtype">id</span>)</div>
-<div class="line"><span class="lineno">  228</span>  {</div>
-<div class="line"><span class="lineno">  229</span>    <span class="keywordflow">case</span> KANO:</div>
-<div class="line"><span class="lineno">  230</span>      <span class="keywordflow">if</span> (<a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[ind].key_JOY_LEFT_status == 1) <span class="comment">// se apertar para esquerda, seleciona CAGE</span></div>
-<div class="line"><span class="lineno">  231</span>      {</div>
-<div class="line"><span class="lineno">  232</span>        <a class="code hl_function" href="#a654fe96fb185a123e5c3e3df2ed5e0ed">playCursor</a>();</div>
-<div class="line"><span class="lineno">  233</span>        SPR_setPosition(<a class="code hl_variable" href="game__vars_8c.html#aa5e097d9886fbef5de8248a18d1d95ee">GE</a>[ind].sprite, OPTIONS_X[JOHNNY_CAGE], OPTIONS_Y[JOHNNY_CAGE]);</div>
-<div class="line"><span class="lineno">  234</span>        <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[ind].id = JOHNNY_CAGE;</div>
-<div class="line"><span class="lineno">  235</span>      }</div>
-<div class="line"><span class="lineno">  236</span>      <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[ind].key_JOY_RIGHT_status == 1) <span class="comment">// se apertar para direita, Subzero</span></div>
-<div class="line"><span class="lineno">  237</span>      {</div>
-<div class="line"><span class="lineno">  238</span>        <a class="code hl_function" href="#a654fe96fb185a123e5c3e3df2ed5e0ed">playCursor</a>();</div>
-<div class="line"><span class="lineno">  239</span>        SPR_setPosition(<a class="code hl_variable" href="game__vars_8c.html#aa5e097d9886fbef5de8248a18d1d95ee">GE</a>[ind].sprite, OPTIONS_X[SUBZERO], OPTIONS_Y[SUBZERO]);</div>
-<div class="line"><span class="lineno">  240</span>        <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[ind].id = SUBZERO;</div>
-<div class="line"><span class="lineno">  241</span>      }</div>
-<div class="line"><span class="lineno">  242</span>      <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[ind].key_JOY_DOWN_status == 1)<span class="comment">// se apertar para baixo, Raiden</span></div>
-<div class="line"><span class="lineno">  243</span>      {</div>
-<div class="line"><span class="lineno">  244</span>        <a class="code hl_function" href="#a654fe96fb185a123e5c3e3df2ed5e0ed">playCursor</a>();</div>
-<div class="line"><span class="lineno">  245</span>        SPR_setPosition(<a class="code hl_variable" href="game__vars_8c.html#aa5e097d9886fbef5de8248a18d1d95ee">GE</a>[ind].sprite, OPTIONS_X[RAIDEN], OPTIONS_Y[RAIDEN]);</div>
-<div class="line"><span class="lineno">  246</span>        <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[ind].id = RAIDEN;</div>
-<div class="line"><span class="lineno">  247</span>      }</div>
-<div class="line"><span class="lineno">  248</span>      <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  249</span> </div>
-<div class="line"><span class="lineno">  250</span>    <span class="keywordflow">case</span> JOHNNY_CAGE:</div>
-<div class="line"><span class="lineno">  251</span>      <span class="keywordflow">if</span> (<a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[ind].key_JOY_RIGHT_status == 1)</div>
-<div class="line"><span class="lineno">  252</span>      {</div>
-<div class="line"><span class="lineno">  253</span>        <a class="code hl_function" href="#a654fe96fb185a123e5c3e3df2ed5e0ed">playCursor</a>();</div>
-<div class="line"><span class="lineno">  254</span>        SPR_setPosition(<a class="code hl_variable" href="game__vars_8c.html#aa5e097d9886fbef5de8248a18d1d95ee">GE</a>[ind].sprite, OPTIONS_X[KANO], OPTIONS_Y[KANO]);</div>
-<div class="line"><span class="lineno">  255</span>        <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[ind].id = KANO;</div>
-<div class="line"><span class="lineno">  256</span>      }</div>
-<div class="line"><span class="lineno">  257</span>      <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[ind].key_JOY_LEFT_status == 1)</div>
-<div class="line"><span class="lineno">  258</span>      {</div>
-<div class="line"><span class="lineno">  259</span>        <a class="code hl_function" href="#a654fe96fb185a123e5c3e3df2ed5e0ed">playCursor</a>();</div>
-<div class="line"><span class="lineno">  260</span>        SPR_setPosition(<a class="code hl_variable" href="game__vars_8c.html#aa5e097d9886fbef5de8248a18d1d95ee">GE</a>[ind].sprite, OPTIONS_X[SONYA], OPTIONS_Y[SONYA]);</div>
-<div class="line"><span class="lineno">  261</span>        <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[ind].id = SONYA;</div>
-<div class="line"><span class="lineno">  262</span>      }</div>
-<div class="line"><span class="lineno">  263</span>      <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  264</span> </div>
-<div class="line"><span class="lineno">  265</span>    <span class="keywordflow">case</span> SUBZERO:</div>
-<div class="line"><span class="lineno">  266</span>      <span class="keywordflow">if</span> (<a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[ind].key_JOY_LEFT_status == 1)</div>
-<div class="line"><span class="lineno">  267</span>      {</div>
-<div class="line"><span class="lineno">  268</span>        <a class="code hl_function" href="#a654fe96fb185a123e5c3e3df2ed5e0ed">playCursor</a>();</div>
-<div class="line"><span class="lineno">  269</span>        SPR_setPosition(<a class="code hl_variable" href="game__vars_8c.html#aa5e097d9886fbef5de8248a18d1d95ee">GE</a>[ind].sprite, OPTIONS_X[KANO], OPTIONS_Y[KANO]);</div>
-<div class="line"><span class="lineno">  270</span>        <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[ind].id = KANO;</div>
-<div class="line"><span class="lineno">  271</span>      }</div>
-<div class="line"><span class="lineno">  272</span>      <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[ind].key_JOY_RIGHT_status == 1)</div>
-<div class="line"><span class="lineno">  273</span>      {</div>
-<div class="line"><span class="lineno">  274</span>        <a class="code hl_function" href="#a654fe96fb185a123e5c3e3df2ed5e0ed">playCursor</a>();</div>
-<div class="line"><span class="lineno">  275</span>        SPR_setPosition(<a class="code hl_variable" href="game__vars_8c.html#aa5e097d9886fbef5de8248a18d1d95ee">GE</a>[ind].sprite, OPTIONS_X[SONYA], OPTIONS_Y[SONYA]);</div>
-<div class="line"><span class="lineno">  276</span>        <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[ind].id = SONYA;</div>
-<div class="line"><span class="lineno">  277</span>      }</div>
-<div class="line"><span class="lineno">  278</span>      <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[ind].key_JOY_DOWN_status == 1)</div>
-<div class="line"><span class="lineno">  279</span>      {</div>
-<div class="line"><span class="lineno">  280</span>        <a class="code hl_function" href="#a654fe96fb185a123e5c3e3df2ed5e0ed">playCursor</a>();</div>
-<div class="line"><span class="lineno">  281</span>        SPR_setPosition(<a class="code hl_variable" href="game__vars_8c.html#aa5e097d9886fbef5de8248a18d1d95ee">GE</a>[ind].sprite, OPTIONS_X[SCORPION], OPTIONS_Y[SCORPION]);</div>
-<div class="line"><span class="lineno">  282</span>        <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[ind].id = SCORPION;</div>
-<div class="line"><span class="lineno">  283</span>      }</div>
-<div class="line"><span class="lineno">  284</span>      <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  285</span> </div>
-<div class="line"><span class="lineno">  286</span>    <span class="keywordflow">case</span> SONYA:</div>
-<div class="line"><span class="lineno">  287</span>      <span class="keywordflow">if</span> (<a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[ind].key_JOY_LEFT_status == 1)</div>
-<div class="line"><span class="lineno">  288</span>      {</div>
-<div class="line"><span class="lineno">  289</span>        <a class="code hl_function" href="#a654fe96fb185a123e5c3e3df2ed5e0ed">playCursor</a>();</div>
-<div class="line"><span class="lineno">  290</span>        SPR_setPosition(<a class="code hl_variable" href="game__vars_8c.html#aa5e097d9886fbef5de8248a18d1d95ee">GE</a>[ind].sprite, OPTIONS_X[SUBZERO], OPTIONS_Y[SUBZERO]);</div>
-<div class="line"><span class="lineno">  291</span>        <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[ind].id = SUBZERO;</div>
-<div class="line"><span class="lineno">  292</span>      }</div>
-<div class="line"><span class="lineno">  293</span>      <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[ind].key_JOY_RIGHT_status == 1)</div>
-<div class="line"><span class="lineno">  294</span>      {</div>
-<div class="line"><span class="lineno">  295</span>        <a class="code hl_function" href="#a654fe96fb185a123e5c3e3df2ed5e0ed">playCursor</a>();</div>
-<div class="line"><span class="lineno">  296</span>        SPR_setPosition(<a class="code hl_variable" href="game__vars_8c.html#aa5e097d9886fbef5de8248a18d1d95ee">GE</a>[ind].sprite, OPTIONS_X[JOHNNY_CAGE], OPTIONS_Y[JOHNNY_CAGE]);</div>
-<div class="line"><span class="lineno">  297</span>        <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[ind].id = JOHNNY_CAGE;</div>
-<div class="line"><span class="lineno">  298</span>      }</div>
-<div class="line"><span class="lineno">  299</span>      <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  300</span> </div>
-<div class="line"><span class="lineno">  301</span>    <span class="keywordflow">case</span> SCORPION:</div>
-<div class="line"><span class="lineno">  302</span>      <span class="keywordflow">if</span> (<a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[ind].key_JOY_LEFT_status == 1)</div>
-<div class="line"><span class="lineno">  303</span>      {</div>
-<div class="line"><span class="lineno">  304</span>        <a class="code hl_function" href="#a654fe96fb185a123e5c3e3df2ed5e0ed">playCursor</a>();</div>
-<div class="line"><span class="lineno">  305</span>        SPR_setPosition(<a class="code hl_variable" href="game__vars_8c.html#aa5e097d9886fbef5de8248a18d1d95ee">GE</a>[ind].sprite, OPTIONS_X[LIU_KANG], OPTIONS_Y[LIU_KANG]);</div>
-<div class="line"><span class="lineno">  306</span>        <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[ind].id = LIU_KANG;</div>
-<div class="line"><span class="lineno">  307</span>      }</div>
-<div class="line"><span class="lineno">  308</span>      <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[ind].key_JOY_UP_status == 1)</div>
-<div class="line"><span class="lineno">  309</span>      {</div>
-<div class="line"><span class="lineno">  310</span>        <a class="code hl_function" href="#a654fe96fb185a123e5c3e3df2ed5e0ed">playCursor</a>();</div>
-<div class="line"><span class="lineno">  311</span>        SPR_setPosition(<a class="code hl_variable" href="game__vars_8c.html#aa5e097d9886fbef5de8248a18d1d95ee">GE</a>[ind].sprite, OPTIONS_X[SUBZERO], OPTIONS_Y[SUBZERO]);</div>
-<div class="line"><span class="lineno">  312</span>        <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[ind].id = SUBZERO;</div>
-<div class="line"><span class="lineno">  313</span>      }</div>
-<div class="line"><span class="lineno">  314</span>      <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  315</span> </div>
-<div class="line"><span class="lineno">  316</span>    <span class="keywordflow">case</span> LIU_KANG:</div>
-<div class="line"><span class="lineno">  317</span>      <span class="keywordflow">if</span> (<a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[ind].key_JOY_RIGHT_status == 1)</div>
-<div class="line"><span class="lineno">  318</span>      {</div>
-<div class="line"><span class="lineno">  319</span>        <a class="code hl_function" href="#a654fe96fb185a123e5c3e3df2ed5e0ed">playCursor</a>();</div>
-<div class="line"><span class="lineno">  320</span>        SPR_setPosition(<a class="code hl_variable" href="game__vars_8c.html#aa5e097d9886fbef5de8248a18d1d95ee">GE</a>[ind].sprite, OPTIONS_X[SCORPION], OPTIONS_Y[SCORPION]);</div>
-<div class="line"><span class="lineno">  321</span>        <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[ind].id = SCORPION;</div>
-<div class="line"><span class="lineno">  322</span>      }</div>
-<div class="line"><span class="lineno">  323</span>      <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[ind].key_JOY_LEFT_status == 1)</div>
-<div class="line"><span class="lineno">  324</span>      {</div>
-<div class="line"><span class="lineno">  325</span>        <a class="code hl_function" href="#a654fe96fb185a123e5c3e3df2ed5e0ed">playCursor</a>();</div>
-<div class="line"><span class="lineno">  326</span>        SPR_setPosition(<a class="code hl_variable" href="game__vars_8c.html#aa5e097d9886fbef5de8248a18d1d95ee">GE</a>[ind].sprite, OPTIONS_X[RAIDEN], OPTIONS_Y[RAIDEN]);</div>
-<div class="line"><span class="lineno">  327</span>        <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[ind].id = RAIDEN;</div>
-<div class="line"><span class="lineno">  328</span>      }</div>
-<div class="line"><span class="lineno">  329</span>      <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  330</span> </div>
-<div class="line"><span class="lineno">  331</span>    <span class="keywordflow">case</span> RAIDEN:</div>
-<div class="line"><span class="lineno">  332</span>      <span class="keywordflow">if</span> (<a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[ind].key_JOY_RIGHT_status == 1)</div>
-<div class="line"><span class="lineno">  333</span>      {</div>
-<div class="line"><span class="lineno">  334</span>        <a class="code hl_function" href="#a654fe96fb185a123e5c3e3df2ed5e0ed">playCursor</a>();</div>
-<div class="line"><span class="lineno">  335</span>        SPR_setPosition(<a class="code hl_variable" href="game__vars_8c.html#aa5e097d9886fbef5de8248a18d1d95ee">GE</a>[ind].sprite, OPTIONS_X[LIU_KANG], OPTIONS_Y[LIU_KANG]);</div>
-<div class="line"><span class="lineno">  336</span>        <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[ind].id = LIU_KANG;</div>
-<div class="line"><span class="lineno">  337</span>      }</div>
-<div class="line"><span class="lineno">  338</span>      <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[ind].key_JOY_UP_status == 1)</div>
-<div class="line"><span class="lineno">  339</span>      {</div>
-<div class="line"><span class="lineno">  340</span>        <a class="code hl_function" href="#a654fe96fb185a123e5c3e3df2ed5e0ed">playCursor</a>();</div>
-<div class="line"><span class="lineno">  341</span>        SPR_setPosition(<a class="code hl_variable" href="game__vars_8c.html#aa5e097d9886fbef5de8248a18d1d95ee">GE</a>[ind].sprite, OPTIONS_X[KANO], OPTIONS_Y[KANO]);</div>
-<div class="line"><span class="lineno">  342</span>        <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[ind].id = KANO;</div>
-<div class="line"><span class="lineno">  343</span>      }</div>
-<div class="line"><span class="lineno">  344</span>      <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  345</span> </div>
-<div class="line"><span class="lineno">  346</span>    <span class="keywordflow">default</span>:</div>
-<div class="line"><span class="lineno">  347</span>      <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  348</span>  }</div>
-<div class="line"><span class="lineno">  349</span> </div>
-<div class="line"><span class="lineno">  350</span>  <span class="comment">// se o ID mudou, troca o sprite do personagem</span></div>
-<div class="line"><span class="lineno">  351</span>  <span class="keywordflow">if</span> (prevId != <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[ind].<span class="keywordtype">id</span>)</div>
-<div class="line"><span class="lineno">  352</span>    <a class="code hl_function" href="anima__system_8c.html#ab609215115971b40d9e47df6e4a8f853">playerState</a>(ind, PARADO);</div>
-<div class="line"><span class="lineno">  353</span>}</div>
+<p class="definition">Definição na linha <a class="el" href="char__select__room_8c_source.html#l00214">214</a> do arquivo <a class="el" href="char__select__room_8c_source.html">char_select_room.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  215</span>{</div>
+<div class="line"><span class="lineno">  216</span>  <span class="comment">// se o seletor estiver invisível não permitir mover o cursor.</span></div>
+<div class="line"><span class="lineno">  217</span>  <span class="keywordflow">if</span> (<a class="code hl_variable" href="game__vars_8c.html#aa5e097d9886fbef5de8248a18d1d95ee">GE</a>[ind].sprite == NULL || <a class="code hl_variable" href="game__vars_8c.html#aa5e097d9886fbef5de8248a18d1d95ee">GE</a>[ind].sprite-&gt;visibility == HIDDEN)</div>
+<div class="line"><span class="lineno">  218</span>    <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  219</span> </div>
+<div class="line"><span class="lineno">  220</span>  <span class="keywordtype">int</span> prevId = <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[ind].id; <span class="comment">// guarda personagem anterior</span></div>
+<div class="line"><span class="lineno">  221</span> </div>
+<div class="line"><span class="lineno">  222</span>  <span class="keywordflow">switch</span> (<a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[ind].<span class="keywordtype">id</span>)</div>
+<div class="line"><span class="lineno">  223</span>  {</div>
+<div class="line"><span class="lineno">  224</span>    <span class="keywordflow">case</span> KANO:</div>
+<div class="line"><span class="lineno">  225</span>      <span class="keywordflow">if</span> (<a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[ind].key_JOY_LEFT_status == 1) <span class="comment">// se apertar para esquerda, seleciona CAGE</span></div>
+<div class="line"><span class="lineno">  226</span>      {</div>
+<div class="line"><span class="lineno">  227</span>        <a class="code hl_function" href="#a654fe96fb185a123e5c3e3df2ed5e0ed">playCursor</a>();</div>
+<div class="line"><span class="lineno">  228</span>        SPR_setPosition(<a class="code hl_variable" href="game__vars_8c.html#aa5e097d9886fbef5de8248a18d1d95ee">GE</a>[ind].sprite, OPTIONS_X[JOHNNY_CAGE], OPTIONS_Y[JOHNNY_CAGE]);</div>
+<div class="line"><span class="lineno">  229</span>        <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[ind].id = JOHNNY_CAGE;</div>
+<div class="line"><span class="lineno">  230</span>      }</div>
+<div class="line"><span class="lineno">  231</span>      <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[ind].key_JOY_RIGHT_status == 1) <span class="comment">// se apertar para direita, Subzero</span></div>
+<div class="line"><span class="lineno">  232</span>      {</div>
+<div class="line"><span class="lineno">  233</span>        <a class="code hl_function" href="#a654fe96fb185a123e5c3e3df2ed5e0ed">playCursor</a>();</div>
+<div class="line"><span class="lineno">  234</span>        SPR_setPosition(<a class="code hl_variable" href="game__vars_8c.html#aa5e097d9886fbef5de8248a18d1d95ee">GE</a>[ind].sprite, OPTIONS_X[SUBZERO], OPTIONS_Y[SUBZERO]);</div>
+<div class="line"><span class="lineno">  235</span>        <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[ind].id = SUBZERO;</div>
+<div class="line"><span class="lineno">  236</span>      }</div>
+<div class="line"><span class="lineno">  237</span>      <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[ind].key_JOY_DOWN_status == 1)<span class="comment">// se apertar para baixo, Raiden</span></div>
+<div class="line"><span class="lineno">  238</span>      {</div>
+<div class="line"><span class="lineno">  239</span>        <a class="code hl_function" href="#a654fe96fb185a123e5c3e3df2ed5e0ed">playCursor</a>();</div>
+<div class="line"><span class="lineno">  240</span>        SPR_setPosition(<a class="code hl_variable" href="game__vars_8c.html#aa5e097d9886fbef5de8248a18d1d95ee">GE</a>[ind].sprite, OPTIONS_X[RAIDEN], OPTIONS_Y[RAIDEN]);</div>
+<div class="line"><span class="lineno">  241</span>        <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[ind].id = RAIDEN;</div>
+<div class="line"><span class="lineno">  242</span>      }</div>
+<div class="line"><span class="lineno">  243</span>      <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  244</span> </div>
+<div class="line"><span class="lineno">  245</span>    <span class="keywordflow">case</span> JOHNNY_CAGE:</div>
+<div class="line"><span class="lineno">  246</span>      <span class="keywordflow">if</span> (<a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[ind].key_JOY_RIGHT_status == 1)</div>
+<div class="line"><span class="lineno">  247</span>      {</div>
+<div class="line"><span class="lineno">  248</span>        <a class="code hl_function" href="#a654fe96fb185a123e5c3e3df2ed5e0ed">playCursor</a>();</div>
+<div class="line"><span class="lineno">  249</span>        SPR_setPosition(<a class="code hl_variable" href="game__vars_8c.html#aa5e097d9886fbef5de8248a18d1d95ee">GE</a>[ind].sprite, OPTIONS_X[KANO], OPTIONS_Y[KANO]);</div>
+<div class="line"><span class="lineno">  250</span>        <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[ind].id = KANO;</div>
+<div class="line"><span class="lineno">  251</span>      }</div>
+<div class="line"><span class="lineno">  252</span>      <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[ind].key_JOY_LEFT_status == 1)</div>
+<div class="line"><span class="lineno">  253</span>      {</div>
+<div class="line"><span class="lineno">  254</span>        <a class="code hl_function" href="#a654fe96fb185a123e5c3e3df2ed5e0ed">playCursor</a>();</div>
+<div class="line"><span class="lineno">  255</span>        SPR_setPosition(<a class="code hl_variable" href="game__vars_8c.html#aa5e097d9886fbef5de8248a18d1d95ee">GE</a>[ind].sprite, OPTIONS_X[SONYA], OPTIONS_Y[SONYA]);</div>
+<div class="line"><span class="lineno">  256</span>        <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[ind].id = SONYA;</div>
+<div class="line"><span class="lineno">  257</span>      }</div>
+<div class="line"><span class="lineno">  258</span>      <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  259</span> </div>
+<div class="line"><span class="lineno">  260</span>    <span class="keywordflow">case</span> SUBZERO:</div>
+<div class="line"><span class="lineno">  261</span>      <span class="keywordflow">if</span> (<a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[ind].key_JOY_LEFT_status == 1)</div>
+<div class="line"><span class="lineno">  262</span>      {</div>
+<div class="line"><span class="lineno">  263</span>        <a class="code hl_function" href="#a654fe96fb185a123e5c3e3df2ed5e0ed">playCursor</a>();</div>
+<div class="line"><span class="lineno">  264</span>        SPR_setPosition(<a class="code hl_variable" href="game__vars_8c.html#aa5e097d9886fbef5de8248a18d1d95ee">GE</a>[ind].sprite, OPTIONS_X[KANO], OPTIONS_Y[KANO]);</div>
+<div class="line"><span class="lineno">  265</span>        <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[ind].id = KANO;</div>
+<div class="line"><span class="lineno">  266</span>      }</div>
+<div class="line"><span class="lineno">  267</span>      <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[ind].key_JOY_RIGHT_status == 1)</div>
+<div class="line"><span class="lineno">  268</span>      {</div>
+<div class="line"><span class="lineno">  269</span>        <a class="code hl_function" href="#a654fe96fb185a123e5c3e3df2ed5e0ed">playCursor</a>();</div>
+<div class="line"><span class="lineno">  270</span>        SPR_setPosition(<a class="code hl_variable" href="game__vars_8c.html#aa5e097d9886fbef5de8248a18d1d95ee">GE</a>[ind].sprite, OPTIONS_X[SONYA], OPTIONS_Y[SONYA]);</div>
+<div class="line"><span class="lineno">  271</span>        <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[ind].id = SONYA;</div>
+<div class="line"><span class="lineno">  272</span>      }</div>
+<div class="line"><span class="lineno">  273</span>      <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[ind].key_JOY_DOWN_status == 1)</div>
+<div class="line"><span class="lineno">  274</span>      {</div>
+<div class="line"><span class="lineno">  275</span>        <a class="code hl_function" href="#a654fe96fb185a123e5c3e3df2ed5e0ed">playCursor</a>();</div>
+<div class="line"><span class="lineno">  276</span>        SPR_setPosition(<a class="code hl_variable" href="game__vars_8c.html#aa5e097d9886fbef5de8248a18d1d95ee">GE</a>[ind].sprite, OPTIONS_X[SCORPION], OPTIONS_Y[SCORPION]);</div>
+<div class="line"><span class="lineno">  277</span>        <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[ind].id = SCORPION;</div>
+<div class="line"><span class="lineno">  278</span>      }</div>
+<div class="line"><span class="lineno">  279</span>      <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  280</span> </div>
+<div class="line"><span class="lineno">  281</span>    <span class="keywordflow">case</span> SONYA:</div>
+<div class="line"><span class="lineno">  282</span>      <span class="keywordflow">if</span> (<a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[ind].key_JOY_LEFT_status == 1)</div>
+<div class="line"><span class="lineno">  283</span>      {</div>
+<div class="line"><span class="lineno">  284</span>        <a class="code hl_function" href="#a654fe96fb185a123e5c3e3df2ed5e0ed">playCursor</a>();</div>
+<div class="line"><span class="lineno">  285</span>        SPR_setPosition(<a class="code hl_variable" href="game__vars_8c.html#aa5e097d9886fbef5de8248a18d1d95ee">GE</a>[ind].sprite, OPTIONS_X[SUBZERO], OPTIONS_Y[SUBZERO]);</div>
+<div class="line"><span class="lineno">  286</span>        <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[ind].id = SUBZERO;</div>
+<div class="line"><span class="lineno">  287</span>      }</div>
+<div class="line"><span class="lineno">  288</span>      <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[ind].key_JOY_RIGHT_status == 1)</div>
+<div class="line"><span class="lineno">  289</span>      {</div>
+<div class="line"><span class="lineno">  290</span>        <a class="code hl_function" href="#a654fe96fb185a123e5c3e3df2ed5e0ed">playCursor</a>();</div>
+<div class="line"><span class="lineno">  291</span>        SPR_setPosition(<a class="code hl_variable" href="game__vars_8c.html#aa5e097d9886fbef5de8248a18d1d95ee">GE</a>[ind].sprite, OPTIONS_X[JOHNNY_CAGE], OPTIONS_Y[JOHNNY_CAGE]);</div>
+<div class="line"><span class="lineno">  292</span>        <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[ind].id = JOHNNY_CAGE;</div>
+<div class="line"><span class="lineno">  293</span>      }</div>
+<div class="line"><span class="lineno">  294</span>      <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  295</span> </div>
+<div class="line"><span class="lineno">  296</span>    <span class="keywordflow">case</span> SCORPION:</div>
+<div class="line"><span class="lineno">  297</span>      <span class="keywordflow">if</span> (<a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[ind].key_JOY_LEFT_status == 1)</div>
+<div class="line"><span class="lineno">  298</span>      {</div>
+<div class="line"><span class="lineno">  299</span>        <a class="code hl_function" href="#a654fe96fb185a123e5c3e3df2ed5e0ed">playCursor</a>();</div>
+<div class="line"><span class="lineno">  300</span>        SPR_setPosition(<a class="code hl_variable" href="game__vars_8c.html#aa5e097d9886fbef5de8248a18d1d95ee">GE</a>[ind].sprite, OPTIONS_X[LIU_KANG], OPTIONS_Y[LIU_KANG]);</div>
+<div class="line"><span class="lineno">  301</span>        <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[ind].id = LIU_KANG;</div>
+<div class="line"><span class="lineno">  302</span>      }</div>
+<div class="line"><span class="lineno">  303</span>      <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[ind].key_JOY_UP_status == 1)</div>
+<div class="line"><span class="lineno">  304</span>      {</div>
+<div class="line"><span class="lineno">  305</span>        <a class="code hl_function" href="#a654fe96fb185a123e5c3e3df2ed5e0ed">playCursor</a>();</div>
+<div class="line"><span class="lineno">  306</span>        SPR_setPosition(<a class="code hl_variable" href="game__vars_8c.html#aa5e097d9886fbef5de8248a18d1d95ee">GE</a>[ind].sprite, OPTIONS_X[SUBZERO], OPTIONS_Y[SUBZERO]);</div>
+<div class="line"><span class="lineno">  307</span>        <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[ind].id = SUBZERO;</div>
+<div class="line"><span class="lineno">  308</span>      }</div>
+<div class="line"><span class="lineno">  309</span>      <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  310</span> </div>
+<div class="line"><span class="lineno">  311</span>    <span class="keywordflow">case</span> LIU_KANG:</div>
+<div class="line"><span class="lineno">  312</span>      <span class="keywordflow">if</span> (<a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[ind].key_JOY_RIGHT_status == 1)</div>
+<div class="line"><span class="lineno">  313</span>      {</div>
+<div class="line"><span class="lineno">  314</span>        <a class="code hl_function" href="#a654fe96fb185a123e5c3e3df2ed5e0ed">playCursor</a>();</div>
+<div class="line"><span class="lineno">  315</span>        SPR_setPosition(<a class="code hl_variable" href="game__vars_8c.html#aa5e097d9886fbef5de8248a18d1d95ee">GE</a>[ind].sprite, OPTIONS_X[SCORPION], OPTIONS_Y[SCORPION]);</div>
+<div class="line"><span class="lineno">  316</span>        <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[ind].id = SCORPION;</div>
+<div class="line"><span class="lineno">  317</span>      }</div>
+<div class="line"><span class="lineno">  318</span>      <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[ind].key_JOY_LEFT_status == 1)</div>
+<div class="line"><span class="lineno">  319</span>      {</div>
+<div class="line"><span class="lineno">  320</span>        <a class="code hl_function" href="#a654fe96fb185a123e5c3e3df2ed5e0ed">playCursor</a>();</div>
+<div class="line"><span class="lineno">  321</span>        SPR_setPosition(<a class="code hl_variable" href="game__vars_8c.html#aa5e097d9886fbef5de8248a18d1d95ee">GE</a>[ind].sprite, OPTIONS_X[RAIDEN], OPTIONS_Y[RAIDEN]);</div>
+<div class="line"><span class="lineno">  322</span>        <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[ind].id = RAIDEN;</div>
+<div class="line"><span class="lineno">  323</span>      }</div>
+<div class="line"><span class="lineno">  324</span>      <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  325</span> </div>
+<div class="line"><span class="lineno">  326</span>    <span class="keywordflow">case</span> RAIDEN:</div>
+<div class="line"><span class="lineno">  327</span>      <span class="keywordflow">if</span> (<a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[ind].key_JOY_RIGHT_status == 1)</div>
+<div class="line"><span class="lineno">  328</span>      {</div>
+<div class="line"><span class="lineno">  329</span>        <a class="code hl_function" href="#a654fe96fb185a123e5c3e3df2ed5e0ed">playCursor</a>();</div>
+<div class="line"><span class="lineno">  330</span>        SPR_setPosition(<a class="code hl_variable" href="game__vars_8c.html#aa5e097d9886fbef5de8248a18d1d95ee">GE</a>[ind].sprite, OPTIONS_X[LIU_KANG], OPTIONS_Y[LIU_KANG]);</div>
+<div class="line"><span class="lineno">  331</span>        <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[ind].id = LIU_KANG;</div>
+<div class="line"><span class="lineno">  332</span>      }</div>
+<div class="line"><span class="lineno">  333</span>      <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[ind].key_JOY_UP_status == 1)</div>
+<div class="line"><span class="lineno">  334</span>      {</div>
+<div class="line"><span class="lineno">  335</span>        <a class="code hl_function" href="#a654fe96fb185a123e5c3e3df2ed5e0ed">playCursor</a>();</div>
+<div class="line"><span class="lineno">  336</span>        SPR_setPosition(<a class="code hl_variable" href="game__vars_8c.html#aa5e097d9886fbef5de8248a18d1d95ee">GE</a>[ind].sprite, OPTIONS_X[KANO], OPTIONS_Y[KANO]);</div>
+<div class="line"><span class="lineno">  337</span>        <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[ind].id = KANO;</div>
+<div class="line"><span class="lineno">  338</span>      }</div>
+<div class="line"><span class="lineno">  339</span>      <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  340</span> </div>
+<div class="line"><span class="lineno">  341</span>    <span class="keywordflow">default</span>:</div>
+<div class="line"><span class="lineno">  342</span>      <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  343</span>  }</div>
+<div class="line"><span class="lineno">  344</span> </div>
+<div class="line"><span class="lineno">  345</span>  <span class="comment">// se o ID mudou, troca o sprite do personagem</span></div>
+<div class="line"><span class="lineno">  346</span>  <span class="keywordflow">if</span> (prevId != <a class="code hl_variable" href="game__vars_8c.html#a5135cf03aefd90677db09304781dbb8c">player</a>[ind].<span class="keywordtype">id</span>)</div>
+<div class="line"><span class="lineno">  347</span>    <a class="code hl_function" href="player__state_8c.html#a215f450776e74a1c1f35b9f9499c08a5">playerState</a>(ind, PARADO);</div>
+<div class="line"><span class="lineno">  348</span>}</div>
 <div class="ttc" id="achar__select__room_8c_html_a654fe96fb185a123e5c3e3df2ed5e0ed"><div class="ttname"><a href="#a654fe96fb185a123e5c3e3df2ed5e0ed">playCursor</a></div><div class="ttdeci">void playCursor(void)</div><div class="ttdoc">Executa o áudio do cursor.</div><div class="ttdef"><b>Definição</b> <a href="char__select__room_8c_source.html#l00568">char_select_room.c:568</a></div></div>
 </div><!-- fragment --><div class="dynheader">
 Este é o diagrama das funções utilizadas por essa função:</div>
@@ -1288,7 +1293,7 @@ Este é o diagrama das funções utilizadas por essa função:</div>
 <area shape="rect" title=" " alt="" coords="5,32,122,62"/>
 <area shape="rect" href="char__select__room_8c.html#a654fe96fb185a123e5c3e3df2ed5e0ed" title="Executa o áudio do cursor." alt="" coords="172,5,260,35"/>
 <area shape="poly" title=" " alt="" coords="122,34,156,28,157,33,123,39"/>
-<area shape="rect" href="anima__system_8c.html#ab609215115971b40d9e47df6e4a8f853" title=" " alt="" coords="170,59,262,88"/>
+<area shape="rect" href="player__state_8c.html#a215f450776e74a1c1f35b9f9499c08a5" title=" " alt="" coords="170,59,262,88"/>
 <area shape="poly" title=" " alt="" coords="123,54,155,60,154,65,122,60"/>
 </map>
 </div>
