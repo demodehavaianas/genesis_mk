@@ -7,6 +7,7 @@ static void fsm_update_trocando_de_lado(u8 atacante, u8 defensor, u8 i);
 static void fsm_update_defesa(u8 defensor, u8 distancia_player_x_special, u8 atacante, u8 i);
 static void fsm_update_bloqueio(u8 i);
 static void fsm_update_pulo_neutro(u8 i);
+static void fsm_update_soco_baixo(u8 i);
 static void fsm_update_golpe_perto(u8 i);;
 
 void fsm_update(void)
@@ -47,7 +48,7 @@ void fsm_update(void)
             {
                 playerState(i, SOCO_ALTO);
             }
-
+/*
             if(player[i].key_JOY_A_status == BUTTON_PRESSED && 
                 (player[i].state == PARADO ||
                  player[i].state == ANDAR_PRA_FRENTE ||
@@ -55,7 +56,7 @@ void fsm_update(void)
             {
                 playerState(i, SOCO_BAIXO);
             }
-
+*/
         }
 
         fsm_update_golpe_perto(i);
@@ -254,6 +255,34 @@ static void fsm_update_bloqueio(u8 i)
         playerState(i, BLOQUEIO_ABAIXADO_FIM);
 }
 
+static void fsm_update_soco_baixo(u8 i)
+{
+    u16 estado = player[i].state;
+
+    if (player[i].key_JOY_countdown[1] > 0)
+        player[i].key_JOY_countdown[1]--;
+
+    if (player[i].key_JOY_A_status != BUTTON_PRESSED)
+        return;
+
+    if (estado == PARADO || estado == ANDAR_PRA_FRENTE || estado == ANDAR_PRA_TRAS)
+    {
+        playerState(i, SOCO_BAIXO);
+        return;
+    }
+
+    /* passos 1..4: 0,1,2 ou o início da volta. O passo 5 já é o quadro final. */
+    if (estado == SOCO_BAIXO && player[i].animFrame <= 4)
+    {
+        player[i].key_JOY_countdown[1] = 36;
+        playerState(i, SOCO_BAIXO_CONTINUO);
+        return;
+    }
+
+    if (estado == SOCO_BAIXO_CONTINUO)
+        player[i].key_JOY_countdown[1] = 36;
+}
+
 static void fsm_update_pulo_neutro(u8 i)
 {
     bool cima = player[i].key_JOY_UP_status == BUTTON_PRESSED;
@@ -266,7 +295,8 @@ static void fsm_update_pulo_neutro(u8 i)
 
     if (estado == PARADO || estado == ANDAR_PRA_FRENTE || estado == ANDAR_PRA_TRAS)
     {
-        player[i].vSpeed = -27;
+        //player[i].vSpeed = -27;
+        player[i].vSpeed = -22;
         playerState(i, INI_PULO_NEUTRO);
     }
 }

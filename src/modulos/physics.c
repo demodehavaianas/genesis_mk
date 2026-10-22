@@ -38,7 +38,7 @@ static void physics_pulo_neutro(u8 i)
         return;
 
     player[i].vSpeed += 1;
-    player[i].y += player[i].vSpeed >> 2;
+    player[i].y += player[i].vSpeed >> 1;
 
     if (player[i].y >= (s16) gAlturaDoPiso)
     {

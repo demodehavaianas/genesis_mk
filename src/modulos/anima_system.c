@@ -1,5 +1,17 @@
 #include "mkplus.h"
 
+#define SOCO_TIMER 1
+
+/* Passos 1..5 do soco curto desenham 0,1,2,1,0. O sprite só tem esses 3 quadros. */
+static u8 soco_baixo_frame(u16 step)
+{
+    static const u8 seq[5] = { 0, 1, 2, 1, 0 };
+
+    if (step < 1 || step > 5)
+        return 0;
+    return seq[step - 1];
+}
+
 void animate()
 {
     //if(player[0].hitPause == 0 && player[1].hitPause == 0){
@@ -18,6 +30,18 @@ void animate()
             //hora de trocar ou recarregar a animacao
             if (player[i].animFrame > player[i].animFrameTotal)
             {
+                if (player[i].state == SOCO_BAIXO_CONTINUO)
+                {
+                    /* 0..7 acabou. Sem A novo, para. Com A, volta no quadro 1 (não no 0). */
+                    if (player[i].key_JOY_countdown[SOCO_TIMER] == 0)
+                    {
+                        gASG_system = TRUE;
+                        playerState(i, PARADO);
+                    }
+                    else
+                        player[i].animFrame = 2;
+                }
+                else
                 //--------------------- refactory
                 if (player[i].state == BLOQUEIO_EM_PE     ||
                     player[i].state == BLOQUEIO_ABAIXADO  ||
@@ -152,8 +176,15 @@ void animate()
 
             player[i].frameTimeAtual = 1;
             player[i].frameTimeTotal = player[i].dataAnim[player[i].animFrame];
+
+            {
+                u16 frame = (u16)(player[i].animFrame - 1);
+                if (player[i].state == SOCO_BAIXO)
+                    frame = soco_baixo_frame(player[i].animFrame);
+                SPR_setAnimAndFrame(player[i].sprite, 0, frame);
+            }
             
-            SPR_setAnimAndFrame(player[i].sprite, 0, player[i].animFrame-1);
+            //SPR_setAnimAndFrame(player[i].sprite, 0, player[i].animFrame-1);
 
             //FUNCAO_FSM_HITBOXES(i); //Atualiza as Hurt / Hitboxes
         }
