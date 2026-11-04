@@ -116,62 +116,6 @@ void animate()
                             break;
                     }
                 }
-                //---------------------
-                /*gASG_system = TRUE;
-
-                if(player[i].state == PARADO)             playerState(i, PARADO);//
-                if(player[i].state == ANDAR_PRA_FRENTE)   playerState(i, ANDAR_PRA_FRENTE);//
-                if(player[i].state == ANDAR_PRA_TRAS)     playerState(i, ANDAR_PRA_TRAS);//
-                if(player[i].state == ABAIXANDO)          playerState(i, ABAIXADO);//
-                if(player[i].state == ABAIXADO)           playerState(i, ABAIXADO);//
-                if(player[i].state == LEVANTANDO)         playerState(i, PARADO);//
-                if(player[i].state == VIRAR)              playerState(i, PARADO);//
-                if(player[i].state == CHUTE_BAIXO)        playerState(i, PARADO);//
-                if(player[i].state == CHUTE_ALTO)         playerState(i, PARADO);//
-                if(player[i].state == SOCO_PERTO)         playerState(i, PARADO);//
-                if(player[i].state == CHUTE_PERTO)        playerState(i, PARADO);//
-                if(player[i].state == RASTEIRA && 
-                   player[i].key_JOY_DOWN_status == BUTTON_RELEASED) playerState(i, PARADO); //
-                if(player[i].state == RASTEIRA && 
-                   player[i].key_JOY_DOWN_status == BUTTON_HELD)     playerState(i, ABAIXADO); //
-                if(player[i].state == GIRATORIA)          playerState(i, PARADO);//
-                if(player[i].state == CHUTE_ABAIXADO)     playerState(i, ABAIXADO);//
-
-                if (player[i].state == BLOQUEIO_EM_PE_INI)
-                {
-                    if (player[i].key_JOY_B_status == BUTTON_PRESSED ||
-                        player[i].key_JOY_B_status == BUTTON_HELD)
-                        playerState(i, BLOQUEIO_EM_PE); // ainda segurando 
-                    else
-                        playerState(i, BLOQUEIO_EM_PE_FIM); // soltou durante os 2 quadros 
-                }
-                else if (player[i].state == BLOQUEIO_EM_PE)
-                {
-                    player[i].animFrame = 1; // 1 quadro só: segura, não recria o sprite 
-                }
-                else if (player[i].state == BLOQUEIO_EM_PE_FIM)
-                    playerState(i, PARADO);
-                //--
-                if (player[i].state == BLOQUEIO_ABAIXADO_INI)
-                {
-                    if (player[i].key_JOY_B_status == BUTTON_PRESSED ||
-                        player[i].key_JOY_B_status == BUTTON_HELD)
-                        playerState(i, BLOQUEIO_ABAIXADO);
-                    else
-                        playerState(i, BLOQUEIO_ABAIXADO_FIM);
-                }
-                else if (player[i].state == BLOQUEIO_ABAIXADO)
-                {
-                    player[i].animFrame = 1; // pose de 1 quadro: não recria o sprite
-                }
-                else if (player[i].state == BLOQUEIO_ABAIXADO_FIM)
-                {
-                    if (player[i].key_JOY_DOWN_status == BUTTON_PRESSED ||
-                        player[i].key_JOY_DOWN_status == BUTTON_HELD)
-                        playerState(i, ABAIXADO);
-                    else
-                        playerState(i, LEVANTANDO);
-                }*/
             }
 
             player[i].frameTimeAtual = 1;

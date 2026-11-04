@@ -48,6 +48,8 @@ void fsm_update(void)
             {
                 playerState(i, SOCO_ALTO);
             }
+
+            fsm_update_soco_baixo(i);
 /*
             if(player[i].key_JOY_A_status == BUTTON_PRESSED && 
                 (player[i].state == PARADO ||
